@@ -1,0 +1,273 @@
+% !TEX root = tnnls_relation_gait.tex
+
+\ifx\allfiles\undefined
+    \input{tnnls_prefix}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure*}[t]
+%	\centering
+%	\includegraphics[width=1.0\linewidth]{figures/network.pdf}
+%	\caption{
+%    Illustration of Gait Quality Aware Network.
+%    The Encoder mainly consists of convolutional layers to extract the features from each silhouette separately.
+%    FQBlock is taken to assess the quality of each silhouette where its weights are shared across the silhouettes but independent for different bins (annotated by different colors).
+%    PQBlock operates on the set-level part representations and predicts a score to assess each part separately.
+%    \emph{Set Pool} is taken to aggregate the features in a silhouette set.
+%    $N$ denotes the number of silhouettes in a set,
+%    $H$ and $W$ denote the height and width of the silhouette-level features,
+%    $C$ and $\widehat{C}$ denote the channel dimension,
+%    $S$ is the number of bins to horizontally slice the features which is equal to the number of parts.
+%    Best viewed in color.
+%	}
+%	\label{fig_network}
+%\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{related work}
+\section{background}
+
+%Depression were the most common mental disorders, which brought great challenge to personal wellbeing and social economy around the world. According to World Health Organization (WHO), people with mental illness are among the main victims of the Covid-19 pandemic, with worldwide cases of depression rising by more than 25\% during the pandemic. Depression is a mental illness that does not directly lead to death, but many depressed people are unable to overcome their psychological barriers and choose to commit suicide. According to statistical surveys, the probability of suicide in depression is around 10-15\%. Given the high prevalence of depression and the risk of suicide, it is becoming increasingly important to find new diagnostic and treatment protocols.
+
+This section presents some basic knowledge in ADD task including scales, datasets and assessment metrics which are important to be known ahead.
+Firstly, introduces some scales of diagnosing depression which are used as labels.
+Secondly, shows some public datasets with different modal.
+Finally, lists some commonly used assessment metrics, which are important in evaluating the performance of methods.
+
+\subsection{Depression Diagnosis Scale}
+%\subsection{Questionnaires}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table*}
+\caption{Commonly used depression diagnosis scales}
+\label{tab1}
+%\begin{table}[]
+\begin{tabular}{l|l|l|l|l}
+
+\hline
+\multicolumn{1}{c|}{Name}                                                                                                 & \multicolumn{1}{c|}{Items} & \multicolumn{1}{c|}{Scores} & \multicolumn{1}{c|}{Grading}                                                                                                                    & \multicolumn{1}{c}{Usage}     \\ \hline
+Beck Depression Inventory (BDI)~\cite{1961An}                                                        & 21                         & 0-63                        & \begin{tabular}[c]{@{}l@{}}0-9 minimal\\    \\ 10-18 mild\\    \\ 19-29 moderate\\    \\ 30-63 severe\end{tabular}                              & \multirow{6}{*}{self- rating}  \\ \cline{1-4}
+Beck Depression Inventory-II (BDI-\uppercase\expandafter{\romannumeral2})~\cite{beck1996beck}        & 21                         & 0-63                        & \begin{tabular}[c]{@{}l@{}}0-13 minimal\\    \\ 14-19 mild\\    \\ 20-28 moderate\\    \\ 29-63 severe\end{tabular}                             &                                \\ \cline{1-4}
+Self-rating depression scale (SDS)~\cite{SDS}                                                        & 20                         & 20-80                       & \begin{tabular}[c]{@{}l@{}}20-53 minimal\\    \\ 53-62 mild\\    \\ 63-72 moderate\\    \\ 73-80 severe\end{tabular}                            &                                \\ \cline{1-4}
+Patient Health Questionnaire (PHQ-9)~\cite{2013The}                                                  & 9                          & 0-27                        & \begin{tabular}[c]{@{}l@{}}0-5 minimal\\    \\ 5-9 mild\\    \\ 10-14 moderate\\    \\ 15-19 medium severe\\    \\ 20-27 severe\end{tabular}    &                                \\ \cline{1-4}
+Center for Epidemiological Survey,   Depression Scale (CES-D)~\cite{1977The}                         & 20                         & 0-60                        & \begin{tabular}[c]{@{}l@{}}0-16 minimal\\    \\ 16-20 mild\\    \\ 21-25 moderate\\    \\ 26-60 severe\end{tabular}                             &                                \\ \cline{1-4}
+Geriatric Depression Scale (GDS)~\cite{brink1982screening}                                           & 30                         & 0-30                        & \begin{tabular}[c]{@{}l@{}}0-10 minimal\\    \\ 11-20 mild\\    \\ 21-30 moderate\end{tabular}                                                  &                                \\ \hline
+Hamilton Depression Scale (HAMD)~\cite{HAMD}                                                         & 17/21/24                   &\shortstack{ 0-34\\/0-42\\/0-48 }             & \begin{tabular}[c]{@{}l@{}}0-8 minimal\\    \\ 8-20 mild\\    \\ 20-35 moderate\\    \\ 35-48 severe\end{tabular}                               & \multirow{5}{*}{others-rating} \\ \cline{1-4}
+Montgomery-Asberg Depression Rating Scale   (MADRS)~\cite{montgomery1979new}                         & 10                         & 0-60                        & \begin{tabular}[c]{@{}l@{}}0-12 minimal\\    \\ 12-21 mild\\    \\ 22-29 moderate\\    \\ 30-34 medium severe\\    \\ 35-60 severe\end{tabular} &                                \\ \cline{1-4}
+International Classification of Diseases (ICD-10)~\cite{world1992icd}                                & -                          & -                           & \multirow{3}{*}{*}                                                                                                                              &                                \\ \cline{1-3}
+Diagnostic and Statistical Manual of Mental Disorders (DSM-IV)~\cite{segal2010diagnostic}          & -                          & -                           &                                                                                                                                                 &                                \\ \cline{1-3}
+Chinese Classification and Diagnostic Criteria of Mental Disorders (CCMD-3)~\cite{chen2002chinese} & -                          & -                           &                                                                                                                                                 &                                \\ \hline
+        
+	\end{tabular}
+	\begin{tablenotes}
+			\footnotesize
+			\item{*} Clinical diagnosis criteria: Different criteria are listed for different numbers of symptoms, and doctors confirm the diagnosis of the condition based on the number of symptom matches and the duration of the patient's symptoms.
+		\end{tablenotes}
+
+%	\end{table}[]
+
+\end{table*}                             
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As the most commonly used tools, a series of questionnaires capturing depressive symptoms had been developed and showed great success in psychiatric practice.
+The common depression test scales are shown in table \ref{tab1}.
+
+Different scales have different number of questions, each question has 3-4 options, different options correspond to different scores, and the total scores of all items are summed to correspond to the classification of different levels of depression. 
+%Different scales correspond to different diagnoses of psychological disorders, such as: depression, anxiety, pleasure, etc.
+For example,
+The BDI-II is scored by summing the ratings for the 21 items. Includes issues such as sleep, appetite, mood, and suicidal thoughts. Each item is rated on a 4-point scale ranging from 0 to 3. The maximum total score is 63. Participants were asked to rate how they have been feeling for the past two weeks, and select the option that matches. After doing all the questions, sum up the scores corresponding to all the options. Finally, the participant can see in which range of the depression scale his or her score falls. Higher total scores indicate more severe depressive symptoms.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Depending on the method of use, the test scale divided into other-rating scales and self-rating.
+%他评量表
+Other-rating scales refers to the interview of the test subject by professional psychiatrist, psychologist or other trained medical personnel, and the conclusion is drawn by scoring each item of the scale, which is relatively more reliable, but requires subject to a professional place to complete, which is less convenient.
+%自评量表
+Self-rating scales refers to the self-assessment conducted by the tester according to the guidance of the scale, there are easy to administer and can be completed in 5-10 minutes.
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+However, purely relying on self-report scales also limited the availability and effectiveness of today’s mental health service. The results of the scale only represent the tester's recent emotions. Negative emotions and depression are not the same concept, and it is easily to be subjectively concealed. 
+During professional diagnosis, doctors usually collect data such as physiological electrical signals and brain images from patients for analysis, which are reliable means of diagnosing depression, but these require complex equipment and specialized personnel to collect them.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As a natural, easily observed body movements, human gait and facial expressions have been found to reflect walker’s mental aspects, including the state of depression.
+In recent years, people pay more and more attention to identifying depression from behavioral signals, and analyze the abnormal expression behaviors that may be caused by depression, such as facial expression becoming dull, often avoiding eye contact with others, and using flat short sentences when speaking. Many researchers have found that depression can be well identified by comparing and analyzing these characteristics.
+
+
+\subsection{Datasets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The world around us involves many modes, we see objects, hear sounds, feel textures, smell smells, and so on. Most people associate the word modality with sensory modality, which represents the main channel of our communication and sensation, such as vision, hearing, etc.
+This section introduces some public datasets with different modal as shown in Table \ref{tab2}, including the name of the dataset, the information of the subject and the data mode.
+Due to privacy problems in depression based research, only part of the modal data has a public dataset.
+
+The Reddit Self-reported Depression Diagnosis (RSDD) dataset was created by annotating users from a publicly-available Reddit dataset, containing 9,210 diagnosed users and 107,274 control users which is a large-scale general forum dataset.
+The data is in JSON format. Each row is an array representing a user. The label field includes the user's label (control or depression), and the posts field contains timestamp and untokenized pairs.
+
+The CLEF/eRsik 2017 dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into two groups: risk case of depression and non-risk case.
+
+Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) is a multi-modal open dataset for mental-disorder analysis, includes data mainly from clinically depressed patients and matching normal controls. All patients in MODMA were carefully diagnosed and selected by professional psychiatrists in hospitals. Electroencephalogram (EEG) and speech recording data are made publicly available in this dataset. The EEG signals were recorded as both in resting state and under stimulation. The EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
+
+Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011. It is jointly organized by Imperial College London, the University of Nottingham, Queen Mary University, the University of Southern California and the University of Passau in Germany. It is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a regression problem or classification problem.
+
+% Wyss Institute Biomarkers for Depression(WIBD)
+
+%The EATD-Corpus is a dataset consist of audio and text files of 162 volunteers who received counseling.
+Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extracted transcripts of responses from 162 depressed and non-depressed volunteers. This dataset is the first and only public depression dataset that contains audio and text data in Chinese.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Depression is the most common psychological disease in recently, which is manifested by single or repeated episodes of depression. Its clinical manifestations are slow behavior, passive life, laziness, unwilling to contact and interact with people around, often sitting alone, or lying-in bed all day, alienating relatives and friends, avoiding social interaction, etc. Secondly, patients mainly showed significant and lasting negative emotion, depression and pessimism. The patient's thinking association speed and reaction is slow, the reasoning is blocked. Physiological signals are altered accordingly in depressed patients, such as changes in the structure of various brain regions and significant variation in EEG cardiac signals. Clinically, it also can be seen that the active speech is reduced and speed is significantly slowed down, the voice is low, and the dialogue is difficult. In serious cases, the communication cannot be carried out smoothly. These features are the abnormal performance of depressed patients compared with healthy people, which can be captured by vision or hearing, using these features can effectively identify depression.
+%
+%There are also many announcements of dataset chants used in ADD, as shown in Table \ref{tab2}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table*}
+\centering
+\caption{Commonly used datasets}
+\label{tab2}
+     %\begin{table}[]
+	%\begin{tabular}{l|l|l|l|l|l|l}
+	\begin{tabularx}{19cm}{X|X|X|X}
+	\hline
+Dataset                                                  & Classes(D/H)                                                                                                        & Type                & Task                       \\
+\hline
+%Michalak et al.~\cite{2009Embodiment}                                                      &                                                                                                                & 14 MDD                                                                                                              & Depression          & \multirow{10}{*}{Gait}      \\
+%Yuan et al. ~\cite{yuan2019Depression}                                                         & \begin{tabular}[c]{@{}l@{}}Healthy people and \\depressed patients                                                                         \end{tabular} & \begin{tabular}[c]{@{}l@{}}101 \\ (54:47)\end{tabular}                                                         & Depression          &                            \\
+%Tamar et al.~\cite{Tamar2012Depressive}                                                          & Elderly                                                                                                        & 610                                                                                                                 & Depression          &                            \\
+%Briggs et al. ~\cite{2019Do}                                                        & Elderly                                                                                                        & 3615                                                                                                                & Depression          &                            \\
+%Fang et al. ~\cite{fang2019Depression}                                                          & College Students                                                                                               & 3669                                                                                                                & Depression          &                            \\
+%Zhao et al.  ~\cite{2019See}                                                         & \begin{tabular}[c]{@{}l@{}}College Students    \\ (University of Chinese\\ Academy of   Sciences)\end{tabular} & 179                                                                                                                 & Anxiety +Depression &                            \\
+%\hline
+RSDD  ~\cite{yates2017depression}                    & 9210:100000+                                                                                                    
+& Depression          & Text (Social Network)             \\
+eRisk ~\cite{Stankevich2018FeatureEF}               
+&887          & Depression          &   \\
+\hline
+%ChunkeJing et al.~\cite{ChunkeJing2019Different}                                                        & volunteers                                                                                                     & 88                                                                                                                  & Anxiety +Depression & Speech+Gait                \\
+%\hline
+MODMA ~\cite{2020MODMA}                                                       & \begin{tabular}[c]{@{}l@{}}53    \\ (24:29)    \\ (EEG)    \\ 52  \\ (23:29)    \\ (Audio)\end{tabular} & Mental-disorder          & EEG+specch                 \\
+\hline
+AVEC(2013\&2014)~\cite{valstar2014avec}                                                             & \begin{tabular}[c]{@{}l@{}}100    \\ (46/54)\end{tabular}                                                         & Depression          & \multirow{3}{*}{Audio+ Facial expressions} \\
+AVEC(2017)\&DAIC-WOZ~\cite{nasir2016multimodal}                                                         & \begin{tabular}[c]{@{}l@{}}142    \\ (42/100)\end{tabular}                                                        & Depression          &                                              \\
+AVEC(2019)\&E-DAIC ~\cite{ringeval2019avec}                                                                                                                                                                       &275                                                                                                                    & Depression          &
+\\
+%WIBD~\cite{2019Tracking}                                                              &                                                                                                                & \begin{tabular}[c]{@{}l@{}}18    \\ (12/6)\end{tabular}                                                           & Depression          &                                             \\
+%Pittsburgh ~\cite{2017Dynamic}                                                      &                                                                                                                & \begin{tabular}[c]{@{}l@{}}130    \\ (93/37)\end{tabular}                                                         & Depression          &                                            
+%\\    
+\hline
+EATD-Corpus ~\cite{2022Automatic}                                                            & \begin{tabular}[c]{@{}l@{}}162    \\ (30/132)\end{tabular}                                                        & Depression          &Audio+ text                                \\          
+	\hline              
+	%\end{tabular}
+\end{tabularx}
+	%\end{table}
+\end{table*}
+
+\ifx\allfiles\undefined
+\input{tnnls_suffix}
+\fi
+%{\shortstack{Speech+ Facial\\ expressions}}
+
+\subsection{Metrics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
+Several studies have examined scale delineation as a multicategorical problem to classify depression. However, in the vast majority of studies, researchers have studied depression classification as a dichotomous problem by setting cut points. Therefore, their experimental evaluation methods are usually some common classification indicators such as precision, accuracy, recall, F1-score, specificity,  sensitivity and Area Under the Curve (AUC). 
+
+There are also studies that use test scale scores as labels for regression analysis, and their experimental evaluation methods are usually some commonly used regressors such as: mean absolute error (MAE) and root mean squared error (RMSE).
+
+\subsubsection{Classification indicators}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There are several basic concepts to know in the classification index: positive means that the condition or thing exists, while negative means that the condition or thing does not exist. For example, a positive depression test means that a depressive condition is present, while a negative test means that a depressive condition is not present.
+
+\begin{figure}[tbp]
+	\centering	
+	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/metric2.png}		
+	\caption{
+	Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents the number of data instances of this category.
+	}
+	\label{metric}
+\end{figure}
+
+As shown in Fig \ref{metric}, the samples are divided into positive and negative samples, and the positive samples predicted to be positive are labeled as True positive (TP), the positive samples predicted to be negative are labeled as False negative (FN), the negative samples predicted to be positive are labeled as False positive (FP), and the negative samples predicted to be negative are labeled as True negative (TN). So we have $P=TP+FN$ and $N=FP+TN$.
+
+\emph{Precision:} reflects the ability of the classifier or model to correctly predict the accuracy of positive samples, and also calculates how many of the predicted positive samples are true positive samples. The calculation formula is as follows:
+
+\begin{equation}
+ Precision =\frac{TP}{TP+FP}
+\end{equation}
+
+
+\emph{Accuracy:} reflects the ability of the classifier or model to correctly judge the overall sample, it also calculates the ability to correctly classify positive samples as \emph{positive} and negative samples as \emph{negative}. The calculation formula is as follows:
+
+\begin{equation}
+Accuracy =\frac{TP+TN}{TP+FN+FP+TN}=\frac{TP+TN}{P+N}
+\end{equation}
+
+
+\emph{Recall:} reflects the ability of the classifier or model to correctly predict the full degree of positive samples, increasing the number of positive samples predicted as positive samples, and also calculates the proportion of positive samples predicted as positive samples to the total positive samples. The calculation formula is as follows:
+
+\begin{equation}
+Recall =\frac{TP}{TP+FN}=\frac{TP}{P}
+\end{equation}
+
+
+\emph{F1-score:} is the average of the precision and recall rates. This metric tells us how accurate the model is because it takes into account both how many data points the model makes true predictions about that are actually true and how many of the total number of true predictions the model makes correct predictions about. The formula is as follows:
+
+\begin{equation}
+F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
+\end{equation}
+
+
+\emph{Specificity:} reflects the ability of the classifier or model to correctly predict the full extent of negative samples, and also calculates the proportion of negative samples predicted to be negative to the total negative samples. The calculation formula is as follows:
+
+\begin{equation}
+Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
+\end{equation}
+
+
+\emph{Sensitivity:} reflects the ability of the classifier or model to correctly predict the full extent of positive samples, and also calculates the proportion of positive samples predicted to be positive to the total negative samples. The calculation formula is as follows:
+
+\begin{equation}
+ Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
+\end{equation}
+
+
+\begin{figure}[tbp]
+	\centering	
+	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/AUC.png}		
+	\caption{
+	ROC curve is obtained based on confusion matrix. Its abscissa is false positive rate (FPR), and its ordinate is true rate (TPR). Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
+	AUC is defined as the area under the ROC curve. 
+	}
+	\label{AUC}
+\end{figure}
+
+
+\emph{AUC:} generally, a specific threshold is selected and the probability of predicting a positive sample is greater than or equal to this threshold and is judged as a positive sample, and less than this threshold is judged as a negative sample. According to the formula described above, the recall rate True positive rate (TPR) and the false positive rate False positive rate (FPR) are obtained, and the corresponding coordinate points and values are described on the plane to obtain the receiver operating characteristic curve (ROC) curve as shown in Fig \ref{AUC}.
+
+The area covered by the ROC curve downward is the AUC value, and since the ROC curve is generally above the line $y=x$, the value of AUC ranges between 0.5 and 1. The closer the AUC is to 1.0, the higher the authenticity of the detection method; when it is equal to 0.5, it is the lowest authenticity and has no application value.
+
+As a numerical value, AUC will more clearly explain the effect of the classifier than ROC curve.
+
+\subsubsection{Regression indicators}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Commonly used metrics to evaluate regression models are MAE and RMSE.
+
+\emph{MAE:} the absolute value of the data deviation is used, which is the average distance between the predicted and true values. To avoid errors canceling each other out, the absolute value is taken to calculate the absolute value. The smaller the MAE value, the better the model performance. The calculation formula is as follows:
+
+\begin{equation}
+MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
+\end{equation}
+
+Where $y_{i}$ is the true value, $\breve{y}_{i}$ is the regression predicted value, and $n$ is the number of data to be regressed.
+
+
+\emph{RMSE:} it takes the difference between each actual and predicted value, then squares the difference and adds them together, and finally divides by the number of observations and takes the square root of the result. Thus, RMSE is the square root of MSE. Similarly, the smaller the RMSE value, the better the model performance. The calculation formula is as follows:
+
+\begin{equation}
+RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Many studies have shown that depressed and healthy people are very different in many aspects, such as brain imaging, electrophysiological signals , audiovisual data, text, gait, and other multi-modal data. By analyzing the abnormal performance of these multimodal data can well assist in the depressive disorders diagnosing.
