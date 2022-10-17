@@ -1,0 +1,49 @@
+% !TEX root = tnnls_relation_gait.tex
+
+\ifx\allfiles\undefined
+    \input{tnnls_prefix}
+\fi
+
+\section{Conclusion}
+In this work, we propose a Gait Quality Aware Network (GQAN) towards the interpretability of silhouette-based gait recognition.
+%
+It tries to assess the quality of each silhouette and each part for the recognition via two blocks: Frame Quality Block (FQBlock) and Part Quality Block (PQBlock).
+%
+Specifically, FQBlock works in a squeeze-and-excitation style to recalibrate the features for each silhouette and the scores for all channels are added as the frame quality indicator.
+%
+PQBlock predicts a score for each part to compute the weighted distance between probe and gallery.
+%
+And a Part Quality Loss is proposed which enables GQAN to be trained with only the sequence-level identity annotations.
+%
+Besides, GQAN achieves very competitive performance under all walking conditions on CASIA-B and OUMVLP.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tbp]
+	\centering
+	\subfloat[ID=400, BIN=10]{
+		\label{fig_fquality_hid1}\includegraphics[width=1.0\linewidth]{figures/casia-b2hid2021_png_id_0400_type_type-01_view_view-000_visualize_fquality_bin09.pdf}
+	}
+	\\
+	\vspace{-2mm}
+	\subfloat[ID=401, BIN=13]{
+		\label{fig_fquality_hid2}\includegraphics[width=1.0\linewidth]{figures/casia-b2hid2021_png_id_0401_type_type-01_view_view-002_visualize_fquality_bin12.pdf}
+	}
+	\\
+	\vspace{-2mm}
+	\subfloat[ID=403, BIN=15]{
+		\label{fig_fquality_hid3}\includegraphics[width=1.0\linewidth]{figures/casia-b2hid2021_png_id_0403_type_type-01_view_view-006_visualize_fquality_bin14.pdf}
+	}
+	\caption{
+		Examples for frame quality visualization on HID Competition Dataset 2021.
+		%
+        The settings are the same as those in Section~\ref{sec_frame_vis} except that the model is only trained on CASIA-B.
+        %
+		% Best viewed in color.
+	}
+	\label{fig_fquality_hid}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifx\allfiles\undefined
+\input{tnnls_suffix}
+\fi 
