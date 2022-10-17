@@ -1,0 +1,101 @@
+% !TEX root = tnnls_relation_gait.tex
+
+\ifx\allfiles\undefined
+    \input{tnnls_prefix}
+\fi
+
+\section{Depression recognition method based on Text}
+\label{sec_approach}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[tbp]
+	\centering	
+	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/text2.png}		
+	\caption{
+	Text on social network .
+	}
+	\label{text2}
+\end{figure}
+
+Although depression has become one of the most concerned psychological problems of human beings, but due to the limited public awareness of depression, and many people do not pay attention to or even reject mental and psychological diseases, they will hide their true inner feelings, resulting in long-term repression of negative emotions can not find a suitable way to vent. The rapid development of Internet technology has built a suitable platform for people to vent their psychological feelings. 
+
+In recent years, the popularity of Internet technology has made social media platforms such as Microblog, Twitter and Facebook an important platform for people to express their psychological emotions. Studies have shown that people tend to express their true emotions online more than other ways, and the development of social networks not only provides people with a more convenient way to communicate, but also provides a new window for people to vent their emotions~\cite{chancellor2020methods}. People can record their life status in real time through social networks and interact with their friends to express their emotions to relieve stress.
+Several researchers have studied data from users on social networking platforms and found that depressed patients differ significantly from normal users in terms of linguistic attributes and social behavior ~\cite{chancellor2016quantifying,de2014mental,nguyen2014affective,wolohan2018detecting}. For example, patients suffering from depression use first-person pronouns and past tense verbs more frequently, as well as adjectives with derogatory meanings~\cite{rude2004language,nadeem2016identifying}.
+%and the use of emotion words, negative emotion words, cognitive mechanism words, and connectives significantly increased over time in depressed patients [].
+The aforementioned study conducted a comparative analysis of language use and social behavior characteristics of depressed and normal individuals under various different social networking platforms and confirmed a strong correlation between social networking activity records and users' depressive status.
+Therefore, the development of social networks also provides a new way to detect depressed users: through the current computer technology to analyze the user's social network data to detect the user's depression status~\cite{de2013predicting,magami2020automatic}.
+
+%\subsubsection{Facial expressions}
+%\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[tbp]
+	\centering	
+	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/text.png}		
+	\caption{
+	Flow chart of text-based depression recognition model.
+	}
+	\label{text}
+\end{figure}
+
+As shown in Fig \ref{text}, studies related to depression detection based on social media texts usually collect users' behavioral data on social network platforms such as Twitter, Weibo, Facebook, Reddit, or publicly published text content for analysis, while some other studies use relatively private social network data such as WeChat Moments and Qzone. Firstly, the raw data is pre-processed, such as removing other non-target language user data, removing deactivated words, URLs and special characters, etc., and then the sentences are divided into words. The next step is feature extraction and selection of the processed data. For the data selection and related feature engineering aspects, they can be mainly divided into the following aspects: linguistic features, behavioral features, emotional and cognitive features, demographic features, image features, etc. Finally, the attributes obtained by feature selection will be used to identify depressed users in social networks and to detect users with depression from normal users.
+
+\subsubsection{Text depression recognition based on machine learning}
+\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The researchers extracted features such as sentiment, mood and writing behavior of users from different social networking platforms and used various machine learning models for depression prediction.
+The most applied traditional machine learning method is SVM~\cite{shing2018expert,smys2021analysis}, Peng~\cite{peng2019multi} et al. used a multi-core SVM model for depression identification based on social media data. aldarwish~\cite{aldarwish2017predicting} et al. used a plain Bayesian model , SVM models, etc. for depression rank identification and verified the utility of social media sites for depression rank identification. Secondly LR~\cite{eichstaedt2018facebook}, RF~\cite{tate2020predicting,kwakernaak2020using}, etc. are also widely used and Eichstaedt~\cite{eichstaedt2018facebook} et al. used LR methods to predict depressed users on Facebook. Finally, other classical machine learning classification algorithms such as NB, DT and XGBoost have also been used in related studies.
+
+\subsubsection{Text depression recognition based on deep learning}
+\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Deep learning methods are another approach that has been widely used by researchers in recent years. Among the frequently used methods are DNN, CNN, and RNN~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
+Shen~\cite{shen2018cross} et al. proposed a cross-domain deep neural network model with feature adaptive transformation and combination strategy (DNN-FATC) to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhanced detection in some other target domain (e.g., Weibo).
+Rao~\cite{rao2020mgl} et al. built a multilayer MGL-CNN to further identify depressed individuals in online forums by modeling them separately at sentence level and user level.
+LSTM is a special type of RNN that learns long-term dependent information and has also been widely used in depression detection based on social media texts. Hu~\cite{hu2021depression} et al. proposed a Bi-LSTM-based depressive tendency detection model for microblog users. The content features of the microblog text were mined by bi-directional transmission and capturing the semantic dependencies of the context.
+
+\subsubsection{Performance Comparison}
+%\label{sec\_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+.
+\begin{table*}
+\centering
+\caption{Experimental results based on text}
+\label{tab5}
+\begin{tabular}{l|l|ll|lllll}
+
+\hline
+\multicolumn{1}{c|}{\multirow{2}{*}{ID}} & \multicolumn{1}{c|}{\multirow{2}{*}{Method}}                                          & \multicolumn{2}{c|}{Data}                                     & \multicolumn{5}{c}{Metrics}                                                                                                                        \\
+\multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                                                                 & \multicolumn{1}{c}{Media}      & \multicolumn{1}{c|}{Dataset} & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1-Score} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{AUC} \\
+\hline
+1                                       & SVM~\cite{de2013predicting}                                    & Twitter                        & -                           & 0.74                          & 0.63                       & -                            & 0.70                         & -                       \\
+2                                       & Naïve Bayes~\cite{nadeem2016identifying}                       & Twitter                        & CLPsych 2015                & 0.82                          & 0.82                       & 0.81                         & 0.86                         & 0.94                    \\
+3                                       & Logistic Regression~\cite{nadeem2016identifying}               & Twitter                        & CLPsych 2015                & 0.86                          & 0.82                       & 0.84                         & 0.82                         & 0.91                    \\
+4                                       & Multi-kernel SVM~\cite{peng2019multi}                          & Weibo                          & -                           & 0.76                          & 0.77                       & 0.76                         & 0.83                         & -                       \\
+5                                       & SVM+ Naïve Bayes~\cite{aldarwish2017predicting}                & Facebook, LiveJournal, Twitter & -                           & 1.00                          & 0.57                       & -                            & 0.63                         & -                       \\
+6                                       & LDA(latent dirichlet allocation)~\cite{eichstaedt2018facebook} & Facebook                       & -                           & -                             & -                          & -                            & -                            & 0.72                    \\
+7                                       & MGL-CNN~\cite{rao2020mgl}                                      & Reddit                         & RSDD                        & 0.63                          & 0.48                       & 0.54                         & -                            & -                       \\
+8                                       & MGL-CNN~\cite{rao2020mgl}                                      & Online media                   & eRisk 2017                  & 0.63                          & 0.57                       & 0.60                         & -                            & -                       \\
+9                                       & CNN~\cite{yates2017depression}                                 & Reddit                         & RSDD                        & 0.75                          & 0.57                       & 0.65                         & -                            & -                       \\
+10                                      & MDL~\cite{shen2017depression}                                  & Twitter                        & -                           & 0.8+                          & 0.8+                       & 0.85                         & 0.8+                         & -                       \\
+11                                      & DNN-FATC~\cite{shen2018cross}                                  & Twitter+ Weibo                 & -                           & -                             & -                          & 0.79                         & -                            & -                       \\
+12                                      & CNNWithMax~\cite{orabi2018deep}                                & Twitter                        & CLPSych 2015                & 0.87                          & 0.87                       & 0.87                         & 0.88                         & 0.95                    \\
+13                                      & MultiChannelCNN~\cite{orabi2018deep}                           & Facebook                       & Bell Let’s Talk             & 0.81                          & 0.84                       & 0.82                         & 0.83                         & 0.92                    \\
+14                                      & Bi-LSTM~\cite{hu2021depression}                                & Weibo                          & -                           & -                             & -                          & -                            & 0.95                         & -                       \\
+15                                      & LIWC~\cite{wolohan2018detecting}                               & Reddit                         & -                           & -                             & -                          & 0.68                         & 0.79                         & 0.75                   \\
+\hline
+\end{tabular}
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Table\ref{tab5} summarizes the experimental results of the social platform text-based depression detection, including the source and name of the method, the type of data used and the source of the dataset (- indicates that the data used were collected by themselves), and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
+
+Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
+
+
+\ifx\allfiles\undefined
+\input{tnnls\_suffix}
+\fi 

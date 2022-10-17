@@ -1,0 +1,91 @@
+% !TEX root = tnnls_relation_gait.tex
+
+\ifx\allfiles\undefined
+    \input{tnnls_prefix}
+\fi
+%\section{Depression Recognition}
+\section{Depression recognition method based on multi-modal data}
+
+As described in Section 3, most studies have been conducted to detect depression based only on single physiological indicators, such as EEG, EM, speech signals, facial expressions, text, etc.
+Although single indicators can identify depression to some extent, they do not give a comprehensive representation.
+For example, in case of a depressed person, when a stimulus is presented, speech signals showed a longer response time and lower pronunciation rate~\cite{alghowinem2016multimodal}, while EM  showed decreased eyebrow movement and elevated blink rates ~\cite{sobin1997psychomotor, ellgring2007non, mackintosh1983blink}; thus, it is considerably likely that both modalities are correlated.
+It seems obvious that the signal from single modality provided only partial information, while a combination of different modality signals can be used to form a more realistic model for recognizing depression than the former~\cite{gupta2014multimodal}.
+So, there is increasing interest in using different modalities to handle information.
+
+
+
+
+
+In short, a more accurate and robust depression recognition model can be constructed by integrating complementary information from different modalities that reflect different aspects of depression.
+In this section, we will generally divide depression detection based on multi-modal data into three categories: depression recognition method based on multiple electrophysiological signals, depression recognition method based on multiple brain imaging, and depression recognition method based on multiple audio and video data.
+
+
+
+\subsection{Depression recognition method based on multiple electrophysiological signals }
+
+
+Various studies have shown that electrophysiological signals such as EEG, ECG, EOG, and EMG can reflect a person's
+physiological and emotional state to varying degrees, which is helpful for clinically assisted diagnosis of depression~\cite{sornmo2005bioelectrical}.
+Further, electrophysiological signals not only have the benefits of good timing and convenient operation, but also have higher generalizability and stability of the developed depression recognition model~\cite{he2020advances}.
+Therefore, with the continuous development and update of machine learning, research into the depression recognition using multiple physiological signals has increasingly attracted attention.
+The researches generally adopt feature level fusion or decision level fusion in depression recognition.
+%ÌØÕ÷¼¶ÈÚºÏ
+
+%Due to the limited information recorded by single-modality data, more and more researchers are devoted to the study of multi-modal data fusion.
+
+
+
+\subsubsection{Feature level fusion}
+
+
+\begin{figure}[tbp]
+	\centering	
+	\label{multi-modal_01}\includegraphics[width=0.9\linewidth]{figures/depression/multi-modal_01.jpg}		
+	\caption{
+     Flow chart of fusion based on multiple electrophysiological signals (taking two modalities as an example): subfigures a and b represent feature level fusion and decision level fusion, respectively.
+	}
+	\label{multi-modal_01}
+\end{figure}
+Feature level fusion, which can be divided into serial and parallel forms, is the fusion of the data that results from feature extraction~\cite{haghighat2016discriminant,yang2003feature}.
+Feature level fusion aims to find correlations between data from the extracted features or to evaluate the modalities, which can reduce noise interference and improve model efficiency to some extent.
+Taking depression recognition based on multiple electrophysiological signals as an example, the specific process of feature level fusion is shown in Fig~\ref{multi-modal_01}.
+In order to identify depressions, Zhu et al.~\cite{zhu2019multimodal} proposed a model based on feature level fusion.
+And they validated the presented classification model by collecting two physiological signals, EEG and EM.
+The experimental result indicated that the feature fusion method slightly improved the recognition accuracy by 1.88\%, compared with the unimodal classification approach that uses only EEG or EM.
+Thus, it was concluded that the feature level fusion methods can improve the mild depression recognition accuracy, demonstrating the complementary nature of the modalities.
+
+
+
+
+
+\subsubsection{Decision level fusion}
+
+
+Decision level fusion is the process of taking the information obtained from each modality and making independent decisions, and then fusing the outcomes of these decisions in some ways.
+Taking depression recognition based on multiple electrophysiological signals as an example, the specific process of decision level fusion is shown in Fig~\ref{multi-modal_01}.
+Among the different fusion strategies, decision level fusion has unique advantages to fuse the output of various classifiers and getting an effective result.
+It can also synthesize multi-source information and avoid mutual interference.
+However,  the classification results of each modality are usually not completely reliable, and there are misclassifications.
+Moreover, the classification results from different modalities of one object may have high conflict, and this is very unfavorable to the fusion result.
+To solve these problems, Zhu et al.~\cite{zhu2022content}  proposed a content-based multiple evidence fusion (CBMEF) method, which fused EEG and EM data at decision level.
+The method mainly included two modules, the classification performance matrix module and the dual-weight fusion module.
+The classification performance matrices of different modalities were estimated by Bayesian rule based on confusion matrix and Mahalanobis distance, and the matrices were used to correct the classification results.
+Then the relative conflict degree of each modality was calculated, and different weights were assigned to the above modalities at the decision fusion layer according to this conflict degree.
+The idea of introducing the classification performance matrix and the dual-weight model to multimodal biosignals fusion casts a new light on the researches of depression recognition.
+
+
+
+
+
+\subsection{Others}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In addition to the above three types of multimodal fusions, there are a number of other modal fusions that have also attracted extensive attention from researchers.
+For example,
+Bruder et al.~\cite{bruder2012relationship} combined high temporal resolution EEG signals with MRI data to increase the precision of identifying depression.
+Zhang et al.~\cite{zhang2019multimodal} explored from physiological and behavioral perspectives simultaneously and fused pervasive EEG and speech signals to make the detection of depression more objective, effective and convenient.
+Jing et al.~\cite{jing2019different}  built a supervised regression model based on personal language and natural gait data to predict depression and anxiety in patients. Their results could be a basis of both applications and future studies on the multi-source data fusion in anxiety and depression recognition.
+
+
+\ifx\allfiles\undefined
+\input{tnnls_suffix}
+\fi
