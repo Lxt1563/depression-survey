@@ -1,0 +1,21 @@
+## General
+/*.pdf
+*.log
+*.blg
+*.aux
+*.synctex
+*.synctex.gz
+*.bak
+*.bbl
+*.fdb_latexmk
+*.fls
+*.loc
+*.brf
+*.soc
+*.out
+*.xml
+sample*
+*.pkl
+*.pyc
+*.cut
+mm2022_idnoise_gait.pdf
