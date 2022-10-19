@@ -30,9 +30,9 @@
 %Depression were the most common mental disorders, which brought great challenge to personal wellbeing and social economy around the world. According to World Health Organization (WHO), people with mental illness are among the main victims of the Covid-19 pandemic, with worldwide cases of depression rising by more than 25\% during the pandemic. Depression is a mental illness that does not directly lead to death, but many depressed people are unable to overcome their psychological barriers and choose to commit suicide. According to statistical surveys, the probability of suicide in depression is around 10-15\%. Given the high prevalence of depression and the risk of suicide, it is becoming increasingly important to find new diagnostic and treatment protocols.
 
 This section presents some basic knowledge in auxiliary depression diagnosis task including scales, datasets and assessment metrics which are important to be known ahead.
-Firstly, introduces some scales of diagnosing depression which are used as labels.
-Secondly, shows some public datasets with different modal.
-Finally, lists some commonly used assessment metrics, which are important in evaluating the performance of methods.
+Firstly, we introduce some scales of diagnosing depression which are used as labels.
+Secondly, we show some public datasets with different modal.
+Finally, we list some commonly used assessment metrics, which are important in evaluating the performance of methods.
 
 \subsection{Depression Diagnosis Scale}
 %\subsection{Questionnaires}
@@ -64,7 +64,7 @@ Finally, lists some commonly used assessment metrics, which are important in eva
 %\begin{tabular}[c]{@{}l@{}}International Classification of Diseases\\ (ICD-10)~\cite{world1992icd}\end{tabular}                                & -                          & -                           & \multirow{4.5}{*}{Clinical diagnosis criteria}                                                                                                                              &                                \\ \cline{1-3}
 \makecell[c]{Diagnostic and Statistical Manual \\of Mental Disorders (DSM-IV)~\cite{segal2010diagnostic}   }       & -                          & -                           &                                                                                                                                                 &                                \\ \cline{1-3}
 \makecell[c]{Chinese Classification and \\Diagnostic Criteria of \\Mental Disorders (CCMD-3)~\cite{chen2002chinese}} & -                          & -                           &                                                                                                                                                 &                                \\ \hline
-     
+
 \end{tabular}
 	\begin{tablenotes}
 			\footnotesize
@@ -72,7 +72,7 @@ Finally, lists some commonly used assessment metrics, which are important in eva
 			\item Clinical diagnosis criteria: Different criteria are listed for different numbers of symptoms, and doctors confirm the diagnosis of the condition based on the number of symptom matches and the duration of the patient's symptoms.			
 		\end{tablenotes}
 \end{threeparttable}}
-\end{table*}                             
+\end{table*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +86,7 @@ The scales are divided into other-rating scales and self-rating scales by the wa
 %他评量表
 For subjects, testing other-rating scales needs communication with psychiatrist, psychologist or other trained medical personnel at a professional place like hospital or clinic, which is more reliable but less convenient.
 %自评量表
-Self-rating scale like BDI-II is a kind of self-assessment under the Instruction manual, which can be easy complete in 5-10 minutes but not quite reliable.  
+Self-rating scale like BDI-II is a kind of self-assessment under the Instruction manual, which can be easy complete in 5-10 minutes but not quite reliable.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -152,9 +152,9 @@ Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extr
 %Fang et al. ~\cite{fang2019Depression}                                                          & College Students                                                                                               & 3669                                                                                                                & Depression          &                            \\
 %Zhao et al.  ~\cite{2019See}                                                         & \begin{tabular}[c]{@{}l@{}}College Students    \\ (University of Chinese\\ Academy of   Sciences)\end{tabular} & 179                                                                                                                 & Anxiety +Depression &                            \\
 %\hline
-RSDD  ~\cite{yates2017depression}                    &116484 (9210:107274)                                                                                                    
+RSDD  ~\cite{yates2017depression}                    &116484 (9210:107274)
 & Depression          & \multirow{2.2}{*}{Text (Social Network) }            \\
-eRisk ~\cite{Stankevich2018FeatureEF}               
+eRisk ~\cite{Stankevich2018FeatureEF}
 &887          & Depression          &   \\
 \hline
 %ChunkeJing et al.~\cite{ChunkeJing2019Different}                                                        & volunteers                                                                                                     & 88                                                                                                                  & Anxiety +Depression & Speech+Gait                \\
@@ -166,18 +166,18 @@ AVEC2016/2017 \& DAIC-WOZ~\cite{nasir2016multimodal}                            
 AVEC2019 \& E-DAIC ~\cite{ringeval2019avec}                                                                                                                                                                       &275                                                                                                                    & Depression          &
 \\
 %WIBD~\cite{2019Tracking}                                                              &                                                                                                                & \begin{tabular}[c]{@{}l@{}}18    \\ (12/6)\end{tabular}                                                           & Depression          &                                             \\
-%Pittsburgh ~\cite{2017Dynamic}                                                      &                                                                                                                & \begin{tabular}[c]{@{}l@{}}130    \\ (93/37)\end{tabular}                                                         & Depression          &                                            
-%\\    
+%Pittsburgh ~\cite{2017Dynamic}                                                      &                                                                                                                & \begin{tabular}[c]{@{}l@{}}130    \\ (93/37)\end{tabular}                                                         & Depression          &
+%\\
 \hline
-EATD-Corpus ~\cite{2022Automatic}                                                            & \begin{tabular}[c]{@{}l@{}}162  (30/132)\end{tabular}                                                        & Depression          &Audio+ Text                                \\          
-	\hline              
+EATD-Corpus ~\cite{2022Automatic}                                                            & \begin{tabular}[c]{@{}l@{}}162  (30/132)\end{tabular}                                                        & Depression          &Audio+ Text                                \\
+	\hline
 	%\end{tabular}
 	\end{tabular}
 	%\end{table}
 	\end{threeparttable}}
 	
 
-\end{table*} 
+\end{table*}
 
 \ifx\allfiles\undefined
 \input{tnnls_suffix}
@@ -186,8 +186,8 @@ EATD-Corpus ~\cite{2022Automatic}                                               
 
 \subsection{Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
-In many studies, depression detection was seen as a binary classification problem. Subject with the minimal degree of the scale were labeled to have non-depressed and others were labeled to have depressed. And the experimental evaluation methods were some common classification metrics such as precision, accuracy, recall, F1-score, specificity, sensitivity and Area Under the Curve (AUC). 
+%Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification.
+In many studies, depression detection was seen as a binary classification problem. Subject with the minimal degree of the scale were labeled to have non-depressed and others were labeled to have depressed. And the experimental evaluation methods were some common classification metrics such as precision, accuracy, recall, F1-score, specificity, sensitivity and Area Under the Curve (AUC).
 
 Some studies used regression analysis to predict the degree of depression according to the score of scale, and the experimental evaluation methods were some common regression metrics as: mean absolute error (MAE) and root mean squared error (RMSE).
 
@@ -251,13 +251,13 @@ Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 	\centering	
 	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/AUC2.png}		
 	\caption{
-	ROC curve is obtained based on confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
-	AUC is defined as the area under the ROC curve. 
+	ROC curve is obtained based on confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve.
+	AUC is defined as the area under the ROC curve.
 	}
 	\label{AUC}
 \end{figure}
 
-\emph{ROC} represents a probability graph to show the performance of a classification model at different threshold levels. 
+\emph{ROC} represents a probability graph to show the performance of a classification model at different threshold levels.
 The curve is plotted between two parameters, which are: True Positive Rate(TPR) and False Positive Rate (FPR).
 TPR is a synonym for Recall, which can be calculated as:
 
@@ -294,8 +294,8 @@ Where $y_{i}$ is the observed value for the $i^{th}$ observation, $\breve{y}_{i}
 \emph{RMSE} tells us the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation formula as follows:
 
 \begin{equation}
-RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
+RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Many studies have shown that depressed and healthy people are very different in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxilia in the depression diagnose.
+Many studies have shown that depressed and healthy people are very different in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxilia in the depression diagnose. 
