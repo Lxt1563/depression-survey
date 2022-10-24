@@ -1,0 +1,825 @@
+\relax 
+\citation{world2017depression,bhugra2004globalisation,rao2008understanding}
+\citation{wang2021social}
+\citation{peveler2002depression}
+\citation{singh2009loneliness}
+\citation{eisenberg2007prevalence,bergfeld2018treatment,hemming2019alexithymia}
+\citation{huang2019prevalence}
+\citation{faust1988expert}
+\citation{cheng2022addressing,butryn2017shortage}
+\citation{finch2000perceived,lauber2005recommendations,angermeyer2011biogenetic,pescosolido2013backbone}
+\citation{luo2016big}
+\citation{schnyer2017evaluating,sato2015machine,ramasubbu2016accuracy,vai2020predicting,wei2021functional}
+\citation{nilsonne2021eeg,shim2019machine,jiang2016predictability,li2016classification,kim2018automatic}
+\citation{ma2016depaudionet,zhou2018visually,miao2021automatic}
+\citation{trotzek2018utilizing,park2015manifestation,yang2020big}
+\citation{yang2017hybrid}
+\citation{lenartowicz2017brain}
+\citation{nestler2002neurobiology}
+\citation{widmann2015digital}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The taxonomy of ancillary diagnosis of depression from the perspective of various categories of data.}}{1}{}\protected@file@percent }
+\newlabel{Taxonomy}{{1}{1}}
+\citation{thomee2011mobile}
+\citation{lalousis2021heterogeneity,meng2021bidirectional,toenders2022predicting}
+\citation{1961An}
+\citation{beck1975}
+\citation{SDS}
+\citation{2013The}
+\citation{1977The}
+\citation{brink1982screening}
+\citation{HAMD}
+\citation{montgomery1979new}
+\citation{world1992icd}
+\citation{segal2010diagnostic}
+\citation{chen2002chinese}
+\citation{beck1975}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Common types of physiological signals: subgraphs $a-c$ represent brain imaging,electrophysiological signals, and audiovisual data, respectively. These categories in turn have different representations: fNIRS, MRI, EEG, ECG, EOG, facial expression, speech, and gait.}}{2}{}\protected@file@percent }
+\newlabel{common signals}{{2}{2}}
+\newlabel{fig_hard_case1}{{\mbox  {II-A}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  Short Form of the Beck Depression Inventory\nobreakspace  {}\cite  {beck1975}. }}{2}{}\protected@file@percent }
+\newlabel{BDI}{{3}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}background}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Depression Rating Scales}{2}{}\protected@file@percent }
+\citation{gratch2014distress}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Commonly used depression diagnosis scales}}{3}{}\protected@file@percent }
+\newlabel{tab1}{{I}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Datasets}{3}{}\protected@file@percent }
+\citation{gratch2014distress}
+\citation{yates2017depression}
+\citation{Stankevich2018FeatureEF}
+\citation{2020MODMA}
+\citation{valstar2014avec}
+\citation{nasir2016multimodal}
+\citation{ringeval2019avec}
+\citation{2022Automatic}
+\citation{2015Automatic}
+\citation{2020DISTINGUISHING}
+\citation{acharya2015novel}
+\citation{wan2020hybrideegnet}
+\citation{zhang2011new}
+\citation{byun2019detection}
+\citation{yuan2019Depression}
+\citation{2019See}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Metrics}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {II-C}1}Classification indicators}{4}{}\protected@file@percent }
+\newlabel{fig_hard_case1}{{\mbox  {II-C}1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents the number of data instances of this category. }}{4}{}\protected@file@percent }
+\newlabel{metric}{{4}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Commonly used datasets}}{5}{}\protected@file@percent }
+\newlabel{tab2}{{II}{5}}
+\newlabel{fig_hard_case1}{{\mbox  {II-C}1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  ROC curve is obtained based on confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. AUC is defined as the area under the ROC curve. }}{5}{}\protected@file@percent }
+\newlabel{AUC}{{5}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {II-C}2}Regression indicators}{5}{}\protected@file@percent }
+\newlabel{fig_hard_case1}{{\mbox  {II-C}2}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  classification method. }}{5}{}\protected@file@percent }
+\newlabel{method}{{6}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Methods}{5}{}\protected@file@percent }
+\citation{2018Neural}
+\citation{2018Reduced,2019Brain,2014Relationship,2016Correlation,2019The}
+\citation{2019Machine}
+\citation{2017Machine}
+\citation{2017Automatic}
+\citation{2015Automatic}
+\citation{2020Classifying}
+\citation{2022Deep}
+\citation{2021Depression}
+\citation{2020DISTINGUISHING}
+\citation{2021fNIRS}
+\citation{2020Classifying}
+\citation{2020Classifying}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Depression recognition method based on Brain Imaging}{6}{}\protected@file@percent }
+\newlabel{sec_approach}{{III}{6}}
+\newlabel{fig_hard_case1}{{III}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Flow diagram of depression detection based on brain imaging. }}{6}{}\protected@file@percent }
+\newlabel{brain-imaging}{{7}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}fNIRS}{6}{}\protected@file@percent }
+\newlabel{sec_fquality}{{\mbox  {III-A}}{6}}
+\citation{2013Evaluation}
+\citation{P2020Radiological}
+\citation{2019Depression}
+\citation{2018Disrupted}
+\citation{2013Identifying,2019Intrinsic,2019Resting}
+\citation{2014Unsupervised}
+\citation{2016Multivariate}
+\citation{2020Quantitative}
+\citation{2020Generalizable}
+\citation{2020Functional}
+\citation{2020Identifying}
+\citation{2013What}
+\citation{2015Toward}
+\citation{2019The1}
+\citation{marek2011parkinson}
+\citation{2017Functional,2017Elevated,li2018microglial,2014Cerebral}
+\newlabel{fig_hard_case1}{{8a}{7}}
+\newlabel{sub@fig_hard_case1}{{(a)}{a}}
+\newlabel{fig_hard_case2}{{8b}{7}}
+\newlabel{sub@fig_hard_case2}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  Participant instrumented and sitting upright. PFC activation sensitivity map of fNIRS probe. Red and blue dots indicate sources and detectors, respectively , green lines indicate channels. Source-detector separation distance is 2.5 cm\nobreakspace  {}\cite  {2020Classifying}. }}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Data Collection}}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {fNIRS}}}{7}{}\protected@file@percent }
+\newlabel{fNIRS}{{8}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}MRI}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}1}sMRI}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}2}fMRI}{7}{}\protected@file@percent }
+\newlabel{fig_hard_case1}{{9a}{7}}
+\newlabel{sub@fig_hard_case1}{{(a)}{a}}
+\newlabel{fig_hard_case2}{{9b}{7}}
+\newlabel{sub@fig_hard_case2}{{(b)}{b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces  Three View of MRI images\nobreakspace  {}\cite  {marek2011parkinson}. }}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {sMRI images}}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {fMRI images}}}{7}{}\protected@file@percent }
+\newlabel{MRI}{{9}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}3}Brain metabolic imaging}{7}{}\protected@file@percent }
+\citation{2018Early,20181H,2013}
+\citation{2015Automatic}
+\citation{2020Classifying}
+\citation{2021Depression}
+\citation{2020DISTINGUISHING}
+\citation{2017Automatic}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{mousavian2020depression}
+\citation{2020Quantitative}
+\citation{2016Multivariate}
+\citation{2014Unsupervised}
+\citation{2020Functional}
+\citation{2013Identifying}
+\citation{2020Functional}
+\citation{2020Identifying}
+\citation{Nan-Feng}
+\citation{8575800}
+\citation{2020Generalizable}
+\citation{2015Toward}
+\citation{2015Toward}
+\citation{2015Toward}
+\citation{bruder2017right}
+\citation{liao2017major,bairy2017automated,acharya2018automated}
+\citation{ding2019classifying}
+\citation{kim2018automatic}
+\citation{walleczek2006self,Scott2006encyclopedia,klonowski2006application}
+\citation{akar2015nonlinear}
+\citation{ortiz2021futility,kustubayeva2021lyapunov,chopra2022using}
+\citation{zhao2019cardiorespiratory,cukic2018eeg,zhao2021frontal}
+\citation{acharya2015novel}
+\citation{hosseinifard2013classifying}
+\citation{ahmadlou2012fractality}
+\citation{cukic2018eeg}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}4}Performance Comparison}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Depression recognition method based on electrophysiological signals}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}EEG}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Flow diagram of EEG depression recognition using traditional machine learning.}}{8}{}\protected@file@percent }
+\newlabel{eeg_traditional}{{10}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}1}EEG depression recognition based on traditional machine learning}{8}{}\protected@file@percent }
+\citation{wan2020hybrideegnet}
+\citation{saeedi2021major,qayyum2020hybrid,thoduparambil2020eeg}
+\citation{acharya2018automated}
+\citation{li2019eeg}
+\citation{alhagry2017emotion,wang2018lstm}
+\citation{kumar2019prediction}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Experimental results based on brain imaging}}{9}{}\protected@file@percent }
+\newlabel{tab3}{{III}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}2}EEG depression recognition based on Deep learning}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Flow diagram of EEG depression recognition based on deep learning. (a) Raw signal-based deep feature extraction and classification using CNN or LSTM; (b) raw signal-based deep feature extraction and classification using hybrid neural networks; (c) 2D image-based deep feature extraction and classification using hybrid neural networks. }}{9}{}\protected@file@percent }
+\newlabel{eeg_cnn}{{11}{9}}
+\citation{thoduparambil2020eeg}
+\citation{sharma2021dephnn}
+\citation{saeedi2021major}
+\citation{bachmann2018methods}
+\citation{hosseinifard2013classifying}
+\citation{acharya2018automated}
+\citation{acharya2015novel}
+\citation{acharya2015novel}
+\citation{bachmann2018methods}
+\citation{hosseinifard2013classifying}
+\citation{cukic2018eeg}
+\citation{ahmadlou2012fractality}
+\citation{faust2014depression}
+\citation{liao2017major}
+\citation{wan2020hybrideegnet}
+\citation{saeedi2021major}
+\citation{qayyum2020hybrid}
+\citation{thoduparambil2020eeg}
+\citation{acharya2018automated}
+\citation{kang2020deep}
+\citation{kumar2019prediction}
+\citation{sharma2021dephnn}
+\citation{li2019eeg}
+\citation{ay2019automated}
+\citation{jandackova2016heart}
+\citation{heart1996standards}
+\citation{sgoifo2015autonomic}
+\citation{shaffer2017overview}
+\citation{schneider2017validity}
+\citation{colombo2015clinical}
+\citation{byun2019detection}
+\citation{kidwell2018heart}
+\citation{billman2013lf}
+\citation{kemp2012depression}
+\citation{shinba2014altered}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-A}3}Performance Comparison}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}ECG}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}1}HRV depression recognition based on traditional machine learning}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces  Overview of machine learning based methods for Depression Assessment from EEG.}}{11}{}\protected@file@percent }
+\newlabel{tab_eeg}{{IV}{11}}
+\citation{goldberger2002fractal}
+\citation{schulz2010altered}
+\citation{greco2018assessment}
+\citation{vigo2004relation}
+\citation{kuang2017depression}
+\citation{byun2019detection}
+\citation{noor2021predicting}
+\citation{zang2022end}
+\citation{kuang2017depression}
+\citation{zhang2011new}
+\citation{zhang2011new}
+\citation{byun2019detection}
+\citation{roh2014wearable}
+\citation{matsui2016impaired}
+\citation{sun2016objective}
+\citation{kuang2017depression}
+\citation{noor2021predicting}
+\citation{zang2022end}
+\citation{mohanraj2022deep}
+\citation{sweeney1998prefrontal}
+\citation{duque2015double}
+\citation{li2020method}
+\citation{pan2019depression}
+\citation{lu2020depression}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}2}HRV depression recognition based on deep learning}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-B}3}Performance Comparison}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}EM}{12}{}\protected@file@percent }
+\citation{0Identifying}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces  Overview of machine learning based methods for Depression Assessment from HRV.}}{13}{}\protected@file@percent }
+\newlabel{tab_ecg}{{V}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Depression recognition method based on Audiovisual data}{13}{}\protected@file@percent }
+\newlabel{sec_approach}{{V}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Depression recognition method based on facial expression}{13}{}\protected@file@percent }
+\newlabel{sec_fquality}{{\mbox  {V-A}}{13}}
+\citation{2013Social}
+\citation{2005Emotion,BYLSMA2008676,2017Facial}
+\citation{2017A,2018A,2020Automatic,2021Classifying}
+\citation{2019Combining,2019Multi,2020Encoding,2020A,2020Visually,2020Depression}
+\citation{2019Depression2}
+\citation{8466881}
+\citation{2017Exploring}
+\citation{2020Automatic2}
+\newlabel{fig_hard_case1}{{\mbox  {V-A}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces  Samples from AVEC datasets. }}{14}{}\protected@file@percent }
+\newlabel{facial-AVEC}{{12}{14}}
+\newlabel{fig_hard_case1}{{\mbox  {V-A}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces  Flow chart of expression-based depression recognition model. }}{14}{}\protected@file@percent }
+\newlabel{facial}{{13}{14}}
+\newlabel{sec_fquality}{{\mbox  {V-A}1}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}1}Facial expression depression recognition based on machine learning}{14}{}\protected@file@percent }
+\newlabel{sec_fquality}{{\mbox  {V-A}2}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}2}Facial expression depression recognition based on deep learning}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-A}3}Performance Comparison}{14}{}\protected@file@percent }
+\citation{10.1145/2512530.2512533}
+\citation{10.1145/2661806.2661807}
+\citation{2014Eyes}
+\citation{2014Automatic}
+\citation{2015Automated}
+\citation{valstar2016avec}
+\citation{2016Detecting}
+\citation{ringeval2017avec}
+\citation{2017Exploring}
+\citation{2017Automated}
+\citation{2017Automated}
+\citation{2018A}
+\citation{ringeval2019avec}
+\citation{2019Combining}
+\citation{2019Combining}
+\citation{ray2019multi}
+\citation{2019Depression2}
+\citation{2019Depression2}
+\citation{2019Learning}
+\citation{2020A}
+\citation{2020A}
+\citation{2020Visually}
+\citation{2020Visually}
+\citation{2020Encoding}
+\citation{2020Encoding}
+\citation{2020Automatic}
+\citation{2020Automatic2}
+\citation{8466881}
+\citation{8466881}
+\citation{pampouchidou2017facial,montgomery1979new}
+\citation{france2000acoustical,moore2003analysis}
+\citation{france2000acoustical}
+\citation{moore2007critical}
+\citation{shankayi2012identifying}
+\citation{nasir2016multimodal,gong2017topic,cummins2013spectro,helfer2013classification}
+\citation{helfer2013classification,williamson2013vocal,alghowinem2013comparative}
+\citation{jiang2017investigation}
+\citation{ooi2014prediction}
+\citation{alghowinem2013comparative}
+\citation{du2018bipolar}
+\citation{srimadhur2020end}
+\citation{fan2022csenet}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Flow diagram of speech depression recognition based on traditional machine learning.}}{15}{}\protected@file@percent }
+\newlabel{Speech01}{{14}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Speech}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}1}Speech depression recognition based on traditional machine learning}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}2}Speech depression recognition based on deep learning}{15}{}\protected@file@percent }
+\citation{srimadhur2020end}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Experimental results based on facial}}{16}{}\protected@file@percent }
+\newlabel{tab4}{{VI}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Flow diagram of speech depression recognition based on deep learning, with the first to third rows representing acoustic feature-based, spectrogram-based, and end-to-end deep learning models, respectively. }}{16}{}\protected@file@percent }
+\newlabel{Speech02}{{15}{16}}
+\citation{alghowinem2013comparative}
+\citation{alghowinem2013comparative}
+\citation{haque2018measuring}
+\citation{ringeval2017avec}
+\citation{low2010detection}
+\citation{alghowinem2013comparative}
+\citation{valstar2013avec}
+\citation{cummins2011investigation}
+\citation{meng2013depression}
+\citation{williamson2014vocal}
+\citation{nasir2016multimodal}
+\citation{gong2017topic}
+\citation{jayawardena2020ordinal}
+\citation{valstar2016avec}
+\citation{kang2017deep}
+\citation{yang2017hybrid}
+\citation{al2018detecting}
+\citation{dham2017depression}
+\citation{salekin2018weakly}
+\citation{zhang2021depa}
+\citation{othmani2021towards}
+\citation{haque2018measuring}
+\citation{haque2018measuring}
+\citation{ma2016depaudionet}
+\citation{chancellor2020methods}
+\citation{chancellor2016quantifying,de2014mental,nguyen2014affective,wolohan2018detecting}
+\citation{rude2004language,nadeem2016identifying}
+\citation{de2013predicting,magami2020automatic}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {V-B}3}Performance Comparison}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Depression recognition method based on Text}{17}{}\protected@file@percent }
+\newlabel{sec_approach}{{VI}{17}}
+\newlabel{fig_hard_case1}{{VI}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces  Text on social network . }}{17}{}\protected@file@percent }
+\newlabel{text2}{{16}{17}}
+\newlabel{fig_hard_case1}{{VI}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces  Flow chart of text-based depression recognition model. }}{17}{}\protected@file@percent }
+\newlabel{text}{{17}{17}}
+\citation{shing2018expert,smys2021analysis}
+\citation{peng2019multi}
+\citation{aldarwish2017predicting}
+\citation{eichstaedt2018facebook}
+\citation{tate2020predicting,kwakernaak2020using}
+\citation{eichstaedt2018facebook}
+\citation{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}
+\citation{shen2018cross}
+\citation{rao2020mgl}
+\citation{hu2021depression}
+\citation{de2013predicting}
+\citation{nadeem2016identifying}
+\citation{nadeem2016identifying}
+\citation{peng2019multi}
+\citation{aldarwish2017predicting}
+\citation{eichstaedt2018facebook}
+\citation{rao2020mgl}
+\citation{rao2020mgl}
+\citation{yates2017depression}
+\citation{shen2017depression}
+\citation{shen2018cross}
+\citation{orabi2018deep}
+\citation{orabi2018deep}
+\citation{hu2021depression}
+\citation{wolohan2018detecting}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces  Overview of traditional machine learning based methods for Depression Assessment from Speech.}}{18}{}\protected@file@percent }
+\newlabel{tab_1}{{VII}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Overview of deep learning based methods for depression assessment from speech.}}{18}{}\protected@file@percent }
+\newlabel{tab_2}{{VIII}{18}}
+\newlabel{sec_fquality}{{\mbox  {VI-}1}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-}1}Text depression recognition based on machine learning}{18}{}\protected@file@percent }
+\newlabel{sec_fquality}{{\mbox  {VI-}2}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-}2}Text depression recognition based on deep learning}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-}3}Performance Comparison}{18}{}\protected@file@percent }
+\citation{sheridan2007role}
+\citation{xu2020emotion}
+\citation{sloman1987mood,brandler2012depressive,van2005quantitative,michalak2011effects,radovanovic2014gait,naidu2019does}
+\citation{lemke2000spatiotemporal}
+\citation{michalak2009embodiment}
+\citation{karg2010recognition,venture2014recognizing}
+\citation{gholami2016microsoft}
+\citation{nordin2016survey}
+\citation{wang2016gait}
+\citation{verlekar2019gait}
+\citation{han2005individual}
+\citation{yang2008gait}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces Experimental results based on text}}{19}{}\protected@file@percent }
+\newlabel{tab5}{{IX}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Gait}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Video based gait acquisition system. }}{19}{}\protected@file@percent }
+\newlabel{kinect}{{18}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-A}1}Gait depression recognition based on traditional machine learning}{19}{}\protected@file@percent }
+\citation{tuzel2007human}
+\citation{wang2021detecting}
+\citation{li2021simple}
+\citation{shao2021multi}
+\citation{zhong2020random,cubuk2018autoaugment,cubuk2019autoaugment}
+\citation{hussain2017differential}
+\citation{yang2022data}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Flow chart of gait depression recognition based on traditional machine learning. }}{20}{}\protected@file@percent }
+\newlabel{gait_traditional}{{19}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-A}2}Gait depression recognition based on deep learning}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Two different approaches for using deep learning models in gait depression recognition: (a) Building a structure combined skeleton feature set and silhouette features with deep learning method; (b) Building an end-to-end deep architecture. }}{20}{}\protected@file@percent }
+\newlabel{gait_deeplearning}{{20}{20}}
+\citation{wang2021detecting}
+\citation{shao2021multi}
+\citation{9187648,fang2019depression,yang2022data}
+\citation{li2021simple}
+\citation{9187648}
+\citation{lu2022postgraduate}
+\citation{yuan2018depression}
+\citation{fang2019depression}
+\citation{wang2021detecting}
+\citation{zhao2019see}
+\citation{shao2021multi}
+\citation{yang2022data}
+\citation{alghowinem2016multimodal}
+\citation{sobin1997psychomotor,ellgring2007non,mackintosh1983blink}
+\citation{gupta2014multimodal}
+\citation{sornmo2005bioelectrical}
+\citation{he2020advances}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-A}3}Performance Comparison}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Depression recognition method based on multi-modal data}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}Depression recognition method based on multiple electrophysiological signals }{21}{}\protected@file@percent }
+\citation{haghighat2016discriminant,yang2003feature}
+\citation{zhu2019multimodal}
+\citation{zhu2022content}
+\@writefile{lot}{\contentsline {table}{\numberline {X}{\ignorespaces  Overview of machine learning based methods for Depression Assessment from gait.}}{22}{}\protected@file@percent }
+\newlabel{tab_gait}{{X}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VII-A}1}Feature level fusion}{22}{}\protected@file@percent }
+\citation{bruder2012relationship}
+\citation{zhang2019multimodal}
+\citation{jing2019different}
+\citation{mousavian2021depression}
+\citation{2021Deep}
+\newlabel{multi-modal_01}{{\mbox  {VII-A}1}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces  Flow chart of fusion based on multiple electrophysiological signals (taking two modalities as an example): subfigures a and b represent feature level fusion and decision level fusion, respectively. }}{23}{}\protected@file@percent }
+\newlabel{multi-modal_01}{{21}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VII-A}2}Decision level fusion}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Others}{23}{}\protected@file@percent }
+\newlabel{fig_hard_case1}{{\mbox  {VII-D}}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces  Flow chart of depression detection based on multimodal behavioral data. }}{23}{}\protected@file@percent }
+\newlabel{AVT}{{22}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Depression recognition method based on multiple brain imaging}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-D}}Depression recognition method based on multiple audiovisual data}{23}{}\protected@file@percent }
+\citation{2019Automatic}
+\citation{2020Ordinal}
+\citation{2017DCNN,2018Integrating,2017Multimodal}
+\citation{yang2017hybrid}
+\citation{2021Intelligent}
+\citation{2018Bipolar}
+\citation{du2018bipolar}
+\citation{gong2017topic,2016Detecting}
+\citation{al2018detecting}
+\citation{haque2018measuring}
+\citation{fan2019Multi,2019Evaluating}
+\citation{2019A}
+\citation{2019Multimodal}
+\citation{yang2017multimodal}
+\citation{yang2017hybrid}
+\citation{2017DCNN}
+\citation{2018Integrating}
+\citation{2019A}
+\citation{2019Multimodal}
+\citation{fan2019Multi}
+\citation{2019Evaluating}
+\citation{zhao2019Automatic}
+\citation{2016Detecting}
+\citation{gong2017topic}
+\citation{al2018detecting}
+\citation{2020Multimodal}
+\citation{jan2017artificial}
+\citation{2019Depression2}
+\citation{2019Depression2}
+\@writefile{lot}{\contentsline {table}{\numberline {XI}{\ignorespaces Experimental results based on multi-modal}}{24}{}\protected@file@percent }
+\newlabel{tab9}{{XI}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-E}}Performance Comparison}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion and Future Work}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-A}}Conclusion}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VIII-A}1}Brain imaging}{24}{}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{IEEEabrv,tnnls_relation_gait}
+\bibcite{world2017depression}{1}
+\bibcite{bhugra2004globalisation}{2}
+\bibcite{rao2008understanding}{3}
+\bibcite{wang2021social}{4}
+\bibcite{peveler2002depression}{5}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VIII-A}2}Facial expressions}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VIII-A}3}Text}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VIII-A}4}Multi-modal data}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VIII-B}}Future Work}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{25}{}\protected@file@percent }
+\bibcite{singh2009loneliness}{6}
+\bibcite{eisenberg2007prevalence}{7}
+\bibcite{bergfeld2018treatment}{8}
+\bibcite{hemming2019alexithymia}{9}
+\bibcite{huang2019prevalence}{10}
+\bibcite{faust1988expert}{11}
+\bibcite{cheng2022addressing}{12}
+\bibcite{butryn2017shortage}{13}
+\bibcite{finch2000perceived}{14}
+\bibcite{lauber2005recommendations}{15}
+\bibcite{angermeyer2011biogenetic}{16}
+\bibcite{pescosolido2013backbone}{17}
+\bibcite{luo2016big}{18}
+\bibcite{schnyer2017evaluating}{19}
+\bibcite{sato2015machine}{20}
+\bibcite{ramasubbu2016accuracy}{21}
+\bibcite{vai2020predicting}{22}
+\bibcite{wei2021functional}{23}
+\bibcite{nilsonne2021eeg}{24}
+\bibcite{shim2019machine}{25}
+\bibcite{jiang2016predictability}{26}
+\bibcite{li2016classification}{27}
+\bibcite{kim2018automatic}{28}
+\bibcite{ma2016depaudionet}{29}
+\bibcite{zhou2018visually}{30}
+\bibcite{miao2021automatic}{31}
+\bibcite{trotzek2018utilizing}{32}
+\bibcite{park2015manifestation}{33}
+\bibcite{yang2020big}{34}
+\bibcite{yang2017hybrid}{35}
+\bibcite{lenartowicz2017brain}{36}
+\bibcite{nestler2002neurobiology}{37}
+\bibcite{widmann2015digital}{38}
+\bibcite{thomee2011mobile}{39}
+\bibcite{lalousis2021heterogeneity}{40}
+\bibcite{meng2021bidirectional}{41}
+\bibcite{toenders2022predicting}{42}
+\bibcite{1961An}{43}
+\bibcite{beck1975}{44}
+\bibcite{SDS}{45}
+\bibcite{2013The}{46}
+\bibcite{1977The}{47}
+\bibcite{brink1982screening}{48}
+\bibcite{HAMD}{49}
+\bibcite{montgomery1979new}{50}
+\bibcite{world1992icd}{51}
+\bibcite{segal2010diagnostic}{52}
+\bibcite{chen2002chinese}{53}
+\bibcite{gratch2014distress}{54}
+\bibcite{yates2017depression}{55}
+\bibcite{Stankevich2018FeatureEF}{56}
+\bibcite{2020MODMA}{57}
+\bibcite{valstar2014avec}{58}
+\bibcite{nasir2016multimodal}{59}
+\bibcite{ringeval2019avec}{60}
+\bibcite{2022Automatic}{61}
+\bibcite{2015Automatic}{62}
+\bibcite{2020DISTINGUISHING}{63}
+\bibcite{acharya2015novel}{64}
+\bibcite{zhang2011new}{65}
+\bibcite{byun2019detection}{66}
+\bibcite{yuan2019Depression}{67}
+\bibcite{2019See}{68}
+\bibcite{2018Neural}{69}
+\bibcite{2018Reduced}{70}
+\bibcite{2019Brain}{71}
+\bibcite{2014Relationship}{72}
+\bibcite{2016Correlation}{73}
+\bibcite{2019The}{74}
+\bibcite{2019Machine}{75}
+\bibcite{2017Machine}{76}
+\bibcite{2017Automatic}{77}
+\bibcite{2020Classifying}{78}
+\bibcite{2022Deep}{79}
+\bibcite{2021Depression}{80}
+\bibcite{2021fNIRS}{81}
+\bibcite{2013Evaluation}{82}
+\bibcite{P2020Radiological}{83}
+\bibcite{2019Depression}{84}
+\bibcite{2018Disrupted}{85}
+\bibcite{2013Identifying}{86}
+\bibcite{2019Intrinsic}{87}
+\bibcite{2019Resting}{88}
+\bibcite{2014Unsupervised}{89}
+\bibcite{2016Multivariate}{90}
+\bibcite{2020Quantitative}{91}
+\bibcite{2020Generalizable}{92}
+\bibcite{2020Functional}{93}
+\bibcite{2020Identifying}{94}
+\bibcite{2013What}{95}
+\bibcite{2015Toward}{96}
+\bibcite{2019The1}{97}
+\bibcite{marek2011parkinson}{98}
+\bibcite{2017Functional}{99}
+\bibcite{2017Elevated}{100}
+\bibcite{li2018microglial}{101}
+\bibcite{2014Cerebral}{102}
+\bibcite{2018Early}{103}
+\bibcite{20181H}{104}
+\bibcite{2013}{105}
+\bibcite{mousavian2020depression}{106}
+\bibcite{Nan-Feng}{107}
+\bibcite{8575800}{108}
+\bibcite{bruder2017right}{109}
+\bibcite{liao2017major}{110}
+\bibcite{bairy2017automated}{111}
+\bibcite{acharya2018automated}{112}
+\bibcite{ding2019classifying}{113}
+\bibcite{walleczek2006self}{114}
+\bibcite{Scott2006encyclopedia}{115}
+\bibcite{klonowski2006application}{116}
+\bibcite{akar2015nonlinear}{117}
+\bibcite{ortiz2021futility}{118}
+\bibcite{kustubayeva2021lyapunov}{119}
+\bibcite{chopra2022using}{120}
+\bibcite{zhao2019cardiorespiratory}{121}
+\bibcite{cukic2018eeg}{122}
+\bibcite{zhao2021frontal}{123}
+\bibcite{hosseinifard2013classifying}{124}
+\bibcite{ahmadlou2012fractality}{125}
+\bibcite{wan2020hybrideegnet}{126}
+\bibcite{saeedi2021major}{127}
+\bibcite{qayyum2020hybrid}{128}
+\bibcite{thoduparambil2020eeg}{129}
+\bibcite{li2019eeg}{130}
+\bibcite{alhagry2017emotion}{131}
+\bibcite{wang2018lstm}{132}
+\bibcite{kumar2019prediction}{133}
+\bibcite{sharma2021dephnn}{134}
+\bibcite{bachmann2018methods}{135}
+\bibcite{faust2014depression}{136}
+\bibcite{kang2020deep}{137}
+\bibcite{ay2019automated}{138}
+\bibcite{jandackova2016heart}{139}
+\bibcite{heart1996standards}{140}
+\bibcite{sgoifo2015autonomic}{141}
+\bibcite{shaffer2017overview}{142}
+\bibcite{schneider2017validity}{143}
+\bibcite{colombo2015clinical}{144}
+\bibcite{kidwell2018heart}{145}
+\bibcite{billman2013lf}{146}
+\bibcite{kemp2012depression}{147}
+\bibcite{shinba2014altered}{148}
+\bibcite{goldberger2002fractal}{149}
+\bibcite{schulz2010altered}{150}
+\bibcite{greco2018assessment}{151}
+\bibcite{vigo2004relation}{152}
+\bibcite{kuang2017depression}{153}
+\bibcite{noor2021predicting}{154}
+\bibcite{zang2022end}{155}
+\bibcite{roh2014wearable}{156}
+\bibcite{matsui2016impaired}{157}
+\bibcite{sun2016objective}{158}
+\bibcite{mohanraj2022deep}{159}
+\bibcite{sweeney1998prefrontal}{160}
+\bibcite{duque2015double}{161}
+\bibcite{li2020method}{162}
+\bibcite{pan2019depression}{163}
+\bibcite{lu2020depression}{164}
+\bibcite{0Identifying}{165}
+\bibcite{2013Social}{166}
+\bibcite{2005Emotion}{167}
+\bibcite{BYLSMA2008676}{168}
+\bibcite{2017Facial}{169}
+\bibcite{2017A}{170}
+\bibcite{2018A}{171}
+\bibcite{2020Automatic}{172}
+\bibcite{2021Classifying}{173}
+\bibcite{2019Combining}{174}
+\bibcite{2019Multi}{175}
+\bibcite{2020Encoding}{176}
+\bibcite{2020A}{177}
+\bibcite{2020Visually}{178}
+\bibcite{2020Depression}{179}
+\bibcite{2019Depression2}{180}
+\bibcite{8466881}{181}
+\bibcite{2017Exploring}{182}
+\bibcite{2020Automatic2}{183}
+\bibcite{10.1145/2512530.2512533}{184}
+\bibcite{10.1145/2661806.2661807}{185}
+\bibcite{2014Eyes}{186}
+\bibcite{2014Automatic}{187}
+\bibcite{2015Automated}{188}
+\bibcite{valstar2016avec}{189}
+\bibcite{2016Detecting}{190}
+\bibcite{ringeval2017avec}{191}
+\bibcite{2017Automated}{192}
+\bibcite{ray2019multi}{193}
+\bibcite{2019Learning}{194}
+\bibcite{pampouchidou2017facial}{195}
+\bibcite{france2000acoustical}{196}
+\bibcite{moore2003analysis}{197}
+\bibcite{moore2007critical}{198}
+\bibcite{shankayi2012identifying}{199}
+\bibcite{gong2017topic}{200}
+\bibcite{cummins2013spectro}{201}
+\bibcite{helfer2013classification}{202}
+\bibcite{williamson2013vocal}{203}
+\bibcite{alghowinem2013comparative}{204}
+\bibcite{jiang2017investigation}{205}
+\bibcite{ooi2014prediction}{206}
+\bibcite{du2018bipolar}{207}
+\bibcite{srimadhur2020end}{208}
+\bibcite{fan2022csenet}{209}
+\bibcite{haque2018measuring}{210}
+\bibcite{low2010detection}{211}
+\bibcite{valstar2013avec}{212}
+\bibcite{cummins2011investigation}{213}
+\bibcite{meng2013depression}{214}
+\bibcite{williamson2014vocal}{215}
+\bibcite{jayawardena2020ordinal}{216}
+\bibcite{kang2017deep}{217}
+\bibcite{al2018detecting}{218}
+\bibcite{dham2017depression}{219}
+\bibcite{salekin2018weakly}{220}
+\bibcite{zhang2021depa}{221}
+\bibcite{othmani2021towards}{222}
+\bibcite{chancellor2020methods}{223}
+\bibcite{chancellor2016quantifying}{224}
+\bibcite{de2014mental}{225}
+\bibcite{nguyen2014affective}{226}
+\bibcite{wolohan2018detecting}{227}
+\bibcite{rude2004language}{228}
+\bibcite{nadeem2016identifying}{229}
+\bibcite{de2013predicting}{230}
+\bibcite{magami2020automatic}{231}
+\bibcite{shing2018expert}{232}
+\bibcite{smys2021analysis}{233}
+\bibcite{peng2019multi}{234}
+\bibcite{aldarwish2017predicting}{235}
+\bibcite{eichstaedt2018facebook}{236}
+\bibcite{tate2020predicting}{237}
+\bibcite{kwakernaak2020using}{238}
+\bibcite{shen2017depression}{239}
+\bibcite{orabi2018deep}{240}
+\bibcite{ive2018hierarchical}{241}
+\bibcite{shen2018cross}{242}
+\bibcite{rao2020mgl}{243}
+\bibcite{hu2021depression}{244}
+\bibcite{sheridan2007role}{245}
+\bibcite{xu2020emotion}{246}
+\bibcite{sloman1987mood}{247}
+\bibcite{brandler2012depressive}{248}
+\bibcite{van2005quantitative}{249}
+\bibcite{michalak2011effects}{250}
+\bibcite{radovanovic2014gait}{251}
+\bibcite{naidu2019does}{252}
+\bibcite{lemke2000spatiotemporal}{253}
+\bibcite{michalak2009embodiment}{254}
+\bibcite{karg2010recognition}{255}
+\bibcite{venture2014recognizing}{256}
+\bibcite{gholami2016microsoft}{257}
+\bibcite{nordin2016survey}{258}
+\bibcite{wang2016gait}{259}
+\bibcite{verlekar2019gait}{260}
+\bibcite{han2005individual}{261}
+\bibcite{yang2008gait}{262}
+\bibcite{tuzel2007human}{263}
+\bibcite{wang2021detecting}{264}
+\bibcite{li2021simple}{265}
+\bibcite{shao2021multi}{266}
+\bibcite{zhong2020random}{267}
+\bibcite{cubuk2018autoaugment}{268}
+\bibcite{cubuk2019autoaugment}{269}
+\bibcite{hussain2017differential}{270}
+\bibcite{yang2022data}{271}
+\bibcite{9187648}{272}
+\bibcite{fang2019depression}{273}
+\bibcite{lu2022postgraduate}{274}
+\bibcite{yuan2018depression}{275}
+\bibcite{zhao2019see}{276}
+\bibcite{alghowinem2016multimodal}{277}
+\bibcite{sobin1997psychomotor}{278}
+\bibcite{ellgring2007non}{279}
+\bibcite{mackintosh1983blink}{280}
+\bibcite{gupta2014multimodal}{281}
+\bibcite{sornmo2005bioelectrical}{282}
+\bibcite{he2020advances}{283}
+\bibcite{haghighat2016discriminant}{284}
+\bibcite{yang2003feature}{285}
+\bibcite{zhu2019multimodal}{286}
+\bibcite{zhu2022content}{287}
+\bibcite{bruder2012relationship}{288}
+\bibcite{zhang2019multimodal}{289}
+\bibcite{jing2019different}{290}
+\bibcite{mousavian2021depression}{291}
+\bibcite{2021Deep}{292}
+\bibcite{2019Automatic}{293}
+\bibcite{2020Ordinal}{294}
+\bibcite{2017DCNN}{295}
+\bibcite{2018Integrating}{296}
+\bibcite{2021Intelligent}{297}
+\bibcite{2018Bipolar}{298}
+\bibcite{fan2019Multi}{299}
+\bibcite{2019Evaluating}{300}
+\bibcite{2019A}{301}
+\bibcite{2019Multimodal}{302}
+\bibcite{yang2017multimodal}{303}
+\bibcite{zhao2019Automatic}{304}
+\bibcite{2020Multimodal}{305}
+\bibcite{jan2017artificial}{306}
+\gdef \@abspage@last{33}
