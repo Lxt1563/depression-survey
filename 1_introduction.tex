@@ -19,16 +19,16 @@ It is estimated that close to 70\% of depressed patients have had suicidal thoug
 In short, the dangers of depression are staggering.
 
 To alleviate the damage caused by depression, a timely and effective diagnosis is essential. However, there are three main challenges in the clinical diagnosis of depression:
-(1) \emph{Lack of valid and accurate objective indicators.}
+(1) \emph{Objective indicators insufficient:}
 Unlike other physiological diseases, there are no objective and precise markers to assess depression, such as biochemical test indicators, physiological data, or medical imaging.
 Clinicians draw conclusions based on the clinical diagnostic criteria, their professional experience, and the patient's clinical presentation~\cite{faust1988expert}.
 However, many patients purposely hide their actual illness while refusing to participate in treatment, which leads to skewed diagnostic outcomes.
 (2) %Serious shortage of medical resources. At present, there is a serious shortage of medical professionals and medical resources for the diagnosis and treatment of depression. In particular, in low- and middle-income countries, up to 75\% of patients do not receive timely diagnosis and treatment. In addition, face-to-face psychiatric consultations are time-consuming and inefficient, further exacerbating the shortage of resources for psychiatric treatment~\cite{cheng2022addressing,butryn2017shortage}.
-\emph{The severe shortage of medical resources.}
+\emph{Medical resource shortage:}
 There is currently a severe shortage of medical professionals and medical resources for diagnosing and treating depression.
 Up to 75\% of patients, especially in low-income and middle-income countries, do not obtain early diagnosis and treatment.
 Additionally, ineffective and time-consuming face-to-face consultations with psychiatrists add to the lack of resources for psychiatric care~\cite{cheng2022addressing,butryn2017shortage}.
-(3) \emph{Deficiencies in social awareness.}
+(3) \emph{Social discrimination:}
 Because the general public has low awareness of depression, there is an underlying resistance to or avoidance of mental illness.
 Given this, early signs of depression may be dismissed or disregarded, losing the ideal window for treatment, which will make the condition worse and make therapy more challenging~\cite{finch2000perceived,lauber2005recommendations,angermeyer2011biogenetic,pescosolido2013backbone}.
 %To alleviate the damage caused by depression, timely and effective diagnosis is essential.
@@ -48,7 +48,8 @@ Given this, early signs of depression may be dismissed or disregarded, losing th
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{figures/depression/Taxonomy.jpg}
-\caption{The taxonomy of ancillary diagnosis of depression from the perspective of various categories of data.}
+\caption{The taxonomy of auxiliary depression diagnosis with data modality.}
+%\caption{The taxonomy of auxiliary diagnosis of depression from the perspective of various categories of data.}
 \label{Taxonomy}
 \end{figure}
 %recent ancillary diagnosis of depression (ADD) studies about the application of machine learning on various categories of data
@@ -75,10 +76,10 @@ The following advantages exist for machine learning-based auxiliary depression d
 (2) Low interference: the machine learning method is used for automatically auxiliary depression diagnosis, which eliminates the need for professionals to observe consciousness and lessens the difficulties of diagnosing and treating depression owing to patient resistance.
 
 Despite the rapid evolution in this field, there is yet no systematic study to review and discuss existing progress.
-To fill this gap, we conduct a thorough analysis of recent ancillary depression diagnosis studies about the use of machine learning on different categories of data.
-Next, the research methodology and procedures of machine learning in ancillary depression diagnosis are outlined, and finally, the research directions and challenges for the future are presented.
-As shown in Fig~\ref{Taxonomy}, we focus on the progress of the methods and potential research directions in five data contexts:~\emph{brain imaging}~\cite{schnyer2017evaluating,sato2015machine,ramasubbu2016accuracy,vai2020predicting,wei2021functional},  \emph{electrophysiological signals}~\cite{nilsonne2021eeg,shim2019machine,jiang2016predictability,li2016classification,kim2018automatic}, \emph{Audiovisual data}~\cite{ma2016depaudionet,zhou2018visually,miao2021automatic},
-\emph{text}~\cite{trotzek2018utilizing,park2015manifestation,yang2020big}, and \emph{mixed-modal data}~\cite{yang2017hybrid}.
+To fill this gap, we conduct a thorough analysis of recent auxiliary depression diagnosis studies about the use of machine learning on data modality.
+Next, the research methodology and procedures of machine learning in auxiliary depression diagnosis are outlined, and finally, the research directions and challenges for the future are presented.
+As shown in Fig~\ref{Taxonomy}, we focus on the progress of the methods and potential research directions in five data modalities:~\emph{brain imaging}~\cite{schnyer2017evaluating,sato2015machine,ramasubbu2016accuracy,vai2020predicting,wei2021functional},  \emph{electrophysiological signals}~\cite{nilsonne2021eeg,shim2019machine,jiang2016predictability,li2016classification,kim2018automatic}, \emph{Audiovisual data}~\cite{ma2016depaudionet,zhou2018visually,miao2021automatic},
+\emph{text}~\cite{trotzek2018utilizing,park2015manifestation,yang2020big}, and \emph{mixed data}~\cite{yang2017hybrid}.
 These commonly used representation forms of physiological signals are illustrated in Fig~\ref{common signals}, and we will give their brief descriptions in the following:
 
 (1) \emph{Brain imaging:}
@@ -114,19 +115,22 @@ They have been widely utilized to treat auxiliary depression diagnosis due to th
 (3) \emph{Audiovisual data:}
 Audiovisual data, whose forms mainly include facial expressions, speech, and gait, are captured by video and audio recording devices.
 {\color{red}
-Audiovisual data-based auxiliary depression diagnosis is the first recognition method proposed by researchers and the most widely used method, which has the advantage of low acquisition cost but can achieve better recognition results.
-}
+Depression's clinical manifestations include slower movement and speech, which can be caught audiovisually and serve as a valid tool for auxiliary depression diagnosis.}
+%{\color{red}
+%Audiovisual data-based auxiliary depression diagnosis is the first recognition method proposed by researchers and the most widely used method, which has the advantage of low acquisition cost but can achieve better recognition results.
+%}
 %The audiovisual data based method was the first method proposed by researchers for ADD and is the most widely used method, with the advantage of low acquisition cost but better recognition results.
+
 
 
 %Many researchers have used facial expression, speech, and gait to diagnose depression because depressed patients always exhibit abnormal behavior, such as sluggish facial expressions\cite{dai2012more}, frequent avoidance of eye contact, and speaking in short sentences with a flat tone\cite{kraepelin1921manic}. The model is more accurate based on the ease of obtaining data.
 
 (4) \emph{Text:}
-Text is the most direct vehicle for people to express their thoughts and emotions. Especially on social media platforms, people are more inclined to express their true feelings. Therefore, numerous academics have looked at the disparities in textual expression between depressed people and those without depression in the setting of social media platforms from a textual perspective~\cite{thomee2011mobile}.
+Text is the most direct medium for people to express their thoughts and emotions. Especially on social media platforms, people are more inclined to express their true feelings. Therefore, numerous academics have looked at the disparities in textual expression between depressed people and those without depression in the setting of social media platforms from a textual perspective~\cite{thomee2011mobile}.
 
 
 (5) \emph{Mixed:}
-In addition to using single physiological or behavioural data to assist in the diagnosis of depression, many studies have sought to employ mixed-modal data for auxiliary depression diagnosis~\cite{lalousis2021heterogeneity,meng2021bidirectional,toenders2022predicting}.
+In addition to utilizing single physiological or behavioural data for auxiliary depression diagnosis, many studies have sought to employ mixed data for this task~\cite{lalousis2021heterogeneity,meng2021bidirectional,toenders2022predicting}.
 Mixed data have more features than unimodal data, which can give a more complete picture of the symptomatology of depressed patients.
 
 
@@ -134,25 +138,28 @@ Mixed data have more features than unimodal data, which can give a more complete
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{figures/depression/raw_signals.jpg}
-\caption{Common types of physiological signals: subgraphs $a-c$ represent brain imaging,electrophysiological signals, and audiovisual data, respectively. These categories in turn have different representations: fNIRS, MRI, EEG, ECG, EOG, facial expression, speech, and gait.}
+\caption{Common physiological signals: subgraphs $a-c$ represent brain imaging, electrophysiological signals, and audiovisual data, respectively.}
+%These categories, in turn, have different representations: fNIRS, MRI, EEG, ECG, EOG, facial expression, speech, and gait.
 \label{common signals}
 \end{figure}
 
 
-In this paper, we review the current state of research on machine learning in auxiliary depression diagnosis regarding the five types mentioned above of data, with a focus on the progress of the use of machine learning techniques in different data contexts and potential research directions.
+In this paper, we review the current state of research on machine learning in auxiliary depression diagnosis regarding the five data modalities mentioned above, focusing on the progress and potential research directions of using machine learning techniques in their contexts.
 The main contributions of this study lie in three folds.
 
 (1) To the best of our knowledge, this is the first comprehensive survey about auxiliary depression diagnosis on different data modalities, which will provide researchers and clinical psychologists with a better understanding of the use of machine learning in this area.
 
 (2) We provide an in-depth review of advanced auxiliary depression diagnosis studies, and compare the performance of different methods in each data modality.
 
-(3) We summarize and analyze the advantages and disadvantages of different data types for auxiliary depression diagnosis and give insights on promising research directions in this field.
+(3) We summarize and analyze the advantages and disadvantages of different data modalities for auxiliary depression diagnosis and give insights on promising research directions in this field.
 
 The rest of this survey will be organized as follows:
 {\color{red}
-Section 2 presents a summary of standard approaches to diagnosing clinical depression and abnormal changes in the physiology and behaviour of depressed patients and introduces widely-used questionnaires, datasets, and metrics.
-}
-Section 3-7 provides an in-depth analysis of machine learning-based approaches to depression diagnosis from the perspective of different data types.
+Section 2 introduces some basic knowledge in auxiliary depression diagnosis task including scales, datasets and assessment metrics.}
+%{\color{red}
+%Section 2 presents a summary of standard approaches to diagnosing clinical depression and abnormal changes in the physiology and behaviour of depressed patients and introduces widely-used questionnaires, datasets, and metrics.
+%}
+Section 3-7 provides an in-depth analysis of machine learning-based approaches to depression diagnosis from the perspective of different data modalities.
 Section 8 provides insights into promising research directions. We conclude the survey in Section 9.
 
 \ifx\allfiles\undefined
