@@ -224,28 +224,41 @@ Brain imaging technology has revealed abnormalities in brain structure, brain fu
 \textbf{Type}          & \textbf{Paper}                                                                                          & \textbf{Dataset(D+C)}                                                                                                     & \textbf{Methods}                                                                                                                                       & \textbf{Metrics(Accuracy/\%)}                                                                                                        \\
 \hline
 \multirow{6}{*}{fNIRS} & Song et al. ~\cite{2015Automatic}                                                & 138 (108+30)                                                                                                               & SVM                                                                                                                                                    & 86.77                                                                                                                                \\
+\cline{2-5} 
                        & Song et al.~\cite{2015Automatic2}                                                 & 138 (108+30)                                                                                                               & SVM                                                                                                                                                    & 89.71                                                                                                                                \\
+\cline{2-5}
                        & Zhu et al.~\cite{2017Machine}                                                     & 20 (10+10)                                                                                                                 & OneR                                                                                                                                                   & 85.00                                                                                                                                \\
+\cline{2-5}
                        & Zhu et al. ~\cite{2020Classifying}                                               & 31 (14+17)                                                                                                                 & RF+XGBoost                                                                                                                                             & 92.58                                                                                                                                \\
+\cline{2-5}
                        & Ma et al.~\cite{2020DISTINGUISHING }                                              & 36 (MDD)+48 (bipolar disorder patients)                                                                                    & LSTM                                                                                                                  & 96.20                                                                                                                                \\
+\cline{2-5}
                        & Wang et al.~\cite{2021Depression}                                                & 96 (79+17)                                                                                                                 & CNN & 90.00                                                                                                                                \\
 \hline
 \multirow{24}{*}{fMRI} & Lord et al. ~\cite{lord2012changes}                                             & 43 (21+22)                                                                                                                 & SVM                                                                                                                                                    & 99.00                                                                                                                                \\
+\cline{2-5}
                        & Wei et al.~\cite{2013Identifying}                                                 & 40 (20+20)                                                                                                                 & SVM                                                                                                                                                    & 90.0                                                                                                                                 \\
+\cline{2-5}
                        & Zeng et al. ~\cite{2014Unsupervised}                                             & 53 (24+29)                                                                                                                 & Unsupervised ML                                                                                                                                        & 92.50                                                                                                                                \\
                        \cline{2-5}
                        & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 & \makecell[c]{sLASSO\\ gLASSO  \\ sgLASSO  \\ SVM}                                                              & \makecell[c]{83.82  \\ 91.95 \\ 90.08   \\ 94.68}                                              \\
                       \cline{2-5}
                        & Bhaumik~\cite{2016Multivariate}                                                   & 67 (38+29)                                                                                                                 & SVM                                                                                                                                                    & 76.10                                                                                                                                \\
+\cline{2-5}
                        & Gu et al. ~\cite{8575800}                                                        & 92 (46+46)                                                                                                                 & MVPA                                                                                                                                                   & 90.22                                                                                                                                \\
-                       & Wang et al.~\cite{wang2017depression }                                            & 60 (31+29)                                                                                                                 & SVM                                                                                                                                                    & 95.00                                                                                                                                \\
+\cline{2-5}
+                       & Wang et al.~\cite{wang2017depression}                                            & 60 (31+29)                                                                                                                 & SVM                                                                                                                                                    & 95.00                                                                                                                                \\
+\cline{2-5}
                        & Gui et al. ~\cite{2019The1}                                                      & 39 (19+20)                                                                                                                 & DNN                                                                                                                                                    & 94.68                                                                                                                                \\
                        \cline{2-5}
                        & Mousavian et al.~\cite{mousavian2020depression}                                   & NKI online dataset 279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ ST-CNN \\ 3D CNN   \\ 3D VGG-16  \\ FCN \\ FCN\_woT-test  \\ FCN\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
                        \cline{2-5}
                        & Mousavian et al.~\cite{9680063}                                  & NKI online dataset 279 (38+241)                                                                                             & Cubes-Atlas                                                                                                                                            & 93.00                                                                                                                                \\
+\cline{2-5} 
                        & Yan et al.~\cite{2020Quantitative}                                                & 99 (43+56)                                                                                                                 & DFC+SVM                                                                                                                                                & 99.13 (AUC)                                                                                                                           \\
+ \cline{2-5}
                        & Zhao et al. ~\cite{2020Functional}                                               & 555 (269+286)                                                                                                              & FNC+GAN                                                                                                                                                & 70.10                                                                                                                                \\
+ \cline{2-5}
                        & Jun et al.~\cite{2020Identifying}                                                  & 73 (29+44)                                                                                                                 & GCNs                                                                                                                                                   & 74.10                                                                                                                                \\
                       \cline{2-5}
                        & Yamashita et al.~\cite{ 2020Generalizable}                                     & \begin{tabular}[c]{@{}c@{}}discovery dataset 713 (149+564)   \\ independent validation dataset 521 (236+285)\end{tabular} & LASSO                                                                                                                                                  & approximately 70.00                                                                                                                 \\
@@ -253,17 +266,14 @@ Brain imaging technology has revealed abnormalities in brain structure, brain fu
 \end{tabular}}
            \begin{tablenotes}
 			\footnotesize
-			\item functional connectivity network (FCN),
-				functional network connectivity (FNC),
+			\item Least Absolute Shrinkage and Selection Operator(LASSO),
+				group Least Absolute Shrinkage and Selection Operator (gLASSO),
+				sparse group Least Absolute Shrinkage and Selection Operator (sgLASSO),
+				standard Least Absolute Shrinkage and Selection Operator (sLASSO),
 				Multivariate pattern analysis (MVPA),
+				functional connectivity network (FCN),
 				dynamic functional connectivity (DFC),
-				effective connectivity (EC),
-				Multivariate pattern analysis (MVPA),
-				Least Absolute Shrinkage and Selection Operator(LASSO),
-				group Least Absolute Shrinkage and Selection Operator (LASSO),
-				sparse group Least Absolute Shrinkage and Selection Operator (LASSO),
-				standard Least Absolute Shrinkage and Selection Operator (LASSO).
-
+				functional network connectivity (FNC).
 		\end{tablenotes}
 \end{table*}
 
