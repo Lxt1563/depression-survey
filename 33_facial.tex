@@ -138,13 +138,26 @@ Then, a RNN is used to capture Information from the spatiotemporal sequences.
 LSTM is the most representative algorithm among RNN, there are also applications in facial expression-based auxiliary depression diagnosis.
 Ray et al.~\cite{ray2019multi} uses each low-level descriptor feature of pose, gaze, and Facial Action Unit to input into the LSTM for depression assessment.
 Su et al.~\cite{2017Exploring} uses the eight basic directions of the motion vector to characterize subtle changes in microscopic facial expressions and use LSTM to simulate long-term changes between different mood disorder types.
+Guo et al.~\cite{Guo2021Deep} proposes a new method for potential depression risk identification based on two different Deep Belief Network models.
+One model extracts 2D appearance features from facial images captured by an optical camera, while the other model combines LSTM to extract 3D dynamic features from 3D facial points captured by Kinect.
+The integrated networks can achieve the fusion of static and dynamic features, which can improve recognition performance.
 
 \subsubsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Table \ref{tab4} summarizes the results of the experiments on the detection of depression based on facial expressions, including the source and name of the method, the data set used (- means the data used were collected by ourselves), the evaluation criteria of the experimental results, including the classification criteria Accuracy, F1 Score Precision, Recall, the evaluation criteria of depression severity by depression scale mean absolute error (MAE) and root mean square error (RMSE), and Average Error for regression scale scores.
+Table \ref{tab4} summarizes the results of the experiments on the detection of depression based on facial expressions, including the source and some name of the method, the dataset used (- means the data used were collected by ourselves), the evaluation criteria of the experimental results, including the evaluation criteria of depression severity by depression RMSE and MAE.
 
-The AVEC competition has greatly advanced research on depression detection based on behavioral performance, and more and more deep algorithms have been applied to depression recognition tasks, all with good results.
+Comparing different methods using the same dataset, the following list of observations can be summed up::
+
+%The AVEC competition has greatly advanced research on depression detection based on behavioral performance, and more and more deep algorithms have been applied to depression recognition tasks, all with good results.
+
+(1) On the AVEC 2013/2014 dataset, the performance of traditional machine learning methods and manually extracted features are highly correlated.
+Similar to facial expression recognition, local area features such as eyes and mouth in the video are more important for video-based auxiliary depression diagnosis. Extracting features from these areas and combining them with global features can achieve better results.
+
+(2) On the AVEC 2013/2014 dataset, deep learning methods showed better results than traditional machine learning methods because it can automatically learn high-level semantic features that are more useful for diagnosing depression through the network, where a 3D-CNN-based architecture can better capture spatio-temporal facial information related to depressive behavior in videos, which can improve model performance.
+
+(3) In deep learning based methods, due to the superior spatial feature extraction ability of CNN, researchers mostly use it for auxiliary depression diagnosis, later considering the variation of facial videos in the temporal dimension, RNN or 3D convolutional kernels were added for time domain information capture, where the 3D-CNN architecture showed better performance.
+We guess because compared to the spatial information extracted using CNN separately and then combined with the temporal information extracted by RNN, 3D-CNNs are extracting spatio-temporal features at the same time and are able to learn the effective spatio-temporal information better, which can improve the model performance.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -152,7 +165,7 @@ The AVEC competition has greatly advanced research on depression detection based
 \centering
 \caption{Experimental results based on facial}
 \label{tab4}
-\setlength\tabcolsep{8.5mm}{
+\setlength\tabcolsep{8mm}{
 \begin{tabular}{c|c|c|c|c}
 
 \hline
@@ -163,8 +176,8 @@ AVEC2014 baseline~\cite{10.1145/2661806.2661807} & AVEC2014(AViD-Corpus) & SVR  
 Kaya et al~\cite{2014Eyes}                       & AVEC2013(AViD-Corpus) & 1-NN regressor  & 9.72          & 7.86         \\
 Jan et al~\cite{ 2014Automatic}                  & AVEC2014(AViD-Corpus) & LR              & 10.5          & 8.44         \\
 Wen et al~\cite{2015Automated}                   & AVEC2013(AViD-Corpus) & SVR             & 10.27         & 8.22         \\
-AVEC2016 baseline~\cite{valstar2016avec}         & AVEC2016(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
-AVEC2017 baseline~\cite{ringeval2017avec}        & AVEC2017(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
+AVEC2016/2017 baseline~\cite{valstar2016avec}    & AVEC2016(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
+%AVEC2017 baseline~\cite{ringeval2017avec}        & AVEC2017(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
 Yu et al~\cite{2017Automated}                    & AVEC2013(AViD-Corpus) & CNN             & 9.82          & 7.58         \\
 Yu et al ~\cite{2017Automated}                   & AVEC2014(AViD-Corpus) & CNN             & 9.55          & 7.47         \\
 AVEC2019 baseline~\cite{ ringeval2019avec}       & AVEC2019(E-DAIC)      & CNN             & 8.01          & -            \\
@@ -174,12 +187,12 @@ Ray et al.~\cite{ray2019multi}                   & AVEC2019(E-DAIC)      & LSTM 
 Melo et al ~\cite{2019Depression2}               & AVEC2013(AViD-Corpus) & CNN             & 8.25          & 6.30         \\
 Melo et al~\cite{2019Depression2}                & AVEC2014(AViD-Corpus) & CNN             & 8.23          & 6.15         \\
 Zhou et al~\cite{2019Learning}                   & AVEC2014(AViD-Corpus) & CNN             & 8.43          & 6.37         \\
-Melo et al ~\cite{ 2020A}                        & AVEC2013(AViD-Corpus) & CNN             & 7.90          & 5.98         \\
-Melo et al ~\cite{ 2020A}                        & AVEC2014(AViD-Corpus) & CNN             & 7.61          & 5.82         \\
+Melo et al ~\cite{2020A}                        & AVEC2013(AViD-Corpus) & 3D-CNN          & 7.90          & 5.98         \\
+Melo et al ~\cite{2020A}                        & AVEC2014(AViD-Corpus) & 3D-CNN          & 7.61          & 5.82         \\
 Zhou et al~\cite{2020visually}                   & AVEC2013(AViD-Corpus) & CNN             & 8.28          & 6.20         \\
 Zhou et al ~\cite{2020visually}                  & AVEC2014(AViD-Corpus) & CNN             & 8.39          & 6.21         \\
-Melo et al ~\cite{2020Encoding}                  & AVEC2013(AViD-Corpus) & CNN             & 7.97          & 5.96         \\
-Melo et al ~\cite{2020Encoding}                  & AVEC2014(AViD-Corpus) & CNN             & 7.94          & 6.20         \\
+Melo et al ~\cite{2020Encoding}                  & AVEC2013(AViD-Corpus) & 3D-CNN          & 7.97          & 5.96         \\
+Melo et al ~\cite{2020Encoding}                  & AVEC2014(AViD-Corpus) & 3D-CNN          & 7.94          & 6.20         \\
 Jazaery et al~\cite{8466881}                     & AVEC2013(AViD-Corpus) & RNN-C3D         & 9.28          & 7.37         \\
 Jazaery et al ~\cite{8466881}                    & AVEC2014(AViD-Corpus) & RNN-C3D         & 9.20          & 7.22        \\
 \hline
