@@ -7,11 +7,18 @@
 \section{Depression recognition method based on Audiovisual data}
 \label{sec_approach}
 
-Depression is now the most common type of psychological disorder, manifested as a single or repeated multiple depressive episodes, slow clinical behavior, passive and lazy life, do not want to do anything, do not want to contact and interact with people around, often sitting alone, or lying in bed all day, living alone behind closed doors, alienating friends and relatives, avoiding social interaction, etc.. Second, the patient mainly shows significant and persistent depression, depression and pessimism. The patient's thinking is slow, unresponsive, and blocked. Clinically, there is a decrease in active speech, a significant slowdown in speech, a low voice, and difficulty in answering questions, and in severe cases, communication is not smooth. These characteristics are all abnormalities of depressed patients compared to healthy people and can be captured visually or audibly, which can be used to identify depression.
+In recent years, researchers have increasingly focused on using behavioral signals to auxiliary depression diagnosis.
+They analyzing abnormal expressive behaviors that may result from depression, such as facial expressions becoming sluggish, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and walking in a disheveled posture, etc.
+Many researchers have found that auxiliary depression diagnosis can be achieved by comparative analysis of these characteristics.
+The auxiliary depression diagnosis based on behavioral signals is usually studied by audio and video data.
+In addition, video data mainly contain facial expression and gait information, and audio data refers to the participants' speech data.
 
-In recent years, there has been an increasing interest in identifying depression from behavioral signals and analyzing abnormal expressive behaviors that may result from depression, such as facial expressions that become sluggish, frequent avoidance of eye contact with others, and use of short sentences with a flat tone when speaking, and many researchers have found that depression identification can be well achieved by comparative analysis of these characteristics.
+Facial expression and speech based depression data are usually collected from face-to-face interactive interviews or non-interactive human-computer interviews, and video and audio data of the interview process are obtained for analysis.
+Gait based depression data are usually collected from subjects walking in experimental scenarios, including the use of sensors or cameras, and then process the data to extract features for analysis.
 
-AVEC is an expression recognition challenge held every year since 2011, jointly organized by Imperial College London, University of Nottingham, Queen Mary University, USC and University of Passau, Germany, etc. It is recognized as the top international competition in the field of affective computing. AVEC 2013 started to introduce the task of depression recognition, considering the auditory-visual based analysis of depression as a regression problem or classification problems.
+AVEC is an expression recognition challenge held every year since 2011, jointly organized by Imperial College London, University of Nottingham, Queen Mary University, USC and University of Passau, Germany, etc.
+It is recognized as the top international competition in the field of affective computing.
+AVEC 2013 started to introduce the task of depression recognition, considering the audio and video based analysis of depression as a regression problem or classification problems.
 
 \subsection{Depression recognition method based on facial expression}
 \label{sec_fquality}
@@ -26,45 +33,111 @@ AVEC is an expression recognition challenge held every year since 2011, jointly 
 	\label{facial-AVEC}
 \end{figure}
 
-\begin{figure}[tbp]
-	\centering	
-	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/facial.png}		
-	\caption{
-	Flow chart of expression-based depression recognition model.
-	}
-	\label{facial}
-\end{figure}
+%\begin{figure}[tbp]
+%	\centering	
+%	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/facial.png}		
+%	\caption{
+%	Flow chart of expression-based depression recognition model.
+%	}
+%	\label{facial}
+%\end{figure}
 
 A person's personality and mood can be seen from his face, and some studies have found that the appearance and temperament of patients with depression are also different from ordinary people. 
-Zhu et al.~\cite{0Identifying} research team of the institute of psychology of the Chinese Academy of Sciences studied 100 people with mental diseases. They asked 100 patients to read neutral articles through a special technology. From the research process, it was found that these patients frowned and drooped corners of their mouths when reading aloud, and a few tears appeared in their eyes, just like crying, looking very sad. 
+Zhu et al.~\cite{0Identifying} research team of the institute of psychology of the Chinese Academy of Sciences studied 100 people with mental diseases.
+They asked 100 patients to read neutral articles through a special technology.
+From the research process, it was found that these patients frowned and drooped corners of their mouths when reading aloud, and a few tears appeared in their eyes, just like crying, looking very sad.
 
-In order to study the relationship between patients' depression severity and facial expression over time, Girard et al.~\cite{2013Social} designed a study to track the subjects for two years, and collected the data of 36 patients with severe depression at the beginning and reduced symptoms after two years. Through the analysis of facial expressions in video data by manual and automatic systems, it showed that the automatic coding of Facial Action Coding System (FACS) action units is highly consistent with the manual coding, and showed a similar effect in the change of depression severity over time. 
+Under normal circumstances, when people read a book with neutral content, it will not make them feel sad, and it will not make people frown, so there is still a big difference in facial features between people suffering from depression and normal.
+Therefore, by comparing and analyzing the facial expression data of depressed and normal people, it can auxiliary diagnosing depression~\cite{2013Social,2018A,2020Automatic,2005Emotion,BYLSMA2008676,2017Facial}.
 
-The results showed that when the severity of patients' symptoms was high, participants made more facial expressions related to contempt and smiled less, and those smiles were more likely to be accompanied by facial actions related to contempt. These results were consistent with the performance of Exchange-Oriented Withdrawal in the "Social Risk Hypothesis" of depression, indicating that patients with depression show more withdrawal in social intercourse. According to this hypothesis, when patients have severe symptoms, they will stay away from others to protect themselves from expected rejection, contempt and social exclusion~\cite{2005Emotion,BYLSMA2008676,2017Facial}.
+%In order to study the relationship between patients' depression severity and facial expression over time, Girard et al.~\cite{2013Social} designed a study to track the subjects for two years, and collected the data of 36 patients with severe depression at the beginning and reduced symptoms after two years. Through the analysis of facial expressions in video data by manual and automatic systems, it showed that the automatic coding of Facial Action Coding System (FACS) action units is highly consistent with the manual coding, and showed a similar effect in the change of depression severity over time. 
 
-\subsubsection{Facial expression depression recognition based on machine learning}
+%The results showed that when the severity of patients' symptoms was high, participants made more facial expressions related to contempt and smiled less, and those smiles were more likely to be accompanied by facial actions related to contempt. These results were consistent with the performance of Exchange-Oriented Withdrawal in the "Social Risk Hypothesis" of depression, indicating that patients with depression show more withdrawal in social intercourse. According to this hypothesis, when patients have severe symptoms, they will stay away from others to protect themselves from expected rejection, contempt and social exclusion~\cite{2005Emotion,BYLSMA2008676,2017Facial}.
+
+\subsubsection{Facial expression depression recognition based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In recent years, much progress has been made in the study of facial expression recognition, which plays an important role in emotional communication and is also highly informative in auxiliary depression diagnosis.
+It was found that the lower the angle of gaze downward, the lower the intensity of the smile, and the shorter the average duration of the smile, were the most significant facial cues of depression~\cite{6553789}.
 
-To achieve depression recognition from facial images, traditional solutions for vision-based automatic depression diagnosis systems usually include several steps as shown in Fig \ref{facial}: first, facial images are recognized and segmented from the raw video data, then features are extracted, and finally the features are fed into a classifier for classification or regression.
+For privacy and ethical reasons, most datasets for diagnosing depression based on facial expressions do not provide the original video, but rather some simple facial features, such as facial landmarks, histogram of oriented gradients features on the aligned area of the face, gaze direction estimate for both eyes, 3D position and orientation of the head, emotion and facial action unit continuous measures based on FACET software ~\cite{ringeval2017avec,ringeval2019avec}.
+After further processing of these features, they are fed into a classification or regression model for analysis such as SVM, Support Vector Regression, Random Forest, Partial Least Square Regression, naive Bayes and logistic regression are the most commonly used methods in the study of facial features of depressed subjects~\cite{2017A,2018A,2020Automatic,2021Classifying}.
 
+Auxiliary depression diagnosis using traditional machine learning methods relies on feature extraction, so researchers have focused more on extracting more discriminative features.
+Changes in the eyes, mouth, eyebrows, etc. get great contribution in expression recognition, so many studies focus on studying the surrounding features extraction and then combining them with global information for analysis.
 
-Machine learning can be divided into traditional machine based on the depth of the model structure learning and deep learning, which are now often applied to tasks such as vision and speech on tasks such as vision and speech. While traditional machine learning algorithms are suitable for small amounts of data, deep learning has higher performance on larger data sets. 
-%Machine learning is used in facial feature feature extraction and classification in facial features research.
+The Active Appearance Model reflects the features of facial expressions through shape and texture information in dynamic images.
+Cohn et al.~\cite{2009Detecting} demonstrates the feasibility of automatic depression detection by comparing clinical diagnosis with automatically measured facial movements using the Active Appearance Model.
+Alghowinem et al.~\cite{2013Eye} uses Active Appearance Model to extract features from eye movements in video,  in addition to blink interval time, blink frequency, eye closure frequency, etc., and mean, variance, maximum, and minimum values of various features throughout the interview were used to diagnose depression.
 
-Traditional machine learning methods such as SVM, naive Bayes (NB), RF and logistic regression (LR) are the most commonly used classifiers in the study of facial features of depressed patients~\cite{2017A,2018A,2020Automatic,2021Classifying}.
+However, in general, Active Appearance Model needs to rely on manual annotation to initialize the face feature points, which affects the automation of the algorithm.
+Another disadvantage of this method is that the model construction is complicated.
+
+Local Binary Patterns is a common method for extracting appearance features, which is an algorithm capable of describing image textures in a simple way without manual annotation, and has the advantages of rotation invariance and gray scale invariance.
+The original Local Binary Patterns operator is defined as in a 3*3 window, the center pixel of the window is used as the threshold, and the grayscale values of the 8 neighboring pixels are compared with it.
+If the surrounding pixel value is greater than the center pixel value, the position of the pixel point is marked as 1, otherwise it is 0.
+In this way, the 8 points in the 3*3 neighborhood can be compared to produce an 8-bit binary number, which is the Local Binary Patterns value of the center pixel of the window, and this value is used to reflect the texture information of the region.
+After that, some researchers have proposed some improvements based on Local Binary Patterns.
+
+In the AVEC 2014 competition, baseline visual features were extracted by using a Local Gabor Binary Pattern from Three Orthogonal Planes, which combines dynamic and spatial texture analysis with Gabor filtering.
+This method uses multiple Gabor filters to convolve consecutive video frames and applies Local Binary Patterns to extract features from orthogonal XY, XT, and YT slices~\cite{10.1145/2661806.2661807}.
+Pampouchidou et al.~\cite{2016Video} emploies Curvelet transform and Local Binary Patterns to extract features.
+Since Curvelet transform can extract curvature information from images, different facial expressions can be distinguished from their curves by computing Local Binary Patterns descriptors for each facial region extracted by Curvelet transform processing individually to form a feature vector for frame-based classification.
+Jan et al.~\cite{2014Automatic} extracts three different texture features by Local Binary Patterns, Edge Orientation Histogram and Local Phase Quantization methods and mapped their variations to feature vectors by Motion History Histogram.
+
+Inspired by the huge success of the Local Binary Pattern method, the Local Phase Quantization descriptor uses the short-term Fourier transform to obtain the local phase on the facial region.
+In the AVEC 2013 competition, facial detection and alignment were performed for each video frame, and then Local Phase Quantization was used as a dense local appearance descriptor.
+Later, Wen et al.~\cite{2015Automated} proposes Local Phase Quantization from Three Orthogonal Planes to extract facial dynamic feature descriptors.
+Kaya et al.~\cite{2014Ensemble} calculates typical correlation analyses of baseline and Local Phase Quantization features, exploring the eye and mouth regions of the face, then aggregating features to predict levels of depression.
+
+In addition, there are many other traditional feature extraction methods have been applied to facial feature extraction.
+Cummins et al.~\cite{2013Diagnosis} investigates two different descriptors, called Space Time Interest Points and Pyramid Histogram of Oriented Gradients, and showes that the Pyramid Histogram of Oriented Gradients get better accuracy.
+Prez et al.~\cite{perez2014fusing} computes the differences in eye and face positions, combining these values with motion history images, motion still images, and motion-averaged images from video clips containing facial regions.
+Nasir et al.~\cite{nasir2016multimodal} uses perception-driven distance and area features obtained from facial markers to Diagnosing depression.
+Anis et al.~\cite{0Detecting} uses the center of gravity coordinates of facial signs and the rotation matrix of 3D head movements to extract motion features.
+
+However, traditional machine learning-based methods require manual feature design, which makes it difficult to obtain accurate and global information of subtle facial expressions, and some features have high dimensionality and low computational efficiency, which is very unfavorable for building an automated auxiliary depression diagnosis system.
 
 
 \subsubsection{Facial expression depression recognition based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Convolutional neural networks (CNNs) are the most commonly used deep learning networks for facial recognition research in recent years. Many researches based on CNN and its innovative architectures such as three-dimensional CNN (C3D), modality separation networks (MSN), deep residual regression convolutional neural networks (DRR-CNN) for recognizing, classifying, and predicting human emotions, as well as exploring how facial action intensity changes from low to high levels of emotion~\cite{2019Combining,2019Multi,2020Encoding,2020A,2020Visually,2020Depression}. There are also studies that build on CNNs by embedding expectation loss into ResNet-50, a residual neural network, for distributional learning, which allows exploring the sequential relationship between facial images and depression levels to better predict depression levels~\cite{2019Depression2}.
+%Convolutional neural networks (CNNs) are the most commonly used deep learning networks for facial recognition research in recent years. Many researches based on CNN and its innovative architectures such as three-dimensional CNN (C3D), modality separation networks (MSN), deep residual regression convolutional neural networks (DRR-CNN) for recognizing, classifying, and predicting human emotions, as well as exploring how facial action intensity changes from low to high levels of emotion~\cite{2019Combining,2019Multi,2020Encoding,2020A,2020Visually,2020Depression}. There are also studies that build on CNNs by embedding expectation loss into ResNet-50, a residual neural network, for distributional learning, which allows exploring the sequential relationship between facial images and depression levels to better predict depression levels~\cite{2019Depression2}.
 
-Recurrent neural networks (RNN)~\cite{8466881} are suitable for learning for time series, better simulate feature changes to improve classification accuracy, and when combined with CNNs can also handle computer vision problems that contain sequential inputs. The LSTM~\cite{2017Exploring}~\cite{2020Automatic2} is also commonly used in facial recognition research, and is suitable for processing and predicting important events with very long intervals and delays in time series, which is more in line with the detection of continuously changing emotions and close to the clinical reality.
+%Recurrent neural networks (RNN)~\cite{8466881} are suitable for learning for time series, better simulate feature changes to improve classification accuracy, and when combined with CNNs can also handle computer vision problems that contain sequential inputs. The LSTM~\cite{2017Exploring}~\cite{2020Automatic2} is also commonly used in facial recognition research, and is suitable for processing and predicting important events with very long intervals and delays in time series, which is more in line with the detection of continuously changing emotions and close to the clinical reality.
 
-Depression alters many behaviors, among which the face presents most of people's nonverbal information. Therefore, facial expressions are highly informative characteristic indicators in the diagnosis of depression, providing more support for clinical studies of depression and offering the possibility of automated detection of depression.
+%Depression alters many behaviors, among which the face presents most of people's nonverbal information. Therefore, facial expressions are highly informative characteristic indicators in the diagnosis of depression, providing more support for clinical studies of depression and offering the possibility of automated detection of depression.
 
+With the continuous development of computer technology, several researchers use deep learning methods to extract high-level semantic features of facial expressions from raw data for auxiliary depression diagnosis.
+
+CNN model is widely used for facial feature extraction with its excellent spatial feature extraction ability~\cite{ringeval2019avec}.
+Melo et al.~\cite{2019Depression2} applies Resnet-50 as backbone to improve the model loss function and explore the ordinal relationship between all facial images and depression levels.
+The error was reduced by fully collapsing the entire images to achieve correspondence between all graph pairs and the corresponding depression scores.
+Zhou et al.~\cite{2019Learning} argues that some of the pose and angle in the frame images are not suitable for the system to perform the corresponding depression score.
+Therefore, the authors use the memory attention mechanism to assign weights to the frame images so that the images with better effects play a dominant role in results.
+Zhou et al.~\cite{2020visually} proposes a Deep CNN regression model with a Global Average Pooling layer for identifying depression severity from facial images.
+Different face regions were modeled, and these models were combined to improve the overall recognition performance.
+
+Although spatial information is essential to diagnosis of depression, some studies have found that the dynamics of facial behavior is also important to aid in explaining depression, such as slowed head movements and avoidance of eye contact in depressed subjects~\cite{chao2015multi,alghowinem2016multimodal,2017Automated,2018Human}.
+Jan et al.~\cite{jan2017artificial} uses CNN to extract many different visual raw features from facial expression frames, while Feature Dynamic History Histograms were used to capture temporal motion on features.
+Zhu et al.~\cite{2017Automated} proposes a two-channel CNN in which one channel is input to the full face region while the second channel is input to the facial stream, and two fully connected layers perform feature fusion.
+Melo et al.~\cite{2020Encoding} makes a new approach to preprocessing of temporal features based on the traditional two-stream model and propose a new time pooling method to capture and encode the spatio-temporal dynamics of video clips into image maps.
+
+However, using spatial and temporal information alone may deteriorate the modeling of spatio-temporal relationships.
+Therefore, some researchers use 3D-CNN to explore the spatio-temporal correlation of global and local facial regions captured in videos.
+Melo et al.~\cite{2019Combining} uses 3D-CNN to model the spatio-temporal dependence of global and local facial regions captured in video.
+The global 3D convolutional network models spatio-temporal information from the whole face, while the local 3D convolutional network allows to focus attention on the eye region that is thought to be highly correlated with depression.
+In addition, a 3D Global Average Pooling is proposed to summarize the spatio-temporal features of the last convolutional layer.
+Later, Melo et al.~\cite{2020A} proposes a Multiscale Spatiotemporal Network based on a 3D-CNN architecture to efficiently represent facial information related to depressive behavior in videos.
+The basic structure of the model consists of parallel convolutional layers with different temporal depths and receptive field sizes, which allows the Multiscale Spatiotemporal Network to explore a wide range of spatio-temporal variations in facial expressions.
+
+Later, RNN introduces the temporal dimension, which is suitable for processing time-series type data, so some researchers have also applies RNN to learn time-varying attributes in facial video data.
+Jazaery et al.~\cite{8466881} proposes RNN-C3D to model local and global spatio-temporal information from continuous facial expressions to predict depression levels, a framework that uses 3D convolutional neural networks to automatically learn spatio-temporal features at two different scales in facial regions.
+Then, a RNN is used to capture Information from the spatiotemporal sequences.
+LSTM is the most representative algorithm among RNN, there are also applications in facial expression-based auxiliary depression diagnosis.
+Ray et al.~\cite{ray2019multi} uses each low-level descriptor feature of pose, gaze, and Facial Action Unit to input into the LSTM for depression assessment.
+Su et al.~\cite{2017Exploring} uses the eight basic directions of the motion vector to characterize subtle changes in microscopic facial expressions and use LSTM to simulate long-term changes between different mood disorder types.
 
 \subsubsection{Performance Comparison}
 %\label{sec\_fquality}
@@ -79,44 +152,39 @@ The AVEC competition has greatly advanced research on depression detection based
 \centering
 \caption{Experimental results based on facial}
 \label{tab4}
-\begin{tabular}{l|l|l|llll|ll|ll}
+\setlength\tabcolsep{8.5mm}{
+\begin{tabular}{c|c|c|c|c}
 
 \hline
-\multicolumn{1}{c|}{\multirow{2}{*}{ID}} & \multicolumn{1}{c|}{\multirow{2}{*}{Method}}                         & \multirow{2}{*}{Dataset} & \multicolumn{4}{c|}{Classification}       & \multicolumn{2}{c|}{\shortstack{depression severity \\estimation}} & \multicolumn{2}{c}{Regression}                                \\
-                  &                                                                        &                          & Accuracy & F1 Score & Precision & Recall & \multicolumn{1}{c}{RMSE} & \multicolumn{1}{c|}{MAE} & \multicolumn{1}{c}{Scale} & \multicolumn{1}{c}{Average Error} \\
+\textbf{Paper}                                                         & \textbf{Dataset}      & \textbf{Method} & \textbf{RMSE} & \textbf{MAE} \\
 \hline
-1                                       & AVEC2013 baseline~\cite{10.1145/2512530.2512533}                                                               & AVEC2013                                     & -        & -          & -         & -      & 13.61                    & 10.88                   & -         & -                  \\
-2                                       & AVEC2014 baseline~\cite{10.1145/2661806.2661807}                                                               & AVEC2014                                     & -        & -          & -         & -      & 10.86                    & 8.86                    & -         & -                  \\
-3                                       & LPQ+Geo~\cite{2014Eyes}                                                                                        & AVEC2013                                     & -        & -          & -         & -      & 9.72                     & 7.86                    & -         & -                  \\
-4                                       & MHH+PLS~\cite{ 2014Automatic}                                                                                  & AVEC2014                                     & -        & -          & -         & -      & 10.5                     & 8.44                    & -         & -                  \\
-5                                       & LPQ-TOP+MFA~\cite{2015Automated}                                                                               & AVEC2013                                     & -        & -          & -         & -      & 10.27                    & 8.22                    & -         & -                  \\
-6                                       & AVEC2016 baseline~\cite{valstar2016avec}                                                                                     & DAIC-WOZ                                     & -        & 50.00      & 60.00     & 42.80  & 7.13                     & 5.88                    & PHQ       & 7.13               \\
-7                                       & Williamson et al.~\cite{2016Detecting}                                                                         & DAIC-WOZ                                     & -        & 53.00      & -         & -      & -                        & -                       & PHQ       & 5.33               \\
-8                                       & AVEC2017 baseline~\cite{ringeval2017avec}                                                                      & AVEC2017                                     & -        & -          & -         & -      & 6.97                     & 6.12                    & -         & -                  \\
-9                                      & LSTM~\cite{ 2017Exploring}                                                                                     & -                                            & 67.7     & -          & -         & -      & -                        & -                       & -         & -                  \\
-10                                      & Two DCNN~\cite{2017Automated}                                                                                  & AVEC2013                                     & -        & -          & -         & -      & 9.82                     & 7.58                    & -         & -                  \\
-11                                      & Two DCNN~\cite{2017Automated}                                                                                  & AVEC2014                                     & -        & -          & -         & -      & 9.55                     & 7.47                    & -         & -                  \\
-12                                      & SVM+NB+RF~\cite{2018A}                                                                                         & -                                            & 69.10    & -          & -         & -      & -                        & -                       & -         & -                  \\
-13                                      & AVEC2019 baseline~\cite{ ringeval2019avec}                                                                     & AVEC201                                      & -        & -          & -         & -      & 8.01                     & -                       & -         & -                  \\
-14                                      & C3D~\cite{2019Combining}                                                                                       & AVEC2013                                     & -        & -          & -         & -      & 8.26                     & 6.40                    & -         & -                  \\
-15                                      & C3D~\cite{2019Combining}                                                                                       & AVEC2014                                     & -        & -          & -         & -      & 8.31                     & 6.59                    & -         & -                  \\
-16                                      & Ray et al.~\cite{ray2019multi}                                                                                 & -                                            & -        & -          & -         & -      & 8.95                     & -                       & -         & -                  \\
-17                                      & ResNet-50~\cite{2019Depression2}                                                                               & AVEC2013                                     & -        & -          & -         & -      & 8.25                     & 6.30                    & -         & -                  \\
-18                                      & ResNet-50~\cite{2019Depression2}                                                                               & AVEC2014                                     & -        & -          & -         & -      & 8.23                     & 6.15                    & -         & -                  \\
-19                                      & ResNet-50+pool~\cite{2019Learning}                                                                             & AVEC2014                                     & -        & -          & -         & -      & 8.43                     & 6.37                    & -         & -                  \\
-20                                      & MSN~\cite{ 2020A}                                                                                              & AVEC2013                                     & -        & -          & -         & -      & 7.90                     & 5.98                    & -         & -                  \\
-21                                      & MSN~\cite{ 2020A}                                                                                              & AVEC2014                                     & -        & -          & -         & -      & 7.61                     & 5.82                    & -         & -                  \\
-22                                      & MR-DepressNet~\cite{2020Visually}                                                                              & AVEC2013                                     & -        & -          & -         & -      & 8.28                     & 6.20                    & -         & -                  \\
-23                                      & MR-DepressNet~\cite{2020Visually}                                                                              & AVEC2014                                     & -        & -          & -         & -      & 8.39                     & 6.21                    & -         & -                  \\
-24                                      & Two-Stream model~\cite{2020Encoding}                                                                           & AVEC2013                                     & -        & -          & -         & -      & 7.97                     & 5.96                    & -         & -                  \\
-25                                      & Two-Stream model~\cite{2020Encoding}                                                                           & AVEC2014                                     & -        & -          & -         & -      & 7.94                     & 6.20                    & -         & -                  \\
-26                                      & CNN~\cite{2020Automatic}                                                                                       & -                                            & 66.45    & -          & -         & -      & -                        & -                       & -         & -                  \\
-27                                      & SS-LSTM-MIL~\cite{2020Automatic2}                                                                              & DAC-WOZ                                      & -        & 78.3       & 81.80     & 75.00  & -                        & -                       & -         & -                  \\
-28                                      & \begin{tabular}[c]{@{}l@{}}RNN-C3D Tight-Face \& Loose-Face\\ \\weighted merge~\cite{8466881}\end{tabular} & AVEC2013                                     & -        & -          & -         & -      & 9.28                     & 7.37                    & -         & -                  \\
-29                                      & \begin{tabular}[c]{@{}l@{}}RNN-C3D Tight-Face \& Loose-Face\\ \\weighted merge~\cite{8466881}\end{tabular} & AVEC2014                                     & -        & -          & -         & -      & 9.20                     & 7.22                    & -         & -                 \\
+AVEC2013 baseline~\cite{10.1145/2512530.2512533} & AVEC2013(AViD-Corpus) & SVR             & 13.61         & 10.88        \\
+AVEC2014 baseline~\cite{10.1145/2661806.2661807} & AVEC2014(AViD-Corpus) & SVR             & 10.86         & 8.86         \\
+Kaya et al~\cite{2014Eyes}                       & AVEC2013(AViD-Corpus) & 1-NN regressor  & 9.72          & 7.86         \\
+Jan et al~\cite{ 2014Automatic}                  & AVEC2014(AViD-Corpus) & LR              & 10.5          & 8.44         \\
+Wen et al~\cite{2015Automated}                   & AVEC2013(AViD-Corpus) & SVR             & 10.27         & 8.22         \\
+AVEC2016 baseline~\cite{valstar2016avec}         & AVEC2016(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
+AVEC2017 baseline~\cite{ringeval2017avec}        & AVEC2017(DAIC-WOZ)    & RF              & 6.97          & 6.12         \\
+Yu et al~\cite{2017Automated}                    & AVEC2013(AViD-Corpus) & CNN             & 9.82          & 7.58         \\
+Yu et al ~\cite{2017Automated}                   & AVEC2014(AViD-Corpus) & CNN             & 9.55          & 7.47         \\
+AVEC2019 baseline~\cite{ ringeval2019avec}       & AVEC2019(E-DAIC)      & CNN             & 8.01          & -            \\
+Melo et al.~\cite{2019Combining}                 & AVEC2013(AViD-Corpus) & CNN             & 8.26          & 6.40         \\
+Melo et al.~\cite{2019Combining}                 & AVEC2014(AViD-Corpus) & CNN             & 8.31          & 6.59         \\
+Ray et al.~\cite{ray2019multi}                   & AVEC2019(E-DAIC)      & LSTM            & 8.95          & -            \\
+Melo et al ~\cite{2019Depression2}               & AVEC2013(AViD-Corpus) & CNN             & 8.25          & 6.30         \\
+Melo et al~\cite{2019Depression2}                & AVEC2014(AViD-Corpus) & CNN             & 8.23          & 6.15         \\
+Zhou et al~\cite{2019Learning}                   & AVEC2014(AViD-Corpus) & CNN             & 8.43          & 6.37         \\
+Melo et al ~\cite{ 2020A}                        & AVEC2013(AViD-Corpus) & CNN             & 7.90          & 5.98         \\
+Melo et al ~\cite{ 2020A}                        & AVEC2014(AViD-Corpus) & CNN             & 7.61          & 5.82         \\
+Zhou et al~\cite{2020visually}                   & AVEC2013(AViD-Corpus) & CNN             & 8.28          & 6.20         \\
+Zhou et al ~\cite{2020visually}                  & AVEC2014(AViD-Corpus) & CNN             & 8.39          & 6.21         \\
+Melo et al ~\cite{2020Encoding}                  & AVEC2013(AViD-Corpus) & CNN             & 7.97          & 5.96         \\
+Melo et al ~\cite{2020Encoding}                  & AVEC2014(AViD-Corpus) & CNN             & 7.94          & 6.20         \\
+Jazaery et al~\cite{8466881}                     & AVEC2013(AViD-Corpus) & RNN-C3D         & 9.28          & 7.37         \\
+Jazaery et al ~\cite{8466881}                    & AVEC2014(AViD-Corpus) & RNN-C3D         & 9.20          & 7.22        \\
 \hline
 
-\end{tabular}
+\end{tabular}}
 \end{table*}
 
 
