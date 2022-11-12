@@ -122,24 +122,28 @@ The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit 
 
 The eRsik dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into risk case of depression and non-risk case.
 
-Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA were carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
+The Computational Linguistics and Clinical Psychology (CLPsych) provides apples-to-apples comparisons of various approaches to modeling language relevant to mental health from social media. The data used for this dataset is from Twitter users who state a diagnosis of depression or post traumatic stress disorder~\cite{coppersmith2015clpsych}.
 
-Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011, which is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a classification problem or regression problem.
+The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA were carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
+
+The Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011, which is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a classification problem or regression problem.
 
 %%%%%%%%AVEC%%%%%%%%%%%%%%%%%%%
 
-Audio-Visual Depression Corpus (AViD-Corpus) contains 340 video clips of subjects performing a Human-Computer Interaction task while being recorded by a webcam and a microphone. The speakers were recorded between one and four times, with a period of two weeks between the measurements. This data was used for the AVEC2013 and AVEC2014 Challenge, and AVEC2014 uses a subset of the AVEC 2013 audio-visual depression corpus. 
+The Audio-Visual Depression Corpus (AViD-Corpus) contains 340 video clips of subjects performing a Human-Computer Interaction task while being recorded by a webcam and a microphone. The speakers were recorded between one and four times, with a period of two weeks between the measurements. This data was used for the AVEC2013 and AVEC2014 Challenge, and AVEC2014 uses a subset of the AVEC 2013 audio-visual depression corpus. 
 
-Distress Analysis Interview Corpus – Wizard of Oz (DAIC-WOZ) contains clinical interviews designed to support the diagnosis of psychological distress conditions such as anxiety, depression, and post-traumatic stress disorder. Data collected include audio and video recordings and extensive questionnaire responses~\cite{gratch2014distress}. This data was used for the AVEC2016 and AVEC2017 Challenge.
+The Distress Analysis Interview Corpus – Wizard of Oz (DAIC-WOZ) contains clinical interviews designed to support the diagnosis of psychological distress conditions such as anxiety, depression, and post-traumatic stress disorder. Data collected include audio and video recordings and extensive questionnaire responses~\cite{gratch2014distress}. This data was used for the AVEC2016 and AVEC2017 Challenge.
 
-Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and PTSD assessment, developed by ICT~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
+The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and PTSD assessment, developed by ICT~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Wyss Institute Biomarkers for Depression(WIBD)
 
 %The EATD-Corpus is a dataset consist of audio and text files of 162 volunteers who received counseling.
-Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extracted transcripts of responses from 162 depressed and non-depressed volunteers. EATD-Corpus is the first and only public depression dataset that includes audio and text data in Chinese.
+The Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extracted transcripts of responses from 162 depressed and non-depressed volunteers. EATD-Corpus is the first and only public depression dataset that includes audio and text data in Chinese.
+
+Finally, we also introduce some private data sets, which refer to those studies that use their own collected data for analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -151,7 +155,7 @@ Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extr
 \centering
 \caption{Commonly used datasets}
 \label{tab2}
-\setlength\tabcolsep{3mm}{
+\setlength\tabcolsep{0.5mm}{
 %\renewcommand\arraystretch{1.5}
 %\resizebox{0.9999\linewidth}{!}{
 %\begin{threeparttable}
@@ -172,10 +176,12 @@ Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extr
 %Fang et al. ~\cite{fang2019Depression}                                                          & College Students                                                                                               & 3669                                                                                                                & Depression          &                            \\
 %Zhao et al.  ~\cite{2019See}                                                         & \begin{tabular}[c]{@{}l@{}}College Students    \\ (University of Chinese\\ Academy of   Sciences)\end{tabular} & 179                                                                                                                 & Anxiety +Depression &                            \\
 %\hline
-\multirow{8}{*}{Public}        &RSDD  ~\cite{yates2017depression}                    &116484 (9210+107274)                                                                                                    
-& Depression          & \multirow{2.2}{*}{Text (Social Network) }          \\
+\multirow{9}{*}{Public}        &RSDD  ~\cite{yates2017depression}                    &116484 (9210+107274)                                                                                                    
+& Depression          & \multirow{3}{*}{Text (Social Network) }          \\
  &eRisk ~\cite{Stankevich2018FeatureEF}               
 &887          & Depression          &   \\
+ &CLPsych 2015 ~\cite{coppersmith2015clpsych}               
+&1146 (327D+246P+573H)          & Depression and Post Traumatic Stress Disorder          &   \\
 \cline{2-5}
 %ChunkeJing et al.~\cite{ChunkeJing2019Different}                                                        & volunteers                                                                                                     & 88                                                                                                                  & Anxiety +Depression & Speech+Gait                \\
 %\hline
