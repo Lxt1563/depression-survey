@@ -4,7 +4,7 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Depression recognition method based on Text}
+\section{Depression recognition method based on social network data}
 \label{sec_approach}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -17,10 +17,15 @@
 	\label{text2}
 \end{figure}
 
-Although depression has become one of the most concerned psychological problems of human beings, but due to the limited public awareness of depression, and many people do not pay attention to or even reject mental and psychological diseases, they will hide their true inner feelings, resulting in long-term repression of negative emotions can not find a suitable way to vent. The rapid development of Internet technology has built a suitable platform for people to vent their psychological feelings. 
+Although depression has become one of the most concerned psychological problems of human beings, but due to the limited public awareness of depression, and many people do not pay attention to or even reject mental and psychological diseases, they will hide their true inner feelings, resulting in long-term repression of negative emotions can not find a suitable way to vent.
+The rapid development of Internet technology has built a suitable platform for people to vent their psychological feelings. 
 
-In recent years, the popularity of Internet technology has made social media platforms such as Microblog, Twitter and Facebook an important platform for people to express their psychological emotions. Studies have shown that people tend to express their true emotions online more than other ways, and the development of social networks not only provides people with a more convenient way to communicate, but also provides a new window for people to vent their emotions~\cite{chancellor2020methods}. People can record their life status in real time through social networks and interact with their friends to express their emotions to relieve stress.
-Several researchers have studied data from users on social networking platforms and found that depressed patients differ significantly from normal users in terms of linguistic attributes and social behavior ~\cite{chancellor2016quantifying,de2014mental,nguyen2014affective,wolohan2018detecting}. For example, patients suffering from depression use first-person pronouns and past tense verbs more frequently, as well as adjectives with derogatory meanings~\cite{rude2004language,nadeem2016identifying}.
+In recent years, the popularity of Internet technology has made social media such as Microblog, Twitter and Facebook an important platform for people to express their psychological emotions.
+Studies have shown that people tend to express their true emotions online more than other ways, and the development of social networks not only provides people with a more convenient way to communicate, but also provides a new window for people to vent their emotions~\cite{chancellor2020methods}.
+People can record their life status in real time through social networks and interact with their friends to express their emotions to relieve stress.
+Several researchers have studied data from users on social network platforms and found that depressed patients differ significantly from normal users in terms of linguistic attributes and social behavior ~\cite{chancellor2016quantifying,de2014mental,nguyen2014affective,wolohan2018detecting}.
+For example, patients suffering from depression use first-person pronouns and past tense verbs more frequently, as well as adjectives with derogatory meanings~\cite{rude2004language,nadeem2016identifying}.
+
 %and the use of emotion words, negative emotion words, cognitive mechanism words, and connectives significantly increased over time in depressed patients [].
 The aforementioned study conducted a comparative analysis of language use and social behavior characteristics of depressed and normal individuals under various different social networking platforms and confirmed a strong correlation between social networking activity records and users' depressive status.
 Therefore, the development of social networks also provides a new way to detect depressed users: through the current computer technology to analyze the user's social network data to detect the user's depression status~\cite{de2013predicting,magami2020automatic}.
@@ -38,23 +43,109 @@ Therefore, the development of social networks also provides a new way to detect 
 	\label{text}
 \end{figure}
 
-As shown in Fig \ref{text}, studies related to depression detection based on social media texts usually collect users' behavioral data on social network platforms such as Twitter, Weibo, Facebook, Reddit, or publicly published text content for analysis, while some other studies use relatively private social network data such as WeChat Moments and Qzone. Firstly, the raw data is pre-processed, such as removing other non-target language user data, removing deactivated words, URLs and special characters, etc., and then the sentences are divided into words. The next step is feature extraction and selection of the processed data. For the data selection and related feature engineering aspects, they can be mainly divided into the following aspects: linguistic features, behavioral features, emotional and cognitive features, demographic features, image features, etc. Finally, the attributes obtained by feature selection will be used to identify depressed users in social networks and to detect users with depression from normal users.
+As shown in Fig \ref{text}, studies related to depression detection based on social media texts usually collect users' behavioral data on social network platforms such as Twitter, Weibo, Facebook, Reddit, or publicly published text content for analysis, while some other studies use relatively private social network data such as WeChat Moments and Qzone.
+Firstly, the raw data is pre-processed, such as removing other non-target language user data, removing deactivated words, URLs and special characters, etc., and then the sentences are divided into words.
+The next step is feature extraction and selection of the processed data.
+For the data selection and related feature engineering aspects, they can be mainly divided into the following aspects: linguistic features, behavioral features, emotional and cognitive features, demographic features, image features, etc.
+Finally, the attributes obtained by feature selection will be used to identify depressed users in social networks and to detect users with depression from normal users.
 
-\subsubsection{Text depression recognition based on machine learning}
+%%%%%%%%%%%%%%%%%%%%%%CLEF
+Conference and Labs of the Evaluation Forum is an organization that promotes research on multilingual linguistic information access.
+Its function is to maintain the basic framework of the test information retrieval system and create a data repository for researchers to use to develop comparable standards.
+Since the first seminar was formed in 2000, the organization has held a meeting in Europe every September.
+This meeting includes ten benchmarking labs reported results of their year long activities in overview talks and lab sessions, and eRisk is one of the tasks.
+eRisk pilot task focuses on automatically detecting depression as early as possible from a users’ posts to Reddit, which promote the auxiliary diagnosis of depression based on social media data.
+
+\subsubsection{Social network depression recognition based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The researchers extracted features such as sentiment, mood and writing behavior of users from different social networking platforms and used various machine learning models for depression prediction.
-The most applied traditional machine learning method is SVM~\cite{shing2018expert,smys2021analysis}, Peng~\cite{peng2019multi} et al. used a multi-core SVM model for depression identification based on social media data. aldarwish~\cite{aldarwish2017predicting} et al. used a plain Bayesian model , SVM models, etc. for depression rank identification and verified the utility of social media sites for depression rank identification. Secondly LR~\cite{eichstaedt2018facebook}, RF~\cite{tate2020predicting,kwakernaak2020using}, etc. are also widely used and Eichstaedt~\cite{eichstaedt2018facebook} et al. used LR methods to predict depressed users on Facebook. Finally, other classical machine learning classification algorithms such as NB, DT and XGBoost have also been used in related studies.
+The researchers extracted features such as sentiment, mood and writing behavior of users from different social networking platforms and used various machine learning models for depression prediction, such as SVM, Random forest, Naïve Bayes, Logistic regression, Decision Trees, etc~\cite{de2013predicting,losada2016test,2019Early,nadeem2016identifying,fatima2018analysis}.
+The results of these methods are often determined by the extracted features.
+%%The most applied traditional machine learning method is SVM~\cite{shing2018expert,smys2021analysis}, Peng~\cite{peng2019multi} et al. used a multi-core SVM model for depression identification based on social media data. aldarwish~\cite{aldarwish2017predicting} et al. used a plain Bayesian model , SVM models, etc. for depression rank identification and verified the utility of social media sites for depression rank identification. Secondly LR~\cite{eichstaedt2018facebook}, RF~\cite{tate2020predicting,kwakernaak2020using}, etc. are also widely used and Eichstaedt~\cite{eichstaedt2018facebook} et al. used LR methods to predict depressed users on Facebook. Finally, other classical machine learning classification algorithms such as NB, DT and XGBoost have also been used in related studies.
 
-\subsubsection{Text depression recognition based on deep learning}
+Common methods for text feature extraction in social media include: N-grams, Emotion analysis, Bag of words, Part of Speech tagging, Behavior features, Sentence polarity, Word embedding, Tokenization, Stemming, etc.
+By combining these characteristics, researchers can effectively analyze depressed users in social networks.
+Here we briefly introduce the first three common methods.
+
+%In word embedding, each word in the text is listed as a continuous, low dimension and real value vector. Its core idea is to establish a mapping relation. In short, Word Embedding is a technology to convert words expressed in natural language into vector or matrix forms that can be understood by computers.
+
+N-grams means to perform N size sliding window operations on bytes to form a sequence of N byte fragments.
+Essentially, it is an algorithm based on the statistical language model.
+It performs frequency statistics on each byte segment formed, and filters it according to the preset threshold to form a list of key grams, which is vector feature space of the text.
+Each gram in the list is a feature vector dimension.
+Schwartz et al.~\cite{schwartz2014towards} establishes a regression model to predict predict an individual’s degree of depression based on N-gram, Late Dirichlet Allocation, topic and vocabulary use.
+Pedersen et al.~\cite{pedersen2015screening} evaluates the risk of depression by establishing the decision list of N-gram found in Twitter. 
+
+Because of the high correlation between depression and negative emotions, emotional analysis is often used in social network depression diagnosis~\cite{tung2016analyzing}.
+Wang et al.~\cite{wang2013A} based on the 10 features of microblog users, including first person singular and plural pronouns, emoticons, interactions with others, behaviors and other features to build a detection model.
+Shen et al.~\cite{shen2017depression} extracts 6 characteristic groups including social network, user profile, visual, emotional, topic-level and domain specific features. These features not only cover clinical depression standards, but also cover online behavior. Using these feature groups, the author proposes a multimodal depression dictionary learning model to detect depressed users.
+shatte et al.~\cite{shatte2019social} collates a sample of fathers who reported birthday events on the forum Reddit, and use the characteristics of behavior, discussion topic, linguistic style and emotion for depression analysis.
+
+Bag of words model is a common document representation method in the field of information retrieval.
+In information retrieval, the Bag of words model assumes that for a document, its word order, syntax and other elements are ignored, and it is only regarded as a collection of several words.
+The appearance of each word in the document is independent of the appearance of other words.
+Nadeem et al.~\cite{nadeem2016identifying} regars each user as their own independent document, adopt the method of bag of words, and use the frequency of words to quantify the content of Twitter.
+
+In addition, Linguistic Inquiry and Word Count are also computing tools widely used to extract depression features on social media~\cite{tausczik2010psychological,islam2018depression}.
+It calculates the extent to which people use different categories of words in a wide range of texts.
+Nguyen et al.~\cite{nguyen2014affective} extracts Linguistic Inquiry and Word Count features, effective features, Mood tags and topics for Blog post and Community classification.
+Mowery et al.~\cite{2017Feature} conducts feature elimination research by combining Linguistic Inquiry and Word Count features with legal features, syntactic features, syntactic features, graphic features, graphic features and personality traits to determine the best feature set of classification.
+Fatima et al.~\cite{fatima2018analysis} uses language style and sentiment information to find the most effective data dimensions by Linguistic Inquiry and Word Count by applying feature extraction, and describe the degree of depression expressed in the text as mild, moderate or severe according to the user's mood.
+Wolohan et al.~\cite{wolohan2018detecting} uses Linguistic Inquiry and Word Count combined with ngram to diagnose depression.
+
+Moreover, some researchers analyze depression by calculating the statistical characteristics of social network data.
+Choudhury et al.~\cite{de2013predicting} measures Mean, Variance, Momentum, Entropy of behavioral attributes related to social participation, emotion, linguistic and language style, self network, and mention of antidepressants by analyzing social media posts of depressed Twitter users more than a year before the onset of depression, and then established a statistical classifier to provide depression risk estimates.
+Reece et al.~\cite{reece2017instagram} calculates statistical features from participants' Instagram photos, such as the number of comments and "likes" received from each published photo, the total number of faces in the photo, and pixel level averages were calculated for Hue, Saturation, and Value.
+
+What's more, except the common traditional classifiers we mentioned at the beginning, the topic model which used to predict the topic distribution of documents, is also widely used  in the analysis of depression in social networks.
+Its basic idea is to regard the document as a mixture of various hidden topics, and each topic is represented by the probability distribution of the terms related to the topic.
+Latent Dirichlet Allocation is one of the most commonly used topic methods~\cite{li2020modeling}.
+It can give the topic of each document in the form of probability distribution for topic clustering or text classification~\cite{tsugawa2015recognizing,resnik2015beyond}.
+
+Finally, there are many other methods that also achieved good results in auxiliary depression diagnosis based on social networks, such as dictionary learning~\cite{peng2019multi,shen2017depression} and incremental classification~\cite{burdisso2019text}, which provide more possibilities for depression analysis.
+
+
+\subsubsection{Social network depression recognition based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Deep learning methods are another approach that has been widely used by researchers in recent years. Among the frequently used methods are DNN, CNN, and RNN~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
-Shen~\cite{shen2018cross} et al. proposed a cross-domain deep neural network model with feature adaptive transformation and combination strategy (DNN-FATC) to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhanced detection in some other target domain (e.g., Weibo).
-Rao~\cite{rao2020mgl} et al. built a multilayer MGL-CNN to further identify depressed individuals in online forums by modeling them separately at sentence level and user level.
-LSTM is a special type of RNN that learns long-term dependent information and has also been widely used in depression detection based on social media texts. Hu~\cite{hu2021depression} et al. proposed a Bi-LSTM-based depressive tendency detection model for microblog users. The content features of the microblog text were mined by bi-directional transmission and capturing the semantic dependencies of the context.
+Depression is closely related to emotion, so many methods of emotion analysis are used for depression analysis based on social network texts.
+In the method of emotion analysis, context connection is very important.
+Similar words usually have different meanings in different contexts.
+Since deep learning technology can automatically construct text features, people have proposed  CNN, RNN and other models to solve the problem of depression analysis based on text~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
+
+At present, DNN is the basis of many modern artificial intelligence applications.
+It has shown breakthrough achievements in speech recognition and image recognition tasks.
+The application of DNN in the field of depression analysis based on social network is also increasing.
+Mariñelarena et al.~\cite{ marinelarena2017predicting } uses the DNN method to detect depression, and also uses the optimization function provided by the open source library to combine momentum learning and rate annealing, which are two important parameters during training, to improve the model performance.
+Shen~\cite{shen2018cross} et al. proposed a cross-domain DNN model with feature adaptive transformation and combination strategy to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhanced detection in some other target domain (e.g., Weibo).
+
+CNN is a representative algorithm of deep learning.
+With its powerful learning ability, it has been widely used in various fields, including text analysis in social networks.
+Yates et al.~\cite{yates2017depression} proposes a general neural network architecture, which is used to combine posts into a representation of user activities for classification.
+This architecture takes one or more posts as input, uses convolution layer to process posts to identify the features in the sliding text window, combines the identified features into vector representations of user activities, and uses a series of dense layers to classify the combined vector representations.
+Trotzek et al.~\cite{trotzek2018utilizing} extracts features such as the number of function words, variations of the word “I”, all pronouns, personal pronouns, verbs, words indicating a cognitive process, words with a focus on the present, the total number of lexicon words found, two calculated summary variables indicating analytical thinking and authenticity, then use the CNN model embedded based on different words to analyze users' depression risk.
+Rao et al.~\cite{rao2020mgl} proposes a hierarchical post representation model, called Multi Gated LeakyReLU CNN, to identify depressed people in online forums.
+This model is composed of two parts: the first part is the subsequent operation, which is used to learn the expression form of each user post, and the second part is the user level operation, which is used to obtain the overall emotional state of the user.
+They believe that multi gated leakage units can help CNN make full use of limited context information to obtain key features.
+
+RNN is efficient in processing sequence data, so it is also widely used in depression analysis based on social networks.
+Orabi et al.~\cite{orabi2018deep} uses CNN and RNN based models to detect depression, and explored the most effective neural network architecture by adjusting model parameters.
+The experimental results show that the performance of CNN based model is better than RNN model.
+Sadeque et al.~\cite{sadeque2017uarizona} extracts features based on a depression lexicon and on the Unified Medical Language System, also considere both sequential and non-sequential learning models for the prediction depression task.
+For the non-sequential model, they use a SVM that observes the user’s entire post history at once. 
+For the sequential model, they use a RNN model that observes each of a user’s posts, one at a time.
+After that they use an ensemble model to combine both the sequential and non-sequential models.
+
+LSTM is a special type of RNN that learns long-term dependent information and has also been widely used in depression detection based on social media texts. 
+On the basis of LSTM, Bi-directional LSTM combines the information of input sequence in forward and backward directions.
+For the output of time $t$, the forward LSTM layer has the information of time $t$ in the input sequence and the previous time, and the backward LSTM layer has the information of time $t$ in the input sequence and the subsequent time.
+Hu et al.~\cite{hu2021depression} proposes a depression trend detection model based on Bi-directional LSTM.
+Different from the traditional model of direct input of text information, they use the Skip gram model in Word2Vec to vectorize the text, which can get better train for text into word vectors, and extract the semantic features of the text and then input them into the model.
+Through two-way transmission, the semantic dependency of context is captured and the content characteristics of microblog text are mined.
+
+The above deep learning models have problems such as complex structure or long training time, while the bidirectional gated recurrent unit can remember the context information of the sequence, and the structure is simple and the training speed is fast. It also achieved good performance in depression analysis based on social network texts~\cite{dinkel2019text}.
 
 \subsubsection{Performance Comparison}
 %\label{sec\_fquality}
@@ -64,37 +155,77 @@ LSTM is a special type of RNN that learns long-term dependent information and ha
 \centering
 \caption{Experimental results based on text}
 \label{tab5}
-\begin{tabular}{l|l|ll|lllll}
+\begin{tabular}{c|cc|c|ccccc}
 
 \hline
-\multicolumn{1}{c|}{\multirow{2}{*}{ID}} & \multicolumn{1}{c|}{\multirow{2}{*}{Method}}                                          & \multicolumn{2}{c|}{Data}                                     & \multicolumn{5}{c}{Metrics}                                                                                                                        \\
-\multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                                                                 & \multicolumn{1}{c}{Media}      & \multicolumn{1}{c|}{Dataset} & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{F1-Score} & \multicolumn{1}{c}{Accuracy} & \multicolumn{1}{c}{AUC} \\
+\multirow{2}{*}{Paper}               & \multicolumn{2}{c|}{Data}                                                                                                                                                              & \multirow{2}{*}{Method}            & \multicolumn{5}{c}{Metrics}                     \\
+                                                                                                       & Media                                                                          & Dataset(D+H)                                                                                              &                            & Precision & Recall & F1-Score & Accuracy & AUC  \\
 \hline
-1                                       & SVM~\cite{de2013predicting}                                    & Twitter                        & -                           & 0.74                          & 0.63                       & -                            & 0.70                         & -                       \\
-2                                       & Naïve Bayes~\cite{nadeem2016identifying}                       & Twitter                        & CLPsych 2015                & 0.82                          & 0.82                       & 0.81                         & 0.86                         & 0.94                    \\
-3                                       & Logistic Regression~\cite{nadeem2016identifying}               & Twitter                        & CLPsych 2015                & 0.86                          & 0.82                       & 0.84                         & 0.82                         & 0.91                    \\
-4                                       & Multi-kernel SVM~\cite{peng2019multi}                          & Weibo                          & -                           & 0.76                          & 0.77                       & 0.76                         & 0.83                         & -                       \\
-5                                       & SVM+ Naïve Bayes~\cite{aldarwish2017predicting}                & Facebook, LiveJournal, Twitter & -                           & 1.00                          & 0.57                       & -                            & 0.63                         & -                       \\
-6                                       & LDA(latent dirichlet allocation)~\cite{eichstaedt2018facebook} & Facebook                       & -                           & -                             & -                          & -                            & -                            & 0.72                    \\
-7                                       & MGL-CNN~\cite{rao2020mgl}                                      & Reddit                         & RSDD                        & 0.63                          & 0.48                       & 0.54                         & -                            & -                       \\
-8                                       & MGL-CNN~\cite{rao2020mgl}                                      & Online media                   & eRisk 2017                  & 0.63                          & 0.57                       & 0.60                         & -                            & -                       \\
-9                                       & CNN~\cite{yates2017depression}                                 & Reddit                         & RSDD                        & 0.75                          & 0.57                       & 0.65                         & -                            & -                       \\
-10                                      & MDL~\cite{shen2017depression}                                  & Twitter                        & -                           & 0.8+                          & 0.8+                       & 0.85                         & 0.8+                         & -                       \\
-11                                      & DNN-FATC~\cite{shen2018cross}                                  & Twitter+ Weibo                 & -                           & -                             & -                          & 0.79                         & -                            & -                       \\
-12                                      & CNNWithMax~\cite{orabi2018deep}                                & Twitter                        & CLPSych 2015                & 0.87                          & 0.87                       & 0.87                         & 0.88                         & 0.95                    \\
-13                                      & MultiChannelCNN~\cite{orabi2018deep}                           & Facebook                       & Bell Let’s Talk             & 0.81                          & 0.84                       & 0.82                         & 0.83                         & 0.92                    \\
-14                                      & Bi-LSTM~\cite{hu2021depression}                                & Weibo                          & -                           & -                             & -                          & -                            & 0.95                         & -                       \\
-15                                      & LIWC~\cite{wolohan2018detecting}                               & Reddit                         & -                           & -                             & -                          & 0.68                         & 0.79                         & 0.75                   \\
+Choudhury et al.~\cite{de2013predicting}                                          & Twitter                                                                        & 476(171+305)                                                                                              & SVM                        & 0.74      & 0.63   & -        & 0.70     & -    \\
+\hline
+Tsugawa et al.~\cite{tsugawa2015recognizing}                                      & Twitter                                                                        & 209(81+121)                                                                                               & SVM                        & 0.64      & 0..43  & 0.52     & 0.69     & -    \\
+\hline
+Wolohan et al.~\cite{wolohan2018detecting}                                       & Reddit                                                                         & 12106(4947+7159)                                                                                          & SVM                        & -         & -      & 0.73     & 0.82     & 0.79 \\
+\hline
+Shatte et al.~\cite{shatte2019social}                                            & Reddit                                                                         & 365                                                                                                       & SVM                        & 0.67      & 0.68   & 0.67     & 0.66     & -    \\
+\hline
+Peng et al.~\cite{peng2019multi}                                                 & Weibo                                                                          & 276(141+135)                                                                                              & Multi-kernel SVM           & 0.76      & 0.77   & 0.76     & 0.83     & -    \\
+\hline
+Aldarwish et al.~\cite{ aldarwish2017predicting}                                 & \begin{tabular}[c]{@{}c@{}}Facebook,\\  LiveJournal,   \\ Twitter\end{tabular} & \begin{tabular}[c]{@{}c@{}}Posts(758+1374)\\  (489+1865)\\(826+1461)   \\ Total6773(2073+4700)\end{tabular}                                                          & SVM+Naïve Bayes           & 1.00      & 0.57   & -        & 0.63     & -    \\
+\hline
+Nadeem et al. ~\cite{nadeem2016identifying}                                      & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\\ 900(326+574)\end{tabular}             & Naïve Bayes                & 0.81      & 0.82   & 0.81     & 0.86     & 0.94 \\
+\hline
+Nadeem et al.~\cite{nadeem2016identifying}                                       & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\\ 900(326+574)\end{tabular}             & Logistic Regression        & 0.86      & 0.82   & 0.84     & 0.82     & 0.91 \\
+%Dinkel et al$\sim$~\cite{ dinkel2019text}                                        & -                                                                              & DAIC-WOZ107                                                                                               & BGRU                       & 0.85      & 0.83   & 0.84     & 0.86     & -    \\
+\hline
+Eichstaedt et al.~\cite{ eichstaedt2018facebook }                                & Facebook                                                                       & 683(114+569)                                                                                              & Logistic regression        & -         & -      & -        & -        & 0.72 \\
+\hline
+Burdisso et al.~\cite{burdisso2019text}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\\(83+403/52+349)\end{tabular}                                                                                                                                                                 & Incremental classification & 0.63      & 0.60   & 0.61     & -        & -    \\
+\hline
+Mariñelarena et al.~\cite{ marinelarena2017predicting   }                         & Reddit                                                                         & 486(83+403)                                                                                               & DNN                        & 0.85      & 0.81   & 0.83     & 0.94     & -    \\
+\hline
+Shen et al.~\cite{shen2018cross}                                                 & \begin{tabular}[c]{@{}c@{}}Twitter,\\ Weibo\end{tabular}                                                                                                                          & \begin{tabular}[c]{@{}c@{}}(1394+1394) \\ (580+580)\end{tabular}                & DNN                        & -         & -      & 0.79     & -        & -    \\
+\hline
+Yates et al.~\cite{yates2017depression}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\\(9000+107000)\end{tabular}                                                                                                                                                                                                                                      & CNN                        & 0.75      & 0.57   & 0.65     & -        & -    \\
+\hline
+Orabi et al ~\cite{orabi2018deep}                                                & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015 \\1145(327+572+246PTSD)\end{tabular}                                                                         & CNN                        & 0.87      & 0.87   & 0.87     & 0.88     & 0.95 \\
+\hline
+Orabi et al ~\cite{orabi2018deep}                                                & Facebook                                                                       & \begin{tabular}[c]{@{}c@{}}Bell Let’s Talk\\154(53+101)\end{tabular}                                                                                & CNN                        & 0.82      & 0.84   & 0.82     & 0.83     & 0.92 \\
+\hline
+Rao et al.~\cite{rao2020mgl}                                                     & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\\(9000+107000)\end{tabular}                                                                                                                                              & CNN                        & 0.63      & 0.48   & 0.54     & -        & -    \\
+\hline
+Rao et al.~\cite{rao2020mgl}                                                     & Reddit           & \begin{tabular}[c]{@{}c@{}}eRisk2017\\(83+403/52+349)\end{tabular}                                                                                                                                          & CNN                        & 0.63      & 0.57   & 0.60     & -        & -    \\
+\hline
+Sadeque et al.~\cite{ sadeque2017uarizona   }                                    & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\\(83+403/52+349)\end{tabular}                                                                                                                                                                 & SVM+RNN                    & 0.61      & 0.67   & 0.64     & -        & -                   \\
+\hline
+Hu et al.~\cite{hu2021depression}                                                 & Weibo                                                                          & Posts56910(28455+28455)                                                                                   & Bi-directional LSTM                    & -         & -      & -        & 0.95     & -    \\
 \hline
 \end{tabular}
+		\begin{tablenotes}
+			\footnotesize
+			\item The social network data used in the research is usually analyzed by users, but some of the research is based on posts, which we have noted in the table.
+		\end{tablenotes}
 \end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Table\ref{tab5} summarizes the experimental results of the social platform text-based depression detection, including the source and name of the method, the type of data used and the source of the dataset (- indicates that the data used were collected by themselves), and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
+Table\ref{tab5} summarizes the experimental results of the social platform text-based depression detection, including the source and name of the method, the type of data used and the source of the dataset, and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
 
-Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
+%Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
+Most researchers used the social network data they collected to analyze depression. Based on the research on the use of public datasets, we can draw the following conclusions:
 
+(1) On the CLPsych2015 dataset, the traditional machine learning methods based on Naïve Bayes            and Logistic Regression have basically achieved similar results, but the CNN based deep learning method is obviously better than the two traditional machine learning methods, and Orabi et al.~\cite{orabi2018deep} also used the RNN based model for depression analysis.
+The experimental results show that the CNN based model has better performance than the RNN.
+
+(2) On the data set of RSDD, the CNN model proposed by Yates et al.~\cite{yates2017depression} uses convolution layer to process posts to identify the features existing in the sliding text window, and combines the identified features into a vector representation of user activities for classification.
+The CNN model proposed by Rao et al.~\cite{rao2020mgl} uses multiple gated leakage units to help the model capture context information. The first volume of the building layer can capture the N-gram features of the text. Then, closed units with different cores obtain gating weights to effectively identify languages related to negative emotions in user posts and suppress the influence of unimportant information.
+The results show that the method based on sliding window is better. We guess that the key information in the text is more important for depression analysis than the context information.
+
+(3) On the eRisk2017 dataset, the results obtained by three different methods are similar.
+Among them, the combination of SVM and RNN has achieved relatively good results.
+For the non-sequential model, Sadeque et al.~\cite{sadeque2017uarizona} uses a SVM, which can simultaneously observe the entire user's late history.
+For the sequential model, they used an RNN model to observe each post of one user at a time. Finally, they use an ensemble model to combine both the sequential and non-sequential models, it  takes full use advantage of each model.
+The results show that ensemble model works better than the individual models, and waiting for more data before making a decision improves the traditional performance measures 
 
 \ifx\allfiles\undefined
 \input{tnnls\_suffix}
