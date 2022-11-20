@@ -7,43 +7,40 @@
 %\section{Depression recognition method based on audiovisual}
 \subsection{Speech}
 
-Speech is a non-invasive signal that is low-cost and easily accessible.
-The study of speech-based depression recognition began with the examination of clinical aspects of depressed individuals' speech.
-Clinical observations have revealed that there are phonetic differences in speech between healthy and depressed populations.
-These differences can be seen in the fact that depressed people typically speak more smoothly and monotonously, whereas healthy people speak more rhythmically, with less pauses and fewer times than depressed people\cite{pampouchidou2017facial,montgomery1979new}.
-Furthermore, the researchers  designed characteristics based on the variations between the two groups. These characteristics are objective in nature and are able to discriminate between populations that are healthy and those that are depressed.
-But with the rapid advancement of deep learning techniques in recent years, speech-based depression recognition has transitioned from hand-crafted acoustic features to a deep learning-based framework.
+%Speech is a non-invasive signal that is low-cost and easily accessible.
+%%The study of speech-based auxiliary depression diagnosis began with the examination of clinical aspects of depressed individuals' speech.
+%Clinical observations have revealed that there are phonetic differences in speech between healthy and depressed populations.
+%These differences can be seen in the fact that depressed people typically speak more smoothly and monotonously, whereas healthy people speak more rhythmically, with less pauses and fewer times than depressed people\cite{pampouchidou2017facial,montgomery1979new}.
+%Furthermore, the researchers  designed characteristics based on the variations between the two groups. These characteristics are objective in nature and are able to discriminate between populations that are healthy and those that are depressed.
+%But with the rapid advancement of deep learning techniques in recent years, speech-based  auxiliary depression diagnosis has transitioned from hand-crafted acoustic features to a deep learning-based framework.
+
+
+Speech is a non-intrusive, inexpensive, and readily available signal.
+According to clinical observations, healthy and depressed persons speak differently on the phonetic scale.
+The fact that depressed people typically speak more smoothly and monotonously than healthy people, who speak more rhythmically, with fewer pauses and fewer times than depressed people, illustrates these distinctions \cite{pampouchidou2017facial,montgomery1979new}.
+Furthermore, the researchers designed characteristics based on the variations between the two groups.
+These characteristics are objective in nature and are able to discriminate between populations that are healthy and those that are depressed.
+But with the rapid advancement of deep learning techniques in recent years, speech auxiliary depression diagnosis has transitioned from hand-crafted acoustic features to a deep learning-based framework.
+This family of approaches tackles two different tasks: depression classification and depression level regression.
 %
-%Previous work for depression
-%analysis can be broadly categorized into handcrafted feature based
-%methods and deep learning feature based methods according to
-%their adopted frameworks.
+% Furthermore, inspired by current multi-task learning work, we also incorporate an auxiliary task (depression classification) to enhance the main task of depression level regression
+
 
 
 \subsubsection{Speech auxiliary depression diagnosis based on traditional machine learning}
 
-So far, automatic speech-based depression analysis has primarily relied on classic machine learning methods supplemented with hand-crafted feature, as shown in Fig.\ref{Speech01}.
-In terms of hand-crafted feature engineering, the major work is to learn acoustic features related to depression and experiment with feature sets to improve performance.
-Researchers have also employed classic machine learning algorithms, such as support vector machines, as classifiers for depression diagnosis.
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{figures/depression/Speech_tradition.jpg}
-\caption{Flow diagram of speech depression recognition based on traditional machine learning.}
-\label{Speech01}
-\end{figure}
+In the early studies of speech auxiliary depression diagnosis, the main work is to learn acoustic features related with depression and explore feature set for better performance.
+The extracted hand-crafted audio features to detect depression might be classified into four main groups: prosodic, voice quality, formant, and spectral features~\cite{france2000acoustical,moore2003analysis}.
 
 
-
-
-In the study of speech-based depression recognition, acoustic characteristics principally include prosodic, voice quality, formant, and spectral features\cite{france2000acoustical,moore2003analysis}.
-The prosodic features were computed from the speech waveform and included fundamental frequency (F0), log of energy, jitter and shimmer\cite{france2000acoustical}.
-Where F0 is one of the most prevalent prosodic features, and its range of variation and decrease in mean value may be related to the severity of depression.
-The parameters related to voice quality features are frequency perturbation, amplitude perturbation, and glottal parameters.
+\emph{Prosodic features:} The prosodic features were computed from the speech waveform and included fundamental frequency, log of energy, jitter and shimmer\cite{france2000acoustical}.
+Where fundamental frequency is one of the most prevalent prosodic features, and its range of variation and decrease in mean value may be related to the severity of depression.
+\emph{Voice quality:}The parameters related to voice quality features are frequency perturbation, amplitude perturbation, and glottal parameters.
 The glottal spectrum shows the condition of vocal function, while frequency and amplitude perturbation combined describe the stability of vocal fold vibration\cite{moore2007critical}.
-Formant features provide information regarding vocal tract resonance and pronunciation efforts, which represent physical vocal tract properties.
-As formant features, the first three formants are commonly employed.
-Spectral features are a reflection of the relationship between the shape change of the vocal tract and the articulator movement, and the most widely utilized features are PSD and Mel-scaleFrequency Cepstral Coefficients (MFCC).
-The four types of features mentioned above are regularly extracted in frames to generate frame-level Low Level Descriptors (LLDs).
+\emph{Formant features:}Formant features provide information regarding vocal tract resonance and pronunciation efforts, which represent physical vocal tract properties. As formant features, the first three formants are commonly employed.
+\emph{Spectral features:} Spectral features are a reflection of the relationship between the shape change of the vocal tract and the articulator movement, and the most widely utilized features are PSD and Mel-scaleFrequency Cepstral Coefficients (MFCC).
+
+The four types of features mentioned above are regularly extracted in frames to generate frame-level Low Level Descriptors.
 Meanwhile, they can also be extracted directly using feature extraction tools such as OpenSMILE, COVAREP.
 A single acoustic feature cannot adequately describe depressive symptoms due to their complexity and variety.
 As a result, many researchers have developed and mixed various acoustic features to build higher-performance depression recognition models.
@@ -51,14 +48,9 @@ Shankayi et al.\cite{shankayi2012identifying} extracted three categories of feat
 
 
 
-
-
-
-
-
-In traditional speech-based depression recognition studies, SVM\cite{nasir2016multimodal,gong2017topic,cummins2013spectro,helfer2013classification} and Gaussian
-Mixture Model (GMM)\cite{helfer2013classification,williamson2013vocal,alghowinem2013comparative} are the two most popularly utilized modeling and classification methods.
-Jiang et al.\cite{jiang2017investigation} studied 170 subjects and proposed a computational methodology based on SVM (STEDD). They documented accuracies of 75.96\% for females and 80.30\% for males.
+In traditional speech auxiliary depression diagnosis studies, SVM~\cite{nasir2016multimodal,gong2017topic,cummins2013spectro,helfer2013classification} and Gaussian
+Mixture Model (GMM)~\cite{helfer2013classification,williamson2013vocal,alghowinem2013comparative} are the two most popularly utilized modeling and classification methods.
+%Jiang et al.\cite{jiang2017investigation} studied 170 subjects and proposed a computational methodology based on SVM (STEDD). They documented accuracies of 75.96\% for females and 80.30\% for males.
 Ooi et al.\cite{ooi2014prediction} studied 30 subjects (15 were at risk of depression and 15 were not at risk) and presented an ensemble method using GMM classifiers that used prosodic and glottal features. They reported a classification result of 74\%.
 Alghowinem et al.\cite{alghowinem2013comparative} summarized low-level descriptors and statistical features of 60 subjects (30 controls and 30 depressed patients) and compared four classifiers: GMM, SVM, Hierarchical Fuzzy Signature, and Multilayer Perceptron Neural Network. They concluded that GMM and SVM performed better.
 
@@ -67,45 +59,196 @@ Alghowinem et al.\cite{alghowinem2013comparative} summarized low-level descripto
 
 
 
-\subsubsection{Speech auxiliary depression diagnosis based
-on deep learning}
+\subsubsection{Speech auxiliary depression diagnosis based on deep learning}
 
+Deep learning techniques have demonstrated their effectiveness in numerous speech-based applications.
+In speech auxiliary depression diagnosis, CNN, RNN, hybrid networks, and transformer networks are some of the frequently utilized deep classifier techniques.
+%More recently, deep learning methods have shown their capacity in many speech-based applications.
+%The commonly used deep classifier algorithms in speech auxiliary depression diagnosis include CNN, RNN, Hybrid networks, and transformer networks.
 
-More recently deep learning methods have showed their capacity in many audio based applications. These methods learn discriminative features through multiple layers and performed better than traditional methods.
-There are three ways to employ deep learning in this area, depending on the format of the input data.(1)Acoustic features based deep learning model: Traditional acoustic features are put into the deep classifier for training, recognition or prediction;
-(2)Spectrogram based deep learning models: Spectrograms are given as input to CNN and low level features are extracted from spectrograms where spectrogram is log scale plot of Short time fourier transform.
-(3)End to end deep learning models: Pushing raw signal into deep architecture to let model learn high-level features by itself. Architecture of these models is shown in Fig.\ref{Speech02} .
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{figures/depression/Speech_cnn.jpg}
-\caption{Flow diagram of speech depression recognition based on deep learning,
-with the first to third rows representing acoustic feature-based, spectrogram-based, and end-to-end deep learning models, respectively.
-}
-\label{Speech02}
-\end{figure}
+%These methods learn discriminative features through multiple layers and performed better than traditional methods.
+%The deep learning-based approaches for speech auxiliary depression diagnosis could be categorized into three groups:
+%(1)Acoustic features based deep learning models: traditional acoustic features are put into the deep classifier for training, recognition or prediction;
+%(2)Spectrogram based deep learning models: spectrograms are given as input to CNN and low level features are extracted from spectrograms where spectrogram is log scale plot of Short time fourier transform.
+%(3)End to end deep learning models: Pushing raw signal into deep architecture to let model learn high-level features by itself. Architecture of these models is shown in Fig.\ref{Speech02} .
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=1\linewidth]{figures/depression/Speech_cnn.jpg}
+%\caption{Flow diagram of speech depression recognition based on deep learning,
+%with the first to third rows representing acoustic feature-based, spectrogram-based, and end-to-end deep learning models, respectively.
+%}
+%\label{Speech02}
+%\end{figure}
 
 %Figure 2 shows the deep learning based speech depression recognition,
 
-
-CNN could capture spatial properties of features and has the ability of parallel computing. Therefore, CNN can be used as a classifier for traditional acoustic features.
-Well known features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
-Du et al. \cite{du2018bipolar} presented a novel audio-based approach, called IncepLSTM, which effectively integrated Inception module and LSTM on the 16-dimensional MFCCs to capture multi-scale temporal information for Bipolar Disorder recognition. What's more, experiments were conducted on the AVEC 2018 dataset and the results demonstrated the effectiveness of their proposed approach.
+%在SDR中，常用的深度分类器算法包括循环神经网络(RNN)、深度信念网络(deep Belief Network)、卷积神经网络(convolutional Neural Network, CNN)等
 
 
+Specifically, CNN could capture spatial properties of features and has the ability of parallel computing.
+Therefore, it can be used as a classifier for a speech-auxiliary depression diagnosis.
+CNN typically takes the audio feature descriptors as the input and is divided into two sub-categories.
+(1) \emph{Acoustic feature-based}.
+Well known audio features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
+Yang et al.~\cite{yang2017hybrid} present an acoustic features based CNN model.
+In the model, 238 audio feature descriptors extracted with openSMILE toolkit are first input into a CNN to learn high-level features, which are then fed to fully connected layer to predict the PHQ-8 score.
+(2) \emph{Spectrogram-based}.
+The spectrogram converts the speech signal from a 1D to a 2D signal, and it not only represents the dynamic spectral properties of the speech signal but also visualizes the speech.
+Srimadhur et al.~\cite{srimadhur2020end} investigate depression detection using spectrogram-based CNN.
+Moreover, speech samples from the audio-visual emotion challenge (AVEC) 2016 DAIC-Woz dataset were utilized for validating the models.
+The fact that most of the input speech features used in these studies are based on the amplitude spectrogram, which loses the phase spectrogram information, means that important information concerning depression is not present.
+In order to make full use of speech information, Fan et al.~\cite{fan2022csenet} propose a complex squeeze-and-excitation network (CSENet), which uses the complex spectrogram as the input feature. The complex spectrogram contains all of the speech information, both amplitude and phase spectrogram.
+Despite having good outcomes in speech auxiliary depression diagnosis, conventional CNNs have the obvious drawback of being unable to capture lengthy temporal context information.
 
-The spectrogram converts the speech signal from a 1-dimensional to a 2-dimensional signal, and it not only represents the dynamic spectral properties of the speech signal but also visualizes the speech.
-There are observable differences between the speech spectrograms of depressed and non-depressed people.
-In the spectrograms of non-depressed samples, intensity of speech is concentrated more at lower frequencies and low at higher frequencies, whereas, in depressed speech samples, high frequency components also exists with higher intensities and intensity is presented more in short periods of time intervals. Therefore, CNN can use these kind of features from spectrograms to identify depression.
-Srimadhur et al.\cite{srimadhur2020end} carried out an investigation on depression detection using spectrogram based CNN. And speech samples from audio visual emotion challenge (AVEC) 2016 DAIC-Woz dataset were utilized for validating the models.
-However, most of the input speech features of these studies are based on the amplitude spectrogram, which loses the phase spectrogram information.
-Therefore, these speech features may lose some important information related to depression.
-In order to make full use of speech information, Fan et al. \cite{fan2022csenet} proposed a complex squeeze-and-excitation network (CSENet) for SDLP, which used the complex spectrogram as the input feature. The complex spectrogram contains all of the speech information both amplitude and phase spectrogram.
 
-%End to end deep learning model: Pushing raw signal into deep architecture to let model learn high-level features by itself.
-End to end deep architecture have advantages like that it does not require scholars to have a priori knowledge, deep networks can learn better features and give better classification result. %However, there are a few issues which limit end-to-end deep architectures, such as large-scale
-%data supporting, overfitting easily and poor interpretability.
-Srimadhur et al.\cite{srimadhur2020end} proposed spectrogram based CNN and end to end CNN models to estimate the severity level of depression on AVEC 2016 DAIC-woz dataset.
-Experimental analysis has shown that performance of end to end model is ahead of spectrogram based model and baseline models by an efficiency of 13\%.
+
+%In the CNN based auxiliary depression diagnosis framework, audio feature descriptors are first input into a CNN to learn high-level features, which are then fed to the fully connected layer to predict the scale score.
+%According to the different representations of acoustic feature description, it can be further subdivided into two forms, acoustic feature-based CNN and spectrogram-based CNN.
+%(1)Well known audio features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
+%Yang et al.~\cite{yang2017hybrid} present an acoustic features based deep learning model.
+%For each audio segment, they utilize the openSMILE toolkit to extract 238 LLDs,  comprising 211 spectral and energy related features and 27 voicing related dynamic features.
+%And then, they pass the corresponding feature descriptors through a CNN, which has n convolutional
+%layers, followed by one ReLU, Pooling and Dropout layers, while the last convolutional layer is followed by two fully connected
+%layers. In the training process, they add a fully-connected layer to produce the prediction score.
+%(2)The spectrogram converts the speech signal from a 1-dimensional to a 2-dimensional signal, and it not only represents the dynamic spectral properties of the speech signal but also visualizes the speech.
+%Srimadhur et al.\cite{srimadhur2020end} carried out an investigation on depression detection using spectrogram based CNN. And speech samples from audio visual emotion challenge (AVEC) 2016 DAIC-Woz dataset were utilized for validating the models.
+%However, most of the input speech features of these studies are based on the amplitude spectrogram, which loses the phase spectrogram information.
+%Therefore, these speech features may lose some important information related to depression.
+%In order to make full use of speech information, Fan et al. \cite{fan2022csenet} proposed a complex squeeze-and-excitation network (CSENet) for SDLP, which used the complex spectrogram as the input feature. The complex spectrogram contains all of the speech information both amplitude and phase spectrogram.
+
+
+
+%For example, Yang et al.~\cite{yang2017hybrid} present an acoustic features based deep learning model.
+%For each audio segment, they utilize the openSMILE toolkit to extract 238 low level descriptors (LLDs),  comprising 211 spectral and energy related features and 27 voicing related dynamic features.
+%And then, they pass the corresponding feature descriptors through a CNN, which has n convolutional
+%layers, followed by one ReLU, Pooling and Dropout layers, while the last convolutional layer is followed by two fully connected
+%layers. In the training process, they add a fully-connected layer to produce the prediction score.
+%%从不错的实验结果来看，我们可以推断出以下两点。
+%CNN could capture spatial properties of features and has the ability of parallel computing. Therefore, CNN can be used as a classifier for traditional acoustic features.
+%Well known audio features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
+
+
+
+
+%Firstly, Emna et al.  assess depression and predict its severity levels using the MFCC and LSTM.
+%the audio signals are preprocessed
+%(Section 3.1.1). Next, the low-level audio descriptors
+%are extracted and normalized . The low-level features are the MFCC fea-
+%tures. In the following step, these MFCC features are
+%fed to the deep neural network for depression predic-
+%tion (see Section 3.1.4). Depression datasets available
+%to assess depression from speech are relatively small.
+%To overcome this challenge, data augmentation is per-
+%formed and described in Section 3.1.5 and knowledge
+%transfer from related task is eventually carried out in
+%Section 3.1.6. The proposed deep-based framework is
+%presented with more details in the following contents.
+
+
+%RNN is a network based on sequence information in which neighboring information is interdependent.
+%This interdependence typically helps with future state prediction.
+%The most used RNN model in speech auxiliary depression diagnosis is the LSTM.
+%To some extent, it prevents issues like gradient disappearing.
+%It is appropriate for time series data like speech since it can reasonably learn information from large time series.
+%Numerous RNN-based experiments have been conducted as a result of the popularity of deep learning techniques for auxiliary depression diagnosis.
+%Alhanai et al.~\cite{al2018detecting} found that the context-free model outperformed the context-weighted model when using LSTM to identify depression using the Audio/Text feature.
+%However, RNN-related algorithms take a long time to run because of their weak parallelism, and RNN is unable to handle very huge data sets.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Several research studies~\cite{le2017discretized,ma2016depaudionet} have demonstrated that a speech signal's temporal features convey essential information regarding emotion and mental problems and have used sequential classifiers such as RNN and LSTM.
+The RNN and the LSTM use feedback loops to keep information in "memory" over time.
+Nevertheless, the LSTM outperforms the RNN, as it does better at avoiding the vanishing gradient problem and captures longer temporal context information.
+Mao et al.~\cite{mao2022prediction} use LSTM to estimate the depression severity of participants. An LSTM network is obtained using an LSTM layer containing 73 hidden units connected to a fully connected layer.
+Also, they compare the bidirectional LSTM, a variant of LSTM consisting of a forward layer on the original input sequence and a backward layer on the reversed sequence.
+The Bi-LSTM outperforms the traditional LSTM because the forward and backward networks combine the input sequence's forward and backward context information.
+Moreover, to focus on more emotionally salient regions of depression speech, Zhao et al.~\cite{zhao2021multi} propose a multi-head time-dimension attention-based LSTM model. 
+%They first extract frame-level features to store the original temporal relationship of a speech sequence and then analyze their difference between speeches of depression and those of health status.
+%Then, they study the performance of various features and use a modified feature set as the input of the LSTM layer.
+Instead of using the output of the traditional LSTM, multi-head time-dimension attention is employed to obtain more key time information related to depression detection by projecting the output into different subspaces.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%RNN is a network based on sequence information in which neighboring information is interdependent.
+%This interdependence typically helps with future state prediction.
+%The most used RNN model in speech-auxiliary depression diagnosis is the LSTM. To some extent, it prevents issues like gradient disappearing. It is appropriate for time series data like speech since it can reasonably learn information from large time series.
+%Numerous RNN-based experiments have been conducted due to the popularity of deep learning techniques for an auxiliary depression diagnosis.
+%Alhanai et al.~\cite{al2018detecting} found that the context-free model outperformed the context-weighted model when using LSTM to identify depression using the audio feature.
+%However, RNN-related algorithms take a long time because of their weak parallelism, and RNNs cannot handle huge data sets.
+
+
+
+
+%混合网络
+%为了获取更多的与depression检测相关的关键时间信息，组合模型应运而生。最先用到的组合模型是CNN+LSTM
+%Du等人为了获取语音信号的多尺度时间信息，提出了一种基于音频的incplstm方法，该方法在特征序列上有效地集成了incplstm模块和长短时记忆(Long Short-Term Memory, LSTM)。Inception模块最初的设计目的是拓宽CNN体系结构，扩展接受域。此外，由于BD中定义的类具有不断增加的无序强度，我们设计了一个严重性敏感损失，以考虑类间关系。这两个步骤大大增加了从声态中学到的深层特征的辨别能力。另一方面，为了避免在少量训练样本下的过拟合问题，我们利用L - 1正则化器实现了incplstm的稀疏版本，提高了泛化性能。
+%In order to obtain more critical temporal information related to depression-assisted diagnosis, hybrid networks were created. The first combinatorial model used is CNN+LSTM, Ma et al. design a deep model combined DCNN with LSTM instead of previous SDR method based on acoustic feature, named DepAudioNet.
+%In their research, CNN is applied to extract high-level feature from raw wave while LSTM is used to learn the temporal change of Mel scale filter feature, which achieved good results on the DAIC-WOZ dataset, and also strongly promoted the follow-up end-to-end model research.
+
+
+Hybrid networks are developed to gather more critical temporal information related to depression diagnosis.
+Some recent studies have combined a CNN feature extraction architecture with sequential LSTM, an
+approach named CNN-LSTM that can learn to recognize and synthesize sequential dynamics in speech. In the
+CNN-LSTM, the CNN acts as the trainable feature detector for the spatial signal. It learns features that operate
+on a static spatial input (windows) while the LSTM receives a sequence of high-level representations to generate
+a description of the content.
+Instead of using the earlier based on the DepAudioNet acoustic feature, Ma et al.~\cite{ma2016depaudionet} create a deep model that combines CNN and LSTM.
+In their study, CNN is used to extract detailed information from unprocessed waves.
+In parallel, the temporal change of the Mel scale filter feature is learned using LSTM, which produced positive results on the DAIC-WOZ dataset and highly encouraged the subsequent hybrid model study.
+Further, in order to capture multi-scale temporal information of speech signals, Du et al.~\cite{du2018bipolar} propose a novel speech-based approach, called IncepLSTM, which effectively integrates Inception module and LSTM on the feature sequence.
+The Inception module, originally designed to widen the CNN architecture and expand the receptive field.
+In order to avoid the over-fitting problem in a small amount of training samples, they apply the $L^{1}$ Regularizer to achieve a sparse version of IncepLSTM, ameliorating the generalization performance.
+
+%Moreover, to focus on more emotionally salient regions of depression speech, Zhao et al.~\cite{zhao2021multi} propose a multi-head time-dimension attention-based LSTM model. They first extract frame-level features to store the original temporal relationship of a speech sequence and then analyze their difference between speeches of depression and those of health status.
+%Then, they study the performance of various features and use a modified feature set as the input of the LSTM layer.
+%Instead of using the output of the traditional LSTM, multi-head time-dimension attention is employed to obtain more key time information related to depression detection by projecting the output into different subspaces.
+
+
+
+%Transformer 适用于Suitable for very long sequence data
+%很难从长序列的音频和视觉数据中提取长期的时间上下文信息，目前，抑郁症检测任务主要面临两个挑战，分别是数据集数量有限和输入的序列较长。为了解决这两个挑战，该文提出了一种可以在总结长序列的同时解决数据量有限的embedding方法。
+
+%Transformer-based network is suitable to extract long-term temporal context information from speech.
+
+The transformer is suitable for very long sequence data.
+Sun et al.~\cite{sun2021multi} propose a transformer-based network for extracting long-term temporal context information from speech.
+It is the first transformer-based approach for speech auxiliary depression diagnosis.
+Their proposed model consists of the transformer encoder and the Embedding FC Block, where the transformer encoder is used for extracting temporal information and the Embedding FC Block combined by a RELU activation layer, a dropout layer and a fully-connected layer is used to extract the hidden embeddings representing each kind of feature. The embeddings from each kind of feature are fed to two FC blocks to perform depression prediction.
+Beisdes, The last important problem is that models so far are heavily restricted by the limited amount of depression data.
+To address these two challenges, Zhang~\cite{zhang2021depa} proposes an embedding method that can solve the limited amount of data while summarizing long sequences.
+An encoder-decoder model is trained self-supervised to predict and reconstruct a center spectrogram given a spectrogram context.
+Then, DEPA is extracted from a trained encoder model and fed into a depression detection BLSTM network. DEPA exhibits an excellent performance compared to other commonly used features.
+
+
+
+
+
+%Du et al. \cite{du2018bipolar} presented a novel audio-based approach, called IncepLSTM, which effectively integrated Inception module and LSTM on the 16-dimensional MFCCs to capture multi-scale temporal information for Bipolar Disorder recognition. What's more, experiments were conducted on the AVEC 2018 dataset and the results demonstrated the effectiveness of their proposed approach.
+%
+%
+%Du et al. \cite{du2018bipolar} presents a novel speech-based approach, called IncepLSTM,
+%which effectively integrates Inception module and LSTM on the feature sequence to capture multi-scale temporal information for BD recognition.
+%Moreover, in order to obtain a discriminative representation of BD severity, we propose a novel severity-sensitive loss based on the triplet loss to model the inter-severity relationship.
+%Considering the small scale of existing BD corpus, to avoid over-fitting, we also make use of L 1 regulation to improve the sparsity of IncepLSTM. The evaluations are conducted on the Audio/Visual Emotion Chal-
+%lenge (AVEC) 2018 Dataset and the experimental results clearly demonstrate the effectiveness of our method.
+
+
+
+
+
+%The spectrogram converts the speech signal from a 1-dimensional to a 2-dimensional signal, and it not only represents the dynamic spectral properties of the speech signal but also visualizes the speech.
+%There are observable differences between the speech spectrograms of depressed and non-depressed people.
+%In the spectrograms of non-depressed samples, intensity of speech is concentrated more at lower frequencies and low at higher frequencies, whereas, in depressed speech samples, high frequency components also exists with higher intensities and intensity is presented more in short periods of time intervals. Therefore, CNN can use these kind of features from spectrograms to identify depression.
+
+
+%%End to end deep learning model: Pushing raw signal into deep architecture to let model learn high-level features by itself.
+%End to end deep architecture have advantages like that it does not require scholars to have a priori knowledge, deep networks can learn better features and give better classification result. %However, there are a few issues which limit end-to-end deep architectures, such as large-scale
+%%data supporting, overfitting easily and poor interpretability.
+%Srimadhur et al.\cite{srimadhur2020end} proposed spectrogram based CNN and end to end CNN models to estimate the severity level of depression on AVEC 2016 DAIC-woz dataset.
+%Experimental analysis has shown that performance of end to end model is ahead of spectrogram based model and baseline models by an efficiency of 13\%.
+
 
 
 
@@ -114,8 +257,7 @@ Experimental analysis has shown that performance of end to end model is ahead of
 
 \subsubsection{Performance Comparison}
 We evaluate the depression recognition method based on speech.
-The performance comparisons based
-on  traditional machine learning and deep learning are summarized in Table~\ref{tab_1} and Table~\ref{tab_2} respectively.
+The performance comparisons based on traditional machine learning and deep learning are summarized in Table~\ref{tab_speech}.
 From the table we obtain the following three observations:
 
 (1)
@@ -171,49 +313,39 @@ Although the end-to-end model also has better performance, it is difficult to de
 
 
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table*}
-\caption{Overview of traditional machine learning methods for auxiliary depression diagnosis from Speech.}
-\label{tab_1}
-\resizebox{\linewidth}{!}{
-\begin{tabular}{@{}ccccc@{}}
-\hline
-\textbf{Paper} & \textbf{Dataset}     & \textbf{Classifiers}             & \textbf{Metrics} & \textbf{Performance} \\ \hline
-Ringeval\cite{ringeval2017avec}       & SEWA                 & Random forest                    & RMSE/MAE         & 7.78/5.72            \\
-Low\cite{low2010detection}           & hand-craftes dataset & SVM+GMM                          &                  &                      \\
-Alghowinem\cite{alghowinem2013comparative}      & hand-craftes dataset & SVM+GMM+decision fusion          & Accuracy         & 91.67\%              \\
-Valster\cite{valstar2013avec}        & AVid-Corpus          & SVR                              & RMSE/MAE         & 14.12/10.35          \\
-Cummins\cite{cummins2011investigation} & AVEC2013             & SVM                              & Accuracy         & 82\%                 \\
-Meng\cite{meng2013depression}& AVEC2013             & Partial least square regression  & RMSE/MAE         & 11.54/9.78           \\
-Williamson\cite{williamson2014vocal} & AVEC2014             & GMM                              & RMSE/MAE         & 8.50/6.52            \\
-Nasir\cite{nasir2016multimodal} & DAIC-WOZ             & SVM                              & F1               & 63\%                 \\
-Gong\cite{gong2017topic}& DAIC-WOZ             & SVM                              & RMSE/MAE         & 4.99/3.96            \\
-Jayawardena\cite{jayawardena2020ordinal}  & DAIC-WOZ             & LR                               & RMSE             & 6.84                 \\
-Valstar\cite{valstar2016avec}        & DAIC-WOZ             & SVM + grid search +random forest & RMSE/MAE         & 7.78/5.72            \\ \hline
+\begin{table*}[!htbp]
+\centering
+\caption{Performance of speech auxiliary depression diagnosis based on machine learning.}
+\label{tab_speech}
+\renewcommand\arraystretch{1}
+\resizebox{0.7\linewidth}{!}{%
+\begin{tabular}{@{}c|c|c|c@{}}
+\toprule
+\textbf{Paper} & \textbf{Dataset(D+C)} & \textbf{Methods} & \textbf{Methics(\%)} \\ \midrule
+Ringeval~\cite{ringeval2017avec} & SEWA                  & RF               & RMSE/MAE=7.78/5.72   \\
+%Low~\cite{low2010detection}  &                       & SVM+GMM          &                      \\
+Alghowinem~\cite{alghowinem2013comparative}  &                       & SVM+GMM+DF       & Accuracu=91.67       \\
+Valster~\cite{valstar2013avec} & AVid-Corpus           & SVR              & RMSE/MAE=14.12/10.35 \\
+Cummins~\cite{cummins2011investigation}  & AVEC2013              & SVM              & Accuracu=82.00       \\
+Meng~\cite{meng2013depression}          & AVEC2013              & PLSR             & RMSE/MAE=11.54/9.78  \\
+Williamson~\cite{williamson2014vocal}     & AVEC2014              & GMM              & RMSE/MAE=8.50/6.52   \\
+Nasir~\cite{nasir2016multimodal}          & DAIC-WOZ              & SVM              & F1=63                \\
+Gong~\cite{gong2017topic}           & DAIC-WOZ              & SVM              & RMSE/MAE=4.99/3.96   \\
+Jayawardena~\cite{jayawardena2020ordinal}    & DAIC-WOZ              & LR               & RMSE=6.84            \\
+Valstar~\cite{valstar2016avec}        & DAIC-WOZ              & SVM+RF           & RMSE/MAE=7.78/5.72   \\
+Kang~\cite{kang2017deep} & AVEC2014              & DNN              & RMSE/MAE=7.37/5.87   \\
+Yang~\cite{yang2017hybrid}          & DAIC-WOZ              & DCNN             & RMSE/MAE=5.97/5.16   \\
+Al Hannai~\cite{al2018detecting}      & DAIC-WOZ              & LSTM-RNN         & RMSE/MAE=10.03/7.60  \\
+Dham~\cite{dham2017depression}         & DAIC-WOZ              & FF-NN            & RMSE/MAE=7.63/6.28   \\
+Salekin~\cite{salekin2018weakly}       & DAIC-WOZ              & BLSTMMIL  & F1=85.44             \\
+Zhang~\cite{zhang2021depa}         & DAIC-WOZ              & Transformer      & RMSE/MAE=5.73/4.75   \\
+Othmani~\cite{othmani2021towards}       & DAIC-WOZ              & LSTM             & F1=82.00             \\
+Srimadhur~\cite{haque2018measuring}      & DAIC-WOZ              & CNN              & F1=78.00             \\
+Srimadhur\cite{haque2018measuring}      & DAIC-WOZ              & CNN              & F1=66.00             \\
+Ma~\cite{ma2016depaudionet}            & DAIC-WOZ              & Depaudionet      & F1=52.00      \\  \bottomrule
 \end{tabular}}
 \end{table*}
 
-\begin{table*}
-\caption{ Overview of deep machine learning methods for auxiliary depression diagnosis from Speech.}
-\label{tab_2}
-\resizebox{\linewidth}{!}{
-\begin{tabular}{cccccc}
-\hline
-\textbf{Paper} & \textbf{Dataset} & \textbf{Features} & \textbf{Classification} & \textbf{Metrics} & \textbf{Performance} \\ \hline
-Kang\cite{kang2017deep}& AVEC2014         & LLDs & DNN                     & RMSE/MAE         & 7.37/5.87            \\
-Yang\cite{yang2017hybrid}& DAIC-WOZ         & LLDs & DCNN                    & RMSE/MAE         & 5.97/5.16            \\
-Al Hannai\cite{al2018detecting}& DAIC-WOZ         & LLDs & LSTM-RNN                & RMSE/MAE         & 10.03/7.60           \\
-Dham\cite{dham2017depression}& DAIC-WOZ         & LLDs & FF-NN                   & RMSE/MAE         & 7.63/6.28            \\
-Salekin\cite{salekin2018weakly}& DAIC-WOZ         & LLDs & NN2Vec + BLSTMMIL       & F1-score         & 85.44\%              \\
-%Alhanai        & DAIC-WOZ         & Raw signal        & LSTM                    & RMSE/MAE         & 6.27/4.97            \\
-Zhang\cite{zhang2021depa}& DAIC-WOZ         & Spectrogram       & Transformer             & RMSE/MAE         & 5.73/4.75            \\
-Othmani\cite{othmani2021towards}& DAIC-WOZ         & LLDs+ spectrogram & LSTM                    & F1-score         & 82\%                 \\
-Srimadhur\cite{haque2018measuring}& DAIC-WOZ         & Raw signal        & CNN                     & F1-score         & 78\%                 \\
-Srimadhur\cite{haque2018measuring}& DAIC-WOZ         & Spectrogram       & CNN                     & F1-score         & 66\%                 \\
-Ma\cite{ma2016depaudionet}& DAIC-WOZ   & Spectrogram  & Depaudionet      & F1-score  & 52\%                 \\ \hline
-\end{tabular}}
-\end{table*}
 
 
 
