@@ -5,90 +5,166 @@
 \fi
 
 %\subsection{Multi-modal}
-\subsection{Depression recognition method based on multiple brain imaging}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The onset of depression is related to biochemical, genetic, social and environmental factors and involves abnormalities in a variety of neurotransmitters, brain regions and loops. Brain imaging can directly reflect the abnormalities in the brain of depressed patients, and the analysis of brain imaging data can be used as an important tool to detect depression. Each type of brain imaging can reflect the depressed patient's brain, such as sMRI can clearly demonstrate the anatomical structure of the brain with high spatial resolution and reflect the structural morphology within the brain, while fMRI detects changes in the blood-oxygen-dependent level signal of the brain and can reflect the active condition of the neural regions of the brain. fMRI has a higher temporal resolution compared to sMRI, and the corresponding spatial sub The corresponding spatial representation is reduced.
 
-In recent years, most studies have been based on single-modality brain imaging data for depression detection, and few studies have combined multiple brain imaging data from different modalities for analysis. However, combining multimodal brain imaging data can compensate for each other's deficiencies caused by different imaging reasons and can better detect depression. For example, Mousavian et al.~\cite{mousavian2021depression} considered the similarity of spatial cubes from sMRI and RS-fMRI data, from which features were extracted and fed into a unified machine learning classifier framework for depression detection.
+The diagnosis model of depression based on single mode data has made many achievements, but it also has some limitations.
+For example, gait abnormalities may also be caused by physiological diseases, physiological signals are not easy to collect, and data such as voice and facial expressions are vulnerable to the impact of the environment.
+Therefore, the use of single mode data alone cannot meet the needs of clinical depression diagnosis. In recent years, more and more studies have combined multiple modal data for depression assessment and detection, and also have achieved good results.
+
+In short, a more accurate and robust depression diagnosis model can be constructed by integrating complementary information from different modalities that reflect different aspects of depression.
+Most auxiliary depression diagnosis methods based on multimodal data mostly use audio, video and text data, because the international competition AVEC introduced audiovisual depression analysis in 2013, and compared with other, it is easy to collect.
+Therefore, in this section, we mainly introduce the methods of depression diagnosis based on audio, video and text.
 
 
-
-\subsection{Depression recognition method based on multiple audiovisual data}
+\subsection{Depression recognition method based on multiple audiovisual and text data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[tbp]
 	\centering	
-	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/AVT.png}		
+	\label{fig_hard_case1}
+	\includegraphics[width=1.0\linewidth]{figures/depression/AVT.png}		
 	\caption{
-	Flow chart of depression detection based on multimodal behavioral data.
+	Different approaches for fusion technique:(a) Early fusion method; (b) Late fusion method.
 	}
 	\label{AVT}
 \end{figure}
 
+Depressed patients usually show some abnormal behavioral expressions, such as becoming sluggish in facial expressions, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and having slow movements of the head and body parts.
+However, these depressive features may also appear when a healthy person is in a bad mood, and not all depressed patients directly show the above abnormal depressive symptoms, which means that depressed patients do not have a certain characteristic unique to them, so it is difficult to accurately detect depression by relying on a single modal characteristic.
+In recent years, there have also been many mature studies on audio-video and text based multimodal fusion methods in depression detection~\cite{2021Deep}, which have more comprehensive feature coverage and enhanced performance in depression detection compared with unimodal cue detection methods.
 
-Depressed patients usually show some abnormal behavioral expressions, such as becoming sluggish in facial expressions, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and having slow movements of the head and body parts. However, these depressive features may also appear when a healthy person is in a bad mood, and not all depressed patients directly show the above abnormal depressive symptoms, which means that depressed patients do not have a certain characteristic unique to them, so it is difficult to accurately detect depression by relying on a single modal characteristic.
-In recent years, there have also been many mature studies on audio-video based multimodal fusion methods in depression detection~\cite{2021Deep}, which have more comprehensive feature coverage and enhanced performance in depression detection compared with unimodal audio and visual cue detection methods.
-
-Machine learning methods play a key role in multimodal depression detection.
-He et al.~\cite{2019Automatic} introduced the median robust LBP-TOP (MRLBP-TOP) descriptor that can learn patterns on different scales from image sequences for depression detection.
-In addition, Sadari et al.~\cite{2020Ordinal} used ordinal logistic regression for depression identification and proposed a new approach for the task.
- 
-With the development of deep learning, more and more researchers have applied deep learning-based methods to the task of depression detection based on multimodal data, such as CNN, DNN, LSTM, etc~\cite{2017DCNN, 2018Integrating, 2017Multimodal}.
-Yang et al.~\cite{yang2017hybrid} designed a hybrid multimodal depression detection model based on audio-video and text data, containing an audiovisual multimodal depression recognition framework based on deep convolutional neural networks (DCNN) and deep neural networks (DNN) to predict depression severity defined by depression scales.
-Furthermore, He et al.~\cite{2021Intelligent} proposed a new temporal attention (STA) architecture and multimodal attentional feature fusion (MAFF) method for learning and extracting information and features between audio and video cues to predict subjects' scores on depression scales.
-
-To advance the development of depression detection, AVEC started to introduce the task of depression identification in 2013 to detect depression through collected audio, video, and text data, among others. In 2018, AVEC introduced the bipolar disorder (BD) sub-challenge for researchers to detect bipolar depression, based on which, Yang et.al~\cite{2018Bipolar} proposed a new architecture incorporating DNN and random forest for bipolar depression analysis. Du et al.~\cite{du2018bipolar} designed the IncepLSTM model, which combines the initial module of feature sequences and LSTM with learning multi-scale temporal patterns for BD analysis.
-
-Moreover, audio and video data can also be combined with textual data want for depression detection~\cite{gong2017topic,2016Detecting}.
-Hanai et al.~\cite{al2018detecting} simulated the interaction with audio and text features in an LSTM neural network model to detect depression.
-Albert et al.~\cite{haque2018measuring} combined data from three modalities: audio, 3D video of key points of the face, and text transcriptions of patients speaking in clinical interviews. Sentences were summarized into individual embedding models using causal convolutional networks (C-CNN) for depression classification. 
-
-In the Detecting Depression with AI SubChallenge (DDS) of A VEC2019, predict the presence and severity of depression in individuals through digital biomarkers such as vocal acoustics, verbal content of speech, and facial expressions. Provides additional opportunities for multimodal depression detection.~\cite{fan2019Multi,2019Evaluating} 
-Yin et al.~\cite{2019A} proposed a multimodal approach with hierarchical recurrent neural structure to integrate visual, audio, and text features for depression detection.
-Makiuchi et al.~\cite{2019Multimodal} designed separate models for speech and text data for analysis, and for speech patterns used deep spectral features extracted from a pre-trained VGG-16 network with a gated convolutional neural network (GCNN) followed by an LSTM layer. For text embedding BERT text features are extracted and Convolutional Neural Network (CNN) and LSTM layers are used. Finally the two modalities are combined using feature fusion and the experiments show that the multimodal fusion approach is better than the unimodal one.
+There are three methods to fuse modality data for auxiliary diagnosis of depression: early fusion, late fusion and hybrid fusion.
+As shown in Fig \ref{AVT}, the early fusion method connects the features extracted from each mode, and predicts them after generating a single feature vector.
+The late fusion method refers to that each modal data is trained separately in the early stage to obtain the prediction results, and the later stage is fused by decision or integration.
+The hybrid fusion method combines the output of early fusion with the prediction factor of single mode to predict the results~\cite{Morales2018ALF}.
+At present, most of the research is based on early fusion methods.
 
 
-\subsection{Performance Comparison}
+\subsubsection{Multiple audiovisual and text depression recognition based on traditional machine learning}
+\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Machine learning methods play a key role in multimodal depression diagnosis.
+As mentioned in the previous section, the auxiliary diagnosis method of depression based on traditional machine learning audio, video and text focuses on feature extraction, and selects more discriminating features to predict the results.
+When combining these modal data for depression analysis, feature extraction and selection are equally important.
+
+The multimodal combination method is similar to the feature extraction method of each single mode.
+It extracts video features (facial action coding system coding, local binary patterns, active appearance modeling, motion history histogram, topic modeling, etc.~\cite{2009Detecting, meng2013depression}), vocal features (pitch, fluency measures, mel-scale frequency cepstral coefficients, voice quality, measures of periodicity and symmetry, etc.~\cite{2009Detecting, fraser2016detecting} and textual features (topic modeling, part-of-speech, n-gram, speech rate, parse constituents and psycholinguistic measures, etc.~\cite{gong2017topic, morales2016speech, fraser2016detecting}), then the prediction is carried out by combining the features input classification or regression model.
+
+Besides the common classification and regression methods such as Logical Regression, SVM, Support Vector Regression, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017facial, Morales2018ALF}, some researchers have explored fusion methods.
+Morales et al.~\cite{Morales2018ALF} proposes a new early fusion method named Informed Early Fusion.
+Unlike the simple early fusion method for composite modes, the syntax based early fusion method uses the relationship between syntax and suppression to help improve model performance.
+Kächele et al.~\cite{M2014Fusion} performs the final fusion step using a trainable Kalman filter.
+A large number of experimental results show that, compared with single mode data, multimodal data combined with depression diagnosis has a better effect.
+
+\subsubsection{Multiple audiovisual and text depression recognition based on deep learning}
+\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Moreover, audio and video data can also be combined with textual data want for depression detection~\cite{gong2017topic,2016Detecting}.
+%Hanai et al.~\cite{al2018detecting} simulated the interaction with audio and text features in an LSTM neural network model to detect depression.
+%Albert et al.~\cite{haque2018measuring} combined data from three modalities: audio, 3D video of key points of the face, and text transcriptions of patients speaking in clinical interviews. Sentences were summarized into individual embedding models using causal convolutional networks (C-CNN) for depression classification. 
+
+%In the Detecting Depression with AI SubChallenge (DDS) of A VEC2019, predict the presence and severity of depression in individuals through digital biomarkers such as vocal acoustics, verbal content of speech, and facial expressions. Provides additional opportunities for multimodal depression detection.~\cite{fan2019Multi,2019Evaluating} 
+%Yin et al.~\cite{2019A} proposed a multimodal approach with hierarchical recurrent neural structure to integrate visual, audio, and text features for depression detection.
+%Makiuchi et al.~\cite{2019Multimodal} designed separate models for speech and text data for analysis, and for speech patterns used deep spectral features extracted from a pre-trained VGG-16 network with a gated convolutional neural network (GCNN) followed by an LSTM layer. For text embedding BERT text features are extracted and Convolutional Neural Network (CNN) and LSTM layers are used. Finally the two modalities are combined using feature fusion and the experiments show that the multimodal fusion approach is better than the unimodal one.
+
+\subsubsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{table}
-\caption{Experimental results based on multi-modal}
+\begin{table*}
+\centering
+\caption{Experimental results based on multiple data}
 \label{tab9}
-\resizebox{\linewidth}{!}{
-\begin{tabular}{l|l|l|l|ll}
+\begin{tabular}{c|c|c|c|ccc|cc}
 \hline
-\multicolumn{1}{c|}{\multirow{2}{*}{ID}} & \multicolumn{1}{c|}{\multirow{2}{*}{Multi-modal}} & \multicolumn{1}{c|}{\multirow{2}{*}{Method}}                   & \multicolumn{1}{c|}{\multirow{2}{*}{Dataset}} & \multicolumn{2}{c}{Metrics}                        \\
-\multicolumn{1}{c|}{}                    & \multicolumn{1}{c|}{}                             & \multicolumn{1}{c|}{}                                          & \multicolumn{1}{c|}{}                         & \multicolumn{1}{c}{RMSE} & \multicolumn{1}{c}{MAE} \\
+\multirow{2}{*}{Paper}                                                        & \multirow{2}{*}{Dataset}          & \multirow{2}{*}{Method}                & \multirow{2}{*}{Features} & \multicolumn{3}{c|}{Classification metrics} & \multicolumn{2}{c}{Regression metrics} \\
+                                                                              &                                   &                                        &                           & F1 Score      & Precision     & Recall     & RMSE              & MAE                \\
 \hline
-1                                       & \multirow{12}{*}{Audio+Video+Text}               & Y ang et al. ~\cite{yang2017multimodal} & DAIC-WOZ                                     & 5.97                     & 5.16                    \\
-2                                       &                                                  & Y ang et al. ~\cite{ yang2017hybrid}    & DAIC-WOZ                                     & 5.40                     & 4.35                    \\
-3                                       &                                                  & Y ang et al. ~\cite{ 2017DCNN}          & DAIC-WOZ                                     & 6.34                     & 5.38                    \\
-4                                       &                                                  & Y ang et al. ~\cite{ 2018Integrating}   & DAIC-WOZ                                     & 6.34                     & 5.39                    \\
-5                                       &                                                  & Shi et al. ~\cite{2019A}                & E-DAIC                                       & 5.50                     & -                       \\
-6                                       &                                                  & Makiuchi et al. ~\cite{2019Multimodal}  & E-DAIC                                       & 6.11                     & -                       \\
-7                                       &                                                  & Fan et al. ~\cite{fan2019Multi}         & E-DAIC                                       & 5.91                     & 4.39                    \\
-8                                       &                                                  & Zhang et al.~\cite{2019Evaluating}                     & E-DAIC                                       & 6.85                     & 5.84                    \\
-9                                       &                                                  & Zhao et al. ~\cite{zhao2019Automatic}   & DAIC-WOZ                                     & 5.51                     & 4.20                    \\
-10                                      &                                                  & Williamson et al. ~\cite{2016Detecting}                 & 6th                                          & 5.31                     & 3.34                    \\
-11                                      &                                                  & Gong et al. ~\cite{gong2017topic}       & DAIC-WOZ                                     & 4.99                     & 3.96                    \\
-12                                      &                                                  & AVEC2016(baseline)                                            & DAIC-WOZ                                     & 6.62                     & 5.52                    \\
-13                                      & Audio+Text                                       & Alhanai et al.~\cite{al2018detecting}                  & -                                            & 6.27                     & 4.97                    \\
-14                                      & \multirow{4}{*}{Audio+Video}                     & AVEC2013(baseline)                                            & AVEC2013                                     & 13.61                    & 10.88                   \\
-15                                      &                                                  & AVEC2014(baseline)                                            & AVEC2014                                     & 10.86                    & 8.86                    \\
-16                                      &                                                  & Niu et al. ~\cite{2020Multimodal}       & AVEC2013                                     & 7.03                     & 5.21                    \\
-17                                      &                                                  & Jan et al. ~\cite{jan2017artificial}    & AVEC2014                                     & 7.43                     & 6.14                    \\
-18                                      &                                                  & Melo et al. ~\cite{2019Depression2}     & AVEC2013                                     & 8.25                     & 6.30                    \\
-19                                      &                                                  & Melo et al. ~\cite{2019Depression2}     & AVEC2014                                     & 8.23                     & 6.15                   \\
+AVEC2014~\cite{10.1145/2661806.2661807}                                                 & AVEC2014 corpus                   & Support Vector Regression              & A+ V                      & -             & -             & -          & 7.89              & 9.89               \\
 \hline
-\end{tabular}}
-\end{table}
+%AVEC2016                                                                      & DAIC-WOZ                          & SVM                                    & A+ V                      & 0.58          & 0.47          & 0.78       & 7.05              & 5.66               \\
+\hline
+AVEC2016/2017~\cite{valstar2016avec,ringeval2017avec}                                                      & DAIC-WOZ                          & RF                            & A+ V                      & -             & -             & -          & 7.05              & 5.66               \\
+\hline
+Meng et al.~\cite{meng2013depression}                  & AVEC2013 corpus                   & Partial Least Square                   & A+V                       & -             & -             & -          & 8.72              & 10.96              \\
+\hline
+Kächele et al.~\cite{M2014Fusion}                   & AVEC2013 corpus                   & Support Vector Regression              & A+V                       & -             & -             & -          & 8.97              & 10.82              \\
+\hline
+Williamson et al.~\cite{2016Detecting}                       & DAIC-WOZ                          & Gaussian Staircase Model               & A+V+T                     & 0.81          & -             & -          & 5.31              & 4.18               \\
+\hline
+Pampouchidou et al.~\cite{2017facial}                    & AVEC2013/14 corpus                & Nearest Neighbour Classifier           & A+V                       & 0.73          & 0.95          & 0.59       & -                 & --                 \\
+\hline
+Gong et al.~\cite{gong2017topic}                       & DAIZ-WOZ                          & \begin{tabular}[c]{@{}c@{}}Stochastic Gradient Descent\\ Regression\end{tabular}                                                                                                                          & A+T+V                     & 0.60          & -             & -          & 4.99              & 3.96               \\
+\hline
+Morales et al.~\cite{morales2016speech}                 & AVEC2014 corpus                   & SVM                                    & A+T                       & -             & -             & -          & 9.21              & 7.56               \\
+\hline
+\multirow{3}{*}{Morales et al.~\cite{Morales2018ALF}} & \multirow{3}{*}{DAIC-WOZ}         & \multirow{3}{*}{SVM}                   & A+T                       & 0.49          & 0.36          & 0.78       & -                 & -                  \\
+                                                                              &                                   &                                        & A+V                       & 0.49          & 0.36          & 0.78       & -                 & -                  \\
+                                                                              &                                   &                                        & A+T+V                     & 0.49          & 0.36          & 0.78       & -                 & -                  \\
+\hline
+AVEC2019~\cite{ ringeval2019avec}                                         & E-DAIC                            & CNN                                    & A+V                       & -             & -             & -          & 6.37              & -                  \\
+\hline
+Lam et al.~\cite{2019Context}                          & DAIC-WOZ                          & CNN                                    & A+T                       & 0.87          & 0.91          & 0.83       & -                 & -                  \\
+\hline
+Yang et al.~\cite{yang2017multimodal}                  & DAIC-WOZ                          & DCNN+DNN                               & -                         & -             & -             & -          & 5.97              & 5.16               \\
+\hline
+Yang et al.~\cite{yang2018integrating}                  & DAIC-WOZ                          & DCNN+DNN                               & A+V                       & 0.60          & 0.55          & 0.67       & 6.34              & 5.39               \\
+\hline
+Chao et al.~\cite{chao2015multi}                      & AVEC2014 corpus                   & CNN+LSTM                               & A+V                       & -             & -             & -          & 9.98              & 7.91               \\
+\hline
+Alhanai et al.~\cite{al2018detecting}                   & DAIC                              & LSTM                                   & A+T                       & 0.77          & 0.71          & 0.83       & 6.37              & 5.10               \\
+\hline
+\multirow{4}{*}{Qureshi et.al.~\cite{2019TheQureshi}} & \multirow{4}{*}{DAIC-WOZ}         & \multirow{4}{*}{LSTM}                  & A+V                       & -             & -             & -          & 5.25              & 3.89               \\
+                                                                              &                                   &                                        & V+T                       & -             & -             & -          & 5.11              & 3.65               \\
+                                                                              &                                   &                                        & A+T                       & -             & -             & -          & 4.64              & 3.65               \\
+                                                                              &                                   &                                        & A+V+T                     & -             & -             & -          & 4.14              & 3.07               \\
+\hline
+\multirow{3}{*}{Ray et al.~\cite{ray2019multi}}         & \multirow{3}{*}{E-DAIC+ DAIC-WOZ} & \multirow{3}{*}{LSTM}                  & V+T                       & -             & -             & -          & 4.64              & -                  \\
+                                                                              &                                   &                                        & A+T                       & -             & -             & -          & 4.37              & -                  \\
+                                                                              &                                   &                                        & A+V+T                     & -             & -             & -          & 4.28              & -                  \\
+\hline
+Yin et al.~\cite{2019A}                                & E-DAIC                            & LSTM                                   & A+T+V                     & -             & -             & -          & 5.50              & -                 \\
+\hline
+\end{tabular}
+		\begin{tablenotes}
+			\footnotesize
+			\item Results of the experiment include features from audio(A), text(T) and video(V).
+		\end{tablenotes}
+\end{table*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Table \ref{tab9} summarizes the results of the experiments on the detection of depression based on multi-modal data, including the source and name of the method, the data set used (- means the data used were collected by ourselves), the evaluation criteria of the experimental results, including the evaluation criteria of depression severity by depression scale mean absolute error (MAE) and root mean square error (RMSE).
+Table \ref{tab9} summarizes the results of the experiments on the detection of depression based on multi-modal data, including the source and name of the method, the dataset used and the evaluation criteria of the experimental results, which includes classification metrics: F1 Score, Precision, Recall, and regression metrics of depression severity by depression scale: mean absolute error (MAE), root mean square error (RMSE).
+Most studies have multiple evaluation metric for experimental results. For multiple classification metric, we choose the highest F1 score for presentation.
 
-%Table\ref{tab5} summarizes the experimental results of the social platform text-based depression detection, including the source and name of the method, the type of data used and the source of the dataset (- indicates that the data used were collected by themselves), and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
+Comparing different methods using the same dataset, the following list of observations can be summed up:
+
+(1) In general, the more different modality data types are combined, the better experimental results are.
+For example, combining audio, video and text data can better results than combining two modality data or single modality data.
+The data of different modes can balance each modality data's shortcomings and increase the diversity of extracted features, which can choose more effective features to predict depression.
+
+(2) On the AVEC 2013/2014 dataset, Support Vector Regression achieves better results in traditional machine learning based methods.
+It is an important application branch of SVM, which is to find a regression plane and make all the data of a set closest to the plane.
+For the video modality , an epsilon-Support Vector Regression with intersection kernel trained using  Local Gabor Binary Pattern Three Orthogonal Planes features has been employed.
+Support Vector Regression with linear kernel and Sequential Minimal Optimization training as implemented in Waikato Environment for Knowledge Analysis was used for the audio baseline, and feature set consists of Low level descriptors related to energy, spectral, voicing, etc.
+Finally, in order to create the audio-visual baseline, predictions from both audio and video baselines were obtained by taking the mean value for audio and video.
+The author~\cite{10.1145/2661806.2661807} believes that the good results of depression diagnosis may be attributed to the following reasons:
+Firstly, the Local Gabor Binary Pattern Three Orthogonal Planes features have been shown before to outperform other descriptors for human behaviour analysis.
+Secondly, using an average dimensional affect label over multiple subjective ratings should remove some of the subjectivity of the interpretation of the affective behaviour, and remove rater errors caused by cognitive workload effects such as fatigue.
+
+(3) On the DAIC-WOZ dataset, Stochastic Gradient Descent Regression achieves better results in traditional machine learning based methods.
+Gong et al.~\cite{gong2017topic} propose a topic modeling based multi-modal feature vector building scheme to provide the basis for context-aware analysis, and perform a grid search for the following regression models: Random Forest regression, Stochastic Gradient Descent regression, and Support Vector Regression.
+Author observe that with the increase of feature numbers, Stochastic Gradient Descent and Support Vector Regression models continually improve their performance while the random forest model stops improving much earlier.
+When the number of selected features is 46, the Stochastic Gradient Descent regression model achieves the best performance.
+Experiments result show that the proposed approach performs significantly better than context-unaware method and the challenge baseline for all metrics, and it has the ability to discover a variety of temporal features that have underlying relationship with depression and further to build model on them.
+
+\subsection{Others}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Most of the data of other modes in the auxiliary diagnosis of depression use single mode data, but a few studies combine data of multiple modes for prediction.
+Each type of brain imaging can reflect the brain of patients with depression. For example, sMRI can clearly display the anatomical structure of the brain with high spatial resolution and reflect the internal structure of the brain, while fMRI can detect the changes of cerebral blood oxygen dependent level signals, and can reflect the active state of brain neural regions.
+Therefore, Mousavian et al. combined the similarity of spatial cubes of sMRI and fMRI data, extracted features from them and input them into a unified machine learning classifier framework to detect depression~\cite{mousavian2021depression}.
 
 
 
