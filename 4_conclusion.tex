@@ -10,43 +10,41 @@
 \subsection{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Brain imaging}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Depression is the fourth largest disease in the world, but the medical prevention and treatment of depression is still in a situation of low recognition rate in China. The recognition rate of hospitals above prefecture level cities is less than 20\%, and less than 10\% of patients receive relevant drug treatment; Moreover, at the same time, the incidence of depression (and suicides) has begun to show a trend of younger age (universities, and even primary and secondary school students). How to find an efficient and rapid diagnostic method becomes imminent. This paper summarizes the research and application of various modal data in the diagnosis of depression, and provides a reference for designing a more convenient and fast clinical auxiliary diagnosis method.
 
-Multimodal neuroimaging techniques have revealed abnormalities in brain structure, brain function, and brain metabolism in depressed patients, providing new ideas for the early diagnosis of depression and optimization of treatment options. Currently, most studies are still based on unimodal structural and functional brain imaging, such as MRI, fMRI, fNIRS, etc., and the results of these studies demonstrate the usefulness of various types of brain imaging for classifying depressive symptoms. However, studies based on PET, MRS and other brain metabolism and multimodal brain imaging are still in the minority, but these aspects still have a great potential for application in the diagnosis of depression, waiting for researchers to explore.
+%%%%%%traditional machine learning
+Preliminary, the traditional machine learning method was widely used in the task of auxiliary depression diagnosis because of its advantages such as simplicity, easy implementation and strong interpretability.
+Common classification and regression methods, such as SVM, RF, and logical regression, have achieved good performance in solving the problem of depression diagnosis in small samples.
+However, these traditional machine learning methods need to extract features manually, which is time-consuming and labor-intensive, and may extract features with high dimensions, resulting in over fitting of the model.
+Therefore, most researchers use methods such as principal component analysis to reduce the dimensions of extracted features and select the most useful features for prediction.
 
-Current research on brain imaging-based detection of depression still has some limitations: (1) The limitations of the current studies are the small number of training samples and unbalanced data sets. (2) The studies on brain structure, function and metabolism are relatively independent, and too much differentiation in the studies should be avoided; they can be combined with each other as an overall study to explore the important connections of important brain regions in structure, function and metabolism. (3) At present, there are few studies on the imaging differences of brain structure, brain function and brain metabolism between patients with non-refractory depression and patients with refractory depression, and most of them are cross-sectional studies, and there is an urgent need for in-depth longitudinal studies with large samples.
+%%%%%%deep learning
+With the development of artificial intelligence, deep learning methods have gradually matured, which is a method in machine learning based on learning representations of data to achieve complex function approximation by learning a deep nonlinear network structure.
+In the auxiliary depression diagnosis method based on deep learning, the preprocessed data is usually input directly into the model for feature extraction.
+Since the depression data changes in both the temporal and spatial domains, researchers use convolutional kernels to extract the spatial information and also use RNN or 3D convolutional kernels to extract the temporal information, and then combine them for prediction.
+This method does not need to manually extract features, and the network can independently learn the high-level semantic information, extract the most effective features, and avoid the impact of human subjective experience.
+However, deep learning models require large amounts of data for training and cannot explain the decisions they make, so deep learning-based auxiliary depression diagnosis needs further exploration.
 
-
-\subsubsection{Facial expressions}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A person's personality and mood can be seen in their facial features, and some studies have found that the looks and temperament of people with depression can differ from those of the general population. The increasing social concern about depression and the valuable data provided by visual challenge competitions such as AVEC have both accelerated to some extent the development of studies based on facial features of depressed patients in aiding the identification and diagnosis of depression. As a result, research on depression recognition based on facial expression behavior has become a hot topic.
-At the same time, because facial features are so rich in variation, analysis of data from only a single point in time cannot achieve accurate diagnosis of depression, so most studies focus on the analysis of the temporal dimension to improve detection accuracy.
-In future studies, more facial features can be combined with other physiological and behavioral features to improve the detection performance.
-
-
-\subsubsection{Text}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-With the development and popularity of the Internet, it has made various social media platforms an important platform for people to express their psychological emotions.
-By comparing and analyzing the effects of detecting depressed users based on Twitter, Weibo, Facebook, Reddit and other data in related literature, it was demonstrated that it is feasible to detect depressed users using text-based social network data.
-From the experiments and comparison with related work, it is clear that dataset, features, and detection models are all key to the detection of depressed users based on social network data, and there are large differences in these aspects across the literature. In addition, the higher accuracy rates in the existing work are obtained on balanced samples, which differ significantly from the actual distribution of depressed users and imply that there are still many challenges to be faced in the practical application.
-
-There are still some limitations in the current research on social text-based depression detection: (1) most of the studies are based on public social network data, due to privacy issues, few studies are using private social network data such as Qzone and WeChat friend circle for depressed user detection, while compared to public social networks these private data contain more user emotions and have great potential for depressed user detection. The private data contains more user emotions than public social networks, and has great potential for depressed user detection. (2) Most of the literature removes expressions and special symbols in preprocessing to reduce the noise of data, but many users are used to express their emotions with these symbols, and this information is also effective for user psychological detection, so the model can be further improved and performance enhanced by the fusion and utilization of multidimensional features. (3) Similarly, combining information such as images, audio and video posted by users in social networks might be better for depressive tendency prediction.
-
-\subsubsection{Multi-modal data}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Depression is a common and highly prevalent mental disorder, and the existing assessment process is complex and relatively subjective, and its effective diagnosis needs to be addressed. Depression is not only traumatic to the patient's mental health, but also to his or her appearance and behavior, and the accuracy of depression detection can be further improved by combining these abnormalities. For example, combining structural and functional brain imaging can yield high-resolution and well-structured brain data, while audio and video data can be combined with patients' facial expressions and voice expressions to better analyze the emotions expressed by patients, etc.
-
-
+%%%%%%limitations
+Great progress has been made in the diagnosis of depression based on each modality, but many studies still have certain limitations:
+(1) They ignore the changes of patients in the temporal dimension and do not take into account the effects of medication and other factors on the patient's body.
+(2) Most studies use scales to determine depression labels for diagnosed by professional physicians and lack reliability.
+(3) Some behavior data are usually collected by machine, recording the communication between human and machine, rather than collected from human-to-human conversation, which may not match the responses in real scenarios.
+(4) There is no more breakdown of depression categories.
 
 \subsection{Future Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Depression is the fourth largest disease in the world, but the medical prevention and treatment of depression is still in a situation of low recognition rate in China. The recognition rate of hospitals above prefecture level cities is less than 20\%, and less than 10\% of patients receive relevant drug treatment; Moreover, at the same time, the incidence of depression (and suicides) has begun to show a trend of younger age (universities, and even primary and secondary school students). How to find an efficient and rapid diagnostic method becomes imminent. This paper summarizes the research and application of various modal data in the diagnosis of depression, and provides a reference for designing a more convenient and fast clinical auxiliary diagnosis method.
+In the future, in order to obtain more reliable recognition results of depression, researchers should try from many aspects.
+(1) Researchers should consider collecting more data from more angles, enriching data types, and collecting data of diagnosed depression patients as much as possible.
+(2) It can track the data of subjects for a long time to analyze the influence of drugs or other factors on patients with depression.
+(3) Depression can be further subdivided to explore and analyze different types of depression.
 
-Great progress has been made in the detection of depression based on each modality, but many studies still have certain limitations: (1) they ignore the changes of patients in the temporal dimension and do not take into account the effects of medication and other factors on the patient's body. (2) Most studies use scales to determine depression labels for diagnosed by professional physicians and lack reliability. (3) The data are usually collected by machine, recording the communication between human and machine, rather than collected from human-to-human conversation, which may not match the responses in real scenarios. (4) There is no more breakdown of depression categories.
+Among the auxiliary depression diagnosis method, researchers need to gain insight into the pathogenesis of depression and look for the causes of abnormal manifestations in order to develop a more rational diagnostic model.
+More over, researchers also need to consider the characteristics of the spatio-temporal dimension of the data and extract more effective features for prediction.
 
-In the future, in order to obtain more reliable results of depression identification, researchers should consider collecting more data from more angles to analyze the diagnosis of depression. It is also hoped that multimodal depression identification can help more patients with depression get early intervention and treatment, and provide more effective help for the rehabilitation of patients with depression.
+To be clear, these methods are not proposed as standalone diagnostic tools that could replace current approaches to diagnosing depression, but instead proposed as part of a broader awareness, detection, and auxiliary system.
+It is also hoped that multimodal depression identification can help more patients with depression get early intervention and treatment, and provide more effective help for the diagnosis of patients with depression.
 
 
 \ifx\allfiles\undefined
