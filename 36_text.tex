@@ -4,7 +4,7 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Depression recognition method based on social network data}
+\section{Auxiliary depression diagnosis method based on Text}
 \label{sec_approach}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,7 +56,7 @@ Since the first seminar was formed in 2000, the organization has held a meeting 
 This meeting includes ten benchmarking labs reported results of their year long activities in overview talks and lab sessions, and eRisk is one of the tasks.
 eRisk pilot task focuses on automatically detecting depression as early as possible from a users’ posts to Reddit, which promote the auxiliary diagnosis of depression based on social media data.
 
-\subsubsection{Social network depression recognition based on traditional machine learning}
+\subsubsection{Text auxiliary depression diagnosis based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -106,7 +106,7 @@ It can give the topic of each document in the form of probability distribution f
 Finally, there are many other methods that also achieved good results in auxiliary depression diagnosis based on social networks, such as dictionary learning~\cite{peng2019multi,shen2017depression} and incremental classification~\cite{burdisso2019text}, which provide more possibilities for depression analysis.
 
 
-\subsubsection{Social network depression recognition based on deep learning}
+\subsubsection{Text auxiliary depression diagnosis based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -214,7 +214,7 @@ Table\ref{tab5} summarizes the experimental results of the social platform text-
 %Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
 Most researchers used the social network data they collected to analyze depression. Based on the research on the use of public datasets, we can draw the following conclusions:
 
-(1) On the CLPsych2015 dataset, the traditional machine learning methods based on Naïve Bayes            and Logistic Regression have basically achieved similar results, but the CNN based deep learning method is obviously better than the two traditional machine learning methods, and Orabi et al.~\cite{orabi2018deep} also used the RNN based model for depression analysis.
+(1) On the CLPsych2015 dataset, the traditional machine learning methods based on Naïve Bayes and Logistic Regression have basically achieved similar results, but the CNN based deep learning method is obviously better than the two traditional machine learning methods, and Orabi et al.~\cite{orabi2018deep} also used the RNN based model for depression analysis.
 The experimental results show that the CNN based model has better performance than the RNN.
 
 (2) On the data set of RSDD, the CNN model proposed by Yates et al.~\cite{yates2017depression} uses convolution layer to process posts to identify the features existing in the sliding text window, and combines the identified features into a vector representation of user activities for classification.
