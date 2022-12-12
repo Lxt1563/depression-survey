@@ -4,6 +4,8 @@
     \input{tnnls_prefix}
 \fi
 
+\section{Depression recognition method based on multiple audiovisual and text data}
+
 The recognition model of depression based on single mode data has made many achievements, but it also has some limitations.
 For example, gait abnormalities may also be caused by physiological diseases, physiological signals are not easy to collect, and data such as voice and facial expressions are vulnerable to the impact of the environment.
 Therefore, the use of single mode data alone cannot meet the needs of clinical depression diagnosis. In recent years, more and more studies have combined multiple modal data for depression assessment and detection, and also have achieved good results.
@@ -13,7 +15,6 @@ Most depression recognition methods based on multimodal data mostly use audio, v
 Therefore, in this section, we mainly introduce the methods of depression recognition based on audio, video and text.
 
 
-\subsection{Depression recognition method based on multiple audiovisual and text data}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[tbp]
@@ -38,7 +39,7 @@ The hybrid fusion method combines the output of early fusion with the prediction
 At present, most of the research is based on early fusion methods.
 
 
-\subsubsection{Multiple audiovisual and text depression recognition based on traditional machine learning}
+\subsection{Multiple audiovisual and text depression recognition based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -59,7 +60,7 @@ A large number of experimental results show that, compared with single mode data
 %\subsubsection{Audiovisual cues auxiliary depression diagnosis based on deep learning}
 
 
-\subsubsection{Multiple audiovisual and text depression recognition based on deep learning}
+\subsection{Multiple audiovisual and text depression recognition based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
@@ -74,7 +75,7 @@ Moreover, Ray et al.~\cite{ray2019multi} propose a multi-level attention-based e
 More importantly, it recognizes the significance of intra- and inter-modal features for predicting depression levels and fusing the patterns of audio, video, and text to predict the severity of depression.
 
 
-In recent years, hybrid models have attracted considerable attention in research employing audiovisual data for an auxiliary depression diagnosis.
+In recent years, hybrid models have attracted considerable attention in research employing audiovisual data for depression recognition.
 Specifically, the combination modules of the deep convolutional neural network (DCNN) and deep neural network (DNN), as well as CNN and transformer.
 \emph{(1) The combination modules of DCNN and DNN:}
 Yang et al.~\cite{Yang2017} propose a multi-modal fusion framework composed of DCNN and DNN models. This architecture takes into account streams of audio, video, and text. For each modality, handcrafted feature descriptors are fed into a DCNN in order for it to learn high-level global features with compact dynamic information.
@@ -103,7 +104,7 @@ transformer and deep 1D CNN for acoustic feature modeling.
 
 
 
-\subsubsection{Performance Comparison}
+\subsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -173,7 +174,7 @@ It is an important application branch of SVM, which is to find a regression plan
 For the video modality , an epsilon-Support Vector Regression with intersection kernel trained using  Local Gabor Binary Pattern Three Orthogonal Planes features has been employed.
 Support Vector Regression with linear kernel and Sequential Minimal Optimization training as implemented in Waikato Environment for Knowledge Analysis was used for the audio baseline, and feature set consists of Low level descriptors related to energy, spectral, voicing, etc.
 Finally, in order to create the audio-visual baseline, predictions from both audio and video baselines were obtained by taking the mean value for audio and video.
-The author~\cite{10.1145/2661806.2661807} believes that the good results of depression diagnosis may be attributed to the following reasons:
+The author~\cite{10.1145/2661806.2661807} believes that the good results of depression recognition may be attributed to the following reasons:
 Firstly, the Local Gabor Binary Pattern Three Orthogonal Planes features have been shown before to outperform other descriptors for human behaviour analysis.
 Secondly, using an average dimensional affect label over multiple subjective ratings should remove some of the subjectivity of the interpretation of the affective behaviour, and remove rater errors caused by cognitive workload effects such as fatigue.
 
