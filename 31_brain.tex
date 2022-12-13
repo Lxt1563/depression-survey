@@ -133,7 +133,7 @@ Jun et al.~\cite{2020Identifying} uses spectral Graph Convolutional Networks bas
 
 However, MRI data is 3D or 4D, which means that it is high-dimensional, including not only spatial information but also time information.
 Mousavian et al.~\cite {mousavian2020depression} uses 3D-CNN to capture 3D spatial information, or Spatial-temporal CNN to extract spatial and temporal information at the same time.
-In addition, in order to understand the changes of the brain over a period of time, LSTM is also trained to capture the changes of RS-fMRI over time.
+In addition, in order to understand the changes of the brain over a period of time, Long short-term Memory(LSTM) is also trained to capture the changes of RS-fMRI over time.
 Mousavian et al.~\cite{mousavian2020depression} also uses a hybrid model combining CNN and LSTM to capture the spatial and temporal information of data.
 CNN works for retrieving spatial features of the data and extract the active areas, and LSTM retrieves temporal features and models the blood flow.
 
@@ -182,7 +182,7 @@ fNIRS uses the scattering of blood to near-infrared light to obtain the changes 
 The research on fNIRS based auxiliary depression diagnosis is still mainly based on traditional machine learning algorithms~\cite{2019Machine}~\cite{2017Machine}.
 Traditional machine learning classifiers rely heavily on manually extracted features, and different features can be divided into linear and nonlinear.
 Linear features are usually used in fNIRS analysis, such as mean, peak, valley, average, variance and other feature indicators of the blood oxygen response function (HbO, HbR, HbT).
-These are the features of task related cortical regions extracted by measuring the process of motor imagination task, visual task, cognitive task, etc., and recognized by machine learning classifiers such as SVM, OneR, RF, XGBoost~\cite{2015Automatic,2017Automatic,2020Classifying}.
+These are the features of task related cortical regions extracted by measuring the process of motor imagination task, visual task, cognitive task, etc., and recognized by machine learning classifiers such as SVM, One Rule, RF, eXtreme Gradient Boosting~\cite{2015Automatic,2017Automatic,2020Classifying}.
 %In recent years, machine learning techniques have shown great potential in the diagnosis and treatment of mental health disorders including depression~\cite{2019Machine}~\cite{2017Machine}. 
 %The most common machine learning algorithms for predictive classification such as Support Vector Machines (SVM), Decision Trees (DT) and naïve bayes,etc, have been applied to fNIRS data to classify Major Depressive Disorder (MDD) patients and healthy individuals. All of these methods have yielded good results in depression identification~\cite{2017Automatic}. 
 %Hong et al.~\cite{2015Automatic} designed a SVM based classifier to classify the features extracted from fNIRS.
