@@ -4,7 +4,7 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Depression recognition method based on multiple audiovisual and text data}
+\section{Auxiliary depression diagnosis method based on multiple audiovisual and text data}
 
 The recognition model of depression based on single mode data has made many achievements, but it also has some limitations.
 For example, gait abnormalities may also be caused by physiological diseases, physiological signals are not easy to collect, and data such as voice and facial expressions are vulnerable to the impact of the environment.
@@ -39,7 +39,7 @@ The hybrid fusion method combines the output of early fusion with the prediction
 At present, most of the research is based on early fusion methods.
 
 
-\subsection{Multiple audiovisual and text depression recognition based on traditional machine learning}
+\subsection{Multiple audiovisual and text auxiliary depression diagnosis based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -51,7 +51,7 @@ The multimodal combination method is similar to the feature extraction method of
 It extracts video features (facial action coding system coding, local binary patterns, active appearance modeling, motion history histogram, topic modeling, etc.~\cite{2009Detecting, meng2013depression}), vocal features (pitch, fluency measures, mel-scale frequency cepstral coefficients, voice quality, measures of periodicity and symmetry, etc.~\cite{2009Detecting, fraser2016detecting} and textual features (topic modeling, part-of-speech, n-gram, speech rate, parse constituents and psycholinguistic measures, etc.~\cite{gong2017topic, morales2016speech, fraser2016detecting}), then the prediction is carried out by combining the features input classification or regression model.
 
 
-Besides the common classification and regression methods such as Logical Regression, SVM, Support Vector Regression, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017facial, Morales2018ALF}, some researchers have explored fusion methods.
+Besides the common classification and regression methods such as Logical Regression, SVM, Support Vector Regression, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017Facial, Morales2018ALF}, some researchers have explored fusion methods.
 Morales et al.~\cite{Morales2018ALF} proposes a new early fusion method named Informed Early Fusion.
 Unlike the simple early fusion method for composite modes, the syntax based early fusion method uses the relationship between syntax and suppression to help improve model performance.
 Kachele et al.~\cite{M2014Fusion} performs the final fusion step using a trainable Kalman filter.
@@ -60,7 +60,7 @@ A large number of experimental results show that, compared with single mode data
 %\subsubsection{Audiovisual cues auxiliary depression diagnosis based on deep learning}
 
 
-\subsection{Multiple audiovisual and text depression recognition based on deep learning}
+\subsection{Multiple audiovisual and text auxiliary depression diagnosison based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
@@ -100,10 +100,6 @@ transformer and deep 1D CNN for acoustic feature modeling.
 
 
 
-
-
-
-
 \subsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -119,7 +115,7 @@ transformer and deep 1D CNN for acoustic feature modeling.
 Meng et al.~\cite{meng2013depression} &AVEC2013& Partial Least Square  & A+V & - & - & - & 8.72 & 10.96 \\ \hline
 Kachele et al.~\cite{M2014Fusion} & AVEC2013& Support Vector Regression & A+V & - & - & - & 8.97 & 10.82 \\ \hline
 Niu et al.~\cite{niu2020multimodal} &  AVEC2013& CNN+LSTM & A+V & - & - & - &8.16 &6.14\\ \hline
-Pampouchidou et al.~\cite{2017facial} & AVEC2013/14 & Nearest Neighbour Classifier & A+V  & 73.00 & 95.00& 59.00 & -                 & -   \\ \hline
+Pampouchidou et al.~\cite{2017Facial} & AVEC2013/14 & Nearest Neighbour Classifier & A+V  & 73.00 & 95.00& 59.00 & -                 & -   \\ \hline
 Morales et al.~\cite{morales2016speech}& AVEC2014 & SVM & A+T & - & -  & - & 9.21 & 7.56 \\\hline
 AVEC2014~\cite{10.1145/2661806.2661807} &AVEC2014 &Support Vector Regression&A+V & -  & -  & -  & 7.89 & 9.89\\ \hline
 Jan et al.~\cite{jan2017artificial} &AVEC2014 &DCNN & A+V & - & - & - &7.43 &6.14\\ \hline
@@ -130,9 +126,9 @@ Niu et al.~\cite{niu2020multimodal} &AVEC2014 &CNN+LSTM & A+V & - & - & - &7.03 
 AVEC2016/2017~\cite{valstar2016avec,ringeval2017avec} & DAIC-WOZ & RF   & A+ V& - & - & -& 7.05 & 5.66  \\ \hline
 Williamson et al.~\cite{2016Detecting}& DAIC-WOZ& Gaussian Staircase Model & A+V+T& 81.00& - & - & 5.31  & 4.18 \\\hline
 Gong et al.~\cite{gong2017topic} & DAIZ-WOZ& \begin{tabular}[c]{@{}c@{}}Stochastic Gradient Descent\\ Regression\end{tabular}                                                                                                                          & A+T+V & 60.00& - & - & 4.99 & 3.96 \\\hline
-\multirow{3}{*}{Morales et al.~\cite{Morales2018ALF}} & \multirow{3}{*}{DAIC-WOZ} & \multirow{3}{*}{SVM}  & A+T    & 49.00 & 36.00& 78.00  & - & - \\
-& & & A+V & 49.00& 36.00 & 78.00 & -  & -  \\
-& & & A+T+V & 49.00 & 36.00 & 78.00  & - & -  \\\hline
+\multirow{3}{*}{Morales et al.~\cite{Morales2018ALF}} & \multirow{3}{*}{DAIC-WOZ} & \multirow{3}{*}{SVM}  & A+T                       &49.00 &36.00 & 78.00   & - & - \\
+& & & A+V & 49.00&36.00 & 78.00 & -  & -  \\
+& & & A+T+V & 49.00 & 36.00 &78.00  & - & -  \\\hline
 Alhanai et al.~\cite{al2018detecting}& DAIC-WOZ& LSTM & A+T & 77.00& 71.00 & 83.00 & 6.37 & 5.10 \\\hline
 \multirow{2}{*}{Rohanian et al.~\cite{rohanian2019detecting}}  & \multirow{2}{*}{DAIC-WOZ} & \multirow{2}{*}{LSTM}  & T+A & 80.00 & 78.00 & -  & 5.14 & 3.66   \\
 & &  & A+V+T  & 81.00& 80.00 & - & 4.99 & 3.61  \\\hline
@@ -140,7 +136,7 @@ Alhanai et al.~\cite{al2018detecting}& DAIC-WOZ& LSTM & A+T & 77.00& 71.00 & 83.
 & & & V+T& - & - & - & 5.11 & 3.65 \\
 &  &  & A+T & - & - & -& 4.64 & 3.65  \\
 & & & A+V+T & - & - & - & 4.14  & 3.07  \\\hline
-Lau et al.~\cite{lau2021improving} & DAIC-WOZ & BiLSTM & A+T & 92.00 & 100.00 & 86.00 &3.95 &3.00\\\hline
+Lau et al.~\cite{lau2021improving} & DAIC-WOZ & BiLSTM & A+T &92.00 & 100.00 & 86.00 &3.95 &3.00\\\hline
 Yang et al.~\cite{yang2017hybrid}  & DAIC-WOZ & DCNN+DNN & A+V+T &- &-&-&5.40 &4.36 \\ \hline
 Yang et al.~\cite{yang2017multimodal} & DAIC-WOZ & DCNN+DNN & A+V+T & -  & -  & - & 5.97  & 5.16 \\ \hline
 Yang et al.~\cite{yang2018integrating}  & DAIC-WOZ & DCNN+DNN & A+V & 60.00 & 55.00& 67.00& 6.34  & 5.39 \\ \hline
