@@ -50,7 +50,7 @@ Finally, we list some commonly used assessment metrics, which are important in e
 \hline
 %\textbf{Name}                                                                                                 & \multicolumn{1}{c|}{Items} & \multicolumn{1}{c|}{Scores} & \multicolumn{1}{c|}{Grading}                                                                                                                    & \multicolumn{1}{c}{Usage}     \\ \hline
 \textbf{Name}                                                                                                 & \textbf{Items} & \textbf{Scores} & \textbf{Grading}                                                                                                                    & \textbf{Usage}     \\ \hline
-\makecell[c]{Beck Depression Inventory (BDI)~\cite{1961An} }                                                       & 21                         & 0-63                        & \makecell[c]{0-9 minimal, 10-18 mild,\\ 19-29 moderate, 30-63 severe}                              & \multirow{12}{*}{self- rating}  \\ \cline{1-4}
+\makecell[c]{Beck Depression Inventory (BDI)~\cite{1961An} }                                                       & 21                         & 0-63                        & \makecell[c]{0-9 minimal, 10-18 mild,\\ 19-29 moderate, 30-63 severe}                              & \multirow{12}{*}{self-rating}  \\ \cline{1-4}
 %&\makecell[c]{0-9 minimal, 10-18 mild,\\ 19-29 moderate, 30-63 severe}                              & \multirow{12}{*}{self- rating}  \\ \cline{1-4}
 \makecell[c]{Beck Depression Inventory-II (BDI-\uppercase\expandafter{\romannumeral2})~\cite{beck1975}}      & 13                         & 0-39 & \makecell[c]{0-4 minimal, 5-7 mild,\\ 8-15 moderate, 16-39 severe}                             &                                \\ \cline{1-4}
 \makecell[c]{Self-rating depression scale (SDS)~\cite{SDS}  }                                          & 20                         & 20-80                       & \makecell[c]{20-53 minimal, 53-62 mild,\\ 63-72 moderate, 73-80 severe}                            &                                \\ \cline{1-4}
@@ -67,7 +67,7 @@ Finally, we list some commonly used assessment metrics, which are important in e
 \end{tabular}
 	\begin{tablenotes}
 			\footnotesize
-			\item There are three versions of the HAMD scale, 17, 21 and 24-item, and only the 24-item version is described here in detail.
+			\item There are three versions of the HAMD scale, and only the 24-item version is described here in  this table.
 			\item Clinical diagnosis criteria: Different criteria are listed for different numbers of symptoms, and doctors confirm the diagnosis of the condition based on the number of symptom matches and the duration of the patient's symptoms.			
 		\end{tablenotes}
 %\end{threeparttable}}
@@ -89,8 +89,9 @@ As the most commonly used tools, a series of questionnaires capturing depressive
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-For each scale, there are several items with 3-4 options which rating to different scores. Subjects match one option they deem appropriate in each item and the different range of overall score is divided to different degree of depression. 
-For example, the BDI-II scale is a 4-point scale which containing 21 items about sleep, appetite, mood, and suicidal thoughts, as shown in Fig \ref{BDI}.
+For each scale, There are 3-4 options for several items with different scores.
+Subjects match one option they appropriate in each item and the different range of overall score is divided to different degree of depression. 
+For example, the BDI-II scale is a 4-point scale including 21 items about sleep, appetite, mood, and suicidal thoughts, as shown in Fig \ref{BDI}.
 Each item has 4 options and is rated ranging from 0 to 3. 
 The highest overall score is 63, and higher scores indicate more severe depressive symptoms. 
 Subjects will match one option of each item by the feelings in the past two weeks. 
@@ -101,16 +102,16 @@ The scales are divided into other-rating scales and self-rating scales by the wa
 %他评量表
 For subjects, testing other-rating scales needs communication with psychiatrist, psychologist or other trained medical personnel at a professional place like hospital or clinic, which is more reliable but less convenient.
 %自评量表
-Self-rating scale like BDI-II is a kind of self-assessment under the Instruction manual, which can be easy complete in 5-10 minutes but not quite reliable.  
+Self-rating scale like BDI-II is a kind of self-assessment based on the instructions, which can be easily completed in 5-10 minutes but not quite reliable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The scale is tried to test the emotions of subjects, because negative emotions are the main performance of depressed people. 
 However, people with negative emotions are not the same as with depression.
 Measuring depression on a scale alone has limitations, so that physiological electrical signals or brain images from subjects for auxiliary depression diagnosis during professional diagnosis.
-In recent years, some research showed that abnormal behavioral signals like facial expressions, voice and gait can reflect mental disease, which is more easily to observe compared with physiological electrical signals or brain images.
+In recent years, some research showes that abnormal behavioral signals like facial expressions, voice and gait can reflect mental disease, which is more easily to observe compared with physiological electrical signals or brain images.
 For example, depressed people have dull facial expressions, rarely make eye contact, use phrases with a flat tone when speaking, and walk slowly.
-By analyzing the abnormal behavioral signals can be well in auxiliary diagnosing depression.
+By analyzing the abnormal behavioral signals can auxiliary diagnosing depression.
 
 %%补充抑郁量表说明
 In general, the data of patients with depression are not disclosed due to privacy issues, so most of the studies mentioned in this paper use the results of the scale as labels for experiments, and these scales are tests for the normal population who have not been diagnosed with depression.
@@ -119,18 +120,18 @@ In general, the data of patients with depression are not disclosed due to privac
 \subsection{Datasets}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The world around us involves many modes, we see objects, hear sounds, feel textures, smell smells, and so on. Most people associate the word modality with sensory modality, which represents the main channel of our communication and sensation, such as vision, hearing, etc.
-This section introduces some public datasets as shown in Table \ref{tab2}, including the name, information of subject and data mode. Due to privacy issues, only several of the modal data has public dataset.
+This section introduces some public datasets as shown in Table \ref{tab2}, including the name, information of subject and data modality. Due to privacy issues, only several of the data modality has public dataset.
 Therefore, most researchers use the data collected by themselves for analysis.
 
-The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 matched control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user’s label (control or depression), and the posts field contains timestamp and untokenized pairs.
+The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 health control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user’s label (control or depression), and the posts field contains timestamp and untokenized pairs.
 
 The eRsik dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into risk case of depression and non-risk case.
 
 The Computational Linguistics and Clinical Psychology (CLPsych) provides apples-to-apples comparisons of various approaches to modeling language relevant to mental health from social media. The data used for this dataset is from Twitter users who state a diagnosis of depression or post traumatic stress disorder~\cite{coppersmith2015clpsych}.
 
-Bell Let's Talk is a campaign created by Bell Canada to help reduce stigma and promote awareness and understanding of mental health issues. Canadians opened up the dialogue on mental health, contributing more than 122 million tweets, texts, calls and social media shares on Bell Let's Talk Day~\cite{2017Monitoring}.
+Bell Let's Talk is a campaign created by Bell Canada to help reduce stigma and promote awareness and understanding of mental health issues. Canadians open up the dialogue on mental health, contributing more than 122 million tweets, texts, calls and social media shares on Bell Let's Talk Day~\cite{2017Monitoring}.
 
-The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA were carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
+The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA are carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
 
 The Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011, which is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a classification problem or regression problem.
 
@@ -245,14 +246,15 @@ Finally, we also introduce some private data sets, which refer to those studies 
 \subsection{Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
-In many studies, depression detection was seen as a binary classification problem. Subject with the minimal degree of the scale were labeled to have non-depressed and others were labeled to have depressed.
+In many studies, the diagnosis of depression is considered as a binary classification problem.
+Subject with the minimal degree of the scale were labeled to have non-depressed and others are labeled to have depressed.
 And the experimental evaluation methods were some common classification metrics such as precision, accuracy, recall, F1-score, specificity, sensitivity and Area Under the Curve (AUC), and accuracy is the most frequently used of these metrics.
 
 Some studies used regression analysis to predict the degree of depression according to the score of scale, and the experimental evaluation methods were some common regression metrics as: mean absolute error (MAE) and root mean squared error (RMSE).
 
-\subsubsection{Classification indicators}
+\subsubsection{Classification metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Confusion metrics is the basic of classification metrics. And confusion metrics can be split to 4 parts: True Positive (TP), False Positive (FP), False Negative (FN) and True Negative (TN). TP means a positive sample and predicted as positive. False Positive FP means a positive sample but predicted as negative. False Negative FN means a negative sample but predicted as positive. True Negative TN means a negative sample and predicted as negative. Therefore, the total positive samples can be calculated as $TP+FP$, and the total negative samples can be calculated as $FN+TN$. The overall of confusion metrics is shown in Fig \ref{metric}.
+Confusion metric is the basic of classification metrics. And confusion metrics can be split to 4 parts: True Positive (TP), False Positive (FP), False Negative (FN) and True Negative (TN). TP means a positive sample and predicted as positive. False Positive FP means a positive sample but predicted as negative. False Negative FN means a negative sample but predicted as positive. True Negative TN means a negative sample and predicted as negative. Therefore, the total positive samples can be calculated as $TP+FP$, and the total negative samples can be calculated as $FN+TN$. The overall of confusion metrics is shown in Fig \ref{metric}.
 
 \begin{figure}[tbp]
 	\centering	
@@ -264,42 +266,42 @@ Confusion metrics is the basic of classification metrics. And confusion metrics 
 \end{figure}
 
 
-\emph{Precision} reflects the ability of the model to correctly predict positive samples, it calculates how many positive samples are predict as \emph{positive}. The calculation formula as follows:
+\emph{Precision} reflects the ability of the model to correctly predict positive samples, it calculates how many positive samples are predict as \emph{positive}. The calculation is formulated as:
 
 \begin{equation}
  Precision =\frac{TP}{TP+FP}
 \end{equation}
 
 
-\emph{Accuracy} reflects the ability of the model to correctly predict the overall sample, it calculates how many positive samples are predict as \emph{positive} and negative samples as \emph{negative}. The calculation formula as follows:
+\emph{Accuracy} reflects the ability of the model to correctly predict the overall sample, it calculates how many positive samples are predict as \emph{positive} and negative samples as \emph{negative}. The calculation is formulated as:
 
 \begin{equation}
 Accuracy =\frac{TP+TN}{TP+FN+FP+TN}=\frac{TP+TN}{P+N}
 \end{equation}
 
 
-\emph{Recall} reflects the ability of the model to correctly predict the full degree of positive samples, it  calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation formula as follows:
+\emph{Recall} reflects the ability of the model to correctly predict the full degree of positive samples, it  calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation is formulated as:
 
 \begin{equation}
 Recall =\frac{TP}{TP+FN}=\frac{TP}{P}
 \end{equation}
 
 
-\emph{F1-score} is a statistical measure of the accuracy of model. It defined as the harmonic mean of precision and recall. The formula as follows:
+\emph{F1-score} is a statistical measure of the accuracy of model. It defined as the harmonic mean of precision and recall. The calculation is formulated as:
 
 \begin{equation}
 F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
 \end{equation}
 
 
-\emph{Specificity} reflects the ability of the model to correctly predict the full extent of negative samples, it  calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation formula as follows:
+\emph{Specificity} reflects the ability of the model to correctly predict the full extent of negative samples, it  calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as:
 
 \begin{equation}
 Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 \end{equation}
 
 
-\emph{Sensitivity} reflects the ability of the model to correctly predict the full extent of positive samples, it  calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation formula as follows:
+\emph{Sensitivity} reflects the ability of the model to correctly predict the full extent of positive samples, it  calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as:
 
 \begin{equation}
  Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
@@ -337,11 +339,11 @@ In the ROC curve, AUC computes the performance of the binary classifier across d
 
 %As a numerical value, AUC will more clearly explain the effect of the classifier than ROC curve.
 
-\subsubsection{Regression indicators}
+\subsubsection{Regression metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 MAE and RMSE are often used to quantify how well a model fits a dataset.
 
-\emph{MAE} reflects the mean absolute difference between the predicted values and the actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation formula as follows:
+\emph{MAE} reflects the mean absolute difference between the predicted values and the actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation is formulated as:
 
 \begin{equation}
 MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
@@ -350,7 +352,7 @@ MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
 Where $y_{i}$ is the observed value for the $i^{th}$ observation, $\breve{y}_{i}$ is the predicted value for the $i^{th}$ observation, and $n$ is the sample size.
 
 
-\emph{RMSE} reflects the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation formula as follows:
+\emph{RMSE} reflects the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation is formulated as:
 
 \begin{equation}
 RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
