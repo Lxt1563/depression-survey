@@ -20,16 +20,16 @@ According to clinical observations, healthy and depressed persons speak differen
 The fact that depressed people typically speak more smoothly and monotonously than healthy people, who speak more rhythmically, with fewer pauses and fewer times than depressed people, illustrates these distinctions \cite{pampouchidou2017facial,montgomery1979new}.
 Furthermore, the researchers designed characteristics based on the variations between the two groups.
 These characteristics are objective and can discriminate between healthy populations and those that are depressed.
-Nevertheless, with the rapid advancement of deep learning techniques in recent years, speech depression recognition has transitioned from hand-crafted acoustic features to a deep learning-based framework.
+Nevertheless, with the rapid advancement of deep learning techniques in recent years, speech auxiliary depression diagnosis has transitioned from hand-crafted acoustic features to a deep learning-based framework.
 This family of approaches tackles two tasks: depression classification and depression level regression.
 %
 % Furthermore, inspired by current multi-task learning work, we also incorporate an auxiliary task (depression classification) to enhance the main task of depression level regression
 
 
 
-\subsubsection{Speech depression recognition based on traditional machine learning}
+\subsubsection{Speech auxiliary depression diagnosis based on traditional machine learning}
 
-In the early studies of speech depression recognition, the main work is to learn acoustic features related to depression and explore feature sets for better performance.
+In the early studies of speech auxiliary depression diagnosis, the main work is to learn acoustic features related to depression and explore feature sets for better performance.
 The extracted hand-crafted audio features to detect depression might be classified into four main groups: prosodic, voice quality, formant, and spectral features~\cite{france2000acoustical,moore2003analysis}.
 
 
@@ -51,11 +51,11 @@ The glottal spectrum shows the condition of vocal function, while frequency and 
 The four types of features mentioned above are regularly extracted in frames to generate frame-level Low Level Descriptors.
 Meanwhile, they can also be extracted directly using feature extraction tools such as OpenSMILE and COVERED.
 However, a single acoustic feature cannot adequately describe depressive symptoms due to their complexity and variety.
-As a result, many researchers have developed and mixed various acoustic features to build higher-performance depression, recognition models.
+As a result, many researchers have developed and mixed various acoustic features to build higher-performance auxiliary depression diagnosis models.
 Shankari et al.\cite{shankayi2012identifying} extract three categories of features from speech signals: prosodic, vocal tract spectrum, and glottal source. The results showed that using features together leads to better results than using each category alone.
 
 
-In traditional speech depression recognition studies, SVM~\cite{nasir2016multimodal,gong2017topic,cummins2013spectro,helfer2013classification} and Gaussian
+In traditional speech auxiliary depression diagnosis studies, SVM~\cite{nasir2016multimodal,gong2017topic,cummins2013spectro,helfer2013classification} and Gaussian
 Mixture Model (GMM)~\cite{helfer2013classification,williamson2013vocal,alghowinem2013comparative} are the two most popularly utilized modeling and classification methods.
 Ooi et al.\cite{ooi2014prediction} research 30 subjects (15 were at risk of depression, and 15 were not at risk) and present an ensemble method using GMM classifiers that used prosodic and glottal features. They report a classification result of 74\%.
 Alghowinem et al.\cite{alghowinem2013comparative} summarize low-level descriptors and statistical features of 60 subjects (30 controls and 30 depressed patients) and compared four classifiers: GMM, SVM, Hierarchical Fuzzy Signature, and Multilayer Perceptron Neural Network. They conclude that GMM and SVM performed better.
@@ -65,10 +65,10 @@ Alghowinem et al.\cite{alghowinem2013comparative} summarize low-level descriptor
 
 
 
-\subsubsection{Speech depression recognition based on deep learning}
+\subsubsection{Speech auxiliary depression diagnosis based on deep learning}
 
 Deep learning techniques have demonstrated their effectiveness in numerous speech-based applications.
-In speech depression recognition, CNN, RNN, hybrid networks, and transformer networks are some of the frequently utilized deep classifier techniques.
+In speech auxiliary depression diagnosis, CNN, RNN, hybrid networks, and transformer networks are some of the frequently utilized deep classifier techniques.
 %More recently, deep learning methods have shown their capacity in many speech-based applications.
 %The commonly used deep classifier algorithms in speech auxiliary depression diagnosis include CNN, RNN, Hybrid networks, and transformer networks.
 
@@ -93,7 +93,7 @@ In speech depression recognition, CNN, RNN, hybrid networks, and transformer net
 
 
 Specifically, CNN could capture spatial properties of features and has the ability of parallel computing.
-Therefore, it can be used as a classifier for a speech depression recognition.
+Therefore, it can be used as a classifier for a speech auxiliary depression diagnosis.
 CNN typically takes the audio feature descriptors as the input and is divided into two sub-categories.
 (1) \emph{Acoustic feature-based}.
 Well-known audio features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
@@ -105,7 +105,7 @@ Srimadhur et al.~\cite{srimadhur2020end} investigate depression detection using 
 Moreover, speech samples from the audio-visual emotion challenge (AVEC) 2016 DAIC-Woz dataset were utilized for validating the models.
 The fact that most of the input speech features used in these studies are based on the amplitude spectrogram, which loses the phase spectrogram information, means that important information concerning depression is not present.
 In order to make full use of speech information, Fan et al.~\cite{fan2022csenet} propose a complex squeeze-and-excitation network (CSENet), which uses the complex spectrogram as the input feature. The complex spectrogram contains all of the speech information, both amplitude and phase spectrogram.
-Despite having good outcomes in speech depression recognition, conventional CNNs have the obvious drawback of being unable to capture lengthy temporal context information.
+Despite having good outcomes in speech auxiliary depression diagnosis, conventional CNNs have the obvious drawback of being unable to capture lengthy temporal context information.
 
 
 %In the CNN based auxiliary depression diagnosis framework, audio feature descriptors are first input into a CNN to learn high-level features, which are then fed to the fully connected layer to predict the scale score.
@@ -193,7 +193,7 @@ Instead of using the output of the traditional LSTM, multi-head time-dimension a
 %In their research, CNN is applied to extract high-level feature from raw wave while LSTM is used to learn the temporal change of Mel scale filter feature, which achieved good results on the DAIC-WOZ dataset, and also strongly promoted the follow-up end-to-end model research.
 
 
-Hybrid networks are developed to gather more critical temporal information about depression recognition.
+Hybrid networks are developed to gather more critical temporal information about auxiliary depression diagnosis.
 Some recent studies have combined a CNN feature extraction architecture with sequential LSTM, an
 approach named CNN-LSTM that can learn to recognize and synthesize sequential dynamics in speech. In the
 CNN-LSTM, the CNN acts as the trainable feature detector for the spatial signal. It learns features that operate
@@ -218,9 +218,9 @@ In order to avoid the over-fitting problem in a small number of training samples
 
 %Transformer-based network is suitable to extract long-term temporal context information from speech.
 
-The transformer is suitable for very long sequence data and has been studied extensively in speech depression recognition during the past two years.
+The transformer is suitable for very long sequence data and has been studied extensively in speech auxiliary depression diagnosis during the past two years.
 Sun et al.~\cite{sun2021multi} propose a transformer-based network for extracting long-term temporal context information from speech.
-It is the first transformer-based approach for speech depression recognition.
+It is the first transformer-based approach for speech auxiliary depression diagnosis.
 Their proposed model consists of the transformer encoder and the Embedding FC Block, where the transformer encoder is used for extracting temporal information and the Embedding FC Block combined by a RELU activation layer, a dropout layer, and a fully-connected layer is used to extract the hidden embeddings representing each kind of feature. The embeddings from each kind of feature are fed to two FC blocks to perform depression prediction.
 Besides, The last significant problem is that models so far are heavily restricted by the limited amount of depression data.
 To address these two challenges, Zhang~\cite{zhang2021depa} proposes an embedding method that can solve the limited amount of data while summarizing long sequences.
@@ -262,11 +262,11 @@ Then, DEPA is extracted from a trained encoder model and fed into a depression d
 
 
 \subsubsection{Performance Comparison}
-We evaluate the depression recognition method based on speech.
+We evaluate the auxiliary depression diagnosis method based on speech.
 The performance comparisons based on traditional machine learning and deep learning are summarized in Table~\ref{tab_speech}.
 From the table, we obtain the following three observations:
 
-(1) With speech  depression recognition based on traditional machine learning,
+(1) With speech auxiliary depression diagnosis based on traditional machine learning,
 comparative analysis of the performances of several classifiers in depression assessment and prediction indicates that the use of a hybrid classifier using GMM and SVM model gave the best overall classification results\cite{alghowinem2013comparative}.
 This shows that the two have complementary characteristics and that combining their benefits can considerably increase the recognition rate.
  %Different fusion methods, namely feature, score and decision fusion have been also investigated in \cite{alghowinem2013comparative} and it has been demonstrated that : first, amongst the fusion methods, score fusion performed better when combined with GMM, HFS and MLP classifiers. Second, decision fusion worked best for SVM
