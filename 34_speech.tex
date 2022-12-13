@@ -361,33 +361,33 @@ Although the end-to-end model also has better performance, it is difficult to de
 \label{tab_speech}
 %\renewcommand\arraystretch{0.9}
 \resizebox{0.9\linewidth}{!}{%
-\begin{tabular}{c|c|c|cccccc}
+\begin{tabular}{c|c|c|cccc|cc}
 \hline
-\multirow{2}{*}{\textbf{Paper}} & \multirow{2}{*}{\textbf{Dataset}} & \multirow{2}{*}{\textbf{Methods}} & \multicolumn{4}{c}{\textbf{Classification metrics}}              & \multicolumn{2}{c}{\textbf{Regression metrics}} \\ \cline{4-9}
-& & & \textbf{F1} & \textbf{Precision} & \textbf{Recall} & \textbf{accuracy} & \textbf{RMSE}           & \textbf{MAE}\\ \hline
+\multirow{2}{*}{\textbf{Paper}} & \multirow{2}{*}{\textbf{Dataset}} & \multirow{2}{*}{\textbf{Methods}} & \multicolumn{4}{c|}{\textbf{Classification metrics}}              & \multicolumn{2}{c}{\textbf{Regression metrics}} \\ %\cline{4-9}
+& & & \textbf{F1 Score} & \textbf{Precision} & \textbf{Recall} & \textbf{accuracy} & \textbf{RMSE}           & \textbf{MAE}\\ \hline
 Ringeval et al.~\cite{ringeval2017avec}    & SEWA  & RF  & -& - & - & - & 7.78  & 5.72 \\ \hline
 \multirow{3}{*}{Alghowinem et al.~\cite{alghowinem2013comparative}} & \multirow{3}{*}{60(30D+30C)} & GMM &-&- & 78.85 &- &- &-     \\ \cline{3-9}
 & & SVM &- &  - & 84.88 &- &- &-  \\ \cline{3-9}
 & & GMM+SVM & -& - & 91.67 &- & -&-  \\ \hline
 Valster et al.~\cite{valstar2013avec} & AVEC2013 & SVR  &- &- &- &- & 14.12 & 10.35   \\ \hline
-Cummins et al.~\cite{cummins2011investigation} & AVEC2013 & GMM  & -& -& -& 80 &-&- \\ \hline
+Cummins et al.~\cite{cummins2011investigation} & AVEC2013 & GMM  & -& -& -& 80.00 &-&- \\ \hline
 Williamson et al.~\cite{williamson2013vocal}& AVEC2013 & GMM &- & -& - & -& 7.42 & 5.75  \\ \hline
-Williamson et al.~\cite{williamson2014vocal}& AVEC2014  & GMM &-& -&- &- & 8.5 -& 6.52 \\ \hline
+Williamson et al.~\cite{williamson2014vocal}& AVEC2014  & GMM &-& -&- &- & 8.50& 6.52 \\ \hline
 Jan et al.~\cite{jan2017artificial} & AVEC2014 & LR & -& - & -& -& 7.43 & 6.14  \\ \hline
-Nasir et al.~\cite{nasir2016multimodal} & DAIC-WOZ& SVM& 63 &-& -& -&-& -      \\ \hline
+Nasir et al.~\cite{nasir2016multimodal} & DAIC-WOZ& SVM& 63.00 &-& -& -&-& -      \\ \hline
 Gong et al.~\cite{gong2017topic}& DAIC-WOZ & SVM  &-& - & - & -& 4.99 & 3.96  \\ \hline
 Jayawardena et al.~\cite{jayawardena2020ordinal} & DAIC-WOZ & LR  & -& -& - & -& 6.84&  \\ \hline
 Valstar et al.~\cite{valstar2016avec}  & DAIC-WOZ & SVM+RF& -& - &- & - & 7.78 & 5.72  \\ \hline
 Kang et al.~\cite{kang2017deep} & AVEC2014 & DNN &- & -& -& -& 7.37 & 5.87  \\ \hline
 Yang et al.~\cite{yang2017hybrid}& DAIC-WOZ & CNN  & -& -&-&-& 5.97 & 5.16   \\ \hline
-Al Hannai et al.i~\cite{al2018detecting}& DAIC-WOZ & LSTM & 63& 71 & 56 &-& 6.50  & 5.13  \\ \hline
-Dham et al.~\cite{dham2017depression}  & DAIC-WOZ & SVM & -& -& -& -& 6.32  & 4.4    \\ \hline
-Othmani et al.~\cite{othmani2021towards}& DAIC-WOZ & CNN& -&-&-& 73.25& 0.467&- \\ \hline
-Ma et al.~\cite{ma2016depaudionet}& DAIC-WOZ  & CNN+LSTM & 52 & 35 & 1 &- &- & -  \\ \hline
-Salekin et al.~\cite{salekin2018weakly}& DAIC-WOZ & LSTM  & 90.1 & -& -& 90 & -& -    \\ \hline
-\multirow{2}{*}{Srimadhur et al.~\cite{srimadhur2020end}}& \multirow{2}{*}{DAIC-WOZ}  & CNN & 78& -& -& - & -& -   \\ \cline{3-9}
-& & CNN(Spectrogram)  & 66 & - &- &-&-&-   \\ \hline
-Zhang et al.~\cite{zhang2021depa}& DAIC-WOZ & Transformer & 94 & 93& 76  &-& 5.73  & 4.75 \\ \hline
+Al Hannai et al.i~\cite{al2018detecting}& DAIC-WOZ & LSTM & 63.00& 71.00 & 56.00 &-& 6.50  & 5.13  \\ \hline
+Dham et al.~\cite{dham2017depression}  & DAIC-WOZ & SVM & -& -& -& -& 6.32  & 4.40    \\ \hline
+Othmani et al.~\cite{othmani2021towards}& DAIC-WOZ & CNN& -&-&-& 73.25& 0.48&- \\ \hline
+Ma et al.~\cite{ma2016depaudionet}& DAIC-WOZ  & CNN+LSTM & 52.00 & 35.00 & 100.00 &- &- & -  \\ \hline
+Salekin et al.~\cite{salekin2018weakly}& DAIC-WOZ & LSTM  & 90.10 & -& -& 90.00 & -& -    \\ \hline
+\multirow{2}{*}{Srimadhur et al.~\cite{srimadhur2020end}}& \multirow{2}{*}{DAIC-WOZ}  & CNN & 78.00& -& -& - & -& -   \\ \cline{3-9}
+& & CNN(Spectrogram)  & 66.00 & - &- &-&-&-   \\ \hline
+Zhang et al.~\cite{zhang2021depa}& DAIC-WOZ & Transformer & 94.00 & 93.00& 76.00  &-& 5.73  & 4.75 \\ \hline
 \end{tabular}}
 \end{table*}
 
