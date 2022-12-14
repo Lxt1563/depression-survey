@@ -57,7 +57,7 @@ Finally, we list some commonly used assessment metrics, which are important in e
 \makecell[c]{Patient Health Questionnaire (PHQ-9)~\cite{2013The} }                                            & 9                          & 0-27                        &\makecell[c]{0-5 minimal, 5-9 mild, \\ 10-14 moderate, 15-19 medium severe,\\ 20-27 severe}    &                                \\ \cline{1-4}
 \makecell[c]{Center for Epidemiological Survey, Depression Scale (CES-D)~\cite{1977The}     }                    & 20                         & 0-60                        & \makecell[c]{0-15 minimal, 16-19 mild,\\ 20-25 moderate, 26-60 severe}                             &                                \\ \cline{1-4}
 \makecell[c]{Geriatric Depression Scale (GDS)~\cite{brink1982screening}      }                                     & 30                         & 0-30                        & \makecell[c]{0-10 minimal, 11-20 mild,\\ 21-30 moderate}                                                  &                                \\ \hline
-\makecell[c]{Hamilton Depression Scale (HAMD)~\cite{HAMD}    }                        & \makecell{17\\/21\\/\textbf{24} }                      &\makecell{0-34\\/0-42\\/\textbf{0-48} }         & \makecell[c]{0-8 minimal, 8-20 mild,\\ 20-35 moderate, 35-48 severe}                               & \multirow{8}{*}{others-rating} \\ \cline{1-4}
+\makecell[c]{Hamilton Depression Scale (HAMD)~\cite{HAMD}    }                        & \makecell{17\\/21\\/24 }                      &\makecell{0-34\\/0-42\\/0-48 }         & \makecell[c]{0-8 minimal, 8-20 mild,\\ 20-35 moderate, 35-48 severe}                               & \multirow{8}{*}{others-rating} \\ \cline{1-4}
 \makecell[c]{Montgomery-Asberg Depression Rating Scale (MADRS)~\cite{montgomery1979new}     }                    & 10                         & 0-60                        & \makecell[c]{0-12 minimal, 12-21 mild,\\ 22-29 moderate, 30-34 medium severe,\\ 35-60 severe} &                                \\ \cline{1-4}
 \makecell[c]{International Classification of Diseases (ICD-10)~\cite{world1992icd}    }                            & -                          & -                           & \multirow{4.5}{*}{Clinical diagnosis criteria}                                                                                                                              &                                \\ \cline{1-3}
 %\begin{tabular}[c]{@{}l@{}}International Classification of Diseases\\ (ICD-10)~\cite{world1992icd}\end{tabular}                                & -                          & -                           & \multirow{4.5}{*}{Clinical diagnosis criteria}                                                                                                                              &                                \\ \cline{1-3}
@@ -123,25 +123,25 @@ In general, the data of patients with depression are not disclosed due to privac
 This section introduces some public datasets as shown in Table \ref{tab2}, including the name, information of subject and data modality. Due to privacy issues, only several of the data modality has public dataset.
 Therefore, most researchers use the data collected by themselves for analysis.
 
-The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 healthy control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user’s label (control or depression), and the posts field contains timestamp and untokenized pairs.
+The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 healthy control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user’s label (control or depression), and the posts field contains timestamp and untokenized pairs~\cite{yates2017depression}.
 
-The eRsik dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into risk case of depression and non-risk case.
+The early risk (eRsik) dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into risk case of depression and non-risk case~\cite{Stankevich2018FeatureEF}.
 
 The Computational Linguistics and Clinical Psychology (CLPsych) provides apples-to-apples comparisons of various approaches to modeling language relevant to mental health from social media. The data used for this dataset is from Twitter users who state a diagnosis of depression or post traumatic stress disorder~\cite{coppersmith2015clpsych}.
 
 Bell Let's Talk is a campaign created by Bell Canada to help reduce stigma and promote awareness and understanding of mental health issues. Canadians open up the dialogue on mental health, contributing more than 122 million tweets, texts, calls and social media shares on Bell Let's Talk Day~\cite{2017Monitoring}.
 
-The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA are carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description.
+The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA are carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description~\cite{2020MODMA}.
 
 The Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011, which is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a classification problem or regression problem.
 
 %%%%%%%%AVEC%%%%%%%%%%%%%%%%%%%
 
-The Audio-Visual Depression Corpus (AViD-Corpus) contains 340 video clips of subjects performing a Human-Computer Interaction task while being recorded by a webcam and a microphone. The speakers were recorded between one and four times, with a period of two weeks between the measurements. This data was used for the AVEC2013 and AVEC2014 Challenge, and AVEC2014 uses a subset of the AVEC 2013 audio-visual depression corpus. 
+The Audio-Visual Depression Corpus (AViD-Corpus) contains 340 video clips of subjects performing a Human-Computer Interaction task while being recorded by a webcam and a microphone. The speakers were recorded between one and four times, with a period of two weeks between the measurements. This data was used for the AVEC2013 and AVEC2014 Challenge, and AVEC2014 uses a subset of the AVEC 2013 audio-visual depression corpus~\cite{10.1145/2512530.2512533,valstar2014avec}. 
 
 The Distress Analysis Interview Corpus – Wizard of Oz (DAIC-WOZ) contains clinical interviews designed to support the diagnosis of psychological distress conditions such as anxiety, depression, and post-traumatic stress disorder. Data collected include audio and video recordings and extensive questionnaire responses~\cite{gratch2014distress}. This data was used for the AVEC2016 and AVEC2017 Challenge.
 
-The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and PTSD assessment, developed by ICT~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
+The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and Post Traumatic Stress Disorder assessment, developed by ICT~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -150,7 +150,7 @@ The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database 
 %The EATD-Corpus is a dataset consist of audio and text files of 162 volunteers who received counseling.
 The Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extracted transcripts of responses from 162 depressed and non-depressed volunteers. EATD-Corpus is the first and only public depression dataset that includes audio and text data in Chinese.
 
-Finally, we also introduce some private data sets, which refer to those studies that use their own collected data for analysis.
+Finally, we also present some private datasets that are collected by the researchers themselves and used only for their own analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -248,9 +248,10 @@ Finally, we also introduce some private data sets, which refer to those studies 
 %Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
 In many studies, the diagnosis of depression is considered as a binary classification problem.
 Subject with the minimal degree of the scale were labeled to have non-depressed and others are labeled to have depressed.
-And the experimental evaluation methods were some common classification metrics such as precision, accuracy, recall, F1-score, specificity, sensitivity and Area Under the Curve (AUC), and accuracy is the most frequently used of these metrics.
+And the experimental evaluation methods were some common classification metrics such as Precision, Accuracy, Recall, F1-score, Specificity, Sensitivity and Area Under the Curve (AUC).
+%, and accuracy is the most frequently used of these metrics
 
-Some studies used regression analysis to predict the degree of depression according to the score of scale, and the experimental evaluation methods were some common regression metrics as: mean absolute error (MAE) and root mean squared error (RMSE).
+Some studies used regression analysis to predict the degree of depression according to the score of scale, and the experimental evaluation methods were some common regression metrics as: Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
 
 \subsubsection{Classification metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,42 +267,42 @@ Confusion metric is the basic of classification metrics. And confusion metrics c
 \end{figure}
 
 
-\emph{Precision} reflects the ability of the model to correctly predict positive samples, it calculates how many positive samples are predict as \emph{positive}. The calculation is formulated as:
+(1) Precision reflects the ability of the model to correctly predict positive samples, it calculates how many positive samples are predict as \emph{positive}. The calculation is formulated as:
 
 \begin{equation}
  Precision =\frac{TP}{TP+FP}
 \end{equation}
 
 
-\emph{Accuracy} reflects the ability of the model to correctly predict the overall sample, it calculates how many positive samples are predict as \emph{positive} and negative samples as \emph{negative}. The calculation is formulated as:
+(2) Accuracy reflects the ability of the model to correctly predict the overall sample, it calculates how many positive samples are predict as \emph{positive} and negative samples as \emph{negative}. The calculation is formulated as:
 
 \begin{equation}
 Accuracy =\frac{TP+TN}{TP+FN+FP+TN}=\frac{TP+TN}{P+N}
 \end{equation}
 
 
-\emph{Recall} reflects the ability of the model to correctly predict the full degree of positive samples, it  calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation is formulated as:
+(3) Recall reflects the ability of the model to correctly predict the full degree of positive samples, it  calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation is formulated as:
 
 \begin{equation}
 Recall =\frac{TP}{TP+FN}=\frac{TP}{P}
 \end{equation}
 
 
-\emph{F1-score} is a statistical measure of the accuracy of model. It defined as the harmonic mean of precision and recall. The calculation is formulated as:
+(4) F1-score is a statistical measure of the accuracy of model. It defined as the harmonic mean of precision and recall. The calculation is formulated as:
 
 \begin{equation}
 F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
 \end{equation}
 
 
-\emph{Specificity} reflects the ability of the model to correctly predict the full extent of negative samples, it  calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as:
+(5) Specificity reflects the ability of the model to correctly predict the full extent of negative samples, it  calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as:
 
 \begin{equation}
 Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 \end{equation}
 
 
-\emph{Sensitivity} reflects the ability of the model to correctly predict the full extent of positive samples, it  calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as:
+(6) Sensitivity reflects the ability of the model to correctly predict the full extent of positive samples, it  calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as:
 
 \begin{equation}
  Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
@@ -318,7 +319,7 @@ Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 	\label{AUC}
 \end{figure}
 
-\emph{ROC} represents a probability graph to show the performance of a classification model at different threshold levels. 
+(7) Receiver Operating Characteristic (ROC) represents a probability graph to show the performance of a classification model at different threshold levels. 
 The curve is plotted between two parameters, which are: True Positive Rate(TPR) and False Positive Rate (FPR).
 TPR is a synonym for Recall, which can be calculated as:
 
@@ -332,7 +333,7 @@ FPR can be calculated as:
 FPR =\frac{FP}{FP+TN}
 \end{equation}
 
-\emph{AUC} is known for Area Under the ROC curve. AUC calculates the two-dimensional area under the entire ROC curve ranging from (0,0) to (1,1), as shown in Fig \ref{AUC}.
+AUC is known for Area Under the ROC curve. AUC calculates the two-dimensional area under the entire ROC curve ranging from (0,0) to (1,1), as shown in Fig \ref{AUC}.
 In the ROC curve, AUC computes the performance of the binary classifier across different thresholds and provides an aggregate measure. The value of AUC ranges from 0 to 1, which means an excellent model will have AUC near 1.
 
 %The area covered by the ROC curve downward is the AUC value, and since the ROC curve is generally above the line $y=x$, the value of AUC ranges between 0.5 and 1. The closer the AUC is to 1.0, the higher the authenticity of the detection method; when it is equal to 0.5, it is the lowest authenticity and has no application value.
@@ -343,7 +344,7 @@ In the ROC curve, AUC computes the performance of the binary classifier across d
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 MAE and RMSE are often used to quantify how well a model fits a dataset.
 
-\emph{MAE} reflects the mean absolute difference between the predicted values and the actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation is formulated as:
+(1) MAE reflects the mean absolute difference between the predicted values and the actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation is formulated as:
 
 \begin{equation}
 MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
@@ -352,7 +353,7 @@ MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
 Where $y_{i}$ is the observed value for the $i^{th}$ observation, $\breve{y}_{i}$ is the predicted value for the $i^{th}$ observation, and $n$ is the sample size.
 
 
-\emph{RMSE} reflects the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation is formulated as:
+(2) RMSE reflects the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation is formulated as:
 
 \begin{equation}
 RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
@@ -364,7 +365,7 @@ Many studies have shown that depressed and healthy people are very different in 
 
 \begin{figure}[tbp]
 	\centering	
-	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/method.png}		
+	\label{fig_hard_case1}\includegraphics[width=0.9\linewidth]{figures/depression/method.png}		
 	\caption{
 	classification method. 
 	}
@@ -377,21 +378,21 @@ Many studies have shown that depressed and healthy people are very different in 
 
 Although various methods have been proposed to auxiliary depression diagnosis base on different multimodal data, the process of methods is similar, as shown in  Fig \ref{method}.
 
-(1)\emph{Pre-processing:} Most of the raw data have a lot of noises from capture device and environment.
-For example, electrophysiological signal has baseline drift, power-line interference and Electromyography signal all affected by the equipment and human body.
+(1) \emph{Pre-processing:} Most of the raw data have a lot of noises from capture device and environment.
+For example, electrophysiological signal has baseline drift, power-line interference and electromyography signal all affected by the equipment and human body.
 Similarly, other data modality also has interference caused by the acquisition equipment and environment.
 So, it is necessary to preprocess the raw data and use appropriate methods to remove different noises.
 Such as setting frequency intervals to remove power-line and Electromyography interference, and using filters to eliminate baseline drift.
 
-(2)\emph{Feature extraction:} Feature extraction means to the process of transforming raw data into numerical features that can be processed while preserving the information. 
+(2) \emph{Feature extraction:} Feature extraction means to the process of transforming raw data into numerical features that can be processed while preserving the information. 
 Feature extraction includes manual or automatic.
 Manual feature extraction requires researchers to manually extract features based on the characteristics of data and task. 
 In many situations, having a good understanding of the task can help make informed decisions as to which features could be useful.
-Automated feature extraction uses specialized algorithms to extract features automatically from data without the need for human intervention, such as deep learning methods (CNN, RNN, DNN...).
+Automated feature extraction uses specialized algorithms to extract features automatically from data without the need for human intervention, such as deep learning methods.
 
 In some cases, it is necessary to reduce the dimension of extracted features, including feature selection and feature fusion, to lessen the amount of calculation.
 
-(2)\emph{Classification:} Auxiliary depression diagnostic methods based on different modes are divided into traditional machine learning classifiers such as Support Vector Machine (SVM), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN).
+(3) \emph{Prediction:} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN), Long short-term Memory (LSTM).
 
 %%%%%%%%%%% differernt data modality
 
