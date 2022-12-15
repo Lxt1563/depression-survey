@@ -52,9 +52,9 @@ It extracts video features (facial action coding system coding, local binary pat
 
 
 Besides the common classification and regression methods such as LR, SVM, SVR, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017Facial, Morales2018ALF}, some researchers have explored fusion methods.
-Morales et al.~\cite{Morales2018ALF} proposes a new early fusion method named Informed Early Fusion.
+Morales et al.~\cite{Morales2018ALF} propose a new early fusion method named Informed Early Fusion.
 Unlike the simple early fusion method for composite modes, the syntax based early fusion method uses the relationship between syntax and suppression to help improve model performance.
-Kachele et al.~\cite{M2014Fusion} performs the final fusion step using a trainable Kalman filter.
+Kachele et al.~\cite{M2014Fusion} perform the final fusion step using a trainable Kalman filter.
 A large number of experimental results show that, compared with single mode data, multimodal data combined with depression recognition has a better effect.
 
 %\subsubsection{Audiovisual cues auxiliary depression diagnosis based on deep learning}
@@ -97,9 +97,6 @@ transformer and deep 1D CNN for acoustic feature modeling.
 
 
 
-
-
-
 \subsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,11 +110,11 @@ transformer and deep 1D CNN for acoustic feature modeling.
 \multirow{2}{*}{\textbf{Paper}} & \multirow{2}{*}{\textbf{Dataset}} & \multirow{2}{*}{\textbf{Method}}& \multirow{2}{*}{\textbf{Features}} & \multicolumn{3}{c|}{\textbf{Classification metrics}} & \multicolumn{2}{c}{\textbf{Regression metrics}} \\
 &  & & & {\textbf{F1 Score}} & {\textbf{Precision}} & {\textbf{Recall}} & {\textbf{RMSE}}  & {\textbf{MAE}} \\ \hline
 Meng et al.~\cite{meng2013depression} &AVEC2013& Partial Least Square  & A+V & - & - & - & 8.72 & 10.96 \\ \hline
-Kachele et al.~\cite{M2014Fusion} & AVEC2013& Support Vector Regression & A+V & - & - & - & 8.97 & 10.82 \\ \hline
+Kachele et al.~\cite{M2014Fusion} & AVEC2013& SVR & A+V & - & - & - & 8.97 & 10.82 \\ \hline
 Niu et al.~\cite{niu2020multimodal} &  AVEC2013& CNN+LSTM & A+V & - & - & - &8.16 &6.14\\ \hline
 Pampouchidou et al.~\cite{2017Facial} & AVEC2013/14 & Nearest Neighbour Classifier & A+V  & 73.00 & 95.00& 59.00 & -                 & -   \\ \hline
 Morales et al.~\cite{morales2016speech}& AVEC2014 & SVM & A+T & - & -  & - & 9.21 & 7.56 \\\hline
-AVEC2014~\cite{10.1145/2661806.2661807} &AVEC2014 &Support Vector Regression&A+V & -  & -  & -  & 7.89 & 9.89\\ \hline
+AVEC2014~\cite{10.1145/2661806.2661807} &AVEC2014 &SVR &A+V & -  & -  & -  & 7.89 & 9.89\\ \hline
 Jan et al.~\cite{jan2017artificial} &AVEC2014 &DCNN & A+V & - & - & - &7.43 &6.14\\ \hline
 Chao et al.~\cite{chao2015multi} & AVEC2014 & CNN+LSTM & A+V & - & -  & - & 9.98 & 7.91\\\hline
 Niu et al.~\cite{niu2020multimodal} &AVEC2014 &CNN+LSTM & A+V & - & - & - &7.03 &5.21\\\hline
@@ -144,7 +141,7 @@ Lam et al.~\cite{lam2019context} & DAIC-WOZ & CNN+Transformer & A+T & 87.00 & 91
 Niu et al.~\cite{niu2021hcag} & DAIC-WOZ & Graph Attention Network & A+T & 92.00 & 92.00 & 92.00 &3.80 &2.94\\\hline
 AVEC2019~\cite{ ringeval2019avec} & E-DAIC & CNN & A+V & - & - & - & 6.37 & - \\ \hline
 Yin et al.~\cite{2019A}& E-DAIC & LSTM  & A+T+V  & - & - & - & 5.50  & -  \\ \hline
-\multirow{3}{*}{Ray et al.~\cite{ray2019multi}}  & \multirow{3}{*}{E-DAIC+ DAIC-WOZ} & \multirow{3}{*}{LSTM}  & V+T                       & - & -  & -  & 4.64 & -   \\
+\multirow{3}{*}{Ray et al.~\cite{ray2019multi}}  & \multirow{3}{*}{\makecell{E-DAIC+\\DAIC-WOZ}} & \multirow{3}{*}{LSTM}  & V+T                       & - & -  & -  & 4.64 & -   \\
 & & & A+T& -  & -  & - & 4.37 & -  \\
 & &  & A+V+T  & - & - & -  & 4.28 & -  \\\hline
 \end{tabular}
@@ -156,9 +153,11 @@ Yin et al.~\cite{2019A}& E-DAIC & LSTM  & A+T+V  & - & - & - & 5.50  & -  \\ \hl
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Table \ref{tab9} summarizes the results of the experiments on the detection of depression based on multi-modal data, including the source and name of the method, the dataset used and the evaluation criteria of the experimental results, which includes classification metrics: F1 Score, Precision, Recall, and regression metrics of depression severity by depression scale: mean absolute error (MAE), root mean square error (RMSE).
+%Table \ref{tab9} summarizes the results of the experiments on the detection of depression based on multi-modal data, including the source and name of the method, the dataset used and the evaluation criteria of the experimental results, which includes classification metrics: F1 Score, Precision, Recall, and regression metrics of depression severity by depression scale: mean absolute error (MAE), root mean square error (RMSE).
 %Most studies have multiple evaluation metric for experimental results. For multiple classification metric, we choose the highest F1 score for presentation.
-
+We review the effectiveness of the approaches examined in Tabel~\ref{tab9} to provide greater insight into the  multi-modal auxiliary depression diagnosis methods' performance.
+The experimental metrics (\%) are taken directly from the related source articles to conduct a fair comparison.
+For articles with multiple experimental results we choose the one with the highest F1 score for presentation.
 Comparing different methods using the same dataset, the following list of observations can be summed up:
 
 (1) In general, the more different modality data types are combined, the better experimental results are.
@@ -170,7 +169,7 @@ It is an important application branch of SVM, which is to find a regression plan
 For the video modality , an epsilon-SVR with intersection kernel trained using  Local Gabor Binary Pattern Three Orthogonal Planes features has been employed.
 SVR with linear kernel and Sequential Minimal Optimization training as implemented in Waikato Environment for Knowledge Analysis is used for the audio baseline, and feature set consists of Low level descriptors related to energy, spectral, voicing, etc.
 Finally, in order to create the audio-visual baseline, predictions from both audio and video baselines are obtained by taking the mean value for audio and video.
-Valstar  ~\cite{10.1145/2661806.2661807} believes that the good results of depression recognition may be attributed to the following reasons:
+Valstar  ~\cite{10.1145/2661806.2661807} believe that the good results of depression recognition may be attributed to the following reasons:
 Firstly, the Local Gabor Binary Pattern Three Orthogonal Planes features have been shown before to outperform other descriptors for human behaviour analysis.
 Secondly, using an average dimensional affect label over multiple subjective ratings should remove some of the subjectivity of the interpretation of the affective behaviour, and remove rater errors caused by cognitive workload effects such as fatigue.
 
@@ -194,11 +193,11 @@ Experiments result show that the proposed approach performs significantly better
 
 Most of the data of other modes in the depression recognition use single mode data, but a few studies combine data of multiple modes for prediction.
 Each type of brain imaging can reflect the brain of patients with depression. For example, sMRI can clearly display the anatomical structure of the brain with high spatial resolution and reflect the internal structure of the brain, while fMRI can detect the changes of cerebral blood oxygen dependent level signals, and can reflect the active state of brain neural regions.
-Therefore, Mousavian et al~\cite{mousavian2021depression}. combines the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
+Therefore, Mousavian et al.~\cite{mousavian2021depression} combine the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
 Besides, several other modal fusions have also attracted extensive attention from researchers.
 For example,
-Zhang et al.~\cite{zhang2019multimodal} explores from physiological and behavioral perspectives simultaneously and fuse pervasive EEG and speech signals to make the detection of depression more objective, effective, and convenient.
-Jing et al.~\cite{jing2019different} builds a supervised regression model based on individual language and natural gait data to predict depression and anxiety in patients. Their results could be the basis of both applications and future studies on multi-source data fusion in anxiety and depression recognition.
+Zhang et al.~\cite{zhang2019multimodal} explore from physiological and behavioral perspectives simultaneously and fuse pervasive EEG and speech signals to make the detection of depression more objective, effective, and convenient.
+Jing et al.~\cite{jing2019different} build a supervised regression model based on individual language and natural gait data to predict depression and anxiety in patients. Their results could be the basis of both applications and future studies on multi-source data fusion in anxiety and depression recognition.
 
 
 
