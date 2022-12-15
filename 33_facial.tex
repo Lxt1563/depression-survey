@@ -67,8 +67,8 @@ Auxiliary depression diagnosis using traditional machine learning methods relies
 Changes in the eyes, mouth, eyebrows, etc. get great contribution in expression recognition, so many studies focus on studying the surrounding features extraction and then combining them with global information for analysis.
 
 The Active Appearance Model reflects the features of facial expressions through shape and texture information in dynamic images.
-Cohn et al.~\cite{2009Detecting} demonstrates the feasibility of automatic depression detection by comparing clinical diagnosis with automatically measured facial movements using the Active Appearance Model.
-Alghowinem et al.~\cite{2013Eye} uses Active Appearance Model to extract features from eye movements in video,  in addition to blink interval time, blink frequency, eye closure frequency, etc., and mean, variance, maximum, and minimum values of various features throughout the interview were used to diagnose depression.
+Cohn et al.~\cite{2009Detecting} demonstrate the feasibility of automatic depression detection by comparing clinical diagnosis with automatically measured facial movements using the Active Appearance Model.
+Alghowinem et al.~\cite{2013Eye} use Active Appearance Model to extract features from eye movements in video,  in addition to blink interval time, blink frequency, eye closure frequency, etc., and mean, variance, maximum, and minimum values of various features throughout the interview were used to diagnose depression.
 
 However, in general, Active Appearance Model needs to rely on manual annotation to initialize the face feature points, which affects the automation of the algorithm.
 Another disadvantage of this method is that the model construction is complicated.
@@ -81,20 +81,20 @@ After that, some researchers have proposed some improvements based on Local Bina
 
 In the AVEC 2014 competition, baseline visual features are extracted by using a Local Gabor Binary Pattern from Three Orthogonal Planes, which combines dynamic and spatial texture analysis with Gabor filtering.
 This method uses multiple Gabor filters to convolve consecutive video frames and applies Local Binary Patterns to extract features from orthogonal XY, XT, and YT slices~\cite{10.1145/2661806.2661807}.
-Pampouchidou et al.~\cite{2016Video} emploies Curvelet transform and Local Binary Patterns to extract features.
+Pampouchidou et al.~\cite{2016Video} use Curvelet transform and Local Binary Patterns to extract features.
 Since Curvelet transform can extract curvature information from images, different facial expressions can be distinguished from their curves by computing Local Binary Patterns descriptors for each facial region extracted by Curvelet transform processing individually to form a feature vector for frame-based classification.
-Jan et al.~\cite{2014Automatic} extracts three different texture features by Local Binary Patterns, Edge Orientation Histogram and Local Phase Quantization methods and mapped their variations to feature vectors by Motion History Histogram.
+Jan et al.~\cite{2014Automatic} extract three different texture features by Local Binary Patterns, Edge Orientation Histogram and Local Phase Quantization methods and mapped their variations to feature vectors by Motion History Histogram.
 
 Inspired by the huge success of the Local Binary Pattern method, the Local Phase Quantization descriptor uses the short-term Fourier transform to obtain the local phase on the facial region.
 In the AVEC 2013 competition, facial detection and alignment were performed for each video frame, and then Local Phase Quantization is used as a dense local appearance descriptor.
-Later, Wen et al.~\cite{2015Automated} proposes Local Phase Quantization from Three Orthogonal Planes to extract facial dynamic feature descriptors.
-Kaya et al.~\cite{2014Ensemble} calculates typical correlation analyses of baseline and Local Phase Quantization features, exploring the eye and mouth regions of the face, then aggregating features to predict levels of depression.
+Later, Wen et al.~\cite{2015Automated} propose Local Phase Quantization from Three Orthogonal Planes to extract facial dynamic feature descriptors.
+Kaya et al.~\cite{2014Ensemble} calculate typical correlation analyses of baseline and Local Phase Quantization features, exploring the eye and mouth regions of the face, then aggregating features to predict levels of depression.
 
 In addition, there are many other traditional feature extraction methods have been applied to facial feature extraction.
-Cummins et al.~\cite{2013Diagnosis} investigates two different descriptors, called Space Time Interest Points and Pyramid Histogram of Oriented Gradients, and showes that the Pyramid Histogram of Oriented Gradients get better accuracy.
-Prez et al.~\cite{perez2014fusing} computes the differences in eye and face positions, combining these values with motion history images, motion still images, and motion-averaged images from video clips containing facial regions.
-Nasir et al.~\cite{nasir2016multimodal} uses perception-driven distance and area features obtained from facial markers to Diagnosing depression.
-Anis et al.~\cite{0Detecting} uses the center of gravity coordinates of facial signs and the rotation matrix of 3D head movements to extract motion features.
+Cummins et al.~\cite{2013Diagnosis} investigate two different descriptors, called Space Time Interest Points and Pyramid Histogram of Oriented Gradients, and showes that the Pyramid Histogram of Oriented Gradients get better accuracy.
+Prez et al.~\cite{perez2014fusing} compute the differences in eye and face positions, combining these values with motion history images, motion still images, and motion-averaged images from video clips containing facial regions.
+Nasir et al.~\cite{nasir2016multimodal} use perception-driven distance and area features obtained from facial markers to Diagnosing depression.
+Anis et al.~\cite{0Detecting} use the center of gravity coordinates of facial signs and the rotation matrix of 3D head movements to extract motion features.
 
 However, traditional machine learning-based methods require manual feature design, which makes it difficult to obtain accurate and global information of subtle facial expressions, and some features have high dimensionality and low computational efficiency, which is very unfavorable for building an automated auxiliary depression diagnosis system.
 
@@ -112,39 +112,42 @@ However, traditional machine learning-based methods require manual feature desig
 With the continuous development of computer technology, several researchers use deep learning methods to extract high-level semantic features of facial expressions from raw data for auxiliary depression diagnosis.
 
 CNN model is widely used for facial feature extraction with its excellent spatial feature extraction ability~\cite{ringeval2019avec}.
-Melo et al.~\cite{2019Depression2} applies Resnet-50 as backbone to improve the model loss function and explore the ordinal relationship between all facial images and depression levels.
+Melo et al.~\cite{2019Depression2} applie Resnet-50 as backbone to improve the model loss function and explore the ordinal relationship between all facial images and depression levels.
 The error is reduced by fully collapsing the entire images to achieve correspondence between all graph pairs and the corresponding depression scores.
-Zhou et al.~\cite{2019Learning} argues that some of the pose and angle in the frame images are not suitable for the system to perform the corresponding depression score.
+Zhou et al.~\cite{2019Learning} argue that some of the pose and angle in the frame images are not suitable for the system to perform the corresponding depression score.
 Therefore, the authors use the memory attention mechanism to assign weights to the frame images so that the images with better effects play a dominant role in results.
-Zhou et al.~\cite{2020visually} proposes a Deep CNN regression model with a Global Average Pooling layer for identifying depression severity from facial images.
+Zhou et al.~\cite{2020visually} propose a Deep CNN regression model with a Global Average Pooling layer for identifying depression severity from facial images.
 Different face regions are modeled, and these models are combined to improve the overall recognition performance.
 
 Although spatial information is essential to diagnosis of depression, some studies have found that the dynamics of facial behavior is also important to aid in explaining depression, such as slow head movements and avoidance of eye contact in depressed subjects~\cite{chao2015multi,alghowinem2016multimodal,2017Automated,2018Human}.
-Jan et al.~\cite{jan2017artificial} uses CNN to extract many different visual raw features from facial expression frames, while Feature Dynamic History Histograms are used to capture temporal motion on features.
-Zhu et al.~\cite{2017Automated} proposes a two-channel CNN in which one channel is input to the full face region while the second channel is input to the facial stream, and two fully connected layers perform feature fusion.
-Melo et al.~\cite{2020Encoding} makes a new approach to preprocessing of temporal features based on the traditional two-stream model and propose a new time pooling method to capture and encode the spatio-temporal dynamics of video clips into image maps.
+Jan et al.~\cite{jan2017artificial} use CNN to extract many different visual raw features from facial expression frames, while Feature Dynamic History Histograms are used to capture temporal motion on features.
+Zhu et al.~\cite{2017Automated} propose a two-channel CNN in which one channel is input to the full face region while the second channel is input to the facial stream, and two fully connected layers perform feature fusion.
+Melo et al.~\cite{2020Encoding} make a new approach to preprocessing of temporal features based on the traditional two-stream model and propose a new time pooling method to capture and encode the spatio-temporal dynamics of video clips into image maps.
 
 However, using spatial and temporal information alone may deteriorate the modeling of spatio-temporal relationships.
 Therefore, some researchers use 3D-CNN to explore the spatio-temporal correlation of global and local facial regions captured in videos.
-Melo et al.~\cite{2019Combining} uses 3D-CNN to model the spatio-temporal dependence of global and local facial regions captured in video.
+Melo et al.~\cite{2019Combining} use 3D-CNN to model the spatio-temporal dependence of global and local facial regions captured in video.
 The global 3D convolutional network models spatio-temporal information from the whole face, while the local 3D convolutional network allows to focus attention on the eye region that is thought to be highly correlated with depression.
 In addition, a 3D Global Average Pooling is proposed to summarize the spatio-temporal features of the last convolutional layer.
-Later, Melo et al.~\cite{2020A} proposes a Multiscale Spatiotemporal Network based on a 3D-CNN architecture to efficiently represent facial information related to depressive behavior in videos.
+Later, Melo et al.~\cite{2020A} propose a Multiscale Spatiotemporal Network based on a 3D-CNN architecture to efficiently represent facial information related to depressive behavior in videos.
 The basic structure of the model consists of parallel convolutional layers with different temporal depths and receptive field sizes, which allows the Multiscale Spatiotemporal Network to explore a wide range of spatio-temporal variations in facial expressions.
 
 Later, RNN introduces the temporal dimension, which is suitable for processing time-series type data, so some researchers have also applies RNN to learn time-varying attributes in facial video data.
-Jazaery et al.~\cite{8466881} proposes RNN-Convolutional 3D to model local and global spatio-temporal information from continuous facial expressions to predict depression levels, a framework that uses 3D convolutional neural networks to automatically learn spatio-temporal features at two different scales in facial regions.
+Jazaery et al.~\cite{8466881} propose RNN-Convolutional 3D to model local and global spatio-temporal information from continuous facial expressions to predict depression levels, a framework that uses 3D convolutional neural networks to automatically learn spatio-temporal features at two different scales in facial regions.
 Then, a RNN is used to capture Information from the spatiotemporal sequences, and LSTM is the most representative algorithm among RNN, there are also applications in facial expression-based auxiliary depression diagnosis.
-Ray et al.~\cite{ray2019multi} uses each low-level descriptor feature of pose, gaze, and Facial Action Unit to input into the LSTM for depression assessment.
-Su et al.~\cite{2017Exploring} uses the eight basic directions of the motion vector to characterize subtle changes in microscopic facial expressions and use LSTM to simulate long-term changes between different mood disorder types.
-Guo et al.~\cite{Guo2021Deep} proposes a new method for potential depression risk identification based on two different Deep Belief Network models.
+Ray et al.~\cite{ray2019multi} use each low-level descriptor feature of pose, gaze, and Facial Action Unit to input into the LSTM for depression assessment.
+Su et al.~\cite{2017Exploring} use the eight basic directions of the motion vector to characterize subtle changes in microscopic facial expressions and use LSTM to simulate long-term changes between different mood disorder types.
+Guo et al.~\cite{Guo2021Deep} propose a new method for potential depression risk identification based on two different Deep Belief Network models.
 One model extracts 2 Dimension appearance features from facial images captured by an optical camera, while the other model combines LSTM to extract 3D dynamic features from 3D facial points captured by Kinect.
 The integrated network enables the fusion of static and dynamic features, thus improving model performance.
 
 \subsubsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Table \ref{tab4} summarizes the results of the experiments on the detection of depression based on facial expressions, including the source and name of the method, the dataset they used and regression metrics of the experimental results: RMSE and MAE.
+%Table \ref{tab4} summarizes the results of the experiments on the detection of depression based on facial expressions, including the source and name of the method, the dataset they used and regression metrics of the experimental results: RMSE and MAE.
+We evaluate the auxiliary depression diagnosis method using the facial expression data.
+We review the effectiveness of the approaches examined in Tabel~\ref{tab4} to provide greater insight into the facial expression auxiliary depression diagnosis methods' performance.
+The experimental regression metrics RMSE and MAE are taken directly from the related source articles to conduct a fair comparison.
 Comparing different methods using the same dataset, the following list of observations can be summed up:
 
 %The AVEC competition has greatly advanced research on depression detection based on behavioral performance, and more and more deep algorithms have been applied to depression recognition tasks, all with good results.
