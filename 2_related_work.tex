@@ -378,22 +378,25 @@ Many studies have shown that depressed and healthy people are very different in 
 
 Although various methods have been proposed to auxiliary depression diagnosis base on different multimodal data, the process of methods is similar, as shown in  Fig \ref{method}.
 
-(1) \emph{Pre-processing:} Most of the raw data have a lot of noises from capture device and environment.
+\subsubsection{Pre-processing} Most of the raw data have a lot of noises from capture device and environment.
 For example, electrophysiological signal has baseline drift, power-line interference and electromyography signal all affected by the equipment and human body.
 Similarly, other data modality also has interference caused by the acquisition equipment and environment.
 So, it is necessary to preprocess the raw data and use appropriate methods to remove different noises.
 Such as setting frequency intervals to remove power-line and Electromyography interference, and using filters to eliminate baseline drift.
 
-(2) \emph{Feature extraction:} Feature extraction means to the process of transforming raw data into numerical features that can be processed while preserving the information. 
+\subsubsection{Feature extraction} Feature extraction means to the process of transforming raw data into numerical features that can be processed while preserving the information. 
 Feature extraction includes manual or automatic.
 Manual feature extraction requires researchers to manually extract features based on the characteristics of data and task. 
 In many situations, having a good understanding of the task can help make informed decisions as to which features could be useful.
 Automated feature extraction uses specialized algorithms to extract features automatically from data without the need for human intervention, such as deep learning methods.
-
 In some cases, it is necessary to reduce the dimension of extracted features, including feature selection and feature fusion, to lessen the amount of calculation.
 
-(3) \emph{Prediction:} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN), Long short-term Memory (LSTM).
+\subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN), Long short-term Memory (LSTM).
+
+Actually, related researches are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
+Since it can solve the problems encountered in traditional machine learning methods for human-crafted features, such as high threshold, labor expense and low feature utilization rate, deep learning methods are gradually gaining the upper hand in machine learning.
 
 %%%%%%%%%%% differernt data modality
 
 Although the processes are similar, the auxiliary depression diagnostic methods based on various data modalities are not comparable because the data types, extraction features and classification algorithms are all different.
+In the subsequent sections we present the analysis methods based on different modality data in more detail, reviewing both traditional machine learning and deep learning methods, and summarizing the experimental results.
