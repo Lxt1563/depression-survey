@@ -27,10 +27,11 @@ In summary, the electrophysiology of depressed patients differs from that of hea
 Electrophysiological signals are caused by changes in the membrane potential of individual cells, which are usually recorded by metal electrodes placed on the body surface~\cite{widmann2015digital}.
 Due to the non-invasive detection and easy use of electrophysiological signals, auxiliary depression diagnosis with them has become a hot research topic and the most promising research direction.
 Actually, related researches are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
-The methodological flow is as follows (We just focus on classified tasks).
-\emph{(1) Traditional machine learning:} It begins with feature extraction, then feature selection to acquire more effective and representative aspects of depression, and then creating prediction or clustering models based on these features to perform the classification problem~\cite{halilaj2018machine}.
-\emph{(2) Deep Learning:} It sends the original signal to a deep network so that it may automatically learn high-level features.
-Since it can address the issues experienced with human-crafted features, such as high threshold, labor expense, and low feature utilization rate, deep learning is gradually gaining the upper hand in machine learning.
+%We just focus on classified tasks.
+%The methodological flow is as follows (We just focus on classified tasks).
+%\emph{(1) Traditional machine learning:} It begins with feature extraction, then feature selection to acquire more effective and representative aspects of depression, and then creating prediction or clustering models based on these features to perform the classification problem~\cite{halilaj2018machine}.
+%\emph{(2) Deep Learning:} It sends the original signal to a deep network so that it may automatically learn high-level features.
+%Since it can address the issues experienced with human-crafted features, such as high threshold, labor expense, and low feature utilization rate, deep learning is gradually gaining the upper hand in machine learning.
 
 
 %
@@ -41,6 +42,7 @@ Since it can address the issues experienced with human-crafted features, such as
 %Furthermore, as other types of signals are used too infrequently, we focus on EEG, and HRV-based depression recognition.
 
 Depression's electrophysiology covers EEG, ECG, electrodermal, gastric, EOG, and body temperature measurements. EEG is utilized the most commonly~\cite{liao2017major,bairy2017automated,acharya2018automated}, followed by ECG~\cite{ding2019classifying}. It is noteworthy that ECGs are commonly used to diagnose depression by extracting RR interval sequences and measuring HRV. In addition, as other types of signals are employed infrequently, we concentrate on EEG and HRV-based auxiliary depression diagnosis.
+Meanwhile, due to the limited amount of relevant regression tasks, we are just focusing on the classification job.
 
 
 \subsection{EEG}
@@ -129,7 +131,7 @@ The results suggest that by judiciously combining nonlinear features, it may obj
 %Further, Mahato et al.~\cite{mahato2019electroencephalogram} compares various EEG signal analysis techniques and recommends the most suitable technique based on the accuracy for detection of depression.
 %The study reveals that, in general, high classification accuracy is achieved by SVM, LR and ANN and highest classification accuracy of 98.33\% is achieved by SVM. Highest accuracy is achieved by SVM because it is more robust and computationally more efficient due to maximal margin gap between separating hyper planes and kernel trick.
 
-Even though the applied indicators vary, the most prevalent classifiers are often the same: k-Nearest Neighbor (KNN), linear discriminant analysis, linear regression (LR), SVM, decision trees, Bayesian classifiers, random forests, and probabilistic neural networks.
+Even though the applied indicators vary, the most prevalent classifiers are often the same: k-Nearest Neighbor (KNN), linear discriminant analysis (LDA), LR, SVM, decision trees, Bayesian classifiers, RF, and probabilistic neural networks.
 In addition, Mahato et al.~\cite{mahato2019electroencephalogram} examine numerous EEG signal analysis approaches and recommend the best accurate technique for the auxiliary depression diagnosis.
 It is demonstrated that SVM has the highest classification accuracy compared to other approaches. Due to the fact that SVM has the greatest distance between the separation hyperplane and the kernel trick, it is more robust and computationally efficient, resulting in the most excellent accuracy.
 
@@ -187,7 +189,7 @@ Three CNN layers and three MaxPooling1D layers form the first section of the mod
 The second unit includes two LSTM layers whose duty is to generate the feature maps by discovering different patterns in EEG signals and then retain the sequence of these learning.
 Similarly, Sharma et al. \cite{sharma2021dephnn} also propose a new hybrid neural network called DepHNN.
 CNN and LSTM are two deep learning algorithms used to capture the temporal dependencies in the time-series EEG input signals and to process the sequence learning.
-Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1D EEG signal into a 2D image. Then, they develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
+Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1 Dimension (1D) EEG signal into a 2 Dimension (2D) image. Then, they develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
 Finally, their experiments show that the spatial and temporal characteristics of the EEG
 signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning model can also effectively analyze brain connectivity.
 
@@ -375,7 +377,7 @@ Byun et al.~\cite{byun2019detection} demonstrate the HRV-based recongnition usin
 \subsubsection{HRV auxiliary depression diagnosis based on deep learning}
 Different from conventional machine learning, the method based on deep learning can self-learn features from input signals without manual feature extraction and feature selection.
 For HRV auxiliary depression diagnosis based on deep learning, scholars build a deep end-to-end architecture and then push raw signals into deep architecture to let the model learn high-level features.
-Specifically, they can be subdivided into two categories depending on the model used: CNN and Recurrent Neural Network (RNN).
+Specifically, they can be subdivided into two categories depending on the model used: CNN and RNN.
 
 
 
@@ -383,7 +385,7 @@ CNN does not need to extract and select features manually. Moreover, CNN can dir
 Concretely, for auxiliary depression diagnosis, Mohanraj et al.~\cite{mohanraj2022deep} propose a neural network called DesNN.
 The DesNN model contains seven convolutional layers, five bunch standard layers, three pooling layers, and one fully convolutional layer.
 The last completely associated layer utilizes softmax actuation work to the output predictions, while any remaining layers utilize cracked amended straight unit (LeakyReLU) enactment work.
-Similarly, Zang et al.~\cite{zang2022end} propose an end-to-end CNN network containing two convolution layers, two max-pooling layers, and one fully-connected layer. The activation function of the convolutional layer is the rectified linear units (RELU). After each convolution layer, max-pooling is applied to the obtained feature maps. The Softmax function of the fully-connected layer outputs normal or depression.
+Similarly, Zang et al.~\cite{zang2022end} propose an end-to-end CNN network containing two convolution layers, two max-pooling layers, and one fully-connected layer. The activation function of the convolutional layer is the rectified linear units. After each convolution layer, max-pooling is applied to the obtained feature maps. The Softmax function of the fully-connected layer outputs normal or depression.
 Anyhow, the experimental results indicate that the end-to-end deep learning approach can identify depression from ECG signals, and possess high recognition performance. It also shows that ECG is a potential biomarker in the diagnosis of depression.
 
 

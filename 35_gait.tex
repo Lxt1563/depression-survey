@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Human gait, as a daily movement, occurs in parallel with the development of higher brain structures and functions (prefrontal cortex, basal ganglia, and cerebellum) and reflects the integrity of the higher brain systems\cite{sheridan2007role}; thus, it is a good indicator of mental status.
 Furthermore, researchers have also studied the gait characteristics of depression patients through motion analysis~\cite{sloman1987mood,brandler2012depressive,van2005quantitative,michalak2011effects,radovanovic2014gait,naidu2019does}.
-Specifically, Lemake et al.~\cite{lemke2000spatiotemporal} calculated the spatiotemporal gait parameters of patients with major depressive disorder and found that the patients show significant reductions in stride length, cycle time, and lower limb support.
+Specifically, Lemake et al.~\cite{lemke2000spatiotemporal} calculate the spatiotemporal gait parameters of patients with major depressive disorder and found that the patients show significant reductions in stride length, cycle time, and lower limb support.
 Moreover, Michalak\cite{michalak2009embodiment} found reduced walking velocity, arm swing, vertical body movement, increased body sway, and more slumped posture in patients.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,13 +17,13 @@ Moreover, Michalak\cite{michalak2009embodiment} found reduced walking velocity, 
 
 Compared to traditional mental illness detection biometrics, such as facial expression, speech, and physiological parameters, gait is remotely observable, more difficult to imitate, and requires less cooperation from the subject~\cite{xu2020emotion}. These advantages make gait a promising source for auxiliary depression diagnosis.
 Kinect~\cite{gholami2016microsoft}, a device with depth and infrared sensors, can record data from many modalities, such as skeletal and RGB images, while walking.
-It makes it possible to gather gait information and create models for gait auxiliary depression diagnosis.
-There are two basic approaches in related work:
-\emph{(1) Traditional machine learning.}
-The critical task in the traditional method is to learn gait characteristics from depression-related skeletal coordinates captured by Kinect and explore the feature set for better performance.
-In the meantime, traditional classifiers, such as SVM, KNN, RF, etc., are employed for classification.
-\emph{(2) Deep learning.}
-Deep learning-based methods employ deep learning networks to replace the human feature extraction process with end-to-end models, which require only the raw data to make predictions.
+It enables the acquisition of gait information and the development of gait auxiliary depression diagnosis.
+There are two basic approaches in related work: traditional machine learning and deep learning.
+%\emph{(1) Traditional machine learning.}
+%The critical task in the traditional method is to learn gait characteristics from depression-related skeletal coordinates captured by Kinect and explore the feature set for better performance.
+%In the meantime, traditional classifiers, such as SVM, KNN, RF, etc., are employed for classification.
+%\emph{(2) Deep learning.}
+%Deep learning-based methods employ deep learning networks to replace the human feature extraction process with end-to-end models, which require only the raw data to make predictions.
 Notably, these methods concentrate on two tasks: regression of scale scores and depression classification.
 We concentrate primarily on the classification task because of the modest number of regression tasks involved.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +36,7 @@ We first explain the two gait representations that are the basis of the study: s
 The skeleton sequence refers to the 3D coordinate data that can characterize the human body behavior, which is abstracted from the human body structural model of each critical joint of the human body~\cite{nordin2016survey}.
 The skeleton-based representation has strong stability, is not easily influenced by the observational perspective, and can accurately depict the variations in human action~\cite{wang2016gait}.
 The extraction of the silhouette is usually obtained by background subtraction and followed by binarization. Gait silhouette removes all the color and texture information and makes recognition focus on gait, not clothing or other non-gait features.
-The gait energy image (GEI)~\cite{han2005individual}, which is created by averaging the binary silhouette of the human body, has become a popular silhouette feature due to its straightforward processing and potent anti-noise properties~\cite{yang2008gait}.
+The gait energy image~\cite{han2005individual}, which is created by averaging the binary silhouette of the human body, has become a popular silhouette feature due to its straightforward processing and potent anti-noise properties~\cite{yang2008gait}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -63,7 +63,7 @@ Specifically, there are four commonly used gait time-domain features: mean, stan
 The mean is a measure of the central tendency of the random variable characterized by that distribution.
 Standard deviation measures the amount of dispersion of a dataset.
 Kurtosis measures outliers present in the probability distribution.
-In the meantime, several features in the frequency domain, such as amplitudes of all component frequencies, phases, etc., can be obtained with the help of the Fast Fourier transform (FFT). FFT can also be used to keep the critical components while reducing the dimensionality of the gaits data. These temporal and frequency data have a strong correlation with depression, and some techniques, such as SVM, etc., can use them as classification features for auxiliary depression diagnosis.
+In the meantime, several features in the frequency domain, such as amplitudes of all component frequencies, phases, etc., can be obtained with the help of the Fast Fourier transform. It can also be used to keep the critical components while reducing the dimensionality of the gaits data. These temporal and frequency data have a strong correlation with depression, and some techniques, such as SVM, etc., can use them as classification features for auxiliary depression diagnosis.
 Furthermore, Wang et al.~\cite{wang2021detecting} validate the effectiveness of both times- and frequency-domain features in recognizing depression, which is also consistent with previous studies~\cite{sejdic2013comprehensive,zhang2016emotion}.
 However, significant time- and frequency-domain principal components can only provide them with mathematical relationships
 between gait patterns and time- and frequency-domain features. They need to be more intuitive for interpreting gait patterns.
@@ -117,7 +117,7 @@ The experimental results imply that the proposed method leveraging the complemen
 
 We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
 The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
-We should mention that we focus on comparing how different techniques perform on the same data set.
+We should mention that we focus on comparing how different techniques perform on the same dataset.
 The following list of observations can be summed up:
 
 
