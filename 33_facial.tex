@@ -166,18 +166,18 @@ We guess because compared to the spatial information extracted using CNN separat
 %\centering
 \caption{Experimental results based on facial}
 \label{tab4}
-\resizebox{\linewidth}{43mm}{
+%\resizebox{\linewidth}{45mm}{
 %\setlength\tabcolsep{0mm}{
 \begin{tabular}{c|c|c|c|c}
 
 \toprule
 \textbf{Paper}      & \textbf{Dataset}      & \textbf{Method} & \textbf{RMSE} & \textbf{MAE} \\
 \hline
-AVEC2013 baseline~\cite{10.1145/2512530.2512533} & AVEC2013 & SVR             & 13.61         & 10.88        \\
+\makecell{AVEC2013 \\baseline~\cite{10.1145/2512530.2512533}} & AVEC2013 & SVR             & 13.61         & 10.88        \\
 \hline
-AVEC2014 baseline~\cite{10.1145/2661806.2661807} & AVEC2014 & SVR             & 10.86         & 8.86         \\
+\makecell{AVEC2014 \\baseline~\cite{10.1145/2661806.2661807}} & AVEC2014 & SVR             & 10.86         & 8.86         \\
 \hline
-Kaya et al~\cite{2014Eyes}                       & AVEC2013 & 1-NN regressor  & 9.72          & 7.86         \\
+Kaya et al~\cite{2014Eyes}                       & AVEC2013 & \makecell{1-NN \\regressor}  & 9.72          & 7.86         \\
 \hline
 Jan et al~\cite{ 2014Automatic}                  & AVEC2014 & LR              & 10.50          & 8.44         \\
 \hline
@@ -190,7 +190,7 @@ Yu et al~\cite{2017Automated}                    & AVEC2013 & CNN             & 
 \hline
 Yu et al ~\cite{2017Automated}                   & AVEC2014 & CNN             & 9.55          & 7.47         \\
 \hline
-AVEC2019 baseline~\cite{ ringeval2019avec}       & \makecell{AVEC2019\\(E-DAIC)}      & CNN             & 8.01          & -            \\
+\makecell{AVEC2019 \\baseline~\cite{ ringeval2019avec}}       & \makecell{AVEC2019\\(E-DAIC)}      & CNN             & 8.01          & -            \\
 \hline
 Melo et al.~\cite{2019Combining}                 & AVEC2013 & CNN             & 8.26          & 6.40         \\
 \hline
@@ -221,7 +221,7 @@ Jazaery et al~\cite{8466881}                     & AVEC2013 & RNN-C3D         & 
 Jazaery et al ~\cite{8466881}                    & AVEC2014 & RNN-C3D         & 9.20          & 7.22        \\
  \bottomrule
 
-\end{tabular}}
+\end{tabular}
 \end{table}
 
 
