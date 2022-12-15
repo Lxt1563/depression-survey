@@ -89,7 +89,7 @@ In speech auxiliary depression diagnosis, CNN, RNN, hybrid networks, and transfo
 
 %Figure 2 shows the deep learning based speech depression recognition,
 
-%在SDR中，常用的深度分类器算法包括循环神经网络(RNN)、深度信念网络(deep Belief Network)、卷积神经网络(convolutional Neural Network, CNN)等
+%锟斤拷SDR锟叫ｏ拷锟斤拷锟矫碉拷锟斤拷锟饺凤拷锟斤拷锟斤拷锟姐法锟斤拷锟斤拷循锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷(RNN)锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷(deep Belief Network)锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷(convolutional Neural Network, CNN)锟斤拷
 
 
 Specifically, CNN could capture spatial properties of features and has the ability of parallel computing.
@@ -129,7 +129,7 @@ Despite having good outcomes in speech auxiliary depression diagnosis, conventio
 %And then, they pass the corresponding feature descriptors through a CNN, which has n convolutional
 %layers, followed by one ReLU, Pooling and Dropout layers, while the last convolutional layer is followed by two fully connected
 %layers. In the training process, they add a fully-connected layer to produce the prediction score.
-%%从不错的实验结果来看，我们可以推断出以下两点。
+%%锟接诧拷锟斤拷锟斤拷实锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟角匡拷锟斤拷锟狡断筹拷锟斤拷锟斤拷锟斤拷锟姐。
 %CNN could capture spatial properties of features and has the ability of parallel computing. Therefore, CNN can be used as a classifier for traditional acoustic features.
 %Well known audio features, like MFCCs and logMel are fairly simple to extract and have a small number of dimensions which might be more suitable to a low-resource setting than raw signal.
 
@@ -186,9 +186,9 @@ Instead of using the output of the traditional LSTM, multi-head time-dimension a
 
 
 
-%混合网络
-%为了获取更多的与depression检测相关的关键时间信息，组合模型应运而生。最先用到的组合模型是CNN+LSTM
-%Du等人为了获取语音信号的多尺度时间信息，提出了一种基于音频的incplstm方法，该方法在特征序列上有效地集成了incplstm模块和长短时记忆(Long Short-Term Memory, LSTM)。Inception模块最初的设计目的是拓宽CNN体系结构，扩展接受域。此外，由于BD中定义的类具有不断增加的无序强度，我们设计了一个严重性敏感损失，以考虑类间关系。这两个步骤大大增加了从声态中学到的深层特征的辨别能力。另一方面，为了避免在少量训练样本下的过拟合问题，我们利用L - 1正则化器实现了incplstm的稀疏版本，提高了泛化性能。
+%锟斤拷锟斤拷锟斤拷锟斤拷
+%为锟剿伙拷取锟斤拷锟斤拷锟斤拷锟斤拷depression锟斤拷锟斤拷锟斤拷锟截的关硷拷时锟斤拷锟斤拷息锟斤拷锟斤拷锟斤拷模锟斤拷应锟剿讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟矫碉拷锟斤拷锟斤拷锟斤拷模锟斤拷锟斤拷CNN+LSTM
+%Du锟斤拷锟斤拷为锟剿伙拷取锟斤拷锟斤拷锟脚号的讹拷锟竭讹拷时锟斤拷锟斤拷息锟斤拷锟斤拷锟斤拷锟斤拷一锟街伙拷锟斤拷锟斤拷频锟斤拷incplstm锟斤拷锟斤拷锟斤拷锟矫凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷效锟截硷拷锟斤拷锟斤拷incplstm模锟斤拷锟酵筹拷锟斤拷时锟斤拷锟斤拷(Long Short-Term Memory, LSTM)锟斤拷Inception模锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷目锟斤拷锟斤拷锟截匡拷CNN锟斤拷系锟结构锟斤拷锟斤拷展锟斤拷锟斤拷锟津。达拷锟解，锟斤拷锟斤拷BD锟叫讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫诧拷锟斤拷锟斤拷锟接碉拷锟斤拷锟斤拷强锟饺ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷一锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷失锟斤拷锟皆匡拷锟斤拷锟斤拷锟斤拷锟斤拷系锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟剿达拷锟斤拷态锟斤拷学锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟侥憋拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷一锟斤拷锟芥，为锟剿憋拷锟斤拷锟斤拷锟斤拷锟斤拷训锟斤拷锟斤拷锟斤拷锟铰的癸拷锟斤拷锟斤拷锟斤拷锟解，锟斤拷锟斤拷锟斤拷锟斤拷L - 1锟斤拷锟斤拷锟斤拷锟斤拷实锟斤拷锟斤拷incplstm锟斤拷稀锟斤拷锟芥本锟斤拷锟斤拷锟斤拷锟剿凤拷锟斤拷锟斤拷锟杰★拷
 %In order to obtain more critical temporal information related to depression-assisted diagnosis, hybrid networks were created. The first combinatorial model used is CNN+LSTM, Ma et al. design a deep model combined DCNN with LSTM instead of previous SDR method based on acoustic feature, named DepAudioNet.
 %In their research, CNN is applied to extract high-level feature from raw wave while LSTM is used to learn the temporal change of Mel scale filter feature, which achieved good results on the DAIC-WOZ dataset, and also strongly promoted the follow-up end-to-end model research.
 
@@ -213,8 +213,8 @@ In order to avoid the over-fitting problem in a small number of training samples
 
 
 
-%Transformer 适用于Suitable for very long sequence data
-%很难从长序列的音频和视觉数据中提取长期的时间上下文信息，目前，抑郁症检测任务主要面临两个挑战，分别是数据集数量有限和输入的序列较长。为了解决这两个挑战，该文提出了一种可以在总结长序列的同时解决数据量有限的embedding方法。
+%Transformer 锟斤拷锟斤拷锟斤拷Suitable for very long sequence data
+%锟斤拷锟窖从筹拷锟斤拷锟叫碉拷锟斤拷频锟斤拷锟接撅拷锟斤拷锟斤拷锟斤拷锟斤拷取锟斤拷锟节碉拷时锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷息锟斤拷目前锟斤拷锟斤拷锟斤拷症锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷要锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷战锟斤拷锟街憋拷锟斤拷锟斤拷锟捷硷拷锟斤拷锟斤拷锟斤拷锟睫猴拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫较筹拷锟斤拷为锟剿斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷战锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷一锟街匡拷锟斤拷锟斤拷锟杰结长锟斤拷锟叫碉拷同时锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟睫碉拷embedding锟斤拷锟斤拷锟斤拷
 
 %Transformer-based network is suitable to extract long-term temporal context information from speech.
 
@@ -363,8 +363,8 @@ Although the end-to-end model also has better performance, it is difficult to de
 \caption{Experimental results based on speech.}
 \label{tab_speech}
 %\renewcommand\arraystretch{0.9}
-\resizebox{0.9\linewidth}{!}{%
-\setlength\tabcolsep{0.5mm}{
+\resizebox{1\linewidth}{!}{%
+\setlength\tabcolsep{2.5mm}{
 \begin{tabular}{c|c|c|cccc|cc}
 \hline
 \multirow{2}{*}{\textbf{Paper}} & \multirow{2}{*}{\textbf{Dataset}} & \multirow{2}{*}{\textbf{Methods}} & \multicolumn{4}{c|}{\textbf{Classification metrics}}              & \multicolumn{2}{c}{\textbf{Regression metrics}} \\ %\cline{4-9}
