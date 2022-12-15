@@ -127,14 +127,14 @@ Although the traditional machine learning methods still occupy the mainstream re
 Deep learning technology provides more choices for medical image analysis by building neural networks from the main learning features.
 
 Many researchers use CNN to process independent two-dimensional slices to learn effective features in fMRI, thereby better mining the strong local spatial correlation in the image.~\cite{mousavian2020depression}.
-Gui et al.~\cite{2019The1} proposes a deep learning network with multibranch and local residual feedback, for four different types of Task State fMRI imaging data produced by depressed patients and control people under the music task condition.
+Gui et al.~\cite{2019The1} propose a deep learning network with multibranch and local residual feedback, for four different types of Task State fMRI imaging data produced by depressed patients and control people under the music task condition.
 Recently, graph based methods are popular in medical applications because they can adapt to the complex pairwise similarity of imaging/nonimaging features between subjects.
-Jun et al.~\cite{2020Identifying} uses spectral Graph Convolutional Networks based on population graph to successfully integrate effective connectivity features and nonimaging demographic features.
+Jun et al.~\cite{2020Identifying} use spectral Graph Convolutional Networks based on population graph to successfully integrate effective connectivity features and nonimaging demographic features.
 
 However, MRI data is 3 Dimensions (3D) or 4 Dimensions, which means that it is high-dimensional, including not only spatial information but also time information.
-Mousavian et al.~\cite {mousavian2020depression} uses 3D-CNN to capture 3D spatial information, or Spatial-temporal CNN to extract spatial and temporal information at the same time.
+Mousavian et al.~\cite {mousavian2020depression} use 3D-CNN to capture 3D spatial information, or Spatial-temporal CNN to extract spatial and temporal information at the same time.
 In addition, in order to understand the changes of the brain over a period of time, LSTM is also trained to capture the changes of Resting State fMRI over time.
-Mousavian et al.~\cite{mousavian2020depression} also uses a hybrid model combining CNN and LSTM to capture the spatial and temporal information of data.
+Mousavian et al.~\cite{mousavian2020depression} also use a hybrid model combining CNN and LSTM to capture the spatial and temporal information of data.
 CNN works for retrieving spatial features of the data and extract the active areas, and LSTM retrieves temporal features and models the blood flow.
 
 The lack of training samples is a serious problem in the application of deep learning methods in medical imaging. Therefore, some researchers use Generative Adversarial Networks(GAN) to solve the problem of over fitting, but the effect is not ideal, and further research is needed~\cite {2020Functional}.
@@ -207,7 +207,7 @@ This CNN method recognizes the original blood data, manually extracted HbO, HbR,
 
 The RNN method makes the artificial neural network have a strong ability of time series signal classification and prediction, so it has a wide range of applications in the field of natural language processing. Because fNIRS data has significant time series characteristics, the method based on RNN is gradually applied to this field. Among them, LSTM is the most representative, which can solve the long-term dependence problem of general RNN, and can effectively analyze and predict the time series signals in fNIRS data~\cite{2021fNIRS}.
 
-In addition, Ma et al.~\cite{2020DISTINGUISHING } combines CNN and LSTM to increase the network's ability to extract hidden information from fNIRS data, making the model more comprehensive and stable.
+In addition, Ma et al.~\cite{2020DISTINGUISHING } combine CNN and LSTM to increase the network's ability to extract hidden information from fNIRS data, making the model more comprehensive and stable.
 
 
 Brain imaging technology has revealed abnormalities in brain structure, brain function and brain metabolism in patients with depression, providing new ideas for early diagnosis and optimization of treatment plans.
@@ -286,10 +286,15 @@ Brain imaging technology has revealed abnormalities in brain structure, brain fu
 \input{tnnls_suffix}
 \fi 
 
-\subsubsection{Performance Comparison}
+\subsection{Performance Comparison}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Table \ref{tab3} shows a summary of the experimental results based on brain imaging to diagnosing depression.
-As most researchers use their own collected data for the auxiliary diagnosis of depression based on brain images, the work among them is not comparable, but by comparing different methods of the same team, we can draw the following conclusions:
+%Table \ref{tab3} shows a summary of the experimental results based on brain imaging to diagnosing depression.
+%As most researchers use their own collected data for the auxiliary diagnosis of depression based on brain images, the work among them is not comparable, but by comparing different methods of the same team, we can draw the following conclusions:
+We evaluate the auxiliary depression diagnosis method using fMRI and FNIRS.
+We review the effectiveness of the approaches examined in Tabel~\ref{tab3} to provide greater insight into the  brain imaging auxiliary depression diagnosis methods' performance.
+The experimental classification accuracy data (\%) are taken directly from the related source articles to conduct a fair comparison.
+It should be mentioned that we focus on comparing how different techniques perform on the same dataset.
+The following list of observations can be summed up:
 
 (1)Although the general linear model is the mainstream analysis method of fMRI images, based on its good ability to feature extraction, it has also achieved better results than the traditional linear feature extraction methods in fNIRS.
 
