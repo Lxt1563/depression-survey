@@ -70,8 +70,8 @@ For deep learning approaches, a wide range of studies has adopted LSTM as well a
 Numerous previous studies have employed LSTM to extract spatiotemporal features at various scales from audio, video, and text clips to obtain crucial temporal information for a task involving depression recognition.
 Mainly, Alhanai et al.~\cite{AlHanai2018} simulate the interaction between audio and text features in an LSTM neural network model to detect depression.
 Further, Qureshi et al.~\cite{qureshi2019verbal} suggest a bimodal multitasking model that includes both a speech-based and a text-based module.
-The model is passed through separate BiLSTM layers with an attention mechanism. The output attention vectors are concatenated and passed to feedforward layers for depression detection, severity prediction, and symptom severity predictions. The depression detection head has a logistic sigmoid function to output depressed-class probability estimates.
-Moreover, Ray et al.~\cite{ray2019multi} propose a multi-level attention-based early fusion network that employs a bidirectional long and short-term memory network architecture and applies the attention layer to a stacked BLSTM layer.
+The model is passed through separate Bi-directional LSTM layers with an attention mechanism. The output attention vectors are concatenated and passed to feedforward layers for depression detection, severity prediction, and symptom severity predictions. The depression detection head has a logistic sigmoid function to output depressed-class probability estimates.
+Moreover, Ray et al.~\cite{ray2019multi} propose a multi-level attention-based early fusion network that employs a bidirectional long and short-term memory network architecture and applies the attention layer to a stacked Bi-directional LSTM layer.
 More importantly, it recognizes the significance of intra- and inter-modal features for predicting depression levels and fusing the patterns of audio, video, and text to predict the severity of depression.
 
 
@@ -133,7 +133,7 @@ Alhanai et al.~\cite{al2018detecting}& DAIC-WOZ& LSTM & A+T & 77.00& 71.00 & 83.
 & & & V+T& - & - & - & 5.11 & 3.65 \\
 &  &  & A+T & - & - & -& 4.64 & 3.65  \\
 & & & A+V+T & - & - & - & 4.14  & 3.07  \\\hline
-Lau et al.~\cite{lau2021improving} & DAIC-WOZ & BiLSTM & A+T &92.00 & 100.00 & 86.00 &3.95 &3.00\\\hline
+Lau et al.~\cite{lau2021improving} & DAIC-WOZ & Bi-directional LSTM & A+T &92.00 & 100.00 & 86.00 &3.95 &3.00\\\hline
 Yang et al.~\cite{yang2017hybrid}  & DAIC-WOZ & DCNN+DNN & A+V+T &- &-&-&5.40 &4.36 \\ \hline
 Yang et al.~\cite{yang2017multimodal} & DAIC-WOZ & DCNN+DNN & A+V+T & -  & -  & - & 5.97  & 5.16 \\ \hline
 Yang et al.~\cite{yang2018integrating}  & DAIC-WOZ & DCNN+DNN & A+V & 60.00 & 55.00& 67.00& 6.34  & 5.39 \\ \hline
