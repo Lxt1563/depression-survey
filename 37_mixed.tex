@@ -9,11 +9,10 @@
 The recognition model of depression based on single mode data has made many achievements, but it also has some limitations.
 For example, gait abnormalities may also be caused by physiological diseases, physiological signals are not easy to collect, and data such as voice and facial expressions are vulnerable to the impact of the environment.
 Therefore, the use of single mode data alone cannot meet the needs of clinical depression diagnosis. In recent years, more and more studies have combined multiple modal data for depression assessment and detection, and also have achieved good results.
-
 In short, a more accurate and robust depression recognition model can be constructed by integrating complementary information from different modalities that reflect different aspects of depression.
-Most depression recognition methods based on multimodal data mostly use audio, video and text data, because the international competition AVEC introduced audiovisual depression analysis in 2013, and compared with other modality data, it is easy to collect.
-Therefore, in this section, we mainly introduce the methods of depression recognition based on audio, video and text.
 
+Most depression recognition methods based on multimodal data mostly use audio, video and text data~\cite{2021Deep}, because the international competition AVEC introduced audiovisual depression analysis in 2013, and compared with other modality data, it is easy to collect.
+Therefore, in this section, we mainly introduce the methods of depression recognition based on audio, video and text.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -27,19 +26,20 @@ Therefore, in this section, we mainly introduce the methods of depression recogn
 	\label{AVT}
 \end{figure}
 
+%删除单独音视频模态表征抑郁不准确的描述
+%Depressed patients usually show some abnormal behavioral expressions, such as becoming sluggish in facial expressions, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and having slow movements of the head and body parts.
+%However, these depressive features may also appear when a healthy person is in a bad mood, and not all depressed patients directly show the above abnormal depressive symptoms, which means that depressed patients do not have a certain characteristic unique to them, so it is difficult to accurately detect depression by relying on a single modal characteristic.
+%In recent years, there have also been many mature studies on audio-video and text based multimodal fusion methods in depression diagnosis~\cite{2021Deep}, which have more comprehensive feature coverage and enhanced performance in depression detection compared with unimodal cue detection methods.
 
-Depressed patients usually show some abnormal behavioral expressions, such as becoming sluggish in facial expressions, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and having slow movements of the head and body parts.
-However, these depressive features may also appear when a healthy person is in a bad mood, and not all depressed patients directly show the above abnormal depressive symptoms, which means that depressed patients do not have a certain characteristic unique to them, so it is difficult to accurately detect depression by relying on a single modal characteristic.
-In recent years, there have also been many mature studies on audio-video and text based multimodal fusion methods in depression diagnosis~\cite{2021Deep}, which have more comprehensive feature coverage and enhanced performance in depression detection compared with unimodal cue detection methods.
-
-There are three methods to fuse modality data for depression recognition: early fusion, late fusion and hybrid fusion.
+Multimodal data auxiliary depression diagnosis mainly predicts the risk of depression by fusing the representations of different modality data, and how to effectively fuse is a crucial step.
+There are three methods to fuse different modality data: early fusion, late fusion and hybrid fusion.
 As shown in Fig \ref{AVT}, the early fusion method connects the features extracted from each mode, and predicts them after generating a single feature vector.
 The late fusion method refers to that each modal data is trained separately in the early stage to obtain the prediction results, and the later stage is fused by decision or integration.
 The hybrid fusion method combines the output of early fusion with the prediction factor of single mode to predict the results~\cite{Morales2018ALF}.
 At present, most of the research is based on early fusion methods.
 
 
-\subsection{Multiple audiovisual and text auxiliary depression diagnosis based on traditional machine learning}
+\subsection{Multiple audiovisual and text data auxiliary depression diagnosis based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -51,16 +51,16 @@ The multimodal combination method is similar to the feature extraction method of
 It extracts video features (facial action coding system coding, local binary patterns, active appearance modeling, motion history histogram, topic modeling, etc.~\cite{2009Detecting, meng2013depression}), vocal features (pitch, fluency measures, mel-scale frequency cepstral coefficients, voice quality, measures of periodicity and symmetry, etc.~\cite{2009Detecting, fraser2016detecting} and textual features (topic modeling, part-of-speech, n-gram, speech rate, parse constituents and psycholinguistic measures, etc.~\cite{gong2017topic, morales2016speech, fraser2016detecting}), then the prediction is carried out by combining the features input classification or regression model.
 
 
-Besides the common classification and regression methods such as LR, SVM, SVR, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017Facial, Morales2018ALF}, some researchers have explored fusion methods.
+In addition to exploring different classification and regression methods such as LR, SVM, SVR, Nearest Neighbor Classifier, Partial Least Squares, Gaussian Staircase Regression~\cite{2009Detecting, meng2013depression, M2014Fusion, fraser2016detecting, 2016Detecting, 2017Facial, Morales2018ALF}, some researchers have explored fusion methods.
 Morales et al.~\cite{Morales2018ALF} propose a new early fusion method named Informed Early Fusion.
 Unlike the simple early fusion method for composite modes, the syntax based early fusion method uses the relationship between syntax and suppression to help improve model performance.
 Kachele et al.~\cite{M2014Fusion} perform the final fusion step using a trainable Kalman filter.
-A large number of experimental results show that, compared with single mode data, multimodal data combined with depression recognition has a better effect.
+A large number of experimental results show that, compared with single mode data, multimodal data combined with depression analysis has a better effect.
 
 %\subsubsection{Audiovisual cues auxiliary depression diagnosis based on deep learning}
 
 
-\subsection{Multiple audiovisual and text auxiliary depression diagnosison based on deep learning}
+\subsection{Multiple audiovisual and text data auxiliary depression diagnosis based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
@@ -94,7 +94,6 @@ The features from both models are concatenated and passed to a feedforward model
 For example, Lam et al.~\cite{lam2019context} propose a novel method that incorporates a
 data augmentation procedure based on topic modeling using
 transformer and deep 1D CNN for acoustic feature modeling.
-
 
 
 \subsection{Performance Comparison}
@@ -186,18 +185,17 @@ Experiments result show that the proposed approach performs significantly better
 
 
 
-
-
 \subsection{Others}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Most of the data of other modes in the depression recognition use single mode data, but a few studies combine data of multiple modes for prediction.
+Most of the data of other modes in the auxiliary depression diagnosis use single mode data, but a few studies combine data of multiple modes for prediction.
 Each type of brain imaging can reflect the brain of patients with depression. For example, sMRI can clearly display the anatomical structure of the brain with high spatial resolution and reflect the internal structure of the brain, while fMRI can detect the changes of cerebral blood oxygen dependent level signals, and can reflect the active state of brain neural regions.
 Therefore, Mousavian et al.~\cite{mousavian2021depression} combine the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
 Besides, several other modal fusions have also attracted extensive attention from researchers.
 For example,
 Zhang et al.~\cite{zhang2019multimodal} explore from physiological and behavioral perspectives simultaneously and fuse pervasive EEG and speech signals to make the detection of depression more objective, effective, and convenient.
-Jing et al.~\cite{jing2019different} build a supervised regression model based on individual language and natural gait data to predict depression and anxiety in patients. Their results could be the basis of both applications and future studies on multi-source data fusion in anxiety and depression recognition.
+Jing et al.~\cite{jing2019different} build a supervised regression model based on individual language and natural gait data to predict depression and anxiety in patients.
+Their results could be the basis of both applications and future studies on multi-source data fusion in depression analysis.
 
 
 
