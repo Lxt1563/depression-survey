@@ -10,27 +10,27 @@
 \subsection{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Depression is the fourth largest disease in the world, but the medical prevention and treatment of depression is still in a situation of low recognition rate in China. The recognition rate of hospitals above prefecture level cities is less than 20\%, and less than 10\% of patients receive relevant drug treatment; Moreover, the incidence of depression (and suicides) has begun to show a trend of younger age (universities, and even primary and secondary school students). How to find an efficient and rapid diagnostic method becomes imminent. This paper summarizes the research and application of various modal data in the diagnosis of depression, and provides a reference for designing a more convenient and fast clinical auxiliary diagnosis method.
+Depression is the fourth most significant disease in the world, but the medical prevention and treatment of depression are still in a situation of low recognition rate in China. The recognition rate of hospitals above prefecture-level cities is less than 20\%, and less than 10\% of patients receive appropriate drug treatment; Moreover, the incidence of depression (and suicides) has begun to show a trend of younger age (universities and even primary and secondary school students). How to find an efficient and rapid diagnostic method becomes imminent. This paper summarizes the research and application of various modal data in the diagnosis of depression. It provides a reference for designing a more convenient and fast clinical auxiliary diagnosis method.
 
 This paper introduces an auxiliary depression diagnosis method based on different modality data.
-The method based on electrophysiological signals and brain maps mostly collects the data of subjects through professional equipment, and then extracts and analyzes the features of the data. 
-Secondly, the method based on audio and video collects the data of subjects when talking or walking through cameras, and then analyzes the facial expression, speech and gait through the data. 
-More studies have shown that most patients with depression are more inclined to confide in social networks, so auxiliary depression diagnosis based on social media texts has also made great progress. 
+The method based on electrophysiological signals and brain imaging mainly collects the data of subjects through professional equipment and then extracts and analyzes the features of the data. 
+Secondly, the method based on audio and video collects the data of subjects when talking or walking through cameras. Then it analyzes the facial expression, speech and gait through the data. 
+More studies have shown that most patients with depression are more inclined to confide in social networks, so auxiliary depression diagnosis based on social media texts has also made significant progress. 
 Finally, combining different modal data can effectively improve the diagnostic performance of the model.
 The depression diagnosis methods based on different modal data are based on machine learning models.
 This paper divides them into traditional machine learning methods and deep learning methods.
 
 %%%%%%traditional machine learning
-Preliminary, the traditional machine learning method was widely used in the task of auxiliary depression diagnosis because of its advantages such as simplicity, easy implementation and strong interpretability.
-Common classification and regression methods, such as SVM, RF, and LR, have achieved good performance in solving the problem of depression diagnosis in small samples.
-However, these traditional machine learning methods need to extract features manually, which is time-consuming and labor-intensive, and may extract features with high dimensions, resulting in over fitting of the model.
-Therefore, most researchers use methods such as principal component analysis to reduce the dimensions of extracted features and select the most useful features for prediction.
+Preliminary, the traditional machine learning method was widely used in auxiliary depression diagnosis because of its advantages such as simplicity, easy implementation, and strong interpretability.
+Standard classification and regression methods, such as SVM, RF, and LR, have achieved good performance in solving the problem of depression diagnosis in small samples.
+However, these traditional machine learning methods need to extract features manually, which is time-consuming and labor-intensive and may extract features with high dimensions, resulting in overfitting   the model.
+Therefore, most researchers use principal component analysis methods to reduce extracted features' dimensions and select the most valuable features for prediction.
 
 %%%%%%deep learning
 With the development of artificial intelligence, deep learning methods have gradually matured, which is a method in machine learning based on learning representations of data to achieve complex function approximation by learning a deep nonlinear network structure.
 In the auxiliary depression diagnosis method based on deep learning, the preprocessed data is usually input directly into the model for feature extraction.
-Since the depression data changes in both the temporal and spatial domains, researchers use convolutional kernels to extract the spatial information and also use RNN or 3D convolutional kernels to extract the temporal information, and then combine them for prediction.
-This method does not need to manually extract features, and the network can independently learn the high-level semantic information, extract the most effective features, and avoid the impact of human subjective experience.
+Since the depression data changes in both the temporal and spatial domains, researchers use convolutional kernels to extract the spatial information and RNN or 3D convolutional kernels to extract the temporal information, then combine them for prediction.
+This method does not need to extract features manually. The network can independently learn high-level semantic information, extract the most effective features, and avoid the impact of subjective human experience.
 However, deep learning models require large amounts of data for training and cannot explain the decisions they make, so deep learning-based auxiliary depression diagnosis needs further exploration.
 
 
@@ -38,32 +38,32 @@ However, deep learning models require large amounts of data for training and can
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%limitations
-Great progress has been made in the diagnosis of depression based on each modality, but many studies still have certain limitations:
+Significant progress has been made in the diagnosis of depression based on each modality, but many studies still have certain limitations:
 (1) They ignored changes in the patient's time dimension.
-First of all, most patients with depression have no clearly distinguishable symptoms in the early stage, and only audio, video, text and other behavioral data can not be used to diagnose depression.
-Secondly, most studies did not follow up the subjects for a long time, and did not consider the effects of drugs and other factors on the patients' bodies.
-(2) Most studies use the scale to determine the label of depression, rather than through the diagnosis of professional doctors, which lacks reliability.
+First, most patients with depression have no distinguishable symptoms in the early stage, and only audio, video, text, and other behavioral data can not be used to diagnose depression.
+Secondly, most studies did not follow up on the subjects for a long time and did not consider the effects of drugs and other factors on the patients' bodies.
+(2) Most studies use the scale to determine the label of depression rather than through the diagnosis of professional doctors, which lacks reliability.
 The scale is only a step in the diagnosis of depression.
 Professional diagnosis also requires doctors to conduct face-to-face interviews with patients and make judgments based on their experience and collected data (brain imaging, electrophysiological signal, etc.)
-However, these data usually contain the privacy of patients, so they are generally not disclosed.
-(3) Some behavior data are usually collected by machine, recording the communication between human and machine, rather than collected from human-to-human conversation, which may not match the responses in real scenarios.
+However, these data usually contain patients' privacy, so they are generally not disclosed.
+(3) Some behavior data are usually collected by the machine, recording the communication between humans and machines, rather than collected from a human-to-human conversation, which may not match the responses in real scenarios.
 (4) There is no more breakdown of depression categories.
-Depression also has many different types, such as bipolar depression, postpartum depression, menopausal depression, etc.
-The causes, manifestations and age of patients of different depression are also different, which cannot be generalized.
+Depression has many different types, such as bipolar depression, postpartum depression, menopausal depression, etc.
+The causes, manifestations, and ages of patients of different depression are also different, which cannot be generalized.
 
-In the future, in order to obtain more reliable prediction results of depression, researchers should try from many aspects.
+In the future, to obtain more reliable prediction results for depression, researchers should try many aspects.
 (1) Researchers should consider collecting more data from more angles, enriching data types, and collecting data on patients with depression diagnosed by professional doctors as much as possible.
-(2) The research aims to restore the performance of depressed patients in real scenes through interpersonal interaction or creating the most comfortable environment for patients when collecting data.
-(3) It can track the data of subjects for a long time to analyze the influence of different stages, drugs or other factors on patients with depression.
+(2) The research aims to restore the performance of depressed patients in natural scenes through interpersonal interaction or by creating the most comfortable environment for patients when collecting data.
+(3) It can track the data of subjects for a long time to analyze the influence of different stages, drugs, or other factors on patients with depression.
 (4) Depression can be further subdivided to explore and analyze different types of depression.
 
-Among the auxiliary depression diagnosis method, researchers also need to pay attention to some details to improve the performance of the model.
-(1) Researchers need to gain insight into the pathogenesis of depression and look for the causes of abnormal manifestations in order to develop a more rational diagnostic model.
-(2) More over, researchers also need to consider the characteristics of the spatio-temporal dimension of the data and extract more effective features for prediction.
+Among the auxiliary depression diagnosis method, researchers also need to pay attention to some details to improve the the model's  performance.
+(1) Researchers need to gain insight into the pathogenesis of depression and look for the causes of abnormal manifestations to develop a more rational diagnostic model.
+(2) Moreover, researchers also need to consider the characteristics of the spatiotemporal dimension of the data and extract more useful features for prediction.
 (3) Finally, combining the different modality data can make up for the deficiency of single modality data, and selecting appropriate features can improve the diagnosis results.
 
-To be clear, these methods are not propose as standalone diagnostic tools that could replace current approaches to diagnosing depression, but instead proposed as part of a broader awareness, detection, and auxiliary system.
-It is also hope that multimodal depression analysis can help more patients with depression get early intervention and treatment, and provide more effective help for the diagnosis of patients with depression.
+These methods are not proposed as standalone diagnostic tools that could replace current approaches to diagnosing depression but instead offered as part of a broader awareness, detection, and auxiliary system.
+It is also hoped that multimodal depression analysis can help more patients with depression get early intervention and treatment and provide more effective help for the diagnosis of patients with depression.
 
 
 \ifx\allfiles\undefined
