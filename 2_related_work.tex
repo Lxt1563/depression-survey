@@ -27,10 +27,10 @@
 %\section{related work}
 \section{background}
 
-This section presents some basic knowledge in auxiliary depression diagnosis task including scales, datasets and assessment metrics.
-Firstly, we introduce some scales of diagnosing depression which are used as label.
-Secondly, we show some public datasets with different data modality.
-Finally, we list some commonly used assessment metrics, which are important in evaluating the performance of methods.
+This section presents basic knowledge in auxiliary depression diagnosis tasks, including scales, datasets, and assessment metrics.
+Firstly, we introduce some scales for diagnosing depression which are used as the label.
+Secondly, we show some public datasets with different data modalities.
+Finally, we list some commonly used assessment metrics which are essential in evaluating the performance of methods.
 
 \subsection{Depression Rating Scales}
 %\subsection{Questionnaires}
@@ -75,7 +75,7 @@ Finally, we list some commonly used assessment metrics, which are important in e
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As the most commonly used tools, a series of questionnaires capturing depressive symptoms had been developed and showed great success in psychiatric practice. The common depression test scales are shown in Table \ref{tab1}.
+As the most commonly used tools, a series of questionnaires capturing depressive symptoms had been developed and showed great success in psychiatric practice. The standard depression test scales as shown in Table \ref{tab1}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -90,48 +90,49 @@ As the most commonly used tools, a series of questionnaires capturing depressive
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 For each scale, There are 3-4 options for several items with different scores.
-Subjects match one option they appropriate in each item and the different range of overall score is divided to different degree of depression. 
+Subjects match one option they appropriate in each item, and the diverse range of overall scores is divided into the various degrees of depression. 
 For example, the BDI-II scale is a 4-point scale including 21 items about sleep, appetite, mood, and suicidal thoughts, as shown in Fig \ref{BDI}.
 Each item has 4 options and is rated ranging from 0 to 3. 
 The highest overall score is 63, and higher scores indicate more severe depressive symptoms. 
 Subjects will match one option of each item by the feelings in the past two weeks. 
-After finishing the BDI-II scale, subject will get the degree of depression by overall score they matched.
+After finishing the BDI-II scale, the subject will get the degree of depression by the overall score they matched.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The scales are divided into other-rating scales and self-rating scales by the way of testing scales.
+The scales are divided into other-rating scales and self-rating scales by way of testing scales.
 %他评量表
-For subjects, testing other-rating scales needs communication with psychiatrist, psychologist or other trained medical personnel at a professional place like hospital or clinic, which is more reliable but less convenient.
+For subjects, testing other-rating scales needs communication with a psychiatrist, psychologist, or other trained medical personnel at a professional place like a hospital or clinic, which is more reliable but less convenient.
 %自评量表
-Self-rating scale like BDI-II is a kind of self-assessment based on the instructions, which can be easily completed in 5-10 minutes but not quite reliable. 
+Self-rating scale like BDI-II is a self-assessment based on the instructions, which can be easily completed in 5-10 minutes but is not quite reliable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The scale is tried to test the emotions of subjects, because negative emotions are the main performance of depressed people. 
-However, people with negative emotions are not the same as with depression.
-Measuring depression on a scale alone has limitations, so that physiological electrical signals or brain images from subjects for auxiliary depression diagnosis during professional diagnosis.
-In recent years, some research showes that abnormal behavioral signals like facial expressions, voice and gait can reflect mental disease, which is more easily to observe compared with physiological electrical signals or brain images.
+The scale is tried to test subjects' emotions because negative emotions are the central performance of depressed people. 
+However, people with negative emotions are not the same as those with depression.
+Measuring depression on a scale alone has limitations, so physiological electrical signals or brain images from subjects for auxiliary depression diagnosis during professional diagnosis.
+In recent years, some research shows that abnormal behavioural signals like facial expressions, voice and gait can reflect mental disease, which is more easily observed than physiological electrical signals or brain images.
 For example, depressed people have dull facial expressions, rarely make eye contact, use phrases with a flat tone when speaking, and walk slowly.
-By analyzing the abnormal behavioral signals can auxiliary diagnosing depression.
+Analyzing the abnormal behavioural signals can auxiliary diagnosing depression.
 
 %%补充抑郁量表说明
-In general, the data of patients with depression are not disclosed due to privacy issues, so most of the studies mentioned in this paper use the results of the scale as labels for experiments, and these scales are tests for the normal population who have not been diagnosed with depression.
+In general, the data of patients with depression are not disclosed due to privacy issues, so most of the studies mentioned in this paper use the results of the scale as labels for experiments.
+These scales are tests for the normal population who have not been diagnosed with depression.
 
 
 \subsection{Datasets}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The world around us involves many modes, we see objects, hear sounds, feel textures, smell smells, and so on. Most people associate the word modality with sensory modality, which represents the main channel of our communication and sensation, such as vision, hearing, etc.
-This section introduces some public datasets as shown in Table \ref{tab2}, including the name, information of subject and data modality. Due to privacy issues, only several of the data modality has public dataset.
+This section introduces some public datasets, as shown in Table \ref{tab2}, including the name, information of the subject and data modality. Due to privacy issues, only several of the data modality has public dataset.
 Therefore, most researchers use the data collected by themselves for analysis.
 
-The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 healthy control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user’s label (control or depression), and the posts field contains timestamp and untokenized pairs~\cite{yates2017depression}.
+The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 healthy control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user's label (control or depression), and the posts field contains a timestamp and untokenized pairs~\cite{yates2017depression}.
 
-The early risk (eRsik) dataset consists of text examples collected from messages of 887 Reddit users. The main idea of the task is to classify users into risk case of depression and non-risk case~\cite{Stankevich2018FeatureEF}.
+The early risk (eRsik) dataset consists of text examples collected from messages from 887 Reddit users. The main idea of the task is to classify users into risk cases of depression and non-risk cases~\cite{Stankevich2018FeatureEF}.
 
-The Computational Linguistics and Clinical Psychology (CLPsych) provides apples-to-apples comparisons of various approaches to modeling language relevant to mental health from social media. The data used for this dataset is from Twitter users who state a diagnosis of depression or post traumatic stress disorder~\cite{coppersmith2015clpsych}.
+The Computational Linguistics and Clinical Psychology (CLPsych) provides apples-to-apples comparisons of various approaches to modelling language relevant to mental health from social media. The data used for this dataset is from Twitter users who state a diagnosis of depression or post-traumatic stress disorder~\cite{coppersmith2015clpsych}.
 
 Bell Let's Talk is a campaign created by Bell Canada to help reduce stigma and promote awareness and understanding of mental health issues. Canadians open up the dialogue on mental health, contributing more than 122 million tweets, texts, calls and social media shares on Bell Let's Talk Day~\cite{2017Monitoring}.
 
-The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA are carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded as both in resting state and under stimulation, and EEG dataset includes not only data collected using traditional 128-electrodes mounted elastic cap, but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded as during interviewing, reading and picture description~\cite{2020MODMA}.
+The Multi-modal Open Dataset for Mental-disorder Analysis (MODMA) consists of data mainly from clinically depressed patients and matching normal controls, which is a multi-modal open dataset for mental-disorder analysis. All patients in MODMA are carefully diagnosed and selected by professional psychiatrists in hospitals. EEG and speech recording data are made publicly available in MODMA. The EEG signals were recorded both in a resting state and under stimulation, and the EEG dataset includes not only data collected using a traditional 128-electrodes mounted elastic cap but also a novel wearable 3-electrode EEG collector for pervasive applications. The speech data were recorded  during interviewing, reading and picture description~\cite{2020MODMA}.
 
 The Audio-Visual Emotion Challenge (AVEC) is an expression recognition challenge held every year since 2011, which is recognized as the top international competition in the field of emotional computing. AVEC2013 began to introduce the task of depression recognition, which considers the analysis of depression based on auditory vision as a classification problem or regression problem.
 
@@ -141,16 +142,16 @@ The Audio-Visual Depression Corpus (AViD-Corpus) contains 340 video clips of sub
 
 The Distress Analysis Interview Corpus – Wizard of Oz (DAIC-WOZ) contains clinical interviews designed to support the diagnosis of psychological distress conditions such as anxiety, depression, and post-traumatic stress disorder. Data collected include audio and video recordings and extensive questionnaire responses~\cite{gratch2014distress}. This data was used for the AVEC2016 and AVEC2017 Challenge.
 
-The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and Post Traumatic Stress Disorder assessment, developed by ICT~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
+The Extended DAIC Database(E-DAIC) is the extended version of DAIC-WOZ database for depression and Post Traumatic Stress Disorder assessment, developed by the institute for creative technologies~\cite{gratch2014distress}. This data was used for the AVEC2019 Challenge.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Wyss Institute Biomarkers for Depression(WIBD)
 
 %The EATD-Corpus is a dataset consist of audio and text files of 162 volunteers who received counseling.
-The Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audios and extracted transcripts of responses from 162 depressed and non-depressed volunteers. EATD-Corpus is the first and only public depression dataset that includes audio and text data in Chinese.
+The Emotional Audio-Textual Depression Corpus (EATD-Corpus) contains audio and extracted transcripts of responses from 162 depressed and non-depressed volunteers. EATD-Corpus is the first and only public depression dataset that includes audio and text data in Chinese.
 
-Finally, we also present some private datasets that are collected by the researchers themselves and used only for their own analysis.
+Finally, we also present some private datasets collected by the researchers and used only for their own analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -246,63 +247,63 @@ Finally, we also present some private datasets that are collected by the researc
 \subsection{Metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
-In many studies, the diagnosis of depression is considered as a binary classification problem.
-Subject with the minimal degree of the scale were labeled to have non-depressed and others are labeled to have depressed.
-And the experimental evaluation methods were some common classification metrics such as Precision, Accuracy, Recall, F1-score, Specificity, Sensitivity and Area Under the Curve (AUC).
+In many studies, the diagnosis of depression is considered a binary classification problem.
+Subjects with a minimal degree of the scale was labelled to have non-depressed, and others were labelled to have depresseion.
+And the experimental evaluation methods were some standard classification metrics such as Precision, Accuracy, Recall, F1-score, Specificity, Sensitivity and Area Under the Curve (AUC).
 %, and accuracy is the most frequently used of these metrics
 
-Some studies used regression analysis to predict the degree of depression according to the score of scale, and the experimental evaluation methods were some common regression metrics as: Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+Some studies used regression analysis to predict the degree of depression according to the score of scale. The experimental evaluation methods were some common regression metrics such as: Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
 
 \subsubsection{Classification metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Confusion metric is the basic of classification metrics. And confusion metrics can be split to 4 parts: True Positive (TP), False Positive (FP), False Negative (FN) and True Negative (TN). TP means a positive sample and predicted as positive. False Positive FP means a positive sample but predicted as negative. False Negative FN means a negative sample but predicted as positive. True Negative TN means a negative sample and predicted as negative. Therefore, the total positive samples can be calculated as $TP+FP$, and the total negative samples can be calculated as $FN+TN$. The overall of confusion metrics is shown in Fig \ref{metric}.
+Confusion metric is the basis of classification metrics. And confusion metrics can be split into 4 parts: True Positive (TP), False Positive (FP), False Negative (FN), and True Negative (TN). TP means a positive sample and predicted as positive. False Positive FP means a positive sample but predicted as negative. False Negative FN means a negative sample but predicted as positive. True Negative TN means a negative sample and is predicted as negative. Therefore, the total positive samples can be calculated as $TP+FP$, and the total negative samples can be calculated as $FN+TN$. The overall  confusion metrics as shown in Fig \ref{metric}.
 
 \begin{figure}[tbp]
 	\centering	
 	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/metric3.png}		
 	\caption{
-	Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents the number of data instances of this category.
+	Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents this category's number of data instances.
 	}
 	\label{metric}
 \end{figure}
 
 
-(1) Precision reflects the ability of the model to correctly predict positive samples, it calculates how many positive samples are predict as \emph{positive}. The calculation is formulated as:
+(1) Precision reflects the ability of the model to correctly predict positive samples. It calculates how many positive samples are predicted as \emph{positive}. The calculation is formulated as follows:
 
 \begin{equation}
  Precision =\frac{TP}{TP+FP}
 \end{equation}
 
 
-(2) Accuracy reflects the ability of the model to correctly predict the overall sample, it calculates how many positive samples are predict as \emph{positive} and negative samples as \emph{negative}. The calculation is formulated as:
+(2) Accuracy reflects the ability of the model to correctly predict the overall sample. It calculates how many positive samples are predicted as \emph{positive} and negative samples as \emph{negative}. The calculation is formulated as follows:
 
 \begin{equation}
 Accuracy =\frac{TP+TN}{TP+FN+FP+TN}=\frac{TP+TN}{P+N}
 \end{equation}
 
 
-(3) Recall reflects the ability of the model to correctly predict the full degree of positive samples, it  calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation is formulated as:
+(3) Recall reflects the ability of the model to correctly predict the full degree of positive samples. It calculates the proportion of positive samples predicted as \emph{positive} to the total positive samples. The calculation is formulated as follows:
 
 \begin{equation}
 Recall =\frac{TP}{TP+FN}=\frac{TP}{P}
 \end{equation}
 
 
-(4) F1-score is a statistical measure of the accuracy of model. It defined as the harmonic mean of precision and recall. The calculation is formulated as:
+(4) F1-score is a statistical measure of the accuracy of the model. It is defined as the harmonic mean of precision and recall. The calculation is formulated as follows:
 
 \begin{equation}
 F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
 \end{equation}
 
 
-(5) Specificity reflects the ability of the model to correctly predict the full extent of negative samples, it  calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as:
+(5) Specificity reflects the ability of the model to correctly predict the full extent of negative samples. It calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as follows:
 
 \begin{equation}
 Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 \end{equation}
 
 
-(6) Sensitivity reflects the ability of the model to correctly predict the full extent of positive samples, it  calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as:
+(6) Sensitivity reflects the ability of the model to correctly predict the full extent of positive samples. It calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as follows:
 
 \begin{equation}
  Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
@@ -313,7 +314,7 @@ Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 	\centering	
 	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/AUC2.png}		
 	\caption{
-	ROC curve is obtained based on confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
+	The ROC curve is obtained based on the confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
 	AUC is defined as the area under the ROC curve. 
 	}
 	\label{AUC}
@@ -342,9 +343,9 @@ In the ROC curve, AUC computes the performance of the binary classifier across d
 
 \subsubsection{Regression metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MAE and RMSE are often used to quantify how well a model fits a dataset.
+MAE and RMSE often quantify how well a model fits a dataset.
 
-(1) MAE reflects the mean absolute difference between the predicted values and the actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation is formulated as:
+(1) MAE reflects the mean absolute difference between the predicted and actual values in a dataset. The lower the MAE, the better a model fits a dataset. The calculation is formulated as follows:
 
 \begin{equation}
 MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
@@ -353,21 +354,21 @@ MAE= \frac{1}{n} \sum_{i=0}^{n}\left | y_{i} -\breve{y}_{i}\right |
 Where $y_{i}$ is the observed value for the $i^{th}$ observation, $\breve{y}_{i}$ is the predicted value for the $i^{th}$ observation, and $n$ is the sample size.
 
 
-(2) RMSE reflects the square root of the average squared difference between the predicted values and the actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation is formulated as:
+(2) RMSE reflects the square root of the average squared difference between the predicted and actual values in a dataset. The lower the RMSE, the better a model fits a dataset. The calculation is formulated as follows:
 
 \begin{equation}
 RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Many studies have shown that depressed and healthy people are very different in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxilia in the depression diagnose.
+Many studies have shown that depressed and healthy people differ in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxiliary in the depression diagnosis.
 
 
 \begin{figure}[tbp]
 	\centering	
 	\label{fig_hard_case1}\includegraphics[width=0.9\linewidth]{figures/depression/method.png}		
 	\caption{
-	The process of auxiliary depression diagnosis method based on different modality data. 
+	The process of the auxiliary depression diagnosis method is based on different modality data. 
 	}
 	\label{method}
 \end{figure}
@@ -376,27 +377,27 @@ Many studies have shown that depressed and healthy people are very different in 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Although various methods have been proposed to auxiliary depression diagnosis based on different multimodal data, the process of methods is similar, as shown in  Fig \ref{method}.
+Although various methods have been proposed for auxiliary depression diagnosis based on different multimodal data, the process of methods is similar, as shown in Fig \ref{method}.
 
-\subsubsection{Pre-processing} Most of the raw data have a lot of noises from capture device and environment.
-For example, electrophysiological signal has baseline drift, power-line interference and electromyography signal all affected by the equipment and human body.
+\subsubsection{Pre-processing} Most of the raw data have a lot of noise from the capture device and environment.
+For example, an electrophysiological signal has baseline drift, power-line interference, and electromyography signal, all affected by the equipment and human body.
 Similarly, other data modality also has interference caused by the acquisition equipment and environment.
 So, it is necessary to preprocess the raw data and use appropriate methods to remove different noises.
-Such as setting frequency intervals to remove power-line and Electromyography interference, and using filters to eliminate baseline drift.
+For example, setting frequency intervals to eliminate power line and Electromyography interference and using filters to eliminate baseline drift.
 
-\subsubsection{Feature extraction} Feature extraction means to the process of transforming raw data into numerical features that can be processed while preserving the information. 
+\subsubsection{Feature extraction} Feature extraction means transforming raw data into numerical features that can be processed while preserving the information. 
 Feature extraction includes manual or automatic.
-Manual feature extraction requires researchers to manually extract features based on the characteristics of data and task. 
-In many situations, having a good understanding of the task can help make informed decisions as to which features could be useful.
-Automated feature extraction uses specialized algorithms to extract features automatically from data without the need for human intervention, such as deep learning methods.
+Manual feature extraction requires researchers to manually extract features based on the characteristics of data and tasks. 
+In many situations, a good understanding of the task can help make informed decisions about which features could be useful.
+Automated feature extraction uses specialized algorithms to extract features automatically from data without human intervention, such as deep learning methods.
 In some cases, it is necessary to reduce the dimension of extracted features, including feature selection and feature fusion, to lessen the amount of calculation.
 
 \subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN), Long short-term Memory (LSTM).
 
-Actually, related researches are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
-Since it can solve the problems encountered in traditional machine learning methods for human-crafted features, such as high threshold, labor expense and low feature utilization rate, deep learning methods are gradually gaining the upper hand in machine learning.
+Actually, related research are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
+Because it can solve the problems of artificial features encountered in traditional machine learning methods, such as high threshold, labor cost, and low feature utilization, the depth learning method gradually dominates in machine learning.
 
 %%%%%%%%%%% differernt data modality
 
-Although the processes are similar, the auxiliary depression diagnostic methods based on various data modalities are not comparable because the data types, extraction features and classification algorithms are all different.
-In the subsequent sections we present the analysis methods based on different modality data in more detail, reviewing both traditional machine learning and deep learning methods, and summarizing the experimental results.
+Although the processes are similar, the auxiliary depression diagnostic methods based on various data modalities are not comparable because the data types, extraction features, and classification algorithms are different.
+In the subsequent sections, we present the analysis methods based on different modality data in more detail, reviewing both traditional machine learning and deep learning methods and summarizing the experimental results.
