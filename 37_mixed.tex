@@ -4,15 +4,17 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Auxiliary depression diagnosis method based on multiple data}
+\section{Auxiliary depression diagnosis method based on mixed data}
 
 The recognition model of depression based on single-mode data has made many achievements, but it also has some limitations.
 For example, gait abnormalities may also be caused by physiological diseases, physiological signals are not easy to collect, and data such as voice and facial expressions are vulnerable to the impact of the environment.
 Therefore, using single-mode data alone cannot meet the needs of clinical depression diagnosis. In recent years, more and more studies have combined multiple modal data for depression assessment and achieved good results.
 In short, a more accurate and robust depression recognition model can be constructed by integrating complementary information from different modalities that reflect different aspects of depression.
 
-Most depression recognition methods based on multimodal data mostly use audio, video, and text data because the international competition AVEC introduced audiovisual depression analysis in 2013. Compared with other modality data, it is easy to collect~\cite{2021Deep}.
+Most depression recognition methods based on mixed data mostly use audio, video, and text data because the international competition AVEC introduced audiovisual depression analysis in 2013. Compared with other modality data, it is easy to collect~\cite{2021Deep}.
 Therefore, in this section, we mainly introduce the methods of depression recognition based on audio, video, and text.
+
+\subsection{Mixed audiovisual and text data}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -39,7 +41,7 @@ The hybrid fusion method combines the early fusion output with a single mode's p
 At present, most of the research is based on early fusion methods.
 
 
-\subsection{Multiple audiovisual and text data auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Mixed audiovisual and text data auxiliary depression diagnosis based on traditional machine learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -60,7 +62,7 @@ Many experimental results show that, compared with single-mode data, multimodal 
 %\subsubsection{Audiovisual cues auxiliary depression diagnosis based on deep learning}
 
 
-\subsection{Multiple audiovisual and text data auxiliary depression diagnosis based on deep learning}
+\subsubsection{Mixed audiovisual and text data auxiliary depression diagnosis based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
@@ -96,7 +98,7 @@ data augmentation procedure based on topic modeling using
 transformer and deep 1D CNN for acoustic feature modeling.
 
 
-\subsection{Performance Comparison}
+\subsubsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

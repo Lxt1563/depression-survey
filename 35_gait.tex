@@ -35,6 +35,11 @@ The gait energy image~\cite{han2005individual}, which is created by averaging th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsubsection{Gait auxiliary depression diagnosis based on traditional machine learning}
+%Gait auxiliary depression diagnosis is still in its infancy, with most approaches focusing on traditional machine learning.
+In traditional research of gait auxiliary depression diagnosis, hand-crafted features are regularly used together with machine learning classifiers. The gait features are generally divided into two main categories: time-frequency and spatial-temporal features.
+
+
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.9\linewidth]{figures/depression/kinect.jpg}
@@ -42,11 +47,6 @@ The gait energy image~\cite{han2005individual}, which is created by averaging th
 }
 \label{kinect}
 \end{figure}
-
-
-\subsubsection{Gait auxiliary depression diagnosis based on traditional machine learning}
-%Gait auxiliary depression diagnosis is still in its infancy, with most approaches focusing on traditional machine learning.
-In traditional research of gait auxiliary depression diagnosis, hand-crafted features are regularly used together with machine learning classifiers. The gait features are generally divided into two main categories: time-frequency and spatial-temporal features.
 
 
 
@@ -104,31 +104,6 @@ Then, they construct a fusion model consisting of fusing silhouettes from the fr
 The experimental results imply that the proposed method leveraging the complementarity gained a higher accuracy. However, the feature extraction of the skeleton alone and the generation of GEI with silhouettes suffer from variable degrees of information loss. Instead, employing a deep end-to-end architecture to push the original signal into the model for learning may produce unpredictable results.
 
 \subsubsection{Performance Comparison}
-%To shed more light on the performance of gait auxiliary depression diagnosis methods, we summarize the performance of the methods tested in Tabel~\ref{tab_gait}.
-%To perform a fair comparison, the experimental classification accuracy results (\%) are directly derived from the corresponding original papers.
-%It should be noted that we concentrate on contrasting the performance of various approaches on the same data set.
-%Several observations can be summarized as follows:
-
-We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
-The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
-We should mention that we focus on comparing how different techniques perform on the same dataset.
-The following list of observations can be summed up:
-
-
-(1) 
-For traditional gait auxiliary depression diagnosis methods, scholars have been exploring novel gait features and using traditional machine learning models for classification with increasing accuracy.
-Specifically, first, time- and frequency-domain features are more efficient in constructing computational models to identify depression than spatiotemporal features~\cite{wang2021detecting}. It is noteworthy that the model built with time-domain features has the same performance as the model built by combining both spatiotemporal and time-domain features, indicating that spatiotemporal features contribute little to identifying depression. It is also reflected in the fact that the model comprised of time- and frequency-domain features has the same performance as the model consisting of all features. Second, different classifiers display varying performances when given the same feature vector as input.
-
-
-(2) For deep learning-based gait auxiliary depression diagnosis methods, the multi-modal models are more accurate than the single-modal models. Researchers found that the skeleton can help to locate the spatial position of joints of the human body, and the silhouette can describe the detailed information of the human body shape so that the constructed 3D model is more vivid.
-Shao et al.~\cite{shao2021multi} obtain better classification performance using skeleton and silhouette fusion, which agrees that the skeleton and silhouette information are related and complementary.
-
-
-(3)
-The gait auxiliary depression diagnosis method based on deep learning outperforms traditional machine learning for the same dataset~\cite{9187648,fang2019depression,yang2022data}.
-In previous studies, scholars have been committed to exploring new gait features and using traditional machine learning models for classification, and the accuracy has been continuously improved.
-However, traditional machine learning technologies need to be improved in processing raw data in their raw form. They could not express complex functions, making solving more complex natural signal processing problems difficult. Deep learning allows computational models composed of multiple processing layers to learn representations of data with multiple levels of abstraction and demonstrate a powerful ability to learn the essential characteristics of a data set from a small number of samples.
-
 
 
 
@@ -167,3 +142,30 @@ Shao~\cite{shao2021multi}  & 200(86+114)  & LSTM+CNN  & 85.45 \\ \cline{1-4}
 \ifx\allfiles\undefined
 \input{tnnls_suffix}
 \fi
+
+
+%To shed more light on the performance of gait auxiliary depression diagnosis methods, we summarize the performance of the methods tested in Tabel~\ref{tab_gait}.
+%To perform a fair comparison, the experimental classification accuracy results (\%) are directly derived from the corresponding original papers.
+%It should be noted that we concentrate on contrasting the performance of various approaches on the same data set.
+%Several observations can be summarized as follows:
+
+We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
+The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
+We should mention that we focus on comparing how different techniques perform on the same dataset.
+The following list of observations can be summed up:
+
+
+(1) 
+For traditional gait auxiliary depression diagnosis methods, scholars have been exploring novel gait features and using traditional machine learning models for classification with increasing accuracy.
+Specifically, first, time- and frequency-domain features are more efficient in constructing computational models to identify depression than spatiotemporal features~\cite{wang2021detecting}. It is noteworthy that the model built with time-domain features has the same performance as the model built by combining both spatiotemporal and time-domain features, indicating that spatiotemporal features contribute little to identifying depression. It is also reflected in the fact that the model comprised of time- and frequency-domain features has the same performance as the model consisting of all features. Second, different classifiers display varying performances when given the same feature vector as input.
+
+
+(2) For deep learning-based gait auxiliary depression diagnosis methods, the multi-modal models are more accurate than the single-modal models. Researchers found that the skeleton can help to locate the spatial position of joints of the human body, and the silhouette can describe the detailed information of the human body shape so that the constructed 3D model is more vivid.
+Shao et al.~\cite{shao2021multi} obtain better classification performance using skeleton and silhouette fusion, which agrees that the skeleton and silhouette information are related and complementary.
+
+
+(3)
+The gait auxiliary depression diagnosis method based on deep learning outperforms traditional machine learning for the same dataset~\cite{9187648,fang2019depression,yang2022data}.
+In previous studies, scholars have been committed to exploring new gait features and using traditional machine learning models for classification, and the accuracy has been continuously improved.
+However, traditional machine learning technologies need to be improved in processing raw data in their raw form. They could not express complex functions, making solving more complex natural signal processing problems difficult. Deep learning allows computational models composed of multiple processing layers to learn representations of data with multiple levels of abstraction and demonstrate a powerful ability to learn the essential characteristics of a data set from a small number of samples.
+

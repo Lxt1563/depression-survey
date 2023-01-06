@@ -64,7 +64,12 @@ In the meantime, some academics have experimented with a subset of machine learn
 Feature extraction and classification are the two key components of a traditional machine-learning approach.
 The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis, with linear analysis further subdivided into the time domain and frequency domain analysis.
 
-
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{figures/depression/eeg_cnn.jpg}
+\caption{Flow diagram of EEG auxiliary depression diagnosis based on deep learning. (a) Raw signal-based deep feature extraction and classification using CNN or LSTM; (b) raw signal-based deep feature extraction and classification using hybrid neural networks; (c) 2D image-based deep feature extraction and classification using hybrid neural networks. }
+\label{eeg_cnn}
+\end{figure}
 
 Typically, time domain analysis focuses on the measurement and analysis of the raw EEG signal waveform in order to calculate more intuitive or physiologically significant EEG properties.
 In the study of EEG auxiliary depression diagnosis, the time domain features generally used include the mean, variance, kurtosis, and skewness of the signal.
@@ -116,7 +121,7 @@ The results suggest that it can objectively and successfully diagnose depression
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ô­À´%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ô­  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %For EEG auxiliary depression diagnosis studies, numerous non-linear parameters have been discovered, including the correlation dimension \cite{akar2015nonlinear}, the Lyapunov exponent\cite{ortiz2021futility,kustubayeva2021lyapunov,chopra2022using}, and entropy \cite{zhao2019cardiorespiratory,cukic2018eeg,zhao2021frontal}.
 %The correlation dimension describes the system's complexity;
 %the largest Lyapunov exponent reflects the pace of uncertainty growth and is sensitive to the system's beginning value; and the entropy depicts the level of order in the system.
@@ -154,12 +159,7 @@ It is shown that, compared to other methods, SVM has the highest classification 
 Deep learning has been used more and more in recent years to identify depression using EEG.
 All adopted models in these studies can be categorized into three main groups, namely CNN models\cite{wan2020hybrideegnet}, LSTM models, and hybrid neural networks\cite{saeedi2021major,qayyum2020hybrid,thoduparambil2020eeg}. And their detailed flow is shown in Fig~\ref{eeg_cnn}.
 
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{figures/depression/eeg_cnn.jpg}
-\caption{Flow diagram of EEG auxiliary depression diagnosis based on deep learning. (a) Raw signal-based deep feature extraction and classification using CNN or LSTM; (b) raw signal-based deep feature extraction and classification using hybrid neural networks; (c) 2D image-based deep feature extraction and classification using hybrid neural networks. }
-\label{eeg_cnn}
-\end{figure}
+
 
 In specific, %CNN could capture spatial properties of features and has the ability of parallel computing.
 the CNN-based model can automatically and adaptively extract useful information directly from the input data instead of manually selecting features.
@@ -249,13 +249,13 @@ signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning mo
 %& &  &  &  &  & Left hemisphere:99.12      \\
 %& \multirow{-2}{*}{Ay\cite{ay2019automated}} & \multirow{-2}{*}{15D+15C} & \multirow{-2}{*}{Raw signals}                                                                              & \multirow{-2}{*}{CNN-LSTM}  & \multirow{-2}{*}{Accuracy} & Right hemisphere:97.66\\ \bottomrule
 %\end{tabular}
-%      \begin{tablenotes} %ï¿½ï¿½ï¿½Ó´Ë´ï¿½
+%      \begin{tablenotes} %   Ó´Ë´ 
 %		\item Largest Lyapunov exponent: LLX; Higher order spectra: HOS; Recurrence quantification analysis: RQA;
 %              Spectral asymmetry index: SAI;
-%        \item Alpha power variability: APV; Relative gamma power: RGP; Detrended fluctuation analysis: DFA; Linear discriminant analysis: LDA; Sample Entropy: SampEn; % ï¿½ï¿½ï¿½Ó´Ë´ï¿½
+%        \item Alpha power variability: APV; Relative gamma power: RGP; Detrended fluctuation analysis: DFA; Linear discriminant analysis: LDA; Sample Entropy: SampEn; %    Ó´Ë´ 
 %        Fractal Dimension: FD; Enhanced probabilistic neural network: EPNN;
 %        approximate entropy: ApEn; Renyi entropy: REN; Bispectral phase entropy: Ph; Kernel eigen-filter-bank common spatial pattern: KEFBCS.
-%     \end{tablenotes} % ï¿½ï¿½ï¿½Ó´Ë´ï¿½
+%     \end{tablenotes} %    Ó´Ë´ 
 %\end{threeparttable}}
 %\end{table*}
 
@@ -331,7 +331,7 @@ Furthermore, MEAN is associated with HRV intention~\cite{colombo2015clinical}.
 %For the changes in HRV frequency domain parameters in depressed patients, there are more consistent results both nationally and internationally, with significantly lower LF in depressed patients and a significant positive correlation between depressed mood and LF/HF.
 
 The frequency domain provides a measurement of vagal modulation of the RRI derived from the electrocardiogram.
-Frequency domain characteristics indicate numerous spectral components, including very low frequency (VLF: 0.0033¨C0.04 Hz), low frequency (LF: 0.04¨C0.15 Hz), and high frequency (HF: 0.15¨C0.4 Hz)~\cite{kidwell2018heart}.
+Frequency domain characteristics indicate numerous spectral components, including very low frequency (VLF: 0.0033 C0.04 Hz), low frequency (LF: 0.04 C0.15 Hz), and high frequency (HF: 0.15 C0.4 Hz)~\cite{kidwell2018heart}.
 LF is modulated by sympathetic and parasympathetic activities;
 HF is modulated by parasympathetic activities;
 and VLF encompasses nearly all spectral power, although its effect is obscure.
@@ -342,7 +342,7 @@ It evaluates the balance between the sympathetic and parasympathetic nervous sys
 
 %
 %Frequency domain features indicate various spectral components, namely, very low frequency
-%(VLF) (0.003¨C0.04 Hz), LF (0.04¨C0.15 Hz), HF (0.15¨C0.4 Hz). LF is modulated by sympathetic
+%(VLF) (0.003 C0.04 Hz), LF (0.04 C0.15 Hz), HF (0.15 C0.4 Hz). LF is modulated by sympathetic
 %and parasympathetic activities; HF is modulated by parasympathetic activities; VLF comprises
 %nearly the entire spectral power, but the effect is unclear (Colombo, et al., 2015; Thayer, et al.,
 %2010). LH is ratio of LF and HF. It measures the balance between sympathetic and
@@ -411,6 +411,82 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 
 
 
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[!htbp]\large
+\caption{Experimental results based on electrophysiological signals.}
+\center
+\label{tab_eeg}
+\renewcommand\arraystretch{1.4}
+%\resizebox{\linewidth}{!}{
+\resizebox{1\linewidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{@{}c|c|c|c|c@{}}
+\toprule
+\textbf{Type}& \textbf{Paper} & \textbf{Dataset(D+C)} & \textbf{Methods} & \textbf{Metrics(Accuracy/\%)} \\ \midrule
+& Acharya et al~\cite{acharya2015novel}  & 30(15+15)  & SVM  & 98.00     \\ \cline{2-5}
+& & &  & S-channel:92.00  \\
+& \multirow{-2}{*}{{Bachmnn et al~\cite{bachmann2018methods}}} & \multirow{-2}{*}{26(13+13)} & \multirow{-2}{*}{LR} & M-channel:90.00 \\ \cline{2-5}
+&  & &  &   Linear:73.30  \\
+& & & \multirow{-2}{*}{KNN}  & Nonlinear  80.00  \\ \cline{4-5}
+& & & & Linear:76.60 \\
+& & & \multirow{-2}{*}{LDA}  & Nonlinear:86.60   \\ \cline{4-5}
+& &  &   & Linear:76.60                   \\
+& \multirow{-6}{*}{Hosseinifard et al~\cite{hosseinifard2013classifying}}  & \multirow{-6}{*}{90(45+45)} & \multirow{-2}{*}{LR}& Nonlinear:90.00  \\ \cline{2-5}
+& & & MLP  & 95.12 \\
+& & & LR& 97.56  \\
+& & & SVM& 95.12  \\
+& & & Decision tree & 95.12    \\
+& & & RF & 92.68     \\
+& \multirow{-6}{*}{Cukic et al~\cite{cukic2018eeg}}& \multirow{-6}{*}{43(23+20)} & Naive Bayes & 92.68   \\ \cline{2-5}
+& Ahmadlou et al~\cite{ahmadlou2012fractality} & 24(12+12) & EPNN  & 91.30  \\ \cline{2-5}
+& Faust et al~\cite{faust2014depression} & 60(30+30) & PNN & 99.70\\ \cline{2-5}
+& Liao et al~\cite{liao2017major} & 24(12+12) & SVM & 80.00   \\ \cline{2-5}
+& Wan et al\cite{wan2020hybrideegnet} & 35(23+12) & HybridEEGNet   & 79.08 \\ \cline{2-5}
+& Saeedi et al~\cite{saeedi2021major} & 64(34+30) & 1DCNN-LSTM  & 99.24 \\ \cline{2-5}
+& &  &  & LH:98.84   \\
+& \multirow{-2}{*}{Thoduparambil et al~\cite{thoduparambil2020eeg}}& \multirow{-2}{*}{-}& \multirow{-2}{*}{CNN-LSTM}   & RH:99.07 \\ \cline{2-5}
+& & & & LH:93.50  \\
+& \multirow{-2}{*}{Acharya et al~\cite{acharya2018automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN} & RH:96.00 \\ \cline{2-5}
+& Kang et al~\cite{kang2020deep} & 64(34+30)& CNN & 98.85   \\ \cline{2-5}
+& Sharma et al~\cite{sharma2021dephnn} & 45(21+24) & DepHNN  & 99.10  \\ \cline{2-5}
+& Li et al~\cite{li2019eeg} & 48(24+24) & ConvNet  & 85.62   \\ \cline{2-5}
+& & &  & LH:99.12    \\
+\multirow{-30}{*}{EEG} & \multirow{-2}{*}{Ay et al~\cite{ay2019automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN-LSTM}  & RH:97.66\\ \cline{1-5}
+& Zhang et al~\cite{zhang2011new}& 20(10+10)  & FNN& 95.00  \\ \cline{2-5}
+& &   & SVM  & 74.40     \\
+& \multirow{-2}{*}{Byuna et al~\cite{byun2019detection}}& \multirow{-2}{*}{72(31+41)}& Statistical filter & 73.10 \\ \cline{2-5}
+& Roh et al~\cite{roh2014wearable}& 23D & SVM & 71.00 \\ \cline{2-5}
+& Matsui et al~\cite{matsui2016impaired} & 41(13+28)& LDA  & 88.00   \\ \cline{2-5}
+& Sun et al~\cite{sun2016objective} &91(44+47)& LR & 79.00\\ \cline{2-5}
+& Kuang et al~\cite{kuang2017depression} & 76(38+38) & Bayesian  & 86.00    \\ \cline{2-5}
+& Noor et al~\cite{noor2021predicting} & 5000D  & RNN    & 97.24    \\ \cline{2-5}
+& zang et al~\cite{zang2022end} & 74(37+37)   & CNN      & 93.96     \\ \cline{2-5}
+\multirow{-10}{*}{HRV} & Mohanraj et al~\cite{mohanraj2022deep}  & 30(15+15)    & DesNN   & 90.00       \\ \bottomrule
+\end{tabular}
+\end{threeparttable}}
+		\begin{tablenotes}
+			\footnotesize
+			\item Single-channel (S-channel), 
+                  Multil-channel (M-channle), 
+                  Multilayer 
+            \item perceptron (MLP), 
+                  Probabilistic neural network (PNN),
+                  Fuzzy Neural 
+            \item Networks (FNN).
+		\end{tablenotes}
+
+\end{table}
+
+
+
+\ifx\allfiles\undefined
+\input{tnnls_suffix}
+\fi
 
 
 
@@ -528,79 +604,3 @@ laborious and time-consuming. The deep model can overcome the shortcomings of ma
 
 
 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{multirow}
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[!htbp]\large
-\caption{Experimental results based on electrophysiological signals.}
-\center
-\label{tab_eeg}
-\renewcommand\arraystretch{1.4}
-%\resizebox{\linewidth}{!}{
-\resizebox{1\linewidth}{!}{
-\begin{threeparttable}
-\begin{tabular}{@{}c|c|c|c|c@{}}
-\toprule
-\textbf{Type}& \textbf{Paper} & \textbf{Dataset(D+C)} & \textbf{Methods} & \textbf{Metrics(Accuracy/\%)} \\ \midrule
-& Acharya et al~\cite{acharya2015novel}  & 30(15+15)  & SVM  & 98.00     \\ \cline{2-5}
-& & &  & S-channel:92.00  \\
-& \multirow{-2}{*}{{Bachmnn et al~\cite{bachmann2018methods}}} & \multirow{-2}{*}{26(13+13)} & \multirow{-2}{*}{LR} & M-channel:90.00 \\ \cline{2-5}
-&  & &  &   Linear:73.30  \\
-& & & \multirow{-2}{*}{KNN}  & Nonlinear£º80.00  \\ \cline{4-5}
-& & & & Linear:76.60 \\
-& & & \multirow{-2}{*}{LDA}  & Nonlinear:86.60   \\ \cline{4-5}
-& &  &   & Linear:76.60                   \\
-& \multirow{-6}{*}{Hosseinifard et al~\cite{hosseinifard2013classifying}}  & \multirow{-6}{*}{90(45+45)} & \multirow{-2}{*}{LR}& Nonlinear:90.00  \\ \cline{2-5}
-& & & MLP  & 95.12 \\
-& & & LR& 97.56  \\
-& & & SVM& 95.12  \\
-& & & Decision tree & 95.12    \\
-& & & RF & 92.68     \\
-& \multirow{-6}{*}{Cukic et al~\cite{cukic2018eeg}}& \multirow{-6}{*}{43(23+20)} & Naive Bayes & 92.68   \\ \cline{2-5}
-& Ahmadlou et al~\cite{ahmadlou2012fractality} & 24(12+12) & EPNN  & 91.30  \\ \cline{2-5}
-& Faust et al~\cite{faust2014depression} & 60(30+30) & PNN & 99.70\\ \cline{2-5}
-& Liao et al~\cite{liao2017major} & 24(12+12) & SVM & 80.00   \\ \cline{2-5}
-& Wan et al\cite{wan2020hybrideegnet} & 35(23+12) & HybridEEGNet   & 79.08 \\ \cline{2-5}
-& Saeedi et al~\cite{saeedi2021major} & 64(34+30) & 1DCNN-LSTM  & 99.24 \\ \cline{2-5}
-& &  &  & LH:98.84   \\
-& \multirow{-2}{*}{Thoduparambil et al~\cite{thoduparambil2020eeg}}& \multirow{-2}{*}{-}& \multirow{-2}{*}{CNN-LSTM}   & RH:99.07 \\ \cline{2-5}
-& & & & LH:93.50  \\
-& \multirow{-2}{*}{Acharya et al~\cite{acharya2018automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN} & RH:96.00 \\ \cline{2-5}
-& Kang et al~\cite{kang2020deep} & 64(34+30)& CNN & 98.85   \\ \cline{2-5}
-& Sharma et al~\cite{sharma2021dephnn} & 45(21+24) & DepHNN  & 99.10  \\ \cline{2-5}
-& Li et al~\cite{li2019eeg} & 48(24+24) & ConvNet  & 85.62   \\ \cline{2-5}
-& & &  & LH:99.12    \\
-\multirow{-30}{*}{EEG} & \multirow{-2}{*}{Ay et al~\cite{ay2019automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN-LSTM}  & RH:97.66\\ \cline{1-5}
-& Zhang et al~\cite{zhang2011new}& 20(10+10)  & FNN& 95.00  \\ \cline{2-5}
-& &   & SVM  & 74.40     \\
-& \multirow{-2}{*}{Byuna et al~\cite{byun2019detection}}& \multirow{-2}{*}{72(31+41)}& Statistical filter & 73.10 \\ \cline{2-5}
-& Roh et al~\cite{roh2014wearable}& 23D & SVM & 71.00 \\ \cline{2-5}
-& Matsui et al~\cite{matsui2016impaired} & 41(13+28)& LDA  & 88.00   \\ \cline{2-5}
-& Sun et al~\cite{sun2016objective} &91(44+47)& LR & 79.00\\ \cline{2-5}
-& Kuang et al~\cite{kuang2017depression} & 76(38+38) & Bayesian  & 86.00    \\ \cline{2-5}
-& Noor et al~\cite{noor2021predicting} & 5000D  & RNN    & 97.24    \\ \cline{2-5}
-& zang et al~\cite{zang2022end} & 74(37+37)   & CNN      & 93.96     \\ \cline{2-5}
-\multirow{-10}{*}{HRV} & Mohanraj et al~\cite{mohanraj2022deep}  & 30(15+15)    & DesNN   & 90.00       \\ \bottomrule
-\end{tabular}
-\end{threeparttable}}
-		\begin{tablenotes}
-			\footnotesize
-			\item Single-channel (S-channel), 
-                  Multil-channel (M-channle), 
-                  Multilayer 
-            \item perceptron (MLP), 
-                  Probabilistic neural network (PNN),
-                  Fuzzy Neural 
-            \item Networks (FNN).
-		\end{tablenotes}
-
-\end{table}
-
-
-
-\ifx\allfiles\undefined
-\input{tnnls_suffix}
-\fi

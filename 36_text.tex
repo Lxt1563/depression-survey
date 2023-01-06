@@ -97,49 +97,8 @@ It can give the topic of each document in the form of a probability distribution
 
 Finally, many other methods also achieved good results in auxiliary depression diagnosis based on social networks, such as dictionary learning~\cite{peng2019multi,shen2017depression} and incremental classification~\cite{burdisso2019text}, which provide more possibilities for depression analysis.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Text auxiliary depression diagnosis based on deep learning}
-\label{sec_fquality}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Depression is closely related to emotion, so many methods of emotion analysis are used for depression analysis based on social network texts.
-In the method of emotion analysis, context connection is essential.
-Similar words usually have different meanings in different contexts.
-Since deep learning technology can automatically construct text features, people have proposed  CNN, RNN, and other models to solve the problem of depression analysis based on social media text~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
-
-At present, DNN is the basis of many modern artificial intelligence applications.
-It has shown breakthrough achievements in speech recognition and image recognition tasks.
-The application of DNN in the field of depression analysis based on the social network is also increasing.
-Mariñelarena et al.~\cite{ marinelarena2017predicting } use the DNN method to detect depression and the optimization function provided by the open-source library to combine momentum learning and rate annealing, which are two important parameters during training, to improve the model performance.
-Shen et al.~\cite{shen2018cross} propose a cross-domain DNN model with feature adaptive transformation and combination strategy to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhancing detection in some other target domain (e.g., Weibo).
-
-CNN is a representative algorithm of deep learning.
-With its powerful learning ability, CNN has been widely used in various fields, including text analysis in social networks.
-Yates et al.~\cite{yates2017depression} propose a general neural network architecture, which is used to combine posts into a representation of user activities for classification.
-This architecture takes one or more posts as the input, uses a convolution layer to process posts to identify the features in the sliding text window, combines the identified features into vector representations of user activities, and uses a series of dense layers to classify the combined vector representations.
-Trotzek et al.~\cite{trotzek2018utilizing} extract features such as the number of function words, variations of the word “I”, all pronouns, personal pronouns, verbs, words indicating a cognitive process, words with a focus on the present, the total number of lexicon words found, two calculated summary variables indicating analytical thinking and authenticity, then use the CNN model embedded based on different words to analyze users' depression risk.
-Rao et al.~\cite{rao2020mgl} propose a hierarchical post-representation model, called Multi Gated LeakyReLU CNN, to identify depressed people in online forums.
-This model is composed of two parts: the first part is the subsequent operation, which is used to learn the expression form of each user post, and the second part is the user-level operation, which is used to obtain the overall emotional state of the user.
-They believe that multi-gated leakage units can help CNN fully use limited context information to obtain critical features.
-
-RNN is efficient in processing sequence data, so it is also widely used in depression analysis based on social networks.
-Orabi et al.~\cite{orabi2018deep} use CNN and RNN-based models to detect depression and explore the most effective neural network architecture by adjusting model parameters.
-%The experimental results show that the performance of CNN based model is better than RNN model.
-Sadeque et al.~\cite{sadeque2017uarizona} extract features based on a depression lexicon and the Unified Medical Language System and also consider both sequential and non-sequential learning models for the prediction depression task.
-The non-sequential model uses SVM, which observes the user’s entire post history.
-The sequential model uses an RNN model that simultaneously observes each user’s posts.
-After that, they use an ensemble model to combine sequential and non-sequential models.
-
-LSTM is a particular type of RNN that learns long-term dependent information and has also been widely used in auxiliary depression diagnosis based on social media texts. 
-Based on LSTM, Bi-directional LSTM combines the information of input sequence in forward and backward directions.
-For the output of time $t$, the forward LSTM layer has the information of time $t$ in the input sequence and the previous time, and the backward LSTM layer has the information of time $t$ in the input sequence and the subsequent time.
-Hu et al.~\cite{hu2021depression} propose a depression trend detection model based on Bi-directional LSTM.
-Different from the traditional model of direct input of text information, they use the Skip-gram model in Word2Vec to vectorize the text, which can get better training for text into word vectors, extract the semantic features of the text and then input them into the model.
-Through two-way transmission, the semantic dependency of context is captured, and the content characteristics of microblog text are mined.
-
-The above deep learning models have problems such as complex structure or long training time. At the same time, the bidirectional gated recurrent unit can remember the context information of the sequence, the structure is simple, and the training speed is fast. It also achieved good performance in depression analysis based on social network texts~\cite{dinkel2019text}.
-
-\subsection{Performance Comparison}
 %\label{sec\_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 .
@@ -200,6 +159,52 @@ Hu et al.~\cite{hu2021depression}                                               
 \end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Text auxiliary depression diagnosis based on deep learning}
+\label{sec_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Depression is closely related to emotion, so many methods of emotion analysis are used for depression analysis based on social network texts.
+In the method of emotion analysis, context connection is essential.
+Similar words usually have different meanings in different contexts.
+Since deep learning technology can automatically construct text features, people have proposed  CNN, RNN, and other models to solve the problem of depression analysis based on social media text~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
+
+At present, DNN is the basis of many modern artificial intelligence applications.
+It has shown breakthrough achievements in speech recognition and image recognition tasks.
+The application of DNN in the field of depression analysis based on the social network is also increasing.
+Mariñelarena et al.~\cite{ marinelarena2017predicting } use the DNN method to detect depression and the optimization function provided by the open-source library to combine momentum learning and rate annealing, which are two important parameters during training, to improve the model performance.
+Shen et al.~\cite{shen2018cross} propose a cross-domain DNN model with feature adaptive transformation and combination strategy to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhancing detection in some other target domain (e.g., Weibo).
+
+CNN is a representative algorithm of deep learning.
+With its powerful learning ability, CNN has been widely used in various fields, including text analysis in social networks.
+Yates et al.~\cite{yates2017depression} propose a general neural network architecture, which is used to combine posts into a representation of user activities for classification.
+This architecture takes one or more posts as the input, uses a convolution layer to process posts to identify the features in the sliding text window, combines the identified features into vector representations of user activities, and uses a series of dense layers to classify the combined vector representations.
+Trotzek et al.~\cite{trotzek2018utilizing} extract features such as the number of function words, variations of the word “I”, all pronouns, personal pronouns, verbs, words indicating a cognitive process, words with a focus on the present, the total number of lexicon words found, two calculated summary variables indicating analytical thinking and authenticity, then use the CNN model embedded based on different words to analyze users' depression risk.
+Rao et al.~\cite{rao2020mgl} propose a hierarchical post-representation model, called Multi Gated LeakyReLU CNN, to identify depressed people in online forums.
+This model is composed of two parts: the first part is the subsequent operation, which is used to learn the expression form of each user post, and the second part is the user-level operation, which is used to obtain the overall emotional state of the user.
+They believe that multi-gated leakage units can help CNN fully use limited context information to obtain critical features.
+
+RNN is efficient in processing sequence data, so it is also widely used in depression analysis based on social networks.
+Orabi et al.~\cite{orabi2018deep} use CNN and RNN-based models to detect depression and explore the most effective neural network architecture by adjusting model parameters.
+%The experimental results show that the performance of CNN based model is better than RNN model.
+Sadeque et al.~\cite{sadeque2017uarizona} extract features based on a depression lexicon and the Unified Medical Language System and also consider both sequential and non-sequential learning models for the prediction depression task.
+The non-sequential model uses SVM, which observes the user’s entire post history.
+The sequential model uses an RNN model that simultaneously observes each user’s posts.
+After that, they use an ensemble model to combine sequential and non-sequential models.
+
+LSTM is a particular type of RNN that learns long-term dependent information and has also been widely used in auxiliary depression diagnosis based on social media texts. 
+Based on LSTM, Bi-directional LSTM combines the information of input sequence in forward and backward directions.
+For the output of time $t$, the forward LSTM layer has the information of time $t$ in the input sequence and the previous time, and the backward LSTM layer has the information of time $t$ in the input sequence and the subsequent time.
+Hu et al.~\cite{hu2021depression} propose a depression trend detection model based on Bi-directional LSTM.
+Different from the traditional model of direct input of text information, they use the Skip-gram model in Word2Vec to vectorize the text, which can get better training for text into word vectors, extract the semantic features of the text and then input them into the model.
+Through two-way transmission, the semantic dependency of context is captured, and the content characteristics of microblog text are mined.
+
+The above deep learning models have problems such as complex structure or long training time. At the same time, the bidirectional gated recurrent unit can remember the context information of the sequence, the structure is simple, and the training speed is fast. It also achieved good performance in depression analysis based on social network texts~\cite{dinkel2019text}.
+
+
+\subsection{Performance Comparison}
+
 
 %Table\ref{tab5} summarizes the experimental results of the social platform text-based auxiliary depression diagnosis, including the source and name of the method, the type of data used and the source of the dataset, and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
 %Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
