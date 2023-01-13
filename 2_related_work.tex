@@ -273,6 +273,14 @@ Some studies used regression analysis to predict the degree of depression accord
 Confusion metric is the basis of classification metrics. And confusion metrics can be split into 4 parts: True Positive (TP), False Positive (FP), False Negative (FN), and True Negative (TN). TP means a positive sample and predicted as positive. False Positive FP means a positive sample but predicted as negative. False Negative FN means a negative sample but predicted as positive. True Negative TN means a negative sample and is predicted as negative. Therefore, the total positive samples can be calculated as $TP+FP$, and the total negative samples can be calculated as $FN+TN$. The overall  confusion metrics as shown in Fig \ref{metric}.
 
 
+\begin{figure}[tbp]
+	\centering	
+	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/metric3.png}		
+	\caption{
+	Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents this category's number of data instances.
+	}
+	\label{metric}
+\end{figure}
 
 (1) Precision reflects the ability of the model to correctly predict positive samples. It calculates how many positive samples are predicted as \emph{positive}. The calculation is formulated as follows:
 
@@ -314,16 +322,6 @@ Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
 \begin{equation}
  Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
 \end{equation}
-
-\begin{figure}[tbp]
-	\centering	
-	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/metric3.png}		
-	\caption{
-	Confusion Matrix: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents this category's number of data instances.
-	}
-	\label{metric}
-\end{figure}
-
 
 
 (7) Receiver Operating Characteristic (ROC) represents a probability graph to show the performance of a classification model at different threshold levels. 
