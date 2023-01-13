@@ -75,9 +75,6 @@ Finally, we list some commonly used assessment metrics which are essential in ev
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As the most commonly used tools, a series of questionnaires capturing depressive symptoms had been developed and showed great success in psychiatric practice. The standard depression test scales as shown in Table \ref{tab1}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[tbp]
 	\centering	
@@ -87,6 +84,15 @@ As the most commonly used tools, a series of questionnaires capturing depressive
 	}
 	\label{BDI}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As the most commonly used tools, a series of questionnaires capturing depressive symptoms had been developed and showed great success in psychiatric practice.
+It is characterized by its simplicity of use and ability to reflect fairly visually the subjective feelings of depressed patients and their changes in treatment.
+It is primarily indicated for adults with depressive symptoms, both outpatients and inpatients.
+It is a tool auxiliary in diagnosing depression, and the diagnosis is confirmed by the physician's judgment and a series of medical data analyses.
+However, due to privacy issues, patient information is protected from public disclosure, so most studies on depression diagnosis use the results of the scale as ground truth for the data.
+The standard depression test scales as shown in Table \ref{tab1}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 For each scale, There are 3-4 options for several items with different scores.
@@ -108,18 +114,18 @@ Self-rating scale like BDI-II is a self-assessment based on the instructions, wh
 
 The scale is tried to test subjects' emotions because negative emotions are the central performance of depressed people. 
 However, people with negative emotions are not the same as those with depression.
-Measuring depression on a scale alone has limitations, so physiological electrical signals or brain images from subjects for auxiliary depression diagnosis during professional diagnosis.
-In recent years, some research shows that abnormal behavioural signals like facial expressions, voice and gait can reflect mental disease, which is more easily observed than physiological electrical signals or brain images.
+Measuring depression on a scale alone has limitations, so the patient's physiological electrical signals or brain images are collected for auxiliary depression diagnosis during professional diagnosis.
+In recent years, some research shows that abnormal behavioural signals like facial expressions, voice and gait can reflect mental disease~\cite{0Identifying,pampouchidou2017facial,lemke2000spatiotemporal}, which is more easily observed than physiological electrical signals or brain images.
 For example, depressed people have dull facial expressions, rarely make eye contact, use phrases with a flat tone when speaking, and walk slowly.
 Analyzing the abnormal behavioural signals can auxiliary diagnosing depression.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%补充抑郁量表说明
-In general, the data of patients with depression are not disclosed due to privacy issues, so most of the studies mentioned in this paper use the results of the scale as labels for experiments.
+%%补充抑郁量表说明做label
+In general, the data of patients with depression are not disclosed due to privacy issues, so most of the studies mentioned in this paper use the results of the scale as labels for dataset.
 These scales are tests for the normal population who have not been diagnosed with depression.
 
 
 \subsection{Datasets}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -213,7 +219,8 @@ These scales are tests for the normal population who have not been diagnosed wit
 
 
 %The world around us involves many modes, we see objects, hear sounds, feel textures, smell smells, and so on. Most people associate the word modality with sensory modality, which represents the main channel of our communication and sensation, such as vision, hearing, etc.
-This section introduces some public datasets, as shown in Table \ref{tab2}, including the name, information of the subject and data modality. Due to privacy issues, only several of the data modality has public dataset.
+This section introduces some public datasets, as shown in Table \ref{tab2}, including the name, information of the subject and data modality.
+Due to privacy issues, only several of the data modality has public dataset.
 Therefore, most researchers use the data collected by themselves for analysis.
 
 The Reddit Self-reported Depression Diagnosis (RSDD) dataset consists of Reddit posts for 9,210 users who have claimed to have been diagnosed with depression ("diagnosed users") and 107,274 healthy control users, which is a large-scale general forum dataset. The data is in JSON format, and each row is an array representing a user. The label field includes the user's label (control or depression), and the posts field contains a timestamp and untokenized pairs~\cite{yates2017depression}.
@@ -371,16 +378,19 @@ Where $y_{i}$ is the observed value for the $i^{th}$ observation, $\breve{y}_{i}
 RMSE=\sqrt{\frac{1}{n} \sum_{i=0}^{n}\left (y_{i} -\breve{y}_{i}\right )^{2} }  
 \end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Many studies have shown that depressed and healthy people differ in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxiliary in the depression diagnosis.
-
 
 
 \subsection{Methods}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Many studies have shown that depressed and healthy people differ in many aspects, such as brain imaging, electrophysiological signals, audiovisual data, text, and other multi-modal data. By analyzing the abnormal performance, these data can auxiliary in the depression diagnosis.
 
-Although various methods have been proposed for auxiliary depression diagnosis based on different multimodal data, the process of methods is similar, as shown in Fig \ref{method}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Although various methods have been proposed for auxiliary depression diagnosis based on different multimodal data, the procedure for predicting depression in these methods are uniform, as shown in Fig \ref{method}.
 
 
 \begin{figure}[tbp]
@@ -393,25 +403,33 @@ Although various methods have been proposed for auxiliary depression diagnosis b
 \end{figure}
 
 
-\subsubsection{Pre-processing} Most of the raw data have a lot of noise from the capture device and environment.
+\subsubsection{Pre-processing} Most of the raw data have a lot of noises from the capture device and environment.
 For example, an electrophysiological signal has baseline drift, power-line interference, and electromyography signal, all affected by the equipment and human body.
 Similarly, other data modality also has interference caused by the acquisition equipment and environment.
-So, it is necessary to preprocess the raw data and use appropriate methods to remove different noises.
-For example, setting frequency intervals to eliminate power line and Electromyography interference and using filters to eliminate baseline drift.
+It is necessary to preprocess the raw data and use appropriate methods to remove different noises.
+%For example, setting frequency intervals to eliminate power line and Electromyography interference and using filters to eliminate baseline drift.
+Moreover, pre-processing can normalize the data and convert it into an appropriate form for subsequent feature extraction.
+It allows the data to be adapted to the model, matching the model's needs and improving performance.
 
-\subsubsection{Feature extraction} Feature extraction means transforming raw data into numerical features that can be processed while preserving the information. 
-Feature extraction includes manual or automatic.
-Manual feature extraction requires researchers to manually extract features based on the characteristics of data and tasks. 
-In many situations, a good understanding of the task can help make informed decisions about which features could be useful.
-Automated feature extraction uses specialized algorithms to extract features automatically from data without human intervention, such as deep learning methods.
+\subsubsection{Feature extraction} Feature extraction refers to transforming data into numerical features that can be distinguished by the model while retaining essential information about the data for predicting depression. 
+Feature extraction includes hand-crafted or data-driven.
+Hand-crafted feature extraction requires researchers to manually extract features based on the characteristics of data and tasks. 
+A good understanding of the task can help make informed decisions about valuable features in many situations.
+Data-driven feature extraction uses specialized algorithms to extract features automatically from data without human intervention, such as deep learning methods.
 In some cases, it is necessary to reduce the dimension of extracted features, including feature selection and feature fusion, to lessen the amount of calculation.
 
-\subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), and deep learning methods such as Convolutional Neural Networks (CNN), Deep Neural Networks (DNN), Recurrent Neural Network (RNN), Long short-term Memory (LSTM).
+\subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods and deep learning methods.
+Traditional machine learning method inputs the hand-crafted extracted features into a linear or nonlinear classifier for prediction, such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), etc.
+Deep learning methods are usually end-to-end, which combine feature extraction and prediction into one model, such as Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Long short-term Memory (LSTM), etc.
 
-Actually, related research are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
-Because it can solve the problems of artificial features encountered in traditional machine learning methods, such as high threshold, labor cost, and low feature utilization, the depth learning method gradually dominates in machine learning.
+Actually, related researches are shifting from early traditional methods based on hand-crafted features to implementing deep learning architectures.
+%Because it can solve the problems of artificial features encountered in traditional machine learning methods, such as high threshold, labor cost, and low feature utilization, the deep learning method gradually dominates in machine learning.
+Traditional machine learning methods are low-complexity, device-friendly, and require researchers to have some a priori knowledge. In contrast, deep learning methods have high computational complexity, device requirements, and model performance.
+Deep learning methods have gradually become mainstream with the continuous abundance of computational resources (devices and data).
+The lack of objective evaluation indicators for depression and prominent diagnosable characteristics of patients are not conducive to the manual design of prediction models, which further advances the development of deep learning methods.
+
 
 %%%%%%%%%%% differernt data modality
 
-Although the processes are similar, the auxiliary depression diagnostic methods based on various data modalities are not comparable because the data types, extraction features, and classification algorithms are different.
-In the subsequent sections, we present the analysis methods based on different modality data in more detail, reviewing both traditional machine learning and deep learning methods and summarizing the experimental results.
+Although the procedure for predicting depression is uniform, the auxiliary depression diagnostic methods based on various data modalities are not precisely the same because the details in pre-processing, extraction features, and classification algorithms are different.
+In the subsequent sections, we present the methods based on different modality data in more detail, reviewing both traditional machine learning and deep learning methods and summarizing the experimental results.
