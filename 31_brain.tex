@@ -115,13 +115,13 @@ The amplitude of Low-frequency Fluctuation can characterize the energy intensity
 
 These features can better describe the characteristics of different brain regions or voxel regions and are essential features for describing Resting State fMRI images~\cite {lord2012changes,2013Identifying,2016Multivariate,wang2017depression,mousavian2020depression}.
 
-Multivariable Pattern Analysis is also used to research individual-level diagnosis and classification of mental diseases.
+Multivariable pattern analysis~\cite{haxby2001distributed} is also used to research individual-level diagnosis and classification of mental diseases.
 This method can judge whether an unknown type of subject sample has certain diseases by modeling multivariable data of a predetermined type.
 On this basis, Gu et al.~\cite {8575800} use multivariable pattern analysis to carry out the Resting State fMRI-based auxiliary diagnosis of depression.
 
 However, the common problem based on traditional machine learning methods is that the feature dimension needs to be lowered, and the input model variables greatly exceed the number of training samples, resulting in overfitting.
 Therefore, many researchers choose the least absolute shrink and selection operator to capture the key features and further optimize them.
-They use the group least absolute shrink and selection operator, sparse group least absolute shrink and selection operator, and standard least absolute shrink and selection operator for analysis~\cite{2015Toward}~\cite{ 2020Generalizable }.
+They use the group, sparse group, and standard least absolute shrink and selection operator for analysis~\cite{2015Toward}~\cite{ 2020Generalizable }.
 
 \subsubsection{fMRI auxiliary depression diagnosis based on deep learning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -348,10 +348,10 @@ The experimental classification accuracy data (\%) are taken directly from the r
 It should be mentioned that we focus on comparing how different techniques perform on the same dataset.
 The following list of observations can be summed up:
 
-(1) Although the general linear model is the mainstream analysis method of fMRI images, based on its excellent ability to feature extraction, it has also achieved better results than the traditional linear feature extraction methods in fNIRS.
+(1) The general linear model is the mainstream analysis method of fMRI images, based on its excellent ability to feature extraction, it has also achieved better results than the traditional linear feature extraction methods in fNIRS.
 
 (2) When analyzing fMRI, the CNN-based model has a more vital ability to identify the characteristics of depression than the functional connectivity network model.
-Deep learning methods have been applied to find spatial, temporal relationships between voxels of a stationary state network. Networks like CNN are known to be the best method for finding spatial.
+Deep learning methods have been applied to find spatial, temporal relationships between voxels of a stationary state network. Networks like CNN are known to be the best method for finding spatial features.
 
 (3) The lack of training samples is a serious problem when the deep learning method is applied to medical image analysis. Although the GAN model has not achieved good results, such a framework promises wide utility and great potential in neuroimaging biomarker identification.
 
