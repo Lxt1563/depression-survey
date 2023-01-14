@@ -28,7 +28,7 @@ Therefore, in this section, we mainly introduce the methods of depression recogn
 	\label{AVT}
 \end{figure}
 
-%åˆ é™¤å•ç‹¬éŸ³è§†é¢‘æ¨¡æ€è¡¨å¾æŠ‘éƒä¸å‡†ç¡®çš„æè¿°
+%É¾³ıµ¥¶ÀÒôÊÓÆµÄ£Ì¬±íÕ÷ÒÖÓô²»×¼È·µÄÃèÊö
 %Depressed patients usually show some abnormal behavioral expressions, such as becoming sluggish in facial expressions, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and having slow movements of the head and body parts.
 %However, these depressive features may also appear when a healthy person is in a bad mood, and not all depressed patients directly show the above abnormal depressive symptoms, which means that depressed patients do not have a certain characteristic unique to them, so it is difficult to accurately detect depression by relying on a single modal characteristic.
 %In recent years, there have also been many mature studies on audio-video and text based multimodal fusion methods in depression diagnosis~\cite{2021Deep}, which have more comprehensive feature coverage and enhanced performance in depression detection compared with unimodal cue detection methods.
@@ -69,7 +69,7 @@ The fast development of deep learning has motivated many scientists to study rel
 For deep learning approaches, a wide range of studies has adopted LSTM as well as hybrid models for depression recognition.
 
 
-Numerous previous studies have employed LSTM to extract spatiotemporal features at various scales from audio, video, and text clips to obtain crucial temporal information for a task involving depression recognition.
+Numerous previous studies employ LSTM to extract spatiotemporal features at various scales from audio, video, and text clips to obtain crucial temporal information for a task involving depression recognition.
 Mainly, Alhanai et al.~\cite{AlHanai2018} simulate the interaction between audio and text features in an LSTM neural network model to detect depression.
 Further, Qureshi et al.~\cite{qureshi2019verbal} suggest a bimodal multitasking model that includes both a speech-based and a text-based module.
 The model is passed through separate Bi-directional LSTM layers with an attention mechanism. The output attention vectors are concatenated and passed to feedforward layers for depression detection, severity prediction, and symptom severity predictions. The depression detection head has a logistic sigmoid function to output depressed-class probability estimates.
@@ -77,7 +77,7 @@ Moreover, Ray et al.~\cite{ray2019multi} propose a multi-level attention-based e
 More importantly, it recognizes the significance of intra- and inter-modal features for predicting depression levels and fusing the patterns of audio, video, and text to predict the severity of depression.
 
 
-In recent years, hybrid models have attracted considerable attention in research employing audiovisual data for depression recognition.
+In recent years, hybrid models attract considerable attention in research employing audiovisual data for depression recognition.
 Specifically, the combination modules of the DCNN and DNN, as well as CNN and transformer.
 \emph{(1) The combination modules of DCNN and DNN:}
 Yang et al.~\cite{Yang2017} propose a multi-modal fusion framework composed of DCNN and DNN models. This architecture takes into account streams of audio, video, and text. For each modality, handcrafted feature descriptors are fed into a DCNN in order for it to learn high-level global features with compact dynamic information.
