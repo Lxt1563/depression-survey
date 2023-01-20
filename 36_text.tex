@@ -97,68 +97,7 @@ It can give the topic of each document in the form of a probability distribution
 
 Finally, many other methods also achieved good results in auxiliary depression diagnosis based on social networks, such as dictionary learning~\cite{peng2019multi,shen2017depression} and incremental classification~\cite{burdisso2019text}, which provide more possibilities for depression analysis.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\label{sec\_fquality}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-.
-\begin{table*}
-\centering
-\caption{Experimental results based on text}
-\label{tab5}
-\begin{tabular}{c|cc|c|ccccc}
-
-\hline
-\multirow{2}{*}{\textbf{Paper}}            & \multicolumn{2}{c|}{\textbf{Data}}                                                                           & \multirow{2}{*}{\textbf{Method}}            & \multicolumn{5}{c}{\textbf{Metrics}}                     \\
-                                                                                                       & {\textbf{Media}}                                                                          & {\textbf{Dataset(D+C)}}                                                                                              &                            & {\textbf{Precision}} & {\textbf{Recall}} & {\textbf{F1-Score}} & {\textbf{Accuracy}} & {\textbf{AUC}}  \\
-\hline
-Choudhury et al.~\cite{de2013predicting}                                          & Twitter                                                                        & 476(171+305)                                                                                              & SVM                        & 74.00      & 63.00   & -        & 70.00     & -    \\
-\hline
-Tsugawa et al.~\cite{tsugawa2015recognizing}                                      & Twitter                                                                        & 209(81+121)                                                                                               & SVM                        & 64.00      & 43.00  & 52.00     & 69.00     & -    \\
-\hline
-Wolohan et al.~\cite{wolohan2018detecting}                                       & Reddit                                                                         & 12106(4947+7159)                                                                                          & SVM                        & -         & -      & 73.00     & 82.00     & 79.00 \\
-\hline
-Shatte et al.~\cite{shatte2019social}                                            & Reddit                                                                         & 365                                                                                                       & SVM                        &67.00      & 68.00   & 67.00     & 66.00     & -    \\
-\hline
-Peng et al.~\cite{peng2019multi}                                                 & Weibo                                                                          & 276(141+135)                                                                                              & Multi-kernel SVM           &76.00      & 77.00   & 76.00     & 83.00     & -    \\
-\hline
-Aldarwish et al.~\cite{ aldarwish2017predicting}                                 & \begin{tabular}[c]{@{}c@{}}Facebook,\\  LiveJournal,   \\ Twitter\end{tabular} & \begin{tabular}[c]{@{}c@{}}Posts(758+1374)\\  (489+1865)\\(826+1461)   \\ Total6773\\(2073+4700)\end{tabular}                                                          & SVM+Naïve Bayes           & 100.00      & 57.00   & -        & 63.00     & -    \\
-\hline
-Nadeem et al. ~\cite{nadeem2016identifying}                                      & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\end{tabular}             & Naïve Bayes                & 81.00      & 82.00   & 81.00     & 86.00     & 94.00 \\
-\hline
-Nadeem et al.~\cite{nadeem2016identifying}                                       & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\end{tabular}             & Logistic Regression        & 86.00      & 82.00   & 84.00     & 82.00     & 91.00 \\
-%Dinkel et al$\sim$~\cite{ dinkel2019text}                                        & -                                                                              & DAIC-WOZ107                                                                                               & BGRU                       & 0.85      & 0.83   & 0.84     & 0.86     & -    \\
-\hline
-Eichstaedt et al.~\cite{ eichstaedt2018facebook }                                & Facebook                                                                       & 683(114+569)                                                                                              & Logistic regression        & -         & -      & -        & -        & 72.00 \\
-\hline
-Burdisso et al.~\cite{burdisso2019text}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                                                 & Incremental classification & 63.00      & 60.00   & 61.00     & -        & -    \\
-\hline
-Mariñelarena et al.~\cite{ marinelarena2017predicting   }                         & Reddit                                                                         & 486(83+403)                                                                                               & DNN                        & 85.00      & 81.00   & 83.00     & 94.00     & -    \\
-\hline
-Shen et al.~\cite{shen2018cross}                                                 & \begin{tabular}[c]{@{}c@{}}Twitter,\\ Weibo\end{tabular}                                                                                                                          & \begin{tabular}[c]{@{}c@{}}(1394+1394) \\ (580+580)\end{tabular}                & DNN                        & -         & -      & 79.00     & -        & -    \\
-\hline
-Yates et al.~\cite{yates2017depression}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\end{tabular}                                                                                                                                                                                                                                      & CNN                        & 75.00      & 57.00   & 65.00     & -        & -    \\
-\hline
-Orabi et al. ~\cite{orabi2018deep}                                                & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015 \end{tabular}                                                                         & CNN                        & 87.00      & 87.00   & 87.00     & 88.00     & 95.00 \\
-\hline
-Orabi et al. ~\cite{orabi2018deep}                                                & Facebook                                                                       & \begin{tabular}[c]{@{}c@{}}Bell Let’s Talk\end{tabular}                                                                                & CNN                        & 82.00      & 84.00   & 82.00     & 83.00     & 92.00 \\
-\hline
-Rao et al.~\cite{rao2020mgl}                                                     & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\end{tabular}                                                                                                                                              & CNN                        & 63.00      & 48.00   & 54.00     & -        & -    \\
-\hline
-Rao et al.~\cite{rao2020mgl}                                                     & Reddit           & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                          & CNN                        & 63.00      & 57.00   & 60.00     & -        & -    \\
-\hline
-Sadeque et al.~\cite{ sadeque2017uarizona   }                                    & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                                                 & SVM+RNN                    & 61.00      & 67.00   & 64.00     & -        & -                   \\
-\hline
-Hu et al.~\cite{hu2021depression}                                                 & Weibo                                                                          & \begin{tabular}[c]{@{}c@{}}Posts56910\\(28455+28455)\end{tabular}                                                                                                                                                                                                                                                   & Bi-directional LSTM                    & -         & -      & -        & 95.00     & -    \\
-\hline
-\end{tabular}
-		\begin{tablenotes}
-			\footnotesize
-			\item The social network text data used in the research is usually analyzed by users, but some of the research is based on posts, which we have noted in the table.
-		\end{tablenotes}
-\end{table*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Text auxiliary depression diagnosis based on deep learning}
@@ -202,6 +141,75 @@ Through two-way transmission, the semantic dependency of context is captured, an
 
 The above deep learning models have problems such as complex structure or long training time. At the same time, the bidirectional gated recurrent unit can remember the context information of the sequence, the structure is simple, and the training speed is fast. It also achieved good performance in depression analysis based on social network texts~\cite{dinkel2019text}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\label{sec\_fquality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+.
+\begin{table}
+\centering
+\caption{Experimental results based on text}
+\label{tab5}
+\renewcommand\arraystretch{1.4}
+\resizebox{1\linewidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{c|cc|c|c}
+
+\hline
+\multirow{2}{*}{\textbf{Paper}}            & \multicolumn{2}{c|}{\textbf{Data}}                                                                           & \multirow{2}{*}{\textbf{Method}}            & \multirow{2}{*}{\textbf{F1-Score}}                     \\
+                                                                                                       & {\textbf{Media}}                                                                          & {\textbf{Dataset(D+C)}}                                                                                              &                             \\
+\hline
+%Choudhury et al.~\cite{de2013predicting}                                          & Twitter                                                                        & 476(171+305)                                                                                              & SVM                        & 74.00      & 63.00   & -        & 70.00     & -    \\
+%\hline
+Tsugawa et al.~\cite{tsugawa2015recognizing}                                      & Twitter                                                                        & 209(81+121)                                                                                               & SVM                        & 52.00     \\
+\hline
+Wolohan et al.~\cite{wolohan2018detecting}                                       & Reddit                                                                         & 12106(4947+7159)                                                                                          & SVM                        & 73.00    \\
+\hline
+Shatte et al.~\cite{shatte2019social}                                            & Reddit                                                                         & 365                                                                                                       & SVM                         & 67.00    \\
+\hline
+Peng et al.~\cite{peng2019multi}                                                 & Weibo                                                                          & 276(141+135)                                                                                              & SVM           & 76.00     \\
+\hline
+%Aldarwish et al.~\cite{ aldarwish2017predicting}                                 & \begin{tabular}[c]{@{}c@{}}Facebook,\\  LiveJournal,   \\ Twitter\end{tabular} & \begin{tabular}[c]{@{}c@{}}Posts(758+1374)\\  (489+1865)\\(826+1461)   \\ Total6773\\(2073+4700)\end{tabular}                                                          & SVM+Naïve Bayes           & 100.00      & 57.00   & -        & 63.00     & -    \\
+%\hline
+Nadeem et al. ~\cite{nadeem2016identifying}                                      & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\end{tabular}             & Naïve Bayes                & 81.00     \\
+\hline
+Nadeem et al.~\cite{nadeem2016identifying}                                       & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015\end{tabular}             & LR          & 84.00     \\
+%Dinkel et al$\sim$~\cite{ dinkel2019text}                                        & -                                                                              & DAIC-WOZ107                                                                                               & BGRU                       & 0.85      & 0.83   & 0.84     & 0.86     & -    \\
+%\hline
+
+%Eichstaedt et al.~\cite{ eichstaedt2018facebook }                                & Facebook                                                                       & 683(114+569)                                                                                              & LR        & -         & -      & -        & -        & 72.00 \\
+\hline
+Burdisso et al.~\cite{burdisso2019text}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                                                 & \begin{tabular}[c]{@{}c@{}}Incremental\\ classification\end{tabular}    & 61.00     \\
+\hline
+Mariñelarena et al.~\cite{ marinelarena2017predicting   }                         & Reddit                                                                         & 486(83+403)                                                                                               & DNN                      & 83.00   \\
+\hline
+Shen et al.~\cite{shen2018cross}                                                 & \begin{tabular}[c]{@{}c@{}}Twitter,\\ Weibo\end{tabular}                                                                                                                          & \begin{tabular}[c]{@{}c@{}}(1394+1394) \\ (580+580)\end{tabular}                & DNN                         & 79.00      \\
+\hline
+Yates et al.~\cite{yates2017depression}                                          & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\end{tabular}                                                                                                                                                                                                                                      & CNN                         & 65.00        \\
+\hline
+Orabi et al. ~\cite{orabi2018deep}                                                & Twitter                                                                        & \begin{tabular}[c]{@{}c@{}}CLPsych2015 \end{tabular}                                                                         & CNN                          & 87.00     \\
+\hline
+Orabi et al. ~\cite{orabi2018deep}                                                & Facebook                                                                       & \begin{tabular}[c]{@{}c@{}}Bell Let’s Talk\end{tabular}                                                                                & CNN                          & 82.00     \\
+\hline
+Rao et al.~\cite{rao2020mgl}                                                     & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}RSDD\end{tabular}                                                                                                                                              & CNN                         & 54.00      \\
+\hline
+Rao et al.~\cite{rao2020mgl}                                                     & Reddit           & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                          & CNN                         & 60.00    \\
+\hline
+Sadeque et al.~\cite{ sadeque2017uarizona   }                                    & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                                                 & SVM+RNN                     & 64.00               \\
+\hline
+%Hu et al.~\cite{hu2021depression}                                                 & Weibo                                                                          & \begin{tabular}[c]{@{}c@{}}Posts56910\\(28455+28455)\end{tabular}                                                                                                                                                                                                                                                   & Bi-LSTM                    & -         & -      & -        & 95.00     & -    \\
+%\hline
+\end{tabular}
+\end{threeparttable}}
+		\begin{tablenotes}
+			\footnotesize
+			\item The social network text data used in the research is usually analyzed 
+			\item by users, but some of the research is based on posts, which we 
+			\item have noted in the table.
+		\end{tablenotes}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Performance Comparison}
 
