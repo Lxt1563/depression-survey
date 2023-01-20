@@ -16,23 +16,23 @@ In addition, video data mainly contain facial expression and gait information, a
 Facial expression and speech based depression data are usually collected from face-to-face interactive or non-interactive human-computer interviews, and video and audio data of the interview process are obtained for analysis.
 Gait based depression data are usually collected from subjects walking in experimental scenarios, including using sensors or cameras, and then process the data to extract features for analysis.
 
-AVEC is an expression recognition challenge held every year since 2011, jointly organized by Imperial College London, the University of Nottingham, Queen Mary University, the University of Southern California, and the University of Passau, Germany, etc.
-It is recognized as the top international competition in effective computing.
-AVEC 2013 started to introduce the task of depression recognition, considering the audio and video based analysis of depression as a regression problem or classification problem.
+%AVEC is an expression recognition challenge held every year since 2011, jointly organized by Imperial College London, the University of Nottingham, Queen Mary University, the University of Southern California, and the University of Passau, Germany, etc.
+%It is recognized as the top international competition in effective computing.
+%AVEC 2013 started to introduce the task of depression recognition, considering the audio and video based analysis of depression as a regression problem or classification problem.
 
 
 \subsection{Facial expression}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[tbp]
-	\centering	
-	\label{fig_hard_case1}\includegraphics[width=0.9\linewidth]{figures/depression/facial-AVEC.png}		
-	\caption{
-	Samples from AVEC datasets.
-	}
-	\label{facial-AVEC}
-\end{figure}
+%\begin{figure}[tbp]
+%	\centering	
+%	\label{fig_hard_case1}\includegraphics[width=0.9\linewidth]{figures/depression/facial-AVEC.png}		
+%	\caption{
+%	Samples from AVEC datasets.
+%	}
+%	\label{facial-AVEC}
+%\end{figure}
 
 %\begin{figure}[tbp]
 %	\centering	
@@ -47,8 +47,7 @@ A person's personality and mood can be seen from his face, and some studies have
 Zhu et al.~\cite{0Identifying} research team of the institute of psychology of the Chinese Academy of Sciences studies 100 people with mental diseases.
 They ask 100 patients to read neutral articles through a special technology.
 From the research process, these patients are found to look very sad as they frown while reading aloud, the corners of their mouths droop, and a few tears appear in their eyes as if they are crying.
-
-Under normal circumstances, when people read a book with neutral content, it will not make them feel sad and will not make people frown, so there is still a big difference in facial features between people suffering from depression and normal.
+%Under normal circumstances, when people read a book with neutral content, it will not make them feel sad and will not make people frown, so there is still a big difference in facial features between people suffering from depression and normal.
 Therefore, by comparing and analyzing the facial expression data of depressed and normal people, it can provide an auxiliary diagnosis of depression.~\cite{2013Social,2018A,2020Automatic,2005Emotion,BYLSMA2008676,2017Facial}.
 
 %In order to study the relationship between patients' depression severity and facial expression over time, Girard et al.~\cite{2013Social} designed a study to track the subjects for two years, and collected the data of 36 patients with severe depression at the beginning and reduced symptoms after two years. Through the analysis of facial expressions in video data by manual and automatic systems, it showed that the automatic coding of Facial Action Coding System (FACS) action units is highly consistent with the manual coding, and showed a similar effect in the change of depression severity over time.
@@ -72,9 +71,9 @@ However, in general, the Active Appearance Model needs to rely on the manual ann
 Another disadvantage of this method is that the model construction could be more straightforward.
 
 Local Binary Patterns are a common method for extracting appearance features, an algorithm capable of describing image textures in a simple way without manual annotation, and has the advantages of rotation and gray scale invariance.
-The original Local Binary Patterns operator is defined as in a 3*3 window, the center pixel of the window is used as the threshold, and the grayscale values of the 8 neighboring pixels are compared with it.
-If the surrounding pixel value is greater than the center pixel value, the position of the pixel point is marked as 1. Otherwise, it is 0.
-In this way, the 8 points in the 3*3 neighborhood can be compared to produce an 8-bit binary number, which is the Local Binary Patterns value of the center pixel of the window, which is used to reflect the texture information of the region.
+%The original Local Binary Patterns operator is defined as in a 3*3 window, the center pixel of the window is used as the threshold, and the grayscale values of the 8 neighboring pixels are compared with it.
+%If the surrounding pixel value is greater than the center pixel value, the position of the pixel point is marked as 1. Otherwise, it is 0.
+%In this way, the 8 points in the 3*3 neighborhood can be compared to produce an 8-bit binary number, which is the Local Binary Patterns value of the center pixel of the window, which is used to reflect the texture information of the region.
 After that, some researchers proposed improvements based on Local Binary Patterns.
 
 In the AVEC 2014 competition, baseline visual features are extracted using a Local Gabor Binary Pattern from Three Orthogonal Planes, combining dynamic and spatial texture analysis with Gabor filtering.

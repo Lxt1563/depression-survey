@@ -262,7 +262,8 @@ Finally, we also present some private datasets collected by the researchers and 
 %Depression by scale is classified into different levels according to the score, such as minimal, mild, moderate, and severe. Different scales have different ways of classification. 
 In many studies, the diagnosis of depression is considered a binary classification problem.
 Subjects with a minimal degree of the scale was labelled to have non-depressed, and others were labelled to have depresseion.
-And the experimental evaluation methods were some standard classification metrics such as Precision, Accuracy, Recall, F1-score, Specificity, Sensitivity and Area Under the Curve (AUC).
+And the experimental evaluation methods were some standard classification metrics such as Precision, Accuracy, Recall, F1-score.
+% Specificity, Sensitivity and Area Under the Curve (AUC).
 %, and accuracy is the most frequently used of these metrics
 
 Some studies used regression analysis to predict the degree of depression according to the score of scale. The experimental evaluation methods were some common regression metrics such as: Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
@@ -310,52 +311,54 @@ F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
 \end{equation}
 
 
-(5) Specificity reflects the ability of the model to correctly predict the full extent of negative samples. It calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as follows:
+%(5) Specificity reflects the ability of the model to correctly predict the full extent of negative samples. It calculates the proportion of negative samples predicted to be \emph{negative} to the total negative samples. The calculation is formulated as follows:
 
-\begin{equation}
-Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
-\end{equation}
-
-
-(6) Sensitivity reflects the ability of the model to correctly predict the full extent of positive samples. It calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as follows:
-
-\begin{equation}
- Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
-\end{equation}
+%\begin{equation}
+%Specificity =\frac{TN}{FP+TN}=\frac{TN}{N}
+%\end{equation}
 
 
-(7) Receiver Operating Characteristic (ROC) represents a probability graph to show the performance of a classification model at different threshold levels. 
-The curve is plotted between two parameters, which are: True Positive Rate(TPR) and False Positive Rate (FPR).
-TPR is a synonym for Recall, which can be calculated as:
+%(6) Sensitivity reflects the ability of the model to correctly predict the full extent of positive samples. It calculates the proportion of positive samples predicted to be \emph{positive} to the total positive samples. The calculation is formulated as follows:
 
-\begin{equation}
-TPR =\frac{TP}{TP+FN}
-\end{equation}
-
-FPR can be calculated as:
-
-\begin{equation}
-FPR =\frac{FP}{FP+TN}
-\end{equation}
-
-AUC is known for Area Under the ROC curve. AUC calculates the two-dimensional area under the entire ROC curve ranging from (0,0) to (1,1), as shown in Fig \ref{AUC}.
-In the ROC curve, AUC computes the performance of the binary classifier across different thresholds and provides an aggregate measure. The value of AUC ranges from 0 to 1, which means an excellent model will have AUC near 1.
+%\begin{equation}
+% Sensitivity =\frac{TP}{TP+FN}=\frac{TP}{P}
+%\end{equation}
 
 
+%(7) Receiver Operating Characteristic (ROC) represents a probability graph to show the performance of a classification model at different threshold levels. 
+%The curve is plotted between two parameters, which are: True Positive Rate(TPR) and False Positive Rate (FPR).
+%TPR is a synonym for Recall, which can be calculated as:
 
-\begin{figure}[tbp]
-	\centering	
-	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/AUC2.png}		
-	\caption{
-	The ROC curve is obtained based on the confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
-	AUC is defined as the area under the ROC curve. 
-	}
-	\label{AUC}
-\end{figure}
+%\begin{equation}
+%TPR =\frac{TP}{TP+FN}
+%\end{equation}
+
+%FPR can be calculated as:
+
+%\begin{equation}
+%FPR =\frac{FP}{FP+TN}
+%\end{equation}
+
+%AUC is known for Area Under the ROC curve. AUC calculates the two-dimensional area under the entire ROC curve ranging from (0,0) to (1,1), as shown in Fig \ref{AUC}.
+%In the ROC curve, AUC computes the performance of the binary classifier across different thresholds and provides an aggregate measure. The value of AUC ranges from 0 to 1, which means an excellent model will have AUC near 1.
+
+
+
+%\begin{figure}[tbp]
+%	\centering	
+%	\label{fig_hard_case1}\includegraphics[width=1.0\linewidth]{figures/depression/AUC2.png}		
+%	\caption{
+%	The ROC curve is obtained based on the confusion matrix. Its abscissa is FPR, and ordinate is TPR. Draw the coordinates of the same model (FPR, TPR) in ROC space, and it becomes the ROC curve. 
+%	AUC is defined as the area under the ROC curve. 
+%	}
+%	\label{AUC}
+%\end{figure}
 
 %The area covered by the ROC curve downward is the AUC value, and since the ROC curve is generally above the line $y=x$, the value of AUC ranges between 0.5 and 1. The closer the AUC is to 1.0, the higher the authenticity of the detection method; when it is equal to 0.5, it is the lowest authenticity and has no application value.
 
 %As a numerical value, AUC will more clearly explain the effect of the classifier than ROC curve.
+
+Other classification metrics such as specificity, sensitivity and AUC can also be used to evaluate the performance of the model.
 
 \subsubsection{Regression metrics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
