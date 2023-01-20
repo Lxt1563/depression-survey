@@ -65,14 +65,14 @@ Many experimental results show that, compared with single-mode data, multimodal 
 \subsubsection{Mixed audiovisual and text data auxiliary depression diagnosis based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
+%The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
 For deep learning approaches, a wide range of studies has adopted LSTM as well as hybrid models for depression recognition.
 
 
 Numerous previous studies employ LSTM to extract spatiotemporal features at various scales from audio, video, and text clips to obtain crucial temporal information for a task involving depression recognition.
 Mainly, Alhanai et al.~\cite{AlHanai2018} simulate the interaction between audio and text features in an LSTM neural network model to detect depression.
 Further, Qureshi et al.~\cite{qureshi2019verbal} suggest a bimodal multitasking model that includes both a speech-based and a text-based module.
-The model is passed through separate Bi-directional LSTM layers with an attention mechanism. The output attention vectors are concatenated and passed to feedforward layers for depression detection, severity prediction, and symptom severity predictions. The depression detection head has a logistic sigmoid function to output depressed-class probability estimates.
+The model is passed through separate Bi-directional LSTM layers with an attention mechanism. The output attention vectors are concatenated and passed to feedforward layers for depression detection, severity prediction, and symptom severity predictions. %The depression detection head has a logistic sigmoid function to output depressed-class probability estimates.
 Moreover, Ray et al.~\cite{ray2019multi} propose a multi-level attention-based early fusion network that employs a bidirectional long and short-term memory network architecture and applies the attention layer to a stacked Bi-directional LSTM layer.
 More importantly, it recognizes the significance of intra- and inter-modal features for predicting depression levels and fusing the patterns of audio, video, and text to predict the severity of depression.
 

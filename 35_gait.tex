@@ -47,7 +47,7 @@ The gait energy image~\cite{han2005individual}, which is created by averaging th
 
 \subsubsection{Gait auxiliary depression diagnosis based on traditional machine learning}
 %Gait auxiliary depression diagnosis is still in its infancy, with most approaches focusing on traditional machine learning.
-In traditional research of gait auxiliary depression diagnosis, hand-crafted features are regularly used together with machine learning classifiers. The gait features are generally divided into two main categories: time-frequency and spatial-temporal features.
+In traditional research of gait auxiliary depression diagnosis, hand-crafted features are regularly used together with machine learning classifiers. The gait features are generally divided into two main categories: time-frequency and spatial geometric features.
 
 
 
@@ -66,12 +66,12 @@ However, significant time- and frequency-domain principal components can only pr
 between gait patterns and time- and frequency-domain features. They need to be more intuitive for interpreting gait patterns.
 
 
-Differently, while high-level spatial-temporal features may provide an intuitive understanding
+Differently, while high-level spatial geometric features may provide an intuitive understanding
 of individual gait patterns, they contribute less to auxiliary depression diagnosis than low-level time-and frequency-domain features~\cite{wang2021detecting}.
-The spatiotemporal gait features, which comprise the distance between joints, the angle created by the joints, and the distance between the joint point and the bone, represent changes in the distance angle and other properties of the joints with time.
+The gait spatial geometric features, which comprise the distance between joints, the angle created by the joints, and the distance between the joint point and the bone, represent changes in the distance angle and other properties of the joints with time.
 Additionally, there are noticeable differences between the depressed and non-depressed groups in several spatiotemporal, kinematic, and postural gait characteristics, including walking speed, stride length, head movement, vertical head posture, arm swing, and body sway.
 Applying these features to classifiers with various machine learning techniques, Fang et al.~\cite{fang2019depression} investigate whether natural gait analysis might be a practical and reliable approach to support auxiliary depression diagnosis.
-The results suggest that spatial features are beneficial in assessing depression.
+The results suggest that spatial geometric features are beneficial in assessing depression.
 Furthermore, reasonable accuracy can already be achieved by using parameters from the upper body alone, indicating that upper body postures and movements can effectively contribute to depression analysis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,10 +137,6 @@ Shao~\cite{shao2021multi}  & 200(86+114)  & LSTM+CNN  & 85.45 \\ \cline{1-4}
 
 
 \subsubsection{Performance Comparison}
-%To shed more light on the performance of gait auxiliary depression diagnosis methods, we summarize the performance of the methods tested in Tabel~\ref{tab_gait}.
-%To perform a fair comparison, the experimental classification accuracy results (\%) are directly derived from the corresponding original papers.
-%It should be noted that we concentrate on contrasting the performance of various approaches on the same data set.
-%Several observations can be summarized as follows:
 
 We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
 The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
