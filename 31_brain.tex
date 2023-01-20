@@ -235,12 +235,14 @@ Furthermore, features such as the characteristic path length and betweenness cen
 
 
 
-\begin{table*}
+\begin{table}
 \centering
 \caption{Experimental results based on brain imaging}
 \label{tab3}
-\setlength\tabcolsep{2mm}{
-\begin{tabular}{c|c|c|c|c}
+\renewcommand\arraystretch{1.4}
+\resizebox{1\linewidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{@{}c|c|c|c|c@{}}
 \hline
 \textbf{Type}          & \textbf{Paper}                                                                                          & \textbf{Dataset(D+C)}                                                                                                     & \textbf{Methods}                                                                                                                                       & \textbf{Metrics(Accuracy/\%)}                                                                                                        \\
 \hline
@@ -255,23 +257,23 @@ Furthermore, features such as the characteristic path length and betweenness cen
                       \cline{2-5}
                        & Bhaumik~\cite{2016Multivariate}                                                   & 67 (38+29)                                                                                                                 & SVM                                                                                                                                                    & 76.10                                                                                                                                \\
 \cline{2-5}
-                       & Gu et al. ~\cite{8575800}                                                        & 92 (46+46)                                                                                                                 & Multivariate Pattern Analysis  & 90.22                                                                                                                                \\
+                       & Gu et al. ~\cite{8575800}                                                        & 92 (46+46)                                                                                                                 & MVPA  & 90.22                                                                                                                                \\
 \cline{2-5}
                        & Wang et al.~\cite{wang2017depression}                                            & 60 (31+29)                                                                                                                 & SVM                                                                                                                                                    & 95.00                                                                                                                                \\
 \cline{2-5}
                        & Gui et al. ~\cite{2019The1}                                                      & 39 (19+20)                                                                                                                 & DNN                                                                                                                                                    & 94.68                                                                                                                                \\
                        \cline{2-5}
-                       & Mousavian et al.~\cite{mousavian2020depression}                                   & NKI online dataset 279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ Spatial-temporal CNN \\ 3D CNN   \\ 3D VGG-16  \\ Functional Connectivity Network \\ Functional Connectivity Network\_woT-test  \\ Functional Connectivity Network\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
+                       & Mousavian et al.~\cite{mousavian2020depression}                                   &  279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ ST-CNN \\ 3D CNN   \\ 3D VGG-16  \\ FCN \\ FCN\_woT-test  \\ FCN\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
                        \cline{2-5}
-                       & Mousavian et al.~\cite{9680063}                                  & NKI online dataset 279 (38+241)                                                                                             & Cubes-Atlas                                                                                                                                            & 93.00                                                                                                                                \\
+                       & Mousavian et al.~\cite{9680063}                                  & 279 (38+241)                                                                                             & Cubes-Atlas                                                                                                                                            & 93.00                                                                                                                                \\
 \cline{2-5}
-                       & Yan et al.~\cite{2020Quantitative}                                                & 99 (43+56)                                                                                                                 & Dynamic Functional Connectivity+SVM                                                                                                                                                & 99.13 (AUC)                                                                                                                           \\
+                       & Yan et al.~\cite{2020Quantitative}                                                & 99 (43+56)                                                                                                                 & DFC+SVM                                                                                                                                                & 99.13 (AUC)                                                                                                                           \\
  \cline{2-5}
-                       & Zhao et al. ~\cite{2020Functional}                                               & 555 (269+286)                                                                                                              & Functional Network Connectivity+GAN                                                                                                                                                & 70.10                                                                                                                                \\
+                       & Zhao et al. ~\cite{2020Functional}                                               & 555 (269+286)                                                                                                              & FNC+GAN                                                                                                                                                & 70.10                                                                                                                                \\
  \cline{2-5}
-                       & Jun et al.~\cite{2020Identifying}                                                  & 73 (29+44)                                                                                                                 & Graph Convolutional Networks & 74.10                                                                                                                                \\
+                       & Jun et al.~\cite{2020Identifying}                                                  & 73 (29+44)                                                                                                                 & GCN & 74.10                                                                                                                                \\
                       \cline{2-5}
-                       & Yamashita et al.~\cite{ 2020Generalizable}                                     & \begin{tabular}[c]{@{}c@{}}discovery dataset 713 (149+564)   \\ independent validation dataset 521 (236+285)\end{tabular} & LASSO                                                                                                                                                  & approximately 70.00
+                       & Yamashita et al.~\cite{ 2020Generalizable}                                     & \begin{tabular}[c]{@{}c@{}} 713 (149+564)   \\  521 (236+285)\end{tabular} & LASSO                                                                                                                                                  & approximately 70.00
 \\
 \hline
 \multirow{6}{*}{fNIRS} & Song et al. ~\cite{2015Automatic}                                                & 138 (108+30)                                                                                                               & SVM                                                                                                                                                    & 86.77                                                                                                                                \\
@@ -280,27 +282,35 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \cline{2-5}
                        & Zhu et al.~\cite{2017Machine}                                                     & 20 (10+10)                                                                                                                 & One Rule        & 85.00                                                                                                                                \\
 \cline{2-5}
-                       & Zhu et al. ~\cite{2020Classifying}                                               & 31 (14+17)                                                                                                                 & RF+eXtreme Gradient Boosting & 92.58                                                                                                                                \\
+                       & Zhu et al. ~\cite{2020Classifying}                                               & 31 (14+17)                                                                                                                 & RF+XGBoost & 92.58                                                                                                                                \\
 \cline{2-5}
-                       & Ma et al.~\cite{2020DISTINGUISHING }                                              & 36 (MDD)+48 (bipolar disorder patients)                                                                                    & LSTM                                                                                                                  & 96.20                                                                                                                                \\
+%                       & Ma et al.~\cite{2020DISTINGUISHING }                                              & \begin{tabular}[c]{@{}c@{}}36 (MDD)+48\\ (bipolar disorder patients)\end{tabular}                                                                                     & LSTM                                                                                                                  & 96.20                                                                                                                                \\
 \cline{2-5}
                        & Wang et al.~\cite{2021Depression}                                                & 96 (79+17)                                                                                                                 & CNN & 90.00                                                                                                                                \\
 \hline
 
-\end{tabular}}
+\end{tabular}
+\end{threeparttable}}
            \begin{tablenotes}
-			\footnotesize
-			\item Least Absolute Shrinkage and Selection Operator(LASSO),
-			    standard Least Absolute Shrinkage and Selection Operator (sLASSO),
-				group Least Absolute Shrinkage and Selection Operator (gLASSO),
-				sparse group Least Absolute Shrinkage and Selection Operator (sgLASSO),
-				%Multivariate Pattern Analysis (MVPA),
-				%Functional Connectivity Network (FCN),
-				%Dynamic Functional Connectivity (DFC),
-				%Functional Network Connectivity (FNC),
-				%Spatial-temporal CNN (ST-CNN).
-		\end{tablenotes}
-\end{table*}
+			     \footnotesize 
+				 \item Least Absolute Shrinkage and Selection Operator(LASSO),
+			    standard 
+			    \item Least Absolute Shrinkage and Selection Operator (sLASSO),
+				group 
+				\item Least Absolute Shrinkage and Selection Operator (gLASSO),
+				sparse 
+				\item group Least Absolute Shrinkage and Selection Operator (sgLASSO),
+				\item Multivariate Pattern Analysis (MVPA),
+				Spatial-temporal CNN (ST-CNN),
+				\item Functional Connectivity Network (FCN),
+				Dynamic Functional Connectivity
+				\item  (DFC),
+				Functional Network Connectivity (FNC),
+				Graph Convolutional 
+				\item Networks (GCN),
+				eXtreme Gradient Boosting (XGBoost).
+           \end{tablenotes}
+\end{table}
 
 %MVPA (Multivariate pattern analysis)
 
