@@ -5,7 +5,7 @@
 \fi
 
 %\section{Depression Recognition}
-\section{Auxiliary depression diagnosis method based on electrophysiological signals}
+\section{Auxiliary depression diagnosis methods based on electrophysiological signals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Depression is a mental illness that accompanies severe mood swings and aberrant brain activity.
@@ -13,40 +13,43 @@ These aberrant behaviors can be found using EEG to monitor brain activity~\cite{
 Further, depressive episodes may accompany nausea, vomiting, chest tightness, and sweating~\cite{faris2006evidence}.
 These symptoms are associated with autonomic dysfunction,
 while signals such as ECG, heart sounds and pulse can reflect these changes to some extent.
-Specifically, heart rate variability (HRV) analysis is used extensively as a standard tool for evaluating autonomic nervous functions~\cite{vanderlei2009basic}.
+%Specifically, heart rate variability (HRV) analysis is used extensively as a standard tool for evaluating autonomic nervous functions~\cite{vanderlei2009basic}.
 Moreover, research indicates that electrodermal activity is more sensitive and produces more significant changes in response to stimuli than cardiac or cerebral activity in the case of external stimuli or changes in the mental activity of the organism~\cite{zygmunt2010methods}.
 In summary, the electrophysiology of depressed patients differs from that of healthy individuals.
 
 
 Electrophysiological signals are caused by changes in the membrane potential of individual cells, which are usually recorded by metal electrodes placed on the body surface~\cite{widmann2015digital}.
 Due to the non-invasive detection and easy use of electrophysiological signals, auxiliary depression diagnosis with them has become a hot research topic and the most promising research direction.
-%EEG is utilized the most commonly~\cite{liao2017major,bairy2017automated,acharya2018automated}, followed by ECG~\cite{ding2019classifying}.
-It is noteworthy that ECGs usually have a wide range of applications to diagnose depression by extracting RR interval sequences and measuring HRV. In addition, as other types of signals are employed infrequently, we concentrate on EEG and HRV-based auxiliary depression diagnosis.
+In addition, as other types of signals are employed infrequently, we concentrate on EEG and ECG-based auxiliary depression diagnosis.
 Meanwhile, due to the limited amount of relevant regression tasks, we are just focusing on the classification job.
+%EEG is utilized the most commonly~\cite{liao2017major,bairy2017automated,acharya2018automated}, followed by ECG~\cite{ding2019classifying}.
+%It is noteworthy that ECGs usually have a wide range of applications to diagnose depression by extracting RR interval sequences and measuring heart rate variability (HRV). 
+
 
 
 \subsection{EEG}
 
 EEG is the most direct and objective representation of human neurological brain activity.
 It closely relates to brain activity and emotional state, provides a timely representation of the body's emotional changes, and offers a high temporal resolution for examining brain dynamics~\cite{levin2007cognitive}.
-Therefore, the EEG is one of the most promising signals for an auxiliary depression diagnosis~\cite{hosseinifard2013classifying}.
-Current research continues to rely mostly on conventional machine learning methods.
+Therefore, EEG is one of the most promising signals for an auxiliary depression diagnosis~\cite{hosseinifard2013classifying}.
+Current research continues to mostly rely on conventional machine learning methods.
 In the meantime, some academics experiment with a subset of machine learning known as deep learning algorithms, which has led to significant advances.
 
 
 \subsubsection{EEG auxiliary depression diagnosis based on traditional machine learning}
 
 Feature extraction and classification are the two key components of a traditional machine-learning approach.
-The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis, with linear analysis further subdivided into the time and frequency domain analysis.
+The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis. 
 
 
 
-Typically, time domain analysis focuses on the measurement and analysis of the raw EEG signal waveform in order to calculate more intuitive or physiologically significant EEG properties.
-In the study of EEG auxiliary depression diagnosis, the time domain features generally used include the mean, variance, kurtosis, and skewness of the signal.
+%Typically, time domain analysis focuses on the measurement and analysis of the raw EEG signal waveform in order to calculate more intuitive or physiologically significant EEG properties.
+In the study of EEG auxiliary depression diagnosis, linear analysis is subdivided into the time and frequency domain analysis.
+The time domain features generally used include mean, variance, kurtosis, and skewness of the signal.
 These features vary with the EEG signal's sliding window and precisely depict their temporal evolution.
-Additionally, time-domain analysis can measure the synchronization and similarity of signals between various channels.
+%Additionally, time-domain analysis can measure the synchronization and similarity of signals between various channels.
 Frequency domain analysis refers to characterizing a non-stationary EEG signal based on its frequency components and calculating all essential properties at the frequency.
-The most often employed frequency domain characteristic is the power spectral density, which is normalized to estimate the power of the time series at each frequency.
+The most often employed frequency analysis method is the power spectral density, which is normalized to estimate the power of the time series at each frequency.
 However, fundamental linear indicators may not be adequate for describing the dynamic activities of complex interactions~\cite{wright1996dynamics}, and it is challenging to obtain a complete picture of the EEG by examining it just in the time-frequency domain.
 
 
@@ -55,29 +58,28 @@ Nonlinear approaches can capture the chaotic behaviour and abrupt changes in EEG
 In EEG auxiliary depression diagnosis research, prominent nonlinear features include correlation dimension~\cite{akar2015nonlinear}, Lyapunov exponent~\cite{ortiz2021futility,kustubayeva2021lyapunov,chopra2022using}, entropy~\cite{zhao2019cardiorespiratory,cukic2018eeg,zhao2021frontal}, Higuchi's fractal dimension, relative wavelet energy, and detrended fluctuation analysis, among others.
 Each nonlinear indicator reflects the peculiar qualities of EEG from a different perspective, revealing information that other methods may not detect.
 For instance, the correlation dimension indicates the system's complexity, the greatest Lyapunov exponent reflects the rate of uncertainty expansion and is sensitive to the system's initial value, and the entropy quantifies the system's amount of order.
-On this basis, the researchers concurred that combining numerous nonlinear approaches is superior to a single method.
-To verify the conclusion mentioned above, Acharya et al.~\cite{acharya2015novel} present a novel method for automated auxiliary depression diagnosis based on nonlinear techniques: fractal dimension, largest Lyapunov exponent, sample entropy, detrended fluctuation analysis, Hurst's exponent, higher order spectra, and recurrence quantification analysis.
-The results suggest that it can objectively and successfully diagnose depression by carefully combining nonlinear features.
-
+%On this basis, the researchers concurred that combining numerous nonlinear approaches is superior to a single method.
+%To verify the conclusion mentioned above, Acharya et al.~\cite{acharya2015novel} present a novel method for automated auxiliary depression diagnosis based on nonlinear techniques: fractal dimension, largest Lyapunov exponent, sample entropy, detrended fluctuation analysis, Hurst's exponent, higher order spectra, and recurrence quantification analysis.
+%The results suggest that it can objectively and successfully diagnose depression by carefully combining nonlinear features.
 
 
 Even though the applied indicators vary, the most prevalent classifiers are often the same: k-Nearest Neighbor (KNN), linear discriminant analysis (LDA), LR, SVM, decision trees, Bayesian classifiers, RF, and probabilistic neural networks.
-In addition, Mahato et al.~\cite{mahato2019electroencephalogram} examine numerous EEG signal analysis approaches and recommend the best accurate technique for the auxiliary depression diagnosis.
-It is shown that, compared to other methods, SVM has the highest classification accuracy since it has the greatest distance between the separation hyperplane and the kernel trick, which gives it greater robustness and computational efficiency, resulting in excellent accuracy.
+Moreover, Mahato et al.~\cite{mahato2019electroencephalogram} examine numerous classifiers for the auxiliary depression diagnosis.
+It is shown that, SVM has the highest classification accuracy since it has the greatest distance between the separation hyperplane and the kernel trick, which gives it greater robustness and computational efficiency, resulting in excellent accuracy.
 
 
 \subsubsection{EEG auxiliary depression diagnosis based on deep learning}
-Deep learning has been used more and more in recent years to identify depression using EEG.
-All adopted models in these studies can be categorized into three main groups, namely CNN models\cite{wan2020hybrideegnet}, LSTM models, and hybrid neural networks\cite{saeedi2021major,qayyum2020hybrid,thoduparambil2020eeg}.
-
+%Deep learning has been used more and more in recent years to identify depression using EEG.
+All adopted deep models in EEG auxiliary depression diagnosis studies can be categorized into three main groups, namely CNN models\cite{wan2020hybrideegnet}, LSTM models, and hybrid neural networks\cite{saeedi2021major,qayyum2020hybrid,thoduparambil2020eeg}.
 
  %CNN could capture spatial properties of features and has the ability of parallel computing.
-In specific, the CNN-based model can automatically and adaptively extract useful information directly from the input data instead of manually selecting features.
-The underlying convolutional and max-pooling layers contribute themselves in the process of automatic feature representations. The fully connected layers help in the classification process using various activation functions and tuning of parameters.
-Acharya et al.\cite{acharya2018automated} present the first application of the deep neural network concept and CNN for auxiliary depression diagnosis.
+The CNN-based models can automatically and adaptively extract useful information directly from the input data instead of manually selecting features.
+%The underlying convolutional and max-pooling layers contribute themselves in the process of automatic feature representations. The fully connected layers help in the classification process using various activation functions and tuning of parameters.
+At the earliest, Acharya et al.\cite{acharya2018automated} present the first application of the deep neural network concept and CNN for auxiliary depression diagnosis.
+% It learns automatically and adaptively from the input EEG signals to differentiate EEGs obtained from depressive and normal subjects.
 The model's inputs are the EEG signals from the left and right hemispheres of the brain, respectively.
-Five convolutional layers are responsible for providing essential features obtained from the input EEG signals to train the algorithm, five pooling layers are accountable for reducing the feature map's size, and three fully-connected layers establish a connection between neurons of one layer with the next one. Finally, results produce by the last fully-connected layer are applied to a soft-max function to detect depressive cases.
-Further, Li et al.~\cite{li2019eeg} analyze different aspects of EEG (spectral, spatial, and temporal information) for mild auxiliary depression diagnosis. They combines the
+%Five convolutional layers are responsible for providing essential features obtained from the input EEG signals to train the algorithm, five pooling layers are accountable for reducing the feature map's size, and three fully-connected layers establish a connection between neurons of one layer with the next one. Finally, results produce by the last fully-connected layer are applied to a soft-max function to detect depressive cases.
+Further, Li et al.~\cite{li2019eeg} analyze different aspects of EEG (spectral, spatial, and temporal information) for mild auxiliary depression diagnosis. They combine the
 CNN based architectures with spectral information and gain
 excellent classification performance. Spectrogram improves the interpretability of the diagnosis process but still, there is no complete transparency in the underlying working of the model.
 
@@ -91,31 +93,43 @@ The benefit of the LSTM when processing temporal signals such as EEG is that it 
 %Only a tiny portion of LSTM research has focused on detecting depression through physiological signals.
 Only a tiny fraction of EEG auxiliary depression diagnosis studies focus on LSTM.
 Kumar et al.~\cite{kumar2019prediction} predict trends of depression for the next time instants by the LSTM model.
-To generate input data, time-domain analysis with moving window segmentation is
+To generate the input data, time-domain analysis with moving window segmentation is
 employed to extract the statistical mean feature.
 The model uses one LSTM layer with 10 hidden neurons for the prediction.
 They also compare the introduced method with two other models: CNN-LSTM and ConvLSTM.
 It is observed that the LSTM predictor model works best for the prediction of trends of depression.
 
 
-The majority of the hybrid neural network are combined models of both CNN and LSTM blocks.
-Additionally, it has two significant data input formats: time series and feature images.
-Concretely, Thoduparambil et al.\cite{thoduparambil2020eeg} design a deep model in which an integration of CNN and LSTM to detect depression.
-Three CNN layers are exploited to extract features.
-Two LSTM layers have to generate the feature maps by discovering different patterns in EEG signals and then retain the sequence of these learning.
-Similarly, Sharma et al. \cite{sharma2021dephnn} also propose a new hybrid neural network called DepHNN.
-%CNN and LSTM are two deep learning algorithms used to capture the temporal dependencies in the time-series EEG input signals and to process the sequence learning.
-CNN and LSTM are two deep learning algorithms used to capture the temporal dependencies in the time-series EEG
-input signals and process the sequence learning.
-Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1 Dimension (1D) EEG signal into a 2 Dimension (2D) image. Then, they develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
-Finally, their experiments show that the spatial and temporal characteristics of the EEG
+
+The majority of the hybrid network are combined models of both CNN and LSTM blocks.
+It has two significant data input formats: EEG series and feature images.
+Thoduparambil et al.\cite{thoduparambil2020eeg} design a hybrid model with input as EEG signals, which integrate CNN and LSTM.
+CNN and LSTM are used to learn the local characteristics and the EEG signal sequence, respectively.
+%Similarly, Sharma et al. \cite{sharma2021dephnn} also propose a new hybrid neural network based EEG time series.
+Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1 Dimension (1D) EEG signal into a 2 Dimension (2D) image. They develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
+The architecture automatically learn patterns in the constructed image of the EEG signals. 
+The experiment show that the spatial and temporal characteristics of the EEG
 signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning model can also effectively analyze brain connectivity.
+
+
+%The majority of the hybrid network are combined models of both CNN and LSTM blocks.
+%CNN and LSTM are two deep learning algorithms used to capture the temporal dependencies in the time-series EEG
+%input signals and process the sequence learning.
+%The hybrid neural network has two significant data input formats: EEG series and feature images.
+%Thoduparambil et al.\cite{thoduparambil2020eeg} design a deep model in which an integration of CNN and LSTM is used to detect depression.
+%Three CNN layers are exploited to extract features.
+%Two LSTM layers have to generate the feature maps by discovering different patterns in EEG signals and then retain the sequence of these learning.
+%%Similarly, Sharma et al. \cite{sharma2021dephnn} also propose a new hybrid neural network based EEG time series.
+%Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1 Dimension (1D) EEG signal into a 2 Dimension (2D) image. Then, they develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
+%Finally, their experiments show that the spatial and temporal characteristics of the EEG
+%signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning model can also effectively analyze brain connectivity.
 
 
 
 \subsection{ECG}
 
-Physiological variation of the interval between consecutive heartbeats is known as HRV~\cite{appelhans2006heart}. HRV analysis is traditionally performed on ECG signals and has become a helpful tool in auxiliary depression diagnosis~\cite{heart1996standards}.
+Physiological variation of the interval between consecutive heartbeats is known as HRV~\cite{appelhans2006heart}. 
+HRV analysis is traditionally performed on ECG signals and has become a helpful tool in auxiliary depression diagnosis~\cite{heart1996standards}.
 Studies show that people with psychiatric disorders such as depression have reduced HRV, as evidenced by reduced parasympathetic control and increased sympathetic activity~\cite{jandackova2016heart}.
 In a recent study, there are two overall strategies for HRV-based auxiliary depression diagnosis: traditional methods with hand-crafted features and end-to-end deep learning methods.
 
@@ -136,12 +150,13 @@ Precisely, the feature set consists of time-frequency domain HRV features, and n
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-There is frequent use of HRV time-frequency domain characteristics when evaluating the linear activity state of the cardiovascular system.
+%There is frequent use of HRV time-frequency domain characteristics when evaluating the linear activity state of the cardiovascular system.
+Time-domain HRV features can be calculated directly from the time series of RRIs.
 In this field, the time domain features commonly used include:
-The Standard deviation of RRIs (SDNN)~\cite{shaffer2017overview}, the root means square of successive RR interval differences (RMSSD), the standard deviation of the successive difference of RR intervals (SDSD), the percentage of intervals more significant than 50 ms (PNN50)~\cite{schneider2017validity}, and mean value of RR intervals (MEAN).
+the standard deviation of RRIs (SDNN)~\cite{shaffer2017overview}, the root means square of successive RR interval differences (RMSSD), the standard deviation of the successive difference of RR intervals (SDSD), the percentage of intervals more significant than 50 ms (PNN50)~\cite{schneider2017validity}, and mean value of RR intervals (MEAN).
 SDNN reflects both sympathetic and parasympathetic activities~\cite{byun2019detection};
 RMSSD, SDSD, and PNN50 are more sensitive to parasympathetic modulation.
-Furthermore, MEAN is associated with HRV intention~\cite{colombo2015clinical}.
+And, MEAN is associated with HRV intention~\cite{colombo2015clinical}.
 Frequency domain characteristics indicate numerous spectral components, including very low frequency (VLF: 0.0033$-$0.04 Hz), low frequency (LF: 0.04$-$0.15 Hz), and high frequency (HF: 0.15$-$0.4 Hz)~\cite{kidwell2018heart}.
 LF is modulated by sympathetic and parasympathetic activities;
 HF is modulated by parasympathetic activities;
@@ -162,13 +177,14 @@ Byun et al.~\cite{byun2019detection} demonstrate the HRV-based recognition using
 
 
 \subsubsection{HRV auxiliary depression diagnosis based on deep learning}
-For HRV auxiliary depression diagnosis based on deep learning, scholars build a deep end-to-end architecture and then push raw signals into deep architecture to let the model learn high-level features.
-Specifically, they can be subdivided into two categories depending on the model used: CNN and RNN.
+%For HRV auxiliary depression diagnosis based on deep learning, scholars build a deep end-to-end architecture and then push raw signals into deep architecture to let the model learn high-level features.
+%Specifically, they can be subdivided into two categories depending on the model used: CNN and RNN.
 
+The main deep learning methods for HRV-based auxiliary depression diagnosis are CNN and RNN.
 
-
-CNN does not need to extract and select features manually. Moreover, CNN can directly take ECG segments as input as an effective classifier.
-Concretely, for the auxiliary depression diagnosis, Mohanraj et al.~\cite{mohanraj2022deep} propose a neural network called DesNN.
+CNN does not need to extract and select features manually.
+Moreover, CNN can directly take ECG segments as input as an effective classifier.
+Concretely, Mohanraj et al.~\cite{mohanraj2022deep} propose a neural network called DesNN for the auxiliary depression diagnosis.
 In spite of the fact that the inputs are 2D, the DesNN model works a 1D convolution activity.
 The 1D convolution is applied on the time aspect, and it guarantees that the data related with the spatial aspect, stays for all intents and purposes.
 This strategy for keeping the spatial data isolated is valuable in seeing how spatial data is handled by the organization and which channels are significant for the discovery of despondency.
@@ -178,10 +194,11 @@ Potentially because depression is a persistent state, the larger convolution ker
 It provides valuable suggestions for future model design.
 
 
-
-RNN is a network based on sequence information, where
-adjacent information is interdependent. Usually, this interdependence helps predict the future state.
-The layers in an RNN are connected to allow for the recurrent process. LSTM is a form of RNN that can learn long-term relationships. Especially, Noor et al.~\cite{noor2021predicting} present an RNN with an LSTM autoencoder to predict the risk of depression based on HRV. The RNN learns the signals from the dataset and passes those signals to the LSTM autoencoder. There are two parts to the auto-encoder
+%
+%{\color{blue}RNN is a network based on sequence information, where adjacent information is interdependent. }
+%Usually, this interdependence helps predict the future state. The layers in an RNN are connected to allow for the recurrent process.
+RNNs allow us to perform modeling over a sequence or a chain of vectors. These sequences can be either input, output or even both.
+LSTM is a form of RNN that can learn long-term relationships. Especially, Noor et al.~\cite{noor2021predicting} present an RNN with an LSTM autoencoder to predict the risk of depression based on HRV. The RNN learns the signals from the dataset and passes those signals to the LSTM autoencoder. There are two parts to the auto-encoder
 architecture in common. The encoder compresses the input, the
 decoder attempts to recreate it, and the recurrent auto-encoder
 joins the encoder and decoder, capturing the regenerated ECG
@@ -220,8 +237,10 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 \toprule
 \textbf{Type}& \textbf{Paper} & \textbf{Dataset(D+C)} & \textbf{Methods} & \textbf{Metrics(Accuracy/\%)} \\ \midrule
 & Acharya et al~\cite{acharya2015novel}  & 30(15+15)  & SVM  & 98.00     \\ \cline{2-5}
-& & &  & S-channel:92.00  \\
-& \multirow{-2}{*}{{Bachmnn et al~\cite{bachmann2018methods}}} & \multirow{-2}{*}{26(13+13)} & \multirow{-2}{*}{LR} & M-channel:90.00 \\ \cline{2-5}
+%& & &  & S-channel:92.00  \\
+& Bachmnn et al~\cite{bachmann2018methods} & 26(13+13)  & LR  & 92.00     \\ \cline{2-5}
+%& & &  & S-channel:92.00  \\
+%& \multirow{-2}{*}{{Bachmnn et al~\cite{bachmann2018methods}}} & \multirow{-2}{*}{26(13+13)} & \multirow{-2}{*}{LR} & M-channel:90.00 \\ \cline{2-5}
 &  & &  &   Linear:73.30  \\
 & & & \multirow{-2}{*}{KNN}  & Nonlinear  80.00  \\ \cline{4-5}
 & & & & Linear:76.60 \\
@@ -235,19 +254,23 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 & & & RF & 92.68     \\
 & \multirow{-6}{*}{Cukic et al~\cite{cukic2018eeg}}& \multirow{-6}{*}{43(23+20)} & Naive Bayes & 92.68   \\ \cline{2-5}
 & Ahmadlou et al~\cite{ahmadlou2012fractality} & 24(12+12) & EPNN  & 91.30  \\ \cline{2-5}
-& Faust et al~\cite{faust2014depression} & 60(30+30) & PNN & 99.70\\ \cline{2-5}
+
+& & & & Left:98.20  \\
+& \multirow{-2}{*}{Faust et al~\cite{faust2014depression}} & \multirow{-2}{*}{60(30+30)} & \multirow{-2}{*}{PNN} & Right:99.50 \\ \cline{2-5}
+
+%& Faust et al~\cite{faust2014depression} & 60(30+30) & PNN & 99.70\\ \cline{2-5}
 & Liao et al~\cite{liao2017major} & 24(12+12) & SVM & 80.00   \\ \cline{2-5}
 & Wan et al\cite{wan2020hybrideegnet} & 35(23+12) & HybridEEGNet   & 79.08 \\ \cline{2-5}
 & Saeedi et al~\cite{saeedi2021major} & 64(34+30) & 1DCNN-LSTM  & 99.24 \\ \cline{2-5}
-& &  &  & LH:98.84   \\
-& \multirow{-2}{*}{Thoduparambil et al~\cite{thoduparambil2020eeg}}& \multirow{-2}{*}{-}& \multirow{-2}{*}{CNN-LSTM}   & RH:99.07 \\ \cline{2-5}
-& & & & LH:93.50  \\
-& \multirow{-2}{*}{Acharya et al~\cite{acharya2018automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN} & RH:96.00 \\ \cline{2-5}
+& &  &  & Left:98.84   \\
+& \multirow{-2}{*}{Thoduparambil et al~\cite{thoduparambil2020eeg}}& \multirow{-2}{*}{-}& \multirow{-2}{*}{CNN-LSTM}   & Right:99.07 \\ \cline{2-5}
+& & & & Left:93.50  \\
+& \multirow{-2}{*}{Acharya et al~\cite{acharya2018automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN} & Right:96.00 \\ \cline{2-5}
 & Kang et al~\cite{kang2020deep} & 64(34+30)& CNN & 98.85   \\ \cline{2-5}
 & Sharma et al~\cite{sharma2021dephnn} & 45(21+24) & DepHNN  & 99.10  \\ \cline{2-5}
 & Li et al~\cite{li2019eeg} & 48(24+24) & ConvNet  & 85.62   \\ \cline{2-5}
-& & &  & LH:99.12    \\
-\multirow{-30}{*}{EEG} & \multirow{-2}{*}{Ay et al~\cite{ay2019automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN-LSTM}  & RH:97.66\\ \cline{1-5}
+& & &  & Left:97.66    \\
+\multirow{-30}{*}{EEG} & \multirow{-2}{*}{Ay et al~\cite{ay2019automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN-LSTM}  & Right:99.12\\ \cline{1-5}
 & Zhang et al~\cite{zhang2011new}& 20(10+10)  & FNN& 95.00  \\ \cline{2-5}
 & &   & SVM  & 74.40     \\
 & \multirow{-2}{*}{Byuna et al~\cite{byun2019detection}}& \multirow{-2}{*}{72(31+41)}& Statistical filter & 73.10 \\ \cline{2-5}
@@ -263,32 +286,38 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 }
 		\begin{tablenotes}
 			\footnotesize
-			\item Single-channel (S-channel),
-                  Multil-channel (M-channle),
-                  Multilayer
-            \item perceptron (MLP),
+%			\item Single-channel (S-channel),
+%                  Multil-channel (M-channle),
+             \item  Multilayer
+             perceptron (MLP),
                   Probabilistic neural network (PNN),
-                  Fuzzy Neural
-            \item Networks (FNN).
+                  Fuzzy Neural Networks (FNN).
 		\end{tablenotes}
 
 \end{table}
 
 \subsection{Performance Comparison}
 
-We evaluate the auxiliary depression diagnosis method using the EEG and ECG, two commonly utilized electrophysiological markers.
-We review the effectiveness of the approaches examined in Tabel~\ref{tab_eeg} to provide greater insight into the electrophysiological signal auxiliary depression diagnosis methods' performance.
-The experimental classification accuracy data (\%) are taken directly from the related source articles to conduct a fair comparison.
-It should be mentioned that we focus on comparing how different techniques perform on the same data set.
-The following list of observations can be summed up:
+%We evaluate the auxiliary depression diagnosis method using the EEG and ECG, two commonly utilized electrophysiological markers.
+%We review the effectiveness of the approaches examined in Tabel~\ref{tab_eeg} to provide greater insight into the electrophysiological signal auxiliary depression diagnosis methods' performance.
+%It should be mentioned that we focus on comparing how different techniques perform on the same data set.
+%The following list of observations can be summed up:
+
+
+%Table~\ref{tab_eeg} overviews the electrophysiological signal auxiliary depression diagnosis techniques' performance comparisons.
+%From the table we obtain the following four observations:
+
+The performance of electrophysiological signal auxiliary depression diagnosis approaches is presented in Table~\ref{tab_eeg}.
+By comparing the performance of several approaches on the same dataset, we obtain the following four observations: 
 
 
 
 
 
 (1)
-Single channel EEG analysis in the traditional method, employing the combination of measures, can provide the accuracy for discrimination of depression not lower than reported in other studies where multichannel EEG signals were analysed~\cite{bachmann2018methods}.
-Single channel EEG analysis has an advantage compared to multichannel EEG analysis, because it is easily implementable into a patient-friendly inexpensive EEG device, applicable for screening in occupational and family medicine centres.
+%In this research, it is discovered that the EEG data from the right hemisphere yields higher performance in terms of accuracy compare with data from the left hemisphere. Hence, it can be concluded that the EEG signals from the right hemisphere are more distinctive in depression than the EEG signals obtained from the left hemisphere. .
+In the study of Faust~\cite{faust2014depression}, Thoduparambil~\cite{thoduparambil2020eeg}, Acharya~\cite{acharya2018automated}, and Ay~\cite{ay2019automated}, we found that EEG data from the right hemisphere perform better in accuracy than EEG data from the left hemisphere. It shows that the EEG signal from the right hemisphere is more pronounced than that from the left hemisphere in depressed patients. This is consistent with previous research and revelation that the depression is associated with a hyperactive right hemisphere~\cite{hecht2010depression}.
+
 
 (2)
 The nonlinear analysis of EEG can be a valuable method for discriminating between depressed patients and normal subjects.
@@ -298,7 +327,7 @@ The brain system is a best-characterized nonlinear dynamical process.
 The brain's nonlinearity limits linear analysis's ability to provide a complete description of underlying dynamics.
 
 (3)
-In the HRV auxiliary depression diagnosis, the highest accuracy achieved in~\cite{byun2019detection} is relatively low compared to those results.
+In the HRV auxiliary depression diagnosis, the highest accuracy achieved in~\cite{byun2019detection} is relatively low compared to the remaining studies' results.
 However, some previous studies reported the results based on a small number of samples~\cite{roh2014wearable} or
 needed a description of the prediction accuracy validation method~\cite{sun2016objective}.
 Predictive performance may be overstated by cross-validation.

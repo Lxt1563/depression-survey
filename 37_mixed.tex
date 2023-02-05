@@ -65,8 +65,7 @@ Many experimental results show that, compared with single-mode data, multimodal 
 \subsubsection{Mixed audiovisual and text data auxiliary depression diagnosis based on deep learning}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%The fast development of deep learning has motivated many scientists to study related approaches for depression recognition, resulting in a promising performance compared to the hand-crafted features.
-For deep learning approaches, a wide range of studies has adopted LSTM as well as hybrid models for depression recognition.
+A wide range of studies has adopted LSTM as well as hybrid models for depression recognition in deep learning methodologies.
 
 
 Numerous previous studies employ LSTM to extract spatiotemporal features at various scales from audio, video, and text clips to obtain crucial temporal information for a task involving depression recognition.
@@ -79,18 +78,11 @@ More importantly, it recognizes the significance of intra- and inter-modal featu
 
 In recent years, hybrid models attract considerable attention in research employing audiovisual data for depression recognition.
 Specifically, the combination modules of the DCNN and DNN, as well as CNN and transformer.
-\emph{(1) The combination modules of DCNN and DNN:}
-Yang et al.~\cite{Yang2017} propose a multi-modal fusion framework composed of DCNN and DNN models. This architecture takes into account streams of audio, video, and text. For each modality, handcrafted feature descriptors are fed into a DCNN in order for it to learn high-level global features with compact dynamic information.
+In the combination modules of DCNN and DNN, handcrafted feature descriptors are fed into a DCNN in order for it to learn high-level global features with compact dynamic information.
 A DNN is then given the learned features to forecast the scale scores. For multi-modal fusion, the estimated scale scores from the three modalities are integrated into a DNN to obtain the final scale score.
-In the meantime, ~\cite{Yang2017a} presents a hybrid depression recognition system based on audiovisual and textual descriptors.
-The framework initially classifies depressed participants and healthy controls using DCNN and DNN.
-In the studies ~\cite{yang2018integrating,yang2017dcnn}, Yang's approach is also utilized to predict the severity of depression, with promising results.
-\emph{(2) The combination modules of CNN and transformer:}
-The transformer model is a relatively new network architecture
-based on the attention mechanism, dispensing with recurrence and convolutions entirely.
-The attention mechanism will calculate the correlation between any two words in the sequence iteratively, allowing the dependency between two words to be captured regardless of how far apart they are, so fundamentally resolving the challenge of establishing long-term dependency.
-The current study uses CNN and a transformer to analyze audio-video and text data.
-For modeling audio video, scholars used CNNs to perform convolutions over the time dimension for the participants.
+The framework initially classifies depressed participants and healthy controls using DCNN and DNN~\cite{Yang2017a,Yang2017}.
+In the studies ~\cite{yang2018integrating,yang2017dcnn}, it is also utilized to predict the severity of depression, with promising results.
+In the combined module of CNN and transformer, for modeling audio video, scholars used CNNs to perform convolutions over the time dimension for the participants.
 Moreover, for text embedding, BERT text features are extracted using a transformer.
 The features from both models are concatenated and passed to a feedforward model that predicts whether an individual is depressed.
 For example, Lam et al.~\cite{lam2019context} propose a novel method that incorporates a
@@ -152,7 +144,7 @@ Yin et al.~\cite{2019A}& E-DAIC & LSTM  & ATV  & - & 5.50  & -  \\ \hline
 \end{threeparttable}}
 		\begin{tablenotes}
 			\footnotesize
-			\item Results of the experiment include features from audio(A), text(T) and 
+			\item Results of the experiment include features from audio(A), text(T) and
 			\item video(V),
 			 Partial Least Square (PLS),
 			 Stochastic Gradient Descent (SGD),
@@ -165,20 +157,25 @@ Yin et al.~\cite{2019A}& E-DAIC & LSTM  & ATV  & - & 5.50  & -  \\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Table \ref{tab9} summarizes the results of the experiments on the detection of depression based on multi-modal data, including the source and name of the method, the dataset used and the evaluation criteria of the experimental results, which includes classification metrics: F1 Score, Precision, Recall, and regression metrics of depression severity by depression scale: mean absolute error (MAE), root mean square error (RMSE).
 %Most studies have multiple evaluation metric for experimental results. For multiple classification metric, we choose the highest F1 score for presentation.
-We review the effectiveness of the approaches examined in Tabel~\ref{tab9} to provide greater insight into the  multi-modal auxiliary depression diagnosis methods' performance.
-The experimental metrics (\%) are taken directly from the related source articles to conduct a fair comparison.
-For articles with multiple experimental results we choose the one with the highest F1 score for presentation.
-Comparing different methods using the same dataset, the following list of observations can be summed up:
+%We review the effectiveness of the approaches examined in Tabel~\ref{tab9} to provide greater insight into the  multi-modal auxiliary depression diagnosis methods' performance.
+%The experimental metrics (\%) are taken directly from the related source articles to conduct a fair comparison.
+%Comparing different methods using the same dataset, the following list of observations can be summed up:
+
+%Table~\ref{tab9} overviews the multi-modal auxiliary depression diagnosis techniques' performance comparisons.
+%From the table we obtain the following four observations:
+
+The performance of multi-modal auxiliary depression diagnosis approaches is presented in Table~\ref{tab9}.
+By comparing the performance of several approaches on the same dataset, we obtain the following four observations: 
 
 (1) In general, the more different modality data types are combined, the better the experimental results are.
 For example, combining audio, video, and text data can have better results than combining two-modality data or single-modality data.
 The data of different modes can balance each modality data's shortcomings and increase the diversity of extracted features, which can choose more effective features to predict depression.
 
 (2) SVR achieves better results on the AVEC 2013/2014 dataset than other traditional machine learning-based methods.
-It is a vital application branch of SVM, which is to find a regression plane and make all the data of a set closest to the plane.
-An epsilon-SVR with intersection kernel trained using Local Gabor Binary Pattern Three Orthogonal Planes features have been employed for the video modality.
-As implemented in Waikato Environment for Knowledge Analysis, SVR with linear kernel and Sequential Minimal Optimization training is used for the audio baseline. The feature set consists of Low-level descriptors related to energy, spectral, voicing, etc.
-Finally, to create the audio-visual baseline, predictions from both audio and video baselines are obtained by taking the mean value for audio and video.
+%It is a vital application branch of SVM, which is to find a regression plane and make all the data of a set closest to the plane.
+%An epsilon-SVR with intersection kernel trained using Local Gabor Binary Pattern Three Orthogonal Planes features have been employed for the video modality.
+%As implemented in Waikato Environment for Knowledge Analysis, SVR with linear kernel and Sequential Minimal Optimization training is used for the audio baseline. The feature set consists of Low-level descriptors related to energy, spectral, voicing, etc.
+%Finally, to create the audio-visual baseline, predictions from both audio and video baselines are obtained by taking the mean value for audio and video.
 Valstar et al. ~\cite{10.1145/2661806.2661807} believe that the good results of depression recognition may be attributed to the following reasons:
 Firstly, the Local Gabor Binary Pattern Three Orthogonjal Planes features have been shown before to outperform other descriptors for human behavior analysis.
 Secondly, using an average dimensional affect label over multiple subjective ratings should remove some subjectivity in the interpretation of the affective behavior and remove rater errors caused by cognitive workload effects such as fatigue.
@@ -199,11 +196,14 @@ The result shows that the proposed approach performs significantly better than t
 \subsection{Others}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Most of the data of other modes in the auxiliary depression diagnosis use single-mode data, but a few studies combine data from multiple modes for prediction.
-Each type of brain imaging can reflect the brain of patients with depression. For example, sMRI can clearly display the anatomical structure of the brain with high spatial resolution and reflect the internal structure of the brain, while fMRI can detect the changes of cerebral blood oxygen-dependent level signals and can reflect the active state of brain neural regions.
-Therefore, Mousavian et al.~\cite{mousavian2021depression} combine the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
-Besides, several other modal fusions have also attracted extensive attention from researchers.
+%Most of the data of other modes in the auxiliary depression diagnosis use single-mode data, but a few studies combine data from multiple modes for prediction.
+%Each type of brain imaging can reflect the brain of patients with depression. For example, sMRI can clearly display the anatomical structure of the brain with high spatial resolution and reflect the internal structure of the brain, while fMRI can detect the changes of cerebral blood oxygen-dependent level signals and can reflect the active state of brain neural regions.
+%%Therefore, Mousavian et al.~\cite{mousavian2021depression} combine the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
+%Besides, several other modal fusions have also attracted extensive attention from researchers.
+
+A few studies have concentrated on other modal fusions in addition to the combination of audiovisual and text data.
 For example,
+Mousavian et al.~\cite{mousavian2021depression} combine the similarity of spatial cubes of sMRI and fMRI data, extract features from them and input them into a unified machine learning classifier framework to detect depression.
 Zhang et al.~\cite{zhang2019multimodal} explore from physiological and behavioral perspectives simultaneously and fuse pervasive EEG and speech signals to make the detection of depression more objective, effective, and convenient.
 Jing et al. built a supervised regression model based on individual language and natural gait data to predict depression and anxiety in patients.
 Their results could be the basis of both applications and future studies on multi-source data fusion in depression analysis.
