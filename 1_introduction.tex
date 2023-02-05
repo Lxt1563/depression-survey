@@ -18,9 +18,10 @@ Worse still, patients with severe symptoms have thoughts of self-harm or suicide
 It is estimated that nearly 70\% of depressed patients have had suicidal thoughts, and over 50\% have self-harmed\cite{huang2019prevalence}.
 In short, the dangers of depression are staggering.
 
-To alleviate the damage caused by depression, a timely and effective diagnosis is essential. However, there are three main challenges in the clinical diagnosis of depression:
-(1) \emph{Objective indicators insufficient:}
-Unlike other physiological diseases, there are no objective and precise markers to assess depression, such as biochemical test indicators, physiological data, or medical imaging.
+%To alleviate the damage caused by depression, a timely and effective diagnosis is essential. However, there are three main challenges in the clinical diagnosis of depression:
+To alleviate the damage caused by depression, an effective diagnosis is essential. However, there are three main challenges in the clinical diagnosis of depression:
+(1) \emph{Insufficient objective indicators:}
+Unlike other physiological diseases, there are no objective and precise biomarkers to assess depression, such as biochemical test indicators, physiological data, or medical imaging.
 Clinicians draw conclusions based on the clinical diagnostic criteria, their professional experience, and the patient's clinical presentation~\cite{faust1988expert}.
 However, many patients purposely hide their actual illness while refusing to participate in treatment, which leads to skewed diagnostic outcomes.
 (2) %Serious shortage of medical resources. At present, there is a serious shortage of medical professionals and medical resources for the diagnosis and treatment of depression. In particular, in low- and middle-income countries, up to 75\% of patients do not receive timely diagnosis and treatment. In addition, face-to-face psychiatric consultations are time-consuming and inefficient, further exacerbating the shortage of resources for psychiatric treatment~\cite{cheng2022addressing,butryn2017shortage}.
@@ -29,8 +30,8 @@ There is a severe shortage of medical professionals and medical resources for
 diagnosing and treating depression. Up to 75\% of patients do not obtain early diagnosis and treatment, especially in low-income and middle-income countries~\cite{baidu_seg}.
 Additionally, ineffective and time-consuming face-to-face consultations with psychiatrists add to the lack of resources for psychiatric care~\cite{cheng2022addressing,butryn2017shortage}.
 (3) \emph{Social discrimination:}
-Because the general public has low awareness of depression, there is an underlying resistance to or avoidance of mental illness.
-Given this, early signs of depression may be dismissed or disregarded, losing the ideal window for treatment, which will make the condition worse and make therapy more challenging~\cite{finch2000perceived,lauber2005recommendations,angermeyer2011biogenetic,pescosolido2013backbone}.
+Because the general public has low awareness of depression, there is an underlying resistance or avoidance of mental illness.
+Given this, early signs of depression may be ignored, losing the ideal window for treatment, which will make the condition worse and make therapy more challenging~\cite{finch2000perceived,lauber2005recommendations,angermeyer2011biogenetic,pescosolido2013backbone}.
 %To alleviate the damage caused by depression, timely and effective diagnosis is essential.
 %However, there are four main challenges in the clinical diagnosis of depression:
 %(1) Lack of valid and accurate objective indicators. In contrast to other physiological disorders, there are no objective and specific biochemical indicators, physiological signal data, or medical imaging to diagnose and quantify depression. Clinicians can only diagnose depression by interviewing patients, and at the same time, some patients do not cooperate with the diagnosis and deliberately conceal their true state, resulting in biased or misdiagnosed findings.
@@ -71,7 +72,7 @@ Given this, early signs of depression may be dismissed or disregarded, losing th
 
 
 %To address the difficulty of clinical diagnosis of depression, in recent years, researchers have proposed massive machine learning approaches. With the help of machine learning, researchers extract effective features from depression patient data automatically, and then tap the intrinsic connection between depression clinical symptoms and patients' physiological signals, which has become an important direction for auxiliary diagnosis of  depression
-To address the difficulty of clinical diagnosis of depression, in recent years, researchers propose massive machine learning approaches.
+To address the difficulty of clinical diagnosis of depression, researchers propose massive machine learning approaches in recent years.
 With the help of machine learning, researchers extract practical features from depression data automatically and tap the intrinsic connection between depression clinical symptoms and physiological signals, which has become an essential direction for auxiliary depression diagnosis~\cite{luo2016big}.
 The following advantages exist for machine learning-based auxiliary depression diagnosis:
 (1) \emph{High efficiency:} by using computer technology to analyze the physiological signals of depressed patients and create objective diagnostic indicators, clinical diagnosis can make much more quickly and effectively.
@@ -79,14 +80,13 @@ The following advantages exist for machine learning-based auxiliary depression d
 Moreover, it lessens the difficulties of diagnosing and treating depression owing to patient resistance.
 
 
-
-In the previous period, there were many machine learning methods for auxiliary depression diagnosis, and they achieved better performance.
+In the early stage of the studies, there were many traditional machine learning methods for better performance.
 With the development of deep learning techniques, several new methods gradually emerged, and some breakthroughs have been made.
 Despite the rapid evolution in this field, there still needs to be a systematic study to review and discuss existing progress.
 To fill this gap, we conduct a thorough analysis of recent auxiliary depression diagnosis studies about the use of machine learning on data modality.
 Next, the research methodology and machine learning procedures in auxiliary depression diagnosis
 are outlined, and finally, the research directions and challenges for the future are presented.
-As shown in Fig~\ref{Taxonomy}, we focus on the progress of the methods and potential research directions in five data modalities:~\emph{electrophysiological
+As shown in Fig\ref{Taxonomy}, we focus on the progress of the methods and potential research directions in four data modalities:~\emph{electrophysiological
 signals}~\cite{schnyer2017evaluating,sato2015machine,ramasubbu2016accuracy,vai2020predicting,wei2021functional},  \emph{brain imaging }~\cite{nilsonne2021eeg,shim2019machine,jiang2016predictability,li2016classification,kim2018automatic}, \emph{audiovisual data}~\cite{ma2016depaudionet,zhou2018visually,miao2021automatic},
 \emph{text}~\cite{trotzek2018utilizing,park2015manifestation,yang2020big}, and \emph{mixed data}~\cite{yang2017hybrid}.
 %These commonly used representation forms of physiological signals are illustrated in Fig~\ref{common signals}, and we will give their brief descriptions in the following:
@@ -103,13 +103,13 @@ Fig~\ref{Taxonomy} shows the representation forms of the corresponding physiolog
 
 (1) \emph{Electrophysiological signals:}
 Electrophysiological signals are caused by changes in the membrane potential of individual cells~\cite{widmann2015digital}, which are usually recorded by metal electrodes placed on the body surface.
-Electroencephalography (EEG, tracing brain tissue activities), electrocardiography (ECG, recordings of the cardiac movement), and electrooculogram (EOG, examining the behavior of eyes) are common electrophysiological signals relevant to clinical interest.
+Electroencephalography (EEG), electrocardiography (ECG), and electrooculogram (EOG) are common electrophysiological signals relevant to clinical interest.
 They have wide application in auxiliary depression diagnosis due to their non-invasive detection and simplicity of use.
 
 (2) \emph{Brain imaging:}
 Brain imaging refers to the usually non-invasive or minimally invasive techniques that enable imaging the structure or function of the brain~\cite{lenartowicz2017brain}. It is achieved by scanning the subject's brain with various precision instruments.
 Functional Near-Infrared Spectroscopy (fNIRS), nuclear Magnetic Resonance Imaging (MRI), etc., are its primary data representations.
-Studies have shown that, to some extent, brain imaging can identify different types of depression depending on the affected parts of the brain~\cite{nestler2002neurobiology}.
+Studies have shown that, to some extent, brain imaging can identify different types of depression according to the part of the brain affected~\cite{nestler2002neurobiology}.
 
 %Electrophysiological signals, which mainly include EEG,
 %ECG, EOG, galvanic skin response, and body temperature,
@@ -171,7 +171,7 @@ depressed patients.
 
 
 
-In this paper, we review the current state of research on machine learning in auxiliary depression diagnosis regarding the five data modalities mentioned above.
+In this paper, we review the current state of research on machine learning in auxiliary depression diagnosis regarding the four data modalities mentioned above.
 We focus on two widely used methods in auxiliary depression diagnosis: traditional machine learning and deep learning.
 We summarize the general research process and typical research methods in machine learning and compare the advantages and disadvantages of different methods. Finally, we discuss possible directions for future development in the context of the current development of intelligent computing and big data technologies.
 To the best of our knowledge, this is the first comprehensive survey about auxiliary depression diagnosis on different data modalities, which will provide researchers and clinical psychologists with a better understanding of the use of machine learning in this area.
