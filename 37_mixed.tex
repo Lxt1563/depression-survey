@@ -105,7 +105,7 @@ transformer and deep 1D CNN for acoustic feature modeling.
 \begin{threeparttable}
 \begin{tabular}{c|c|c|c|c|cc}
 \hline
-\textbf{Paper} & \textbf{Dataset} & \textbf{Method}&\textbf{Data} & \textbf{F1 Score} & \textbf{RMSE}  & \textbf{MAE} \\
+\textbf{Paper} & \textbf{Dataset} & \textbf{Methods}&\textbf{Data} & \textbf{F1 Score} & \textbf{RMSE}  & \textbf{MAE} \\
  \hline
 Meng et al.~\cite{meng2013depression} &AVEC2013& PLS  & AV & - & 8.72 & 10.96 \\ \hline
 Kachele et al.~\cite{M2014Fusion} & AVEC2013& SVR & AV & -  & 8.97 & 10.82 \\ \hline
@@ -131,7 +131,7 @@ Alhanai et al.~\cite{al2018detecting}& DAIC-WOZ& LSTM & AT & 77.00 & 6.37 & 5.10
 & & & VT& -  & 5.11 & 3.65 \\
 &  &  & AT & -& 4.64 & 3.65  \\
 & & & AVT & - & 4.14  & 3.07  \\\hline
-Lau et al.~\cite{lau2021improving} & DAIC-WOZ & Bi-LSTM & AT &92.00  &3.95 &3.00\\\hline
+Lau et al.~\cite{lau2021improving} & DAIC-WOZ & Bi-directional LSTM & AT &92.00  &3.95 &3.00\\\hline
 Yang et al.~\cite{yang2017hybrid}  & DAIC-WOZ & DCNN+DNN & AVT &- &5.40 &4.36 \\ \hline
 Yang et al.~\cite{yang2017multimodal} & DAIC-WOZ & DCNN+DNN & AVT & -  & 5.97  & 5.16 \\ \hline
 Yang et al.~\cite{yang2018integrating}  & DAIC-WOZ & DCNN+DNN & AV & 60.00& 6.34  & 5.39 \\ \hline
@@ -149,9 +149,9 @@ Yin et al.~\cite{2019A}& E-DAIC & LSTM  & ATV  & - & 5.50  & -  \\ \hline
 			\item Results of the experiment include features from audio(A), text(T) and
 			\item video(V),
 			 Partial Least Square (PLS),
-			 Stochastic Gradient Descent (SGD),
-			\item  Bi-directional LSTM (Bi-LSTM),
-			 Graph Attention Network(GAN).
+			 Stochastic Gradient Descent (SGD).
+			%\item  Bi-directional LSTM (Bi-LSTM),
+			% Graph Attention Network(GAN).
 		\end{tablenotes}
 \end{table}
 

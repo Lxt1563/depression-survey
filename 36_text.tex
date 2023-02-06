@@ -151,12 +151,11 @@ The above deep learning models have problems such as complex structure or long t
 \label{tab5}
 \renewcommand\arraystretch{1.4}
 \resizebox{1\linewidth}{!}{
-\begin{threeparttable}
-\begin{tabular}{c|cc|c|c}
+%\begin{threeparttable}
+\begin{tabular}{@{}c|c|c|c|c@{}}
 
 \hline
-\multirow{2}{*}{\textbf{Paper}}            & \multicolumn{2}{c|}{\textbf{Data}}                                                                           & \multirow{2}{*}{\textbf{Method}}            & \multirow{2}{*}{\textbf{F1-Score}}                     \\
-                                                                                                       & {\textbf{Media}}                                                                          & {\textbf{Dataset(D+C)}}                                                                                              &                             \\
+\textbf{Paper}  & \textbf{Media}     & \textbf{Dataset(D+C)}            & \textbf{Methods}           & \textbf{F1-Score}                                                                                           \\
 \hline
 %Choudhury et al.~\cite{de2013predicting}                                          & Twitter                                                                        & 476(171+305)                                                                                              & SVM                        & 74.00      & 63.00   & -        & 70.00     & -    \\
 %\hline
@@ -195,11 +194,12 @@ Rao et al.~\cite{rao2020mgl}                                                    
 Rao et al.~\cite{rao2020mgl}                                                     & Reddit           & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                          & CNN                         & 60.00    \\
 \hline
 Sadeque et al.~\cite{ sadeque2017uarizona   }                                    & Reddit                                                                         & \begin{tabular}[c]{@{}c@{}}eRisk2017\end{tabular}                                                                                                                                                                 & SVM+RNN                     & 64.00               \\
-\hline
+% \hline
 %Hu et al.~\cite{hu2021depression}                                                 & Weibo                                                                          & \begin{tabular}[c]{@{}c@{}}Posts56910\\(28455+28455)\end{tabular}                                                                                                                                                                                                                                                   & Bi-LSTM                    & -         & -      & -        & 95.00     & -    \\
-%\hline
+\hline
 \end{tabular}
-\end{threeparttable}}
+%\end{threeparttable}}
+}
 		%\begin{tablenotes}
 			%\footnotesize
 			%\item The social network text data used in the research is usually analyzed 
