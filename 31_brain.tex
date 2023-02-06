@@ -4,10 +4,10 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Auxiliary depression diagnosis method based on Brain Imaging}
+\section{Brain Imaging}
 \label{sec_approach}
 
-The structure and function of the brain are abnormal in depressed patients.
+The brain sturcture and function of people with depression is abnormal.
 To a certain extent, they inhibit patients' thinking speed, seriously causing cognitive damage and even mental illness.
 In addition, depression can atrophy the hippocampus of the patient's brain, change neurotransmitters, and cause chronic inflammation, leading to memory loss, slow thinking, and fatigue, which dramatically reduces the energy level and motivation of the patient and makes it difficult for them to socialize.
 These findings have found a breakthrough point for the auxiliary diagnosis of depression.
@@ -22,7 +22,7 @@ As shown in Fig \ref{fNIRS}(a), brain images are acquired by scanning the subjec
 Brain imaging refers to techniques that employ an interaction between brain tissue and various forms of energy (e.g., electromagnetic or particle radiation) rather than the physical incision to capture positional data about the structure and function of the brain.
 Brain images can be divided into MRI, fNIRS, Computed Tomography, Positron Emission Computed Tomography, Magnetic Resonance Spectroscopy, etc., according to different imaging technologies.
 These brain images have several advantages, such as safety, painlessness, and non-invasive, which are essential for a depression diagnosis.
-As other types of images are used too infrequently, we mainly focus on MRI and fNIRS-based auxiliary diagnosis of depression.
+As other types of images are rarely used, we mainly focus on MRI and fNIRS-based auxiliary diagnosis of depression.
 
 
 \begin{figure}[tbp]
@@ -94,10 +94,10 @@ In addition, Resting State fMRI images can reveal low-frequency blood oxygenatio
 %Because deep learning has the advantages of reducing human intervention, deep analysis and feature extraction, selection and classification in the same optimal deep structure. Gui trained a Deep Learning Network (DLN) model with fMRI data of listening to positive and negative music~\cite{2019The1}.
 
 
-\subsubsection{fMRI auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Traditional machine learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A part of traditional methods based on fMRI usually uses Generalize Linear Model to extract linear features and then apply statistical tests for analysis.
+A part of traditional methods based on fMRI usually use Generalize Linear Model to extract linear features and then apply statistical tests for analysis.
 However, more nonlinear features such as Functional Connectivity, Degree Centrality, Regional Homogeneity, and Amplitude of Low-frequency Fluctuation are used for analysis.
 
 \emph{Functional Cnnectivity} refers to statistical dependence between time series of electro-physiological activity and oxygenated blood levels in distinct brain regions.
@@ -119,7 +119,7 @@ However, the common problem based on traditional machine learning methods is tha
 Therefore, many researchers choose the least absolute shrink and selection operator to capture the key features and further optimize them.
 They use the group, sparse group, and standard least absolute shrink and selection operator for analysis~\cite{2015Toward}~\cite{ 2020Generalizable }.
 
-\subsubsection{fMRI auxiliary depression diagnosis based on deep learning}
+\subsubsection{Deep learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Although the traditional machine learning methods still occupy the mainstream research position in the medical image field, it need to manually extract features, which requires researchers to have some prior knowledge in related fields, and there is also the problem of removing redundant features, making the feature extraction process complex and burdensome.
 %Deep learning technology provides more choices for medical image analysis by building neural networks from the main learning features.
@@ -140,10 +140,10 @@ Finally, the softmax layer provides the classification output following the full
 This type of network ensures sufficient depth to assure good nonlinearity and sends mistakes to each layer to better train the entire network.
 
 
-However, MRI data is 3 Dimensions (3D) or 4 Dimensions, which means that it is high-dimensional, including both spatial and time information.
+However, MRI data are 3 dimensional (3D) or 4 dimensional, which means that it is high-dimensional, including both spatial and time information.
 Mousavian et al.~\cite {mousavian2020depression} use 3D-CNN to capture 3D spatial information or Spatial-temporal CNN to extract spatial and temporal information simultaneously.
 In addition, to understand the brain changes over time, LSTM is also trained to capture the changes of Resting State fMRI over time.
-Mousavian et al.~\cite{mousavian2020depression} also use a hybrid model combining CNN and LSTM to capture data's spatial and temporal information.
+Mousavian et al.~\cite{mousavian2020depression} also use a hybrid model combining CNN and LSTM to capture the spatial and temporal information of the data.
 CNN works for retrieving spatial features of the data and extracting the active areas, and LSTM retrieves temporal features and models the blood flow.
 
 
@@ -155,14 +155,14 @@ GCNs enable comprehensive mapping of brain functional connectivity patterns to d
 activities.
 In order to acquire usable representations of brain FC networks, spectral graph convolutional neural networks have been utilized to capture topological information explicitly~\cite{yao2019triplet,ktena2018metric,2020Identifying}.
 However, they typically employ a fixed group-level rather than a subject-level adjacent matrix to represent the interactions between various brain regions, failing to capture the time-varying information in fMRI data.
-To this end, Yao et al.~\cite{yao2020temporal} propose a Temporal-Adaptive GCN framework to extract both static and dynamic information of brain FC patterns for depression identification.
+Yao et al.~\cite{yao2020temporal} propose a Temporal-Adaptive GCN framework to extract both static and dynamic information of brain FC patterns for depression identification.
 Precisely, they extract rs-fMRI time-series signals from each region of interest and divide time-series data into numerous overlapped blocks using fixed-size sliding windows.
 An adaptive graph convolutional layer is subsequently used for each block to generate a flexible connectivity matrix, which can help model multi-level semantic information within the whole time series. Following that, convolution operations on each region of interest along different blocks capture the temporal dynamics of the complete time series. Finally, for depression classification, a fully linked layer is used, followed by a softmax function.
 The results demonstrate that the network is highly effective in capturing dynamic FC alteration and learning valid graph representations.
 
 The transformer's strong ability in long-range dependencies modeling makes it suitable
 to capture relations between distant brain regions in fMRI volume.
-To this end, wang et al.~\cite{wang2022function} propose a transformer-based functional MRI representation learning framework to encode global spatial information of FCNs for a depression diagnosis.
+Wang et al.~\cite{wang2022function} propose a transformer-based functional MRI representation learning framework to encode global spatial information of FCNs for a depression diagnosis.
 Additionally, Dai et al.~\cite{dai2022brainformer} propose a classification model based on a single fMRI volume
 working in an ROI-labeling-free manner.
 Compared with existing methods that rely on FC, this method jointly captures local details inside brain regions and the global relationship between brain regions from single fMRI volumes and exhibits stronger capability in depression classification.
@@ -171,7 +171,7 @@ Compared with existing methods that rely on FC, this method jointly captures loc
 
 
 
-The lack of training samples is a severe problem in applying deep learning methods in medical imaging. Therefore, some researchers use GAN to solve the problem of overfitting, but the effect is not ideal, and further research is needed~\cite {2020Functional}.
+The lack of training samples is a severe problem in applying deep learning methods in medical imaging. Therefore, some researchers use GAN to solve the problem of overfitting, but the results are not satisfactory, and requires further research~\cite {2020Functional}.
 
 %\subsection{Others}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,7 +213,7 @@ fNIRS uses the scattering of blood to near-infrared light to obtain the changes 
 In recent years, a significant amount of research on auxiliary depression diagnosis based on fNIRS has been widely performed.
 These studies have mainly used both traditional machine learning and deep learning approaches.
 
-\subsubsection{fNIRS auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Traditional machine learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The research on fNIRS-based auxiliary depression diagnosis is still mainly based on traditional machine learning algorithms~\cite{2019Machine}~\cite{2017Machine}, which heavily rely on manually extracted features.
 Further, they explored the characteristics of abnormal fNIRS indicators in depressed patients mainly from time-frequency domain feature calculation and spatial brain network analysis.
@@ -253,7 +253,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \cline{2-5}
                        & Zeng et al. ~\cite{2014Unsupervised}                                             & 53 (24+29)                                                                                                                 & Unsupervised ML                                                                                                                                        & 92.50                                                                                                                                \\
                        \cline{2-5}
-                       & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 & \makecell[c]{sLASSO\\ gLASSO  \\ sgLASSO  \\ SVM}                                                              & \makecell[c]{83.82  \\ 91.95 \\ 90.08   \\ 94.68}                                              \\
+                       & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 & \makecell[c]{standard LASSO\\ group LASSO  \\ sparse group LASSO  \\ SVM}                                                              & \makecell[c]{83.82  \\ 91.95 \\ 90.08   \\ 94.68}                                              \\
                       \cline{2-5}
                        & Bhaumik~\cite{2016Multivariate}                                                   & 67 (38+29)                                                                                                                 & SVM                                                                                                                                                    & 76.10                                                                                                                                \\
 \cline{2-5}
@@ -263,7 +263,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \cline{2-5}
                        & Gui et al. ~\cite{2019The1}                                                      & 39 (19+20)                                                                                                                 & DNN                                                                                                                                                    & 94.68                                                                                                                                \\
                        \cline{2-5}
-                       & Mousavian et al.~\cite{mousavian2020depression}                                   &  279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ ST-CNN \\ 3D CNN   \\ 3D VGG-16  \\ FCN \\ FCN\_woT-test  \\ FCN\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
+                       & Mousavian et al.~\cite{mousavian2020depression}                                   &  279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ Spatial-temporal-CNN \\ 3D CNN   \\ 3D VGG-16  \\ FCN \\ FCN\_woT-test  \\ FCN\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
                        \cline{2-5}
                        & Mousavian et al.~\cite{9680063}                                  & 279 (38+241)                                                                                             & Cubes-Atlas                                                                                                                                            & 93.00                                                                                                                                \\
 \cline{2-5}
@@ -294,20 +294,19 @@ Furthermore, features such as the characteristic path length and betweenness cen
            \begin{tablenotes}
 			     \footnotesize
 				 \item Least Absolute Shrinkage and Selection Operator(LASSO),
-			    standard
-			    \item Least Absolute Shrinkage and Selection Operator (sLASSO),
-				group
-				\item Least Absolute Shrinkage and Selection Operator (gLASSO),
-				sparse
-				\item group Least Absolute Shrinkage and Selection Operator (sgLASSO),
-				\item Multivariate Pattern Analysis (MVPA),
-				Spatial-temporal CNN (ST-CNN),
-				\item Functional Connectivity Network (FCN),
-				Dynamic Functional Connectivity
-				\item  (DFC),
-				Functional Network Connectivity (FNC),
-				Graph Convolutional
-				\item Networks (GCN),
+			    %standard
+			    %\item Least Absolute Shrinkage and Selection Operator (sLASSO),
+				%group
+				%\item Least Absolute Shrinkage and Selection Operator (gLASSO),
+				%sparse
+				%\item group Least Absolute Shrinkage and Selection Operator (sgLASSO),
+				Multivariate 
+				\item Pattern Analysis (MVPA),
+				%Spatial-temporal CNN (ST-CNN),
+				Functional Connectivity Network (FCN),
+				\item  Dynamic Functional Connectivity (DFC),
+				Functional Network
+				\item  Connectivity (FNC),
 				eXtreme Gradient Boosting (XGBoost).
            \end{tablenotes}
 \end{table}
@@ -319,22 +318,22 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \fi
 
 
-\subsubsection{fNIRS auxiliary depression diagnosis based on deep learning}
+\subsubsection{Deep learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The main deep learning methods for studying fNIRS-based auxiliary depression diagnosis are CNN, Graph Neural Network (GNN), and RNN.
 
-The emergence of AlexNet confirmed the dominance of deep learning in computer vision and provided more possibilities for applying deep learning methods in fNIRS auxiliary depression diagnosis~\cite{2022Deep}.
+The emergence of AlexNet~\cite{10.1145/3065386} confirmed the dominance of deep learning in computer vision and provided more possibilities for applying deep learning methods in fNIRS auxiliary depression diagnosis~\cite{2022Deep}.
 This CNN method recognizes the original blood data, manually extracting HbO, HbR, HbT features, and channel correlation as inputs~\cite{2021Depression}.
-However, their study has two shortcomings:
+However, their studies have two shortcoming:
 the effects of temporal data and spatial data are not compared or analyzed respectively,
 and temporal and spatial data are not combined with working together.
 
 
-To this end, some studies compare temporal features and Functional Connectivity through statistical analysis and then design the GNN classification of the network that takes both data as input.
+Some studies compare temporal features and Functional Connectivity through statistical analysis and then design the GNN classification of the network that takes both data as input.
 Yu et al.~\cite{yu2022gnn} present a GNN-based technique for automatic depression recognition that integrates both temporal and spatial characteristics of fNIRS data.
 As temporal data, fundamental statistical metrics of each channel are retrieved, and channel connectivity (coherence and correlation) is estimated as spatial features.
 For categorization, they view each subject's data as a graph with temporal characteristics as node characteristics and geographical characteristics as edge weights.
-Compared to conventional machine-learning algorithms, GNN-based methods achieved the best depression recognition performance, as demonstrated by experimental data.
+Compared to conventional machine-learning algorithms, GNN-based methods achieved the best depression recognition performance, as demonstrated by experimental results.
 
 
 The RNN method gives the artificial neural network a robust time-series signal classification and prediction ability, so it has a wide range of applications in natural language processing. Because fNIRS data has significant time series characteristics, the method based on RNN is gradually applied to this field. Among them, LSTM is the most representative. It can solve the long-term dependence problem of general RNN and can effectively analyze and predict the time series signals in fNIRS data~\cite{2021fNIRS}.
@@ -358,14 +357,14 @@ In addition, Ma et al.~\cite{2020DISTINGUISHING } propose a machine-learning cla
 %From the table we obtain the following three observations:
 
 The performance of brain imaging auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab3}.
-By comparing the performance of several approaches on the same dataset, we obtain the following three observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
 
 (1) The general linear model is the mainstream analysis method of fMRI images, based on its excellent ability to feature extraction, it has also achieved better results than the traditional linear feature extraction methods in fNIRS.
 
 (2) When analyzing fMRI, the CNN-based model has a more vital ability to identify the characteristics of depression than the functional connectivity network model.
 Deep learning methods have been applied to find spatial, temporal relationships between voxels of a stationary state network. Networks like CNN are known to be the best method for finding spatial features.
 
-(3) The lack of training samples is a serious problem when the deep learning method is applied to medical image analysis. Although the GAN model has not achieved good results, such a framework promises wide utility and great potential in neuroimaging biomarker identification.
+(3) The lack of training samples is a serious problem when the deep learning method is applied to medical image analysis. Although the GAN-based models have not achieved good results, such a framework promises wide utility and great potential in neuroimaging biomarker identification.
 
 %including the source and name of the method, the input brain imaging modality, the data set used (- represents that the data used were collected by ourselves), and the evaluation criteria of the experimental results, including Accuracy, FScore Precision, Recall, Sensitivity, Specificity, and Area Under Curve (AUC).
 

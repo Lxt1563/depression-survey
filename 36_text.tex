@@ -4,12 +4,12 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Auxiliary depression diagnosis method based on Text}
+\section{Text}
 \label{sec_approach}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Although depression has become one of human beings' most concerning psychological problems, due to the limited public awareness of depression, many people do not pay attention to or even reject mental and psychological diseases. They will hide their true inner feelings, resulting in long-term repression of negative emotions, and can not find a suitable way to vent.
-The rapid development of Internet technology has built a suitable platform for people to vent their psychological feelings. 
+%Although depression has become one of human beings' most concerning psychological problems, due to the limited public awareness of depression, many people do not pay attention to or even reject mental and psychological diseases. They will hide their true inner feelings, resulting in long-term repression of negative emotions, and can not find a suitable way to vent.
+%The rapid development of Internet technology has built a suitable platform for people to vent their psychological feelings. 
 
 In recent years, the popularity of Internet technology has made social media such as Microblog, Twitter, and Facebook an essential platform for people to express their psychological emotions.
 Studies have shown that people tend to express their true emotions online more than in other ways, and the development of social networks provides people with a more convenient way to communicate and a new window for people to vent their emotions~\cite{chancellor2020methods}.
@@ -18,7 +18,7 @@ Several researchers have studied data from users on social network platforms and
 For example, patients suffering from depression use first-person pronouns, past tense verbs more frequently, and adjectives with derogatory meanings~\cite{rude2004language,nadeem2016identifying}.
 
 %and the use of emotion words, negative emotion words, cognitive mechanism words, and connectives significantly increased over time in depressed patients [].
-The study above compares language use and social behavior characteristics of depressed and normal individuals under various social networking platforms. It confirms a strong correlation between social networking activity records and users' depressive status.
+%The study above compares language use and social behavior characteristics of depressed and normal individuals under various social networking platforms. It confirms a strong correlation between social networking activity records and users' depressive status.
 Therefore, the development of social networks also provides a new way to detect depressed users: through the current computer technology to analyze the user's social network data to detect the user's depression status~\cite{de2013predicting,magami2020automatic}.
 
 %\subsubsection{Facial expressions}
@@ -47,7 +47,7 @@ Therefore, the development of social networks also provides a new way to detect 
 %This meeting includes ten benchmarking labs report results of their year-long activities in overview talks and lab sessions, and eRisk is one of the tasks.
 %eRisk pilot task focuses on automatically detecting depression as early as possible from a user’s posts to Reddit, which promotes the auxiliary diagnosis of depression based on social media text.
 
-\subsection{Text auxiliary depression diagnosis based on traditional machine learning}
+\subsection{Traditional machine learning methods}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -100,22 +100,21 @@ Finally, many other methods also achieved good results in auxiliary depression d
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Text auxiliary depression diagnosis based on deep learning}
+\subsection{Deep learning methods}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Depression is closely related to emotion, so many methods of emotion analysis are used for depression analysis based on social network texts.
 In the method of emotion analysis, context connection is essential.
 Similar words usually have different meanings in different contexts.
-Since deep learning technology can automatically construct text features, people have proposed  CNN, RNN, and other models to solve the problem of depression analysis based on social media text~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
+Since deep learning technology can automatically construct text features, people have proposed CNN, RNN, and hybrid models to solve the problem of depression analysis based on social media text~\cite{yates2017depression,shen2017depression,orabi2018deep,ive2018hierarchical}.
 
-At present, DNN is the basis of many modern artificial intelligence applications.
-It has shown breakthrough achievements in speech recognition and image recognition tasks.
-The application of DNN in the field of depression analysis based on the social network is also increasing.
+Deep Neural Network (DNN) is the basis of many modern artificial intelligence applications and has shown advantage in semantic inference tasks.
+%It has shown breakthrough achievements in speech recognition and image recognition tasks.
+%The application of DNN in the field of depression analysis based on the social network is also increasing.
 Mariñelarena et al.~\cite{ marinelarena2017predicting } use the DNN method to detect depression and the optimization function provided by the open-source library to combine momentum learning and rate annealing, which are two important parameters during training, to improve the model performance.
 Shen et al.~\cite{shen2018cross} propose a cross-domain DNN model with feature adaptive transformation and combination strategy to transfer relevant information to a heterogeneous domain, using sufficient Twitter data as the source domain and enhancing detection in some other target domain (e.g., Weibo).
 
-CNN is a representative algorithm of deep learning.
 With its powerful learning ability, CNN has been widely used in various fields, including text analysis in social networks.
 Yates et al.~\cite{yates2017depression} propose a general neural network architecture, which is used to combine posts into a representation of user activities for classification.
 This architecture takes one or more posts as the input, uses a convolution layer to process posts to identify the features in the sliding text window, combines the identified features into vector representations of user activities, and uses a series of dense layers to classify the combined vector representations.
@@ -201,12 +200,12 @@ Sadeque et al.~\cite{ sadeque2017uarizona   }                                   
 %\hline
 \end{tabular}
 \end{threeparttable}}
-		\begin{tablenotes}
-			\footnotesize
-			\item The social network text data used in the research is usually analyzed 
-			\item by users, but some of the research is based on posts, which we 
-			\item have noted in the table.
-		\end{tablenotes}
+		%\begin{tablenotes}
+			%\footnotesize
+			%\item The social network text data used in the research is usually analyzed 
+			%\item by users, but some of the research is based on posts, which we 
+			%\item have noted in the table.
+		%\end{tablenotes}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,12 +216,13 @@ Sadeque et al.~\cite{ sadeque2017uarizona   }                                   
 %Table\ref{tab5} summarizes the experimental results of the social platform text-based auxiliary depression diagnosis, including the source and name of the method, the type of data used and the source of the dataset, and the evaluation criteria of the experimental results including Precision, Recall, F1 Score, Accuracy, and AUC.
 %Text-based depression detection mostly uses social network text. In machine learning methods, using related methods such as logistic regression and Bayes can achieve better results than using SVM alone, and with the rise of deep learning algorithms, better results than the above traditional machine learning are usually achieved.
 %Based on the research on public datasets, we can draw the following conclusions:
-We evaluate the auxiliary depression diagnosis method using the social media text.
-We review the effectiveness of the approaches examined in Tabel~\ref{tab5} to provide greater insight into social media text auxiliary depression diagnosis methods' performance.
-The experimental classification metrics, including Precision, Recall, F1 Score, Accuracy, and AUC, which are taken directly from the related source articles to conduct a fair comparison.
-For articles with multiple experimental results, we choose the one with the highest F1 score for presentation.
-Comparing different methods using the same dataset, the following list of observations can be summed up:
-
+%We evaluate the auxiliary depression diagnosis method using the social media text.
+%We review the effectiveness of the approaches examined in Tabel~\ref{tab5} to provide greater insight into social media text auxiliary depression diagnosis methods' performance.
+%The experimental classification metrics, including Precision, Recall, F1 Score, Accuracy, and AUC, which are taken directly from the related source articles to conduct a fair comparison.
+%For articles with multiple experimental results, we choose the one with the highest F1 score for presentation.
+%Comparing different methods using the same dataset, the following list of observations can be summed up:
+The performance of text auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab5}.
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations:
 
 (1) The traditional machine learning methods based on Naïve Bayes and Logistic Regression have achieved similar results. Still, the CNN-based deep learning method is better than the two traditional machine learning methods, and Orabi et al.~\cite{orabi2018deep} also used the RNN-based model for depression analysis on the CLPsych2015 dataset.
 The experimental results show that the CNN-based model performs better than the RNN.

@@ -4,7 +4,7 @@
     \input{tnnls_prefix}
 \fi
 
-\section{Auxiliary depression diagnosis method based on Audiovisual data}
+\section{Audiovisual data}
 \label{sec_approach}
 
 In recent years, researchers have increasingly focused on using behavioral signals to auxiliary depression diagnosis.
@@ -13,8 +13,9 @@ Many researchers have found that auxiliary depression diagnosis can be achieved 
 The auxiliary depression diagnosis based on behavioral signals is usually studied by audio and video data.
 In addition, video data mainly contain facial expression and gait information, and audio data refers to the participants' speech data.
 
-Facial expression and speech based depression data are usually collected from face-to-face interactive or non-interactive human-computer interviews, and video and audio data of the interview process are obtained for analysis.
-Gait based depression data are usually collected from subjects walking in experimental scenarios, including using sensors or cameras, and then process the data to extract features for analysis.
+%Facial expression and speech based depression data are usually collected from face-to-face interactive or non-interactive human-computer interviews, and video and audio data of the interview process are obtained for analysis.
+%Gait based depression data are usually collected from subjects walking in experimental scenarios, including using sensors or cameras, and then process the data to extract features for analysis.
+
 
 %AVEC is an expression recognition challenge held every year since 2011, jointly organized by Imperial College London, the University of Nottingham, Queen Mary University, the University of Southern California, and the University of Passau, Germany, etc.
 %It is recognized as the top international competition in effective computing.
@@ -43,7 +44,7 @@ Gait based depression data are usually collected from subjects walking in experi
 %	\label{facial}
 %\end{figure}
 
-A person's personality and mood can be seen from his face, and some studies have found that the appearance and temperament of patients with depression are also different from ordinary people.
+A person's personality and mood can be seen from face, and some studies have found that the appearance and temperament of patients with depression are also different from healthy people.
 Zhu et al.~\cite{0Identifying} research team of the institute of psychology of the Chinese Academy of Sciences studies 100 people with mental diseases.
 They ask 100 patients to read neutral articles through a special technology.
 From the research process, these patients are found to look very sad as they frown while reading aloud, the corners of their mouths droop, and a few tears appear in their eyes as if they are crying.
@@ -54,7 +55,7 @@ Therefore, by comparing and analyzing the facial expression data of depressed an
 
 %The results showed that when the severity of patients' symptoms was high, participants made more facial expressions related to contempt and smiled less, and those smiles were more likely to be accompanied by facial actions related to contempt. These results were consistent with the performance of Exchange-Oriented Withdrawal in the "Social Risk Hypothesis" of depression, indicating that patients with depression show more withdrawal in social intercourse. According to this hypothesis, when patients have severe symptoms, they will stay away from others to protect themselves from expected rejection, contempt and social exclusion~\cite{2005Emotion,BYLSMA2008676,2017Facial}.
 
-\subsubsection{Facial expression auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Traditional machine learning methods}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Auxiliary depression diagnosis using traditional machine learning methods relies on feature extraction, so researchers have focused more on extracting more discriminative features.
@@ -96,7 +97,7 @@ Anis et al.~\cite{0Detecting} use the center of gravity coordinates of facial si
 However, traditional machine learning based methods require manual feature design, making obtaining accurate and global information about subtle facial expressions difficult. Some features have high dimensionality and low computational efficiency, which is unfavorable for building an automated auxiliary depression diagnosis system.
 
 
-\subsubsection{Facial expression auxiliary depression diagnosis based on deep learning}
+\subsubsection{Deep learning methods}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -150,7 +151,7 @@ The integrated network enables the fusion of static and dynamic features, thus i
 %From the table we obtain the following three observations:
 
 The performance of facial expression auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab4}.
-By comparing the performance of several approaches on the same dataset, we obtain the following three observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
 
 (1) Traditional machine learning methods' performance and manually extracting features are highly correlated.
 Similar to facial expression recognition, local area features such as eyes and mouth in the video are more critical for a video-based auxiliary depression diagnosis. Extracting features from these areas and combining them with global features can achieve better results.

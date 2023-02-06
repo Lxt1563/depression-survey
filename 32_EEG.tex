@@ -5,7 +5,7 @@
 \fi
 
 %\section{Depression Recognition}
-\section{Auxiliary depression diagnosis methods based on electrophysiological signals}
+\section{Electrophysiological signals}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Depression is a mental illness that accompanies severe mood swings and aberrant brain activity.
@@ -36,7 +36,7 @@ Current research continues to mostly rely on conventional machine learning metho
 In the meantime, some academics experiment with a subset of machine learning known as deep learning algorithms, which has led to significant advances.
 
 
-\subsubsection{EEG auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Traditional machine learning methods}
 
 Feature extraction and classification are the two key components of a traditional machine-learning approach.
 The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis. 
@@ -68,7 +68,7 @@ Moreover, Mahato et al.~\cite{mahato2019electroencephalogram} examine numerous c
 It is shown that, SVM has the highest classification accuracy since it has the greatest distance between the separation hyperplane and the kernel trick, which gives it greater robustness and computational efficiency, resulting in excellent accuracy.
 
 
-\subsubsection{EEG auxiliary depression diagnosis based on deep learning}
+\subsubsection{Deep learning methods}
 %Deep learning has been used more and more in recent years to identify depression using EEG.
 All adopted deep models in EEG auxiliary depression diagnosis studies can be categorized into three main groups, namely CNN models\cite{wan2020hybrideegnet}, LSTM models, and hybrid neural networks\cite{saeedi2021major,qayyum2020hybrid,thoduparambil2020eeg}.
 
@@ -138,7 +138,7 @@ In a recent study, there are two overall strategies for HRV-based auxiliary depr
 
 
 
-\subsubsection{HRV auxiliary depression diagnosis based on traditional machine learning}
+\subsubsection{Traditional machine learning methods}
 
 Traditional machine learning, a mainstream paradigm in HRV auxiliary depression diagnosis, tries to discover depression-related variables and expand the feature set to improve performance.
 Precisely, the feature set consists of time-frequency domain HRV features, and nonlinear features.
@@ -176,7 +176,7 @@ Kang et al. \cite{kuang2017depression} use the bayesian network to recognize dep
 Byun et al.~\cite{byun2019detection} demonstrate the HRV-based recognition using the SVM classifier. Monitoring the changes in linear and nonlinear HRV features for various autonomic nervous system states can facilitate the more objective identification of depression patients.
 
 
-\subsubsection{HRV auxiliary depression diagnosis based on deep learning}
+\subsubsection{Deep learning methods}
 %For HRV auxiliary depression diagnosis based on deep learning, scholars build a deep end-to-end architecture and then push raw signals into deep architecture to let the model learn high-level features.
 %Specifically, they can be subdivided into two categories depending on the model used: CNN and RNN.
 
@@ -308,7 +308,7 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 %From the table we obtain the following four observations:
 
 The performance of electrophysiological signal auxiliary depression diagnosis approaches is presented in Table~\ref{tab_eeg}.
-By comparing the performance of several approaches on the same dataset, we obtain the following four observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following four observations: 
 
 
 
