@@ -23,7 +23,7 @@ Due to the non-invasive detection and easy use of electrophysiological signals, 
 In addition, as other types of signals are employed infrequently, we concentrate on EEG and ECG-based auxiliary depression diagnosis.
 Meanwhile, due to the limited amount of relevant regression tasks, we are just focusing on the classification job.
 %EEG is utilized the most commonly~\cite{liao2017major,bairy2017automated,acharya2018automated}, followed by ECG~\cite{ding2019classifying}.
-%It is noteworthy that ECGs usually have a wide range of applications to diagnose depression by extracting RR interval sequences and measuring heart rate variability (HRV). 
+%It is noteworthy that ECGs usually have a wide range of applications to diagnose depression by extracting RR interval sequences and measuring heart rate variability (HRV).
 
 
 
@@ -39,7 +39,7 @@ In the meantime, some academics experiment with a subset of machine learning kno
 \subsubsection{Traditional machine learning methods}
 
 Feature extraction and classification are the two key components of a traditional machine-learning approach.
-The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis. 
+The derived features from EEG signals can be broadly grouped into two categories: linear analysis and non-linear analysis.
 
 
 
@@ -107,7 +107,7 @@ Thoduparambil et al.\cite{thoduparambil2020eeg} design a hybrid model with input
 CNN and LSTM are used to learn the local characteristics and the EEG signal sequence, respectively.
 %Similarly, Sharma et al. \cite{sharma2021dephnn} also propose a new hybrid neural network based EEG time series.
 Besides, Saeedi et al.~\cite{saeedi2021major} use brain effective connectivity method to convert 1 Dimension (1D) EEG signal into a 2 Dimension (2D) image. They develop a classifier using state-of-the-art deep learning methods (CNN-LSTM) as a novel approach for the automated recognition of depression patients from EEG signals.
-The architecture automatically learn patterns in the constructed image of the EEG signals. 
+The architecture automatically learn patterns in the constructed image of the EEG signals.
 The experiment show that the spatial and temporal characteristics of the EEG
 signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning model can also effectively analyze brain connectivity.
 
@@ -128,7 +128,7 @@ signals are captured by 1DCNN-LSTM. Relying on the results, the deep learning mo
 
 \subsection{ECG}
 
-Physiological variation of the interval between consecutive heartbeats is known as HRV~\cite{appelhans2006heart}. 
+Physiological variation of the interval between consecutive heartbeats is known as HRV~\cite{appelhans2006heart}.
 HRV analysis is traditionally performed on ECG signals and has become a helpful tool in auxiliary depression diagnosis~\cite{heart1996standards}.
 Studies show that people with psychiatric disorders such as depression have reduced HRV, as evidenced by reduced parasympathetic control and increased sympathetic activity~\cite{jandackova2016heart}.
 In a recent study, there are two overall strategies for HRV-based auxiliary depression diagnosis: traditional methods with hand-crafted features and end-to-end deep learning methods.
@@ -247,12 +247,15 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 & & & \multirow{-2}{*}{LDA}  & Nonlinear:86.60   \\ \cline{4-5}
 & &  &   & Linear:76.60                   \\
 & \multirow{-6}{*}{Hosseinifard et al~\cite{hosseinifard2013classifying}}  & \multirow{-6}{*}{90(45+45)} & \multirow{-2}{*}{LR}& Nonlinear:90.00  \\ \cline{2-5}
-& & & MLP  & 95.12 \\
-& & & LR& 97.56  \\
-& & & SVM& 95.12  \\
-& & & Decision tree & 95.12    \\
-& & & RF & 92.68     \\
-& \multirow{-6}{*}{Cukic et al~\cite{cukic2018eeg}}& \multirow{-6}{*}{43(23+20)} & Naive Bayes & 92.68   \\ \cline{2-5}
+%& & & MLP  & 95.12 \\
+%& & & LR& 97.56  \\
+%& & & SVM& 95.12  \\
+%& & & Decision tree & 95.12    \\
+%& & & RF & 92.68     \\
+%& \multirow{-6}{*}{Cukic et al~\cite{cukic2018eeg}}& \multirow{-6}{*}{43(23+20)} & Naive Bayes & 92.68   \\ \cline{2-5}
+
+&Cukic et al~\cite{cukic2018eeg} & 43(23+20) & LR & 97.56  \\ \cline{2-5}
+
 & Ahmadlou et al~\cite{ahmadlou2012fractality} & 24(12+12) & EPNN  & 91.30  \\ \cline{2-5}
 
 & & & & Left:98.20  \\
@@ -272,8 +275,10 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 & & &  & Left:97.66    \\
 \multirow{-30}{*}{EEG} & \multirow{-2}{*}{Ay et al~\cite{ay2019automated}} & \multirow{-2}{*}{30(15+15)} & \multirow{-2}{*}{CNN-LSTM}  & Right:99.12\\ \cline{1-5}
 & Zhang et al~\cite{zhang2011new}& 20(10+10)  & FNN& 95.00  \\ \cline{2-5}
-& &   & SVM  & 74.40     \\
-& \multirow{-2}{*}{Byuna et al~\cite{byun2019detection}}& \multirow{-2}{*}{72(31+41)}& Statistical filter & 73.10 \\ \cline{2-5}
+
+& Byuna et al~\cite{byun2019detection}& 72(31+41)  & SVM& 74.40  \\ \cline{2-5}
+%& &   & SVM  & 74.40     \\
+%& \multirow{-2}{*}{Byuna et al~\cite{byun2019detection}}& \multirow{-2}{*}{72(31+41)}& Statistical filter & 73.10 \\ \cline{2-5}
 & Roh et al~\cite{roh2014wearable}& 23D & SVM & 71.00 \\ \cline{2-5}
 & Matsui et al~\cite{matsui2016impaired} & 41(13+28)& LDA  & 88.00   \\ \cline{2-5}
 & Sun et al~\cite{sun2016objective} &91(44+47)& LR & 79.00\\ \cline{2-5}
@@ -308,7 +313,7 @@ A threshold value is taken to predict normal and depressed risky heartbeat. The 
 %From the table we obtain the following four observations:
 
 The performance of electrophysiological signal auxiliary depression diagnosis approaches is presented in Table~\ref{tab_eeg}.
-By comparing the performance of several approaches on the same datasets, we obtain the following four observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following four observations:
 
 
 
