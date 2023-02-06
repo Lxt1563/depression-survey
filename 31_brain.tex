@@ -12,7 +12,7 @@ To a certain extent, they inhibit patients' thinking speed, seriously causing co
 In addition, depression can atrophy the hippocampus of the patient's brain, change neurotransmitters, and cause chronic inflammation, leading to memory loss, slow thinking, and fatigue, which dramatically reduces the energy level and motivation of the patient and makes it difficult for them to socialize.
 These findings have found a breakthrough point for the auxiliary diagnosis of depression.
 
-%As shown in Fig \ref{fNIRS}(a), 
+%As shown in Fig \ref{fNIRS}(a),
 Brain images are acquired by scanning the subject's brain with various precision instruments.
 %There are significant differences in brain volume and structure among different people, as well as a large amount of interference and noise in the acquisition data due to the slight head movement of the subject or the scanning equipment during the acquisition process, so image pre-processing is needed to eliminate individual differences and noise interference.
 %Among them, image normalization includes head movement correction, brain tissue separation, and segmentation alignment.
@@ -99,8 +99,7 @@ In addition, Resting State fMRI images can reveal low-frequency blood oxygenatio
 \subsubsection{Traditional machine learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A part of traditional methods based on fMRI usually use Generalize Linear Model to extract linear features and then apply statistical tests for analysis.
-However, more nonlinear features such as Functional Connectivity, Degree Centrality, Regional Homogeneity, and Amplitude of Low-frequency Fluctuation are used for analysis.
+In traditional machine learning methods based on fMRI, more nonlinear features such as Functional Connectivity, Degree Centrality, Regional Homogeneity, and Amplitude of Low-frequency Fluctuation are used for analysis.
 
 \emph{Functional Cnnectivity} refers to statistical dependence between time series of electro-physiological activity and oxygenated blood levels in distinct brain regions.
 Abnormalities in connectivity between functional brain areas can reflect changes caused by mental illness.
@@ -111,7 +110,7 @@ This metric has been commonly applied to study the association between healthy o
 \emph{The amplitude of Low-frequency Fluctuation} measures the total power of a given time course within a typical frequency range, which is typically 0.01-0.08Hz.
 The amplitude of Low-frequency Fluctuation can characterize the energy intensity of brain activity over a period of time and effectively delineate the potential pathophysiological mechanisms of diseases.
 
-These features can better describe the characteristics of different brain regions or voxel regions and are essential features for describing Resting State fMRI images~\cite {lord2012changes,2013Identifying,2016Multivariate,wang2017depression,mousavian2020depression}.
+%These features can better describe the characteristics of different brain regions or voxel regions and are essential features for describing Resting State fMRI images~\cite {lord2012changes,2013Identifying,2016Multivariate,wang2017depression,mousavian2020depression}.
 
 Multivariable pattern analysis~\cite{haxby2001distributed} is also used to research individual-level diagnosis and classification of mental diseases.
 This method can judge whether an unknown type of subject sample has certain diseases by modeling multivariable data of a predetermined type.
@@ -134,7 +133,7 @@ The details of these models are given below.
 
 Many researchers use CNN to process independent two-dimensional slices to learn effective features in fMRI, thereby better mining the strong local spatial correlation in the image.~\cite{mousavian2020depression}.
 For example, Chun et al.~\cite{chun2020visualizing} classify depression by estimating whole-brain connectivity using CNN.
-Their model contains two 2D-convolution layers with ReLU activation functions followed by a max-pooling layer, dropout, a fully connected layer with L2-normalization, and another fully connected layer with a softmax activation function.
+%Their model contains two 2D-convolution layers with ReLU activation functions followed by a max-pooling layer, dropout, a fully connected layer with L2-normalization, and another fully connected layer with a softmax activation function.
 Gui et al.~\cite{2019The1} propose a deep learning network with multi-branch and local residual feedback for four types of Task State fMRI imaging data produced by depressed patients and control people under the music task condition.
 In the network construction, the convolution kernel of the convolutional layer has the same size as the input correlation coefficient matrix, allowing the CNN feature matching capabilities to be fully utilized.
 Following convolution, feature-matching results are obtained and passed to the Inception-ResNet structures of the two DNNs.
@@ -159,7 +158,8 @@ In order to acquire usable representations of brain FC networks, spectral graph 
 However, they typically employ a fixed group-level rather than a subject-level adjacent matrix to represent the interactions between various brain regions, failing to capture the time-varying information in fMRI data.
 Yao et al.~\cite{yao2020temporal} propose a Temporal-Adaptive GCN framework to extract both static and dynamic information of brain FC patterns for depression identification.
 Precisely, they extract rs-fMRI time-series signals from each region of interest and divide time-series data into numerous overlapped blocks using fixed-size sliding windows.
-An adaptive graph convolutional layer is subsequently used for each block to generate a flexible connectivity matrix, which can help model multi-level semantic information within the whole time series. Following that, convolution operations on each region of interest along different blocks capture the temporal dynamics of the complete time series. Finally, for depression classification, a fully linked layer is used, followed by a softmax function.
+An adaptive graph convolutional layer is subsequently used for each block to generate a flexible connectivity matrix, which can help model multi-level semantic information within the whole time series. Following that, convolution operations on each region of interest along different blocks capture the temporal dynamics of the complete time series. 
+%Finally, for depression classification, a fully linked layer is used, followed by a softmax function.
 The results demonstrate that the network is highly effective in capturing dynamic FC alteration and learning valid graph representations.
 
 The transformer's strong ability in long-range dependencies modeling makes it suitable
@@ -217,14 +217,14 @@ These studies have mainly used both traditional machine learning and deep learni
 
 \subsubsection{Traditional machine learning methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The research on fNIRS-based auxiliary depression diagnosis is still mainly based on traditional machine learning algorithms~\cite{2019Machine}~\cite{2017Machine}, which heavily rely on manually extracted features.
-Further, they explored the characteristics of abnormal fNIRS indicators in depressed patients mainly from time-frequency domain feature calculation and spatial brain network analysis.
+The research on fNIRS-based auxiliary depression diagnosis explore the characteristics of abnormal fNIRS indicators in depressed patients mainly from time-frequency domain feature calculation and spatial brain network analysis.
 
 The signal's time-domain statistical and frequency-domain features are usually extracted at the fNIRS time-frequency domain analysis level.
-The famous time domain statistical features of fNIRS signals include the mean, peak, valley, average, variance, and other feature indicators of the blood oxygen response function (HbO, HbR, HbT). These are the features of task-related cortical regions extracted by measuring the process of motor imagination task, visual task, cognitive task, etc., and recognized by machine learning classifiers such as SVM, RF, One Rule, and eXtreme Gradient Boosting~\cite{2015Automatic,2017Automatic,2020Classifying}.
+The famous time domain statistical features of fNIRS signals include the mean, peak, valley, average, variance, and other feature indicators of the blood oxygen response function (HbO, HbR, HbT). These are the features of task-related cortical regions extracted by measuring the process of motor imagination task, visual task, cognitive task, etc.~\cite{2015Automatic,2017Automatic,2020Classifying}.
+Moreover, other researchers are committed to extracting features from fNIRS frequency domain signals and using Fourier transform, wavelet transform, and other methods to analyze the signal spectrum to extract effective recognition features~\cite {2015Automatic}.
 In addition, some researchers also applied the statistical parameter mapping method based on the General Linear Model to the task of auxiliary depression diagnosis.
 In this method, the linear combination of fNIRS data and regression quantity reflecting the design of the stimulation scheme is fitted. Therefore, General Linear Model has higher statistical effectiveness than the average value because it considers the whole fNIRS time series and takes advantage of the higher sampling rate recorded by fNIRS~\cite{2015Automatic2}.
-Moreover, other researchers are committed to extracting features from fNIRS frequency domain signals and using Fourier transform, wavelet transform, and other methods to analyze the signal spectrum to extract effective recognition features~\cite {2015Automatic}.
+
 
 
 
@@ -255,7 +255,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \cline{2-5}
                        & Zeng et al. ~\cite{2014Unsupervised}                                             & 53 (24+29)                                                                                                                 & Unsupervised ML                                                                                                                                        & 92.50                                                                                                                                \\
                        \cline{2-5}
-%                       & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 & \makecell[c]{standard LASSO\\ group LASSO  \\ sparse group LASSO  \\ SVM}                                                              & \makecell[c]{83.82  \\ 91.95 \\ 90.08   \\ 94.68}  
+%                       & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 & \makecell[c]{standard LASSO\\ group LASSO  \\ sparse group LASSO  \\ SVM}                                                              & \makecell[c]{83.82  \\ 91.95 \\ 90.08   \\ 94.68}
                         & Yu et al.~\cite{2015Toward}                                                        & 62 (31+31)                                                                                                                 &  SVM                                                            & 94.68                                          \\
                       \cline{2-5}
                        & Bhaumik~\cite{2016Multivariate}                                                   & 67 (38+29)                                                                                                                 & SVM                                                                                                                                                    & 76.10                                                                                                                                \\
@@ -267,7 +267,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
                        & Gui et al. ~\cite{2019The1}                                                      & 39 (19+20)                                                                                                                 & DNN                                                                                                                                                    & 94.68                                                                                                                                \\
                        \cline{2-5}
 %                       & Mousavian et al.~\cite{mousavian2020depression}                                   &  279 (38+241)                                                                                             & \begin{tabular}[c]{@{}c@{}}CNN-LSTM \\ Spatial-temporal-CNN \\ 3D CNN   \\ 3D VGG-16  \\ FCN \\ FCN\_woT-test  \\ FCN\_CanICA\end{tabular} & \begin{tabular}[c]{@{}c@{}}100.00  \\ 100.00  \\ 90.00   \\ 100.00   \\ 94.00   \\ 86.00   \\ 87.00\end{tabular} \\
-                      
+
                         & Mousavian et al.~\cite{mousavian2020depression}                                   &  279 (38+241)                                                                                             & CNN &100.00 \\
                        \cline{2-5}
                        & Mousavian et al.~\cite{9680063}                                  & 279 (38+241)                                                                                             & Cubes-Atlas                                                                                                                                            & 93.00                                                                                                                                \\
@@ -308,7 +308,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
 				
 				\item Multivariate Pattern Analysis (MVPA),
 				%Spatial-temporal CNN (ST-CNN),
-				Functional Connectivity Network 
+				Functional Connectivity Network
 				\item  (FCN), Dynamic Functional Connectivity (DFC),
 				Functional Network
 				\item  Connectivity (FNC),
@@ -362,7 +362,7 @@ In addition, Ma et al.~\cite{2020DISTINGUISHING } propose a machine-learning cla
 %From the table we obtain the following three observations:
 
 The performance of brain imaging auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab3}.
-By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations:
 
 (1) The general linear model is the mainstream analysis method of fMRI images, based on its excellent ability to feature extraction, it has also achieved better results than the traditional linear feature extraction methods in fNIRS.
 

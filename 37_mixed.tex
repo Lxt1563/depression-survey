@@ -48,7 +48,7 @@ At present, most of the research is based on early fusion methods.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Machine learning methods play a crucial role in multimodal depression recognition.
-As mentioned in the previous section, the method of depression analysis based on traditional machine learning audio, video, and text focuses on feature extraction. It selects more discriminating features to predict the results.
+%As mentioned in the previous section, the method of depression analysis based on traditional machine learning audio, video, and text focuses on feature extraction. It selects more discriminating features to predict the results.
 %When combining these modal data for depression analysis, feature extraction and selection is equally important.
 
 The multimodal combination method is similar to the feature extraction method of every single mode.
@@ -167,11 +167,11 @@ Yin et al.~\cite{2019A}& E-DAIC & LSTM  & ATV  & - & 5.50  & -  \\ \hline
 %From the table we obtain the following four observations:
 
 The performance of multi-modal auxiliary depression diagnosis approaches is presented in Table~\ref{tab9}.
-By comparing the performance of several approaches on the same datasets, we obtain the following four observations: 
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
 
 (1) In general, the more different modality data types are combined, the better the experimental results are.
 For example, combining audio, video, and text data can have better results than combining two-modality data or single-modality data.
-The data of different modes can balance each modality data's shortcomings and increase the diversity of extracted features, which can choose more effective features to predict depression.
+Different modality of data can increase the diversity of extracted features, which can choose more effective features to predict depression.
 
 (2) SVR achieves better results on the AVEC 2013/2014 dataset than other traditional machine learning-based methods.
 %It is a vital application branch of SVM, which is to find a regression plane and make all the data of a set closest to the plane.
@@ -186,10 +186,11 @@ Secondly, using an average dimensional affect label over multiple subjective rat
 (3) On the DAIC-WOZ dataset, Stochastic Gradient Descent Regression achieves better results in traditional machine learning based methods.
 Gong et al.~\cite{gong2017topic} propose a topic modeling-based multi-modal feature vector building scheme to provide the basis for context-aware analysis and perform a grid search for the following regression models: RF regression, Stochastic Gradient Descent regression, and SVR.
 The author observes that with the increase of feature numbers, Stochastic Gradient Descent and SVR models continually improve their performance while the random forest model stops improving much earlier.
-When the number of selected features is 46, the Stochastic Gradient Descent regression model achieves the best performance.
-The result shows that the proposed approach performs significantly better than the context-unaware method and the challenge baseline for all metrics. It can discover various temporal features that have an underlying relationship with depression and further build a model.
+%When the number of selected features is 46, the Stochastic Gradient Descent regression model achieves the best performance.
+The result shows that the proposed approach performs significantly better than the context-unaware method and the challenge baseline for all metrics. It can discover various temporal features that have an underlying relationship.
+% with depression and further build a model.
 
-(4)  Summarizing the results in Table \ref{tab9}, using the same dataset and modalities, we found that the deep learning approach outperforms the traditional machine learning approach in most cases.
+%(4)  Summarizing the results in Table \ref{tab9}, using the same dataset and modalities, we found that the deep learning approach outperforms the traditional machine learning approach in most cases.
 %In early studies of multiple audiovisual and text depression recognition based on deep learning, the LSTM is commonly used by different works to learn the discriminative patterns from both images and hand-crafted features.
 
 

@@ -7,9 +7,9 @@
 \section{Audiovisual data}
 \label{sec_approach}
 
-In recent years, researchers have increasingly focused on using behavioral signals to auxiliary depression diagnosis.
+Recently, researchers have increasingly focused on using behavioral signals to diagnose depression.
 They analyze abnormal expressive behaviors resulting from depression, such as facial expressions becoming sluggish, frequently avoiding eye contact with others, using short sentences with a flat tone when speaking, and walking in a disheveled posture, etc.
-Many researchers have found that auxiliary depression diagnosis can be achieved by comparative analysis of these characteristics.
+%Many researchers have found that auxiliary depression diagnosis can be achieved by comparative analysis of these characteristics.
 The auxiliary depression diagnosis based on behavioral signals is usually studied by audio and video data.
 In addition, video data mainly contain facial expression and gait information, and audio data refers to the participants' speech data.
 
@@ -46,7 +46,7 @@ In addition, video data mainly contain facial expression and gait information, a
 
 A person's personality and mood can be seen from face, and some studies have found that the appearance and temperament of patients with depression are also different from healthy people.
 Zhu et al.~\cite{0Identifying} research team of the institute of psychology of the Chinese Academy of Sciences studies 100 people with mental diseases.
-They ask 100 patients to read neutral articles through a special technology.
+%They ask 100 patients to read neutral articles through a special technology.
 From the research process, these patients are found to look very sad as they frown while reading aloud, the corners of their mouths droop, and a few tears appear in their eyes as if they are crying.
 %Under normal circumstances, when people read a book with neutral content, it will not make them feel sad and will not make people frown, so there is still a big difference in facial features between people suffering from depression and normal.
 Therefore, by comparing and analyzing the facial expression data of depressed and normal people, it can provide an auxiliary diagnosis of depression.~\cite{2013Social,2018A,2020Automatic,2005Emotion,BYLSMA2008676,2017Facial}.
@@ -58,30 +58,30 @@ Therefore, by comparing and analyzing the facial expression data of depressed an
 \subsubsection{Traditional machine learning methods}
 \label{sec_fquality}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Auxiliary depression diagnosis using traditional machine learning methods relies on feature extraction, so researchers have focused more on extracting more discriminative features.
-Changes in the eyes, mouth, eyebrows, etc., contribute significantly to expression recognition, so many studies focus on studying the surrounding features extraction and then combining them with global information for analysis.
+Auxiliary depression diagnosis using traditional machine learning methods relies on feature extraction, so researchers have focused on extracting more discriminative features.
+%Changes in the eyes, mouth, eyebrows, etc., contribute significantly to expression recognition, so many studies focus on studying the surrounding features extraction and then combining them with global information for analysis.
 Specifically, the mainstream feature extraction methods include Active Appearance Mode, Local Binary Patterns, Local Gabor Binary Patterns, and  Local Phase Quantization descriptors.
-After further processing these features, they are fed into a classification or regression models for analysis, such as SVM, SVR, RF, LR, Partial Least Square Regression, and naive Bayes are the most commonly used methods in the study of facial features of depressed subjects~\cite{2017A,2018A,2020Automatic,2021Classifying}.
+%After further processing these features, they are fed into a classification or regression models for analysis, such as SVM, SVR, RF, LR, Partial Least Square Regression, and naive Bayes are the most commonly used methods in the study of facial features of depressed subjects~\cite{2017A,2018A,2020Automatic,2021Classifying}.
 
 
 
 The Active Appearance Model reflects the features of facial expressions through shape and texture information in dynamic images.
 Cohn et al.~\cite{2009Detecting} demonstrate the feasibility of automatic depression detection by comparing clinical diagnosis with automatically measured facial movements using the Active Appearance Model.
-Alghowinem et al.~\cite{2013Eye} use the Active Appearance Model to extract features from eye movements in the video, in addition to blink interval time, blink frequency, eye closure frequency, etc., and mean, variance, and maximum. Minimum values of various features throughout the interview were used to diagnose depression.
-However, in general, the Active Appearance Model needs to rely on the manual annotation to initialize the face feature points, which affects the automation of the algorithm.
+Alghowinem et al.~\cite{2013Eye} use the Active Appearance Model to extract features from eye movements, in addition to blink interval time, blink frequency, eye closure frequency, etc., and mean, variance, and maximum. Minimum values of various features throughout the interview were used to diagnose depression.
+However, the Active Appearance Model needs to rely on the manual annotation to initialize the face feature points, which affects the automation of the algorithm.
 Another disadvantage of this method is that the model construction could be more straightforward.
 
-Local Binary Patterns are a common method for extracting appearance features, an algorithm capable of describing image textures in a simple way without manual annotation, and has the advantages of rotation and gray scale invariance.
+Local Binary Patterns are a common method for extracting appearance features, an algorithm capable of describing image textures in a simple way without manual annotation.
+%, and has the advantages of rotation and gray scale invariance.
 %The original Local Binary Patterns operator is defined as in a 3*3 window, the center pixel of the window is used as the threshold, and the grayscale values of the 8 neighboring pixels are compared with it.
 %If the surrounding pixel value is greater than the center pixel value, the position of the pixel point is marked as 1. Otherwise, it is 0.
 %In this way, the 8 points in the 3*3 neighborhood can be compared to produce an 8-bit binary number, which is the Local Binary Patterns value of the center pixel of the window, which is used to reflect the texture information of the region.
 After that, some researchers proposed improvements based on Local Binary Patterns.
-
 In the AVEC 2014 competition, baseline visual features are extracted using a Local Gabor Binary Pattern from Three Orthogonal Planes, combining dynamic and spatial texture analysis with Gabor filtering.
 This method uses multiple Gabor filters to convolve consecutive video frames and applies Local Binary Patterns to extract features from orthogonal XY, XT, and YT slices~\cite{10.1145/2661806.2661807}.
 Pampouchidou et al.~\cite{2016Video} use Curvelet transform and Local Binary Patterns to extract features.
 Since Curvelet transform can extract curvature information from images, different facial expressions can be distinguished from their curves by computing Local Binary Patterns descriptors for each facial region extracted by Curvelet transform processing individually to form a feature vector for frame-based classification.
-Jan et al.~\cite{2014Automatic} extract three different texture features by Local Binary Patterns, Edge Orientation Histogram, and Local Phase Quantization methods and mapped their variations to feature vectors by Motion History Histogram.
+Jan et al.~\cite{2014Automatic} extract three texture features by Local Binary Patterns, edge orientation histogram, local phase quantization methods and mapped their variations to feature vectors by motion history histogram.
 
 Inspired by the huge success of the Local Binary Pattern method, the Local Phase Quantization descriptor uses the short-term Fourier transform to obtain the local phase on the facial region.
 In the AVEC 2013 competition, facial detection and alignment were performed for each video frame, and then Local Phase Quantization was used as a dense local appearance descriptor.
@@ -107,8 +107,8 @@ However, traditional machine learning based methods require manual feature desig
 
 %Depression alters many behaviors, among which the face presents most of people's nonverbal information. Therefore, facial expressions are highly informative characteristic indicators in the diagnosis of depression, providing more support for clinical studies of depression and offering the possibility of automated detection of depression.
 
-With the continuous development of computer technology, several researchers use deep learning methods to extract high-level semantic features of facial expressions from raw data for auxiliary depression diagnosis.
-Among them, CNN is the most used method, followed by RNN.
+%With the continuous development of computer technology, several researchers use deep learning methods to extract high-level semantic features of facial expressions from raw data for auxiliary depression diagnosis.
+In Facial expression auxiliary depression diagnosis, CNN is the most used deep learning method, followed by RNN.
 
 CNN model is widely used for facial feature extraction with its excellent spatial feature extraction ability~\cite{ringeval2019avec}.
 Melo et al.~\cite{2019Depression2} apply Resnet-50 as a backbone to improve the model loss function and explore the ordinal relationship between all facial images and depression levels.

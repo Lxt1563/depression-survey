@@ -307,7 +307,7 @@ F1-score=\frac{2 \times  Precision  \times   Recall }{ Precision + Recall }
 
 \begin{figure}[tbp]
 	\centering	
-	\label{fig_hard_case1}\includegraphics[width=0.8\linewidth]{figures/depression/metric3.png}		
+	\label{fig_hard_case1}\includegraphics[width=1\linewidth]{figures/depression/metric3.png}		
 	\caption{
 	Confusion Matrix
 	%: each row represents the forecast category, and the total number of each row represents the number of data predicted for that category. Each column represents the real category of data, and the total data in each column represents this category's number of data instances.
@@ -401,7 +401,7 @@ Although various methods have been proposed for auxiliary depression diagnosis b
 	\centering	
 	\label{fig_hard_case1}\includegraphics[width=1\linewidth]{figures/depression/method.png}		
 	\caption{
-	Auxiliary depression diagnosis method based on different modality data. 
+	Auxiliary depression diagnostic models based on different modality data. 
 	}
 	\label{method}
 \end{figure}
@@ -422,7 +422,7 @@ Hand-crafted feature extraction requires researchers to manually extract feature
 Data-driven feature extraction uses specialized algorithms to extract features automatically from data without human intervention, such as deep learning methods.
 In some cases, it is necessary to reduce the dimension of extracted features, including feature selection and feature fusion, to lessen the amount of calculation.
 
-\subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning methods and deep learning methods.
+\subsubsection{Prediction} Auxiliary depression diagnostic models based on different modality data are divided into traditional machine learning and deep learning methods.
 Traditional machine learning methods input the hand-crafted extracted features into a linear or nonlinear classifier for prediction, such as Support Vector Machine (SVM), Support Vector Regression (SVR), Random Forests (RF), Logistic Regression (LR), etc.
 Deep learning methods are usually end-to-end, which combine feature extraction and prediction into one model, such as Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Long short-term Memory (LSTM), etc.
 
