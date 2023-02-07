@@ -126,6 +126,47 @@ Further, to capture multi-scale temporal information of speech signals, Du et al
 
 
 
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{multirow}
+\begin{table}[!htbp]\large
+\centering
+\caption{Experimental results based on speech.}
+\label{tab_speech}
+\renewcommand\arraystretch{1.4}
+%\resizebox{\linewidth}{!}{
+\resizebox{1\linewidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{@{}c|c|c|c|c|c@{}}
+\toprule
+\textbf{Paper}& \textbf{Dataset} & \textbf{Methods} & \textbf{F1 Score} & \textbf{RMSE} & \textbf{MAE} \\ \midrule
+Ringeval et al.~\cite{ringeval2017avec}  & SEWA & RF  & - & 7.78 & 5.72 \\ \hline
+Valster et al.~\cite{valstar2013avec}  & AVEC2013 & SVR & -  & 14.12 & 10.35 \\ \hline
+Williamson et al.~\cite{williamson2013vocal} & AVEC2013 & GMM &- & 7.42 & 5.75 \\ \hline
+Williamson et al.~\cite{williamson2014vocal} & AVEC2014 & GMM & - & 8.50 & 6.52 \\ \hline
+Jan et al.~\cite{jan2017artificial} & AVEC2014 & LR &- & 7.43 & 6.14  \\ \hline
+Dham et al.~\cite{dham2017depression}  & DAIC-WOZ & SVM & - & 6.32 & 4.40  \\ \hline
+Gong et al.~\cite{gong2017topic} & DAIC-WOZ & SVM & - & 4.99 & 3.96  \\ \hline
+Valstar et al.~\cite{valstar2016avec}  & DAIC-WOZ & SVM+RF & - & 7.78 & 5.72  \\ \hline
+Nasir et al.~\cite{nasir2016multimodal} & DAIC-WOZ & SVM & 63.00 & - & \\ \hline
+Kang et al.~\cite{kang2017deep} & AVEC2014 & DNN & - & 7.37& 5.87 \\ \hline
+Yang et al.~\cite{yang2017hybrid} & DAIC-WOZ & CNN &-& 5.97 & 5.16  \\ \hline
+Al Hannai et al.~\cite{al2018detecting}& DAIC-WOZ & LSTM& 63.00 & 6.50 & 5.13         \\ \hline
+Ma et al.~\cite{ma2016depaudionet}& DAIC-WOZ & CNN+LSTM & 52.00 & - &-  \\ \hline
+Salekin et al.~\cite{salekin2018weakly} & DAIC-WOZ & LSTM & 90.10&-&-     \\ \hline
+\multirow{2}{*}{Srimadhur et al.~\cite{srimadhur2020end}} & \multirow{2}{*}{DAIC-WOZ} & CNN & 78.00 &-&- \\  \cline{3-6}
+ & & CNN(Spectrogram) & 66.00 &-&- \\ \hline
+Zhang et al.~\cite{zhang2021depa}& DAIC-WOZ & Transformer & 94.00 & 5.73& 4.75     \\ \bottomrule
+\end{tabular}
+\end{threeparttable}}
+\end{table}
+
+
+
+
 The transformer is suitable for very long sequence data and is studied extensively in speech auxiliary depression diagnosis during the past two years.
 Sun et al.~\cite{sun2021multi} propose a transformer-based network for extracting long-term temporal context information from speech.
 It is the first transformer-based approach for speech auxiliary depression diagnosis.
@@ -171,47 +212,6 @@ The main reason is because of variability in the volume during the recording of 
 As it could solve the problems encountered with hand-crafted features, such as high threshold, labour cost and low feature utilization rate, deep learning  gradually becomes the leader in the field of machine
 learning.
 Although the end-to-end model also has better performance, it is difficult to determine the contribution of each module in the architecture due to its end-to-end characteristics, limiting further performance improvement.
-
-
-
-
-
-
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{multirow}
-\begin{table}[!htbp]\large
-\centering
-\caption{Experimental results based on speech.}
-\label{tab_speech}
-\renewcommand\arraystretch{1.4}
-%\resizebox{\linewidth}{!}{
-\resizebox{1\linewidth}{!}{
-\begin{threeparttable}
-\begin{tabular}{@{}c|c|c|c|c|c@{}}
-\toprule
-\textbf{Paper}& \textbf{Dataset} & \textbf{Methods} & \textbf{F1 Score} & \textbf{RMSE} & \textbf{MAE} \\ \midrule
-Ringeval et al.~\cite{ringeval2017avec}  & SEWA & RF  & - & 7.78 & 5.72 \\ \hline
-Valster et al.~\cite{valstar2013avec}  & AVEC2013 & SVR & -  & 14.12 & 10.35 \\ \hline
-Williamson et al.~\cite{williamson2013vocal} & AVEC2013 & GMM &- & 7.42 & 5.75 \\ \hline
-Williamson et al.~\cite{williamson2014vocal} & AVEC2014 & GMM & - & 8.50 & 6.52 \\ \hline
-Jan et al.~\cite{jan2017artificial} & AVEC2014 & LR &- & 7.43 & 6.14  \\ \hline
-Dham et al.~\cite{dham2017depression}  & DAIC-WOZ & SVM & - & 6.32 & 4.40  \\ \hline
-Gong et al.~\cite{gong2017topic} & DAIC-WOZ & SVM & - & 4.99 & 3.96  \\ \hline
-Valstar et al.~\cite{valstar2016avec}  & DAIC-WOZ & SVM+RF & - & 7.78 & 5.72  \\ \hline
-Nasir et al.~\cite{nasir2016multimodal} & DAIC-WOZ & SVM & 63.00 & - & \\ \hline
-Kang et al.~\cite{kang2017deep} & AVEC2014 & DNN & - & 7.37& 5.87 \\ \hline
-Yang et al.~\cite{yang2017hybrid} & DAIC-WOZ & CNN &-& 5.97 & 5.16  \\ \hline
-Al Hannai et al.~\cite{al2018detecting}& DAIC-WOZ & LSTM& 63.00 & 6.50 & 5.13         \\ \hline
-Ma et al.~\cite{ma2016depaudionet}& DAIC-WOZ & CNN+LSTM & 52.00 & - &-  \\ \hline
-Salekin et al.~\cite{salekin2018weakly} & DAIC-WOZ & LSTM & 90.10&-&-     \\ \hline
-\multirow{2}{*}{Srimadhur et al.~\cite{srimadhur2020end}} & \multirow{2}{*}{DAIC-WOZ} & CNN & 78.00 &-&- \\  \cline{3-6}
- & & CNN(Spectrogram) & 66.00 &-&- \\ \hline
-Zhang et al.~\cite{zhang2021depa}& DAIC-WOZ & Transformer & 94.00 & 5.73& 4.75     \\ \bottomrule
-\end{tabular}
-\end{threeparttable}}
-\end{table}
 
 
 

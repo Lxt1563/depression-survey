@@ -120,10 +120,33 @@ The result imply that the proposed method leveraging the complementarity gained 
 However, the feature extraction of the skeleton alone and the generation of GEI with silhouettes suffer from variable degrees of information loss. Instead, employing a deep end-to-end architecture to push the original signal into the model for learning may produce unpredictable results.
 
 
+\subsubsection{Performance Comparison}
+
+%We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
+%The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
+%We should mention that we focus on comparing how different techniques perform on the same dataset.
+%The following list of observations can be summed up:
+%
+%Tabel~\ref{tab_gait} overviews the gait auxiliary depression diagnosis techniques' performance comparisons.
+%From the table we obtain the following three observations:
+The performance of gait auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab_gait}.
+By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
+
+
+(1)
+According to the performance of traditional gait auxiliary depression diagnosis methods, we can obtain the following two points.
+First, time and frequency domain features are more efficient in constructing computational models to identify depression than spatial geometric features. It is reflected in the fact that the model built with time domain features has the same performance as the model built by combining both  spatial geometric and time domain features, indicating that  spatial geometric features contribute little to identifying depression~\cite{wang2021detecting}.
+%It is also reflected in the fact that the model comprised of time and frequency domain features has the same performance as the model consisting of all features.
+Second, different classifiers display varying performances when given the same feature vector as input.
+
+%For traditional gait auxiliary depression diagnosis methods, scholars have been exploring novel gait features and using traditional machine learning models for classification with increasing accuracy.
+%Specifically, first, time and frequency domain features are more efficient in constructing computational models to identify depression than spatiotemporal features~\cite{wang2021detecting}. It is noteworthy that the model built with time domain features has the same performance as the model built by combining both spatiotemporal and time domain features, indicating that spatiotemporal features contribute little to identifying depression. It is also reflected in the fact that the model comprised of time and frequency domain features has the same performance as the model consisting of all features. Second, different classifiers display varying performances when given the same feature vector as input.
+
+
 \begin{table}[!htbp]
 \caption{Experimrntal results based on gait.}
 \label{tab_gait}
-\renewcommand\arraystretch{1.2}
+\renewcommand\arraystretch{1.1}
 \resizebox{0.9999\linewidth}{!}{%
 \begin{tabular}{@{}c|c|c|c@{}}
 \toprule
@@ -149,29 +172,6 @@ Shao~\cite{shao2021multi}  & 200(86+114)  & LSTM+CNN  & 85.45 \\ \cline{1-4}
 &     & TCN    & 92.15     \\ \bottomrule
 \end{tabular} }
 \end{table}
-
-
-\subsubsection{Performance Comparison}
-
-%We provide a performance summary of the methods evaluated in Tabel~\ref{tab_gait} to provide additional insight into the effectiveness of gait auxiliary depression diagnosis approaches.
-%The experimental classification accuracy (\%) is taken directly from the related source articles to conduct a fair comparison.
-%We should mention that we focus on comparing how different techniques perform on the same dataset.
-%The following list of observations can be summed up:
-%
-%Tabel~\ref{tab_gait} overviews the gait auxiliary depression diagnosis techniques' performance comparisons.
-%From the table we obtain the following three observations:
-The performance of gait auxiliary depression diagnosis approaches is presented in Tabel~\ref{tab_gait}.
-By comparing the performance of several approaches on the same datasets, we obtain the following three observations: 
-
-
-(1)
-According to the performance of traditional gait auxiliary depression diagnosis methods, we can obtain the following two points.
-First, time and frequency domain features are more efficient in constructing computational models to identify depression than spatial geometric features. It is reflected in the fact that the model built with time domain features has the same performance as the model built by combining both  spatial geometric and time domain features, indicating that  spatial geometric features contribute little to identifying depression~\cite{wang2021detecting}.
-%It is also reflected in the fact that the model comprised of time and frequency domain features has the same performance as the model consisting of all features.
-Second, different classifiers display varying performances when given the same feature vector as input.
-
-%For traditional gait auxiliary depression diagnosis methods, scholars have been exploring novel gait features and using traditional machine learning models for classification with increasing accuracy.
-%Specifically, first, time and frequency domain features are more efficient in constructing computational models to identify depression than spatiotemporal features~\cite{wang2021detecting}. It is noteworthy that the model built with time domain features has the same performance as the model built by combining both spatiotemporal and time domain features, indicating that spatiotemporal features contribute little to identifying depression. It is also reflected in the fact that the model comprised of time and frequency domain features has the same performance as the model consisting of all features. Second, different classifiers display varying performances when given the same feature vector as input.
 
 
 (2) For deep learning-based gait auxiliary depression diagnosis methods, the multi-modal models are more accurate than the single-modal models. Researchers found that the skeleton can help to locate the spatial position of joints of the human body, and the silhouette can describe the detailed information of the human body shape so that the constructed 3D model is more vivid.

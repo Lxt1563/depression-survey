@@ -236,6 +236,34 @@ The results demonstrate the existence of a small-world model in both patients an
 Furthermore, features such as the characteristic path length and betweenness centrality extracted from the functional connectivity matrix help classify patients and healthy people.
 
 
+\subsubsection{Deep learning methods}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The main deep learning methods for studying fNIRS-based auxiliary depression diagnosis are CNN, Graph Neural Network (GNN), and RNN.
+
+The emergence of AlexNet~\cite{10.1145/3065386} confirmed the dominance of deep learning in computer vision and provided more possibilities for applying deep learning methods in fNIRS auxiliary depression diagnosis~\cite{2022Deep}.
+This CNN method recognizes the original blood data, manually extracting HbO, HbR, HbT features, and channel correlation as inputs~\cite{2021Depression}.
+However, their studies have two shortcoming:
+the effects of temporal data and spatial data are not compared or analyzed respectively,
+and temporal and spatial data are not combined with working together.
+
+
+Some studies compare temporal features and Functional Connectivity through statistical analysis and then design the GNN classification of the network that takes both data as input.
+Yu et al.~\cite{yu2022gnn} present a GNN-based technique for automatic depression recognition that integrates both temporal and spatial characteristics of fNIRS data.
+As temporal data, fundamental statistical metrics of each channel are retrieved, and channel connectivity (coherence and correlation) is estimated as spatial features.
+For categorization, they view each subject's data as a graph with temporal characteristics as node characteristics and geographical characteristics as edge weights.
+Compared to conventional machine-learning algorithms, GNN-based methods achieved the best depression recognition performance, as demonstrated by experimental results.
+
+
+The RNN method gives the artificial neural network a robust time-series signal classification and prediction ability, so it has a wide range of applications in natural language processing. Because fNIRS data has significant time series characteristics, the method based on RNN is gradually applied to this field. Among them, LSTM is the most representative. It can solve the long-term dependence problem of general RNN and can effectively analyze and predict the time series signals in fNIRS data~\cite{2021fNIRS}.
+In addition, Ma et al.~\cite{2020DISTINGUISHING } propose a machine-learning classification method that combines CNN and LSTM. Large-time scale connectivity is determined using attention long short-term memory neural network, and short-time feature information is considered using the InceptionTime neural network in this method. It increases the network's ability to extract hidden information from fNIRS data, making the model more comprehensive and stable.
+
+%Brain imaging technology has revealed abnormalities in brain structure, brain function and brain metabolism in patients with depression, providing new ideas for early diagnosis and optimization of treatment plans.
+
+
+
+\subsection{Performance Comparison}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{table}
 \centering
@@ -323,33 +351,7 @@ Furthermore, features such as the characteristic path length and betweenness cen
 \fi
 
 
-\subsubsection{Deep learning methods}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The main deep learning methods for studying fNIRS-based auxiliary depression diagnosis are CNN, Graph Neural Network (GNN), and RNN.
 
-The emergence of AlexNet~\cite{10.1145/3065386} confirmed the dominance of deep learning in computer vision and provided more possibilities for applying deep learning methods in fNIRS auxiliary depression diagnosis~\cite{2022Deep}.
-This CNN method recognizes the original blood data, manually extracting HbO, HbR, HbT features, and channel correlation as inputs~\cite{2021Depression}.
-However, their studies have two shortcoming:
-the effects of temporal data and spatial data are not compared or analyzed respectively,
-and temporal and spatial data are not combined with working together.
-
-
-Some studies compare temporal features and Functional Connectivity through statistical analysis and then design the GNN classification of the network that takes both data as input.
-Yu et al.~\cite{yu2022gnn} present a GNN-based technique for automatic depression recognition that integrates both temporal and spatial characteristics of fNIRS data.
-As temporal data, fundamental statistical metrics of each channel are retrieved, and channel connectivity (coherence and correlation) is estimated as spatial features.
-For categorization, they view each subject's data as a graph with temporal characteristics as node characteristics and geographical characteristics as edge weights.
-Compared to conventional machine-learning algorithms, GNN-based methods achieved the best depression recognition performance, as demonstrated by experimental results.
-
-
-The RNN method gives the artificial neural network a robust time-series signal classification and prediction ability, so it has a wide range of applications in natural language processing. Because fNIRS data has significant time series characteristics, the method based on RNN is gradually applied to this field. Among them, LSTM is the most representative. It can solve the long-term dependence problem of general RNN and can effectively analyze and predict the time series signals in fNIRS data~\cite{2021fNIRS}.
-In addition, Ma et al.~\cite{2020DISTINGUISHING } propose a machine-learning classification method that combines CNN and LSTM. Large-time scale connectivity is determined using attention long short-term memory neural network, and short-time feature information is considered using the InceptionTime neural network in this method. It increases the network's ability to extract hidden information from fNIRS data, making the model more comprehensive and stable.
-
-%Brain imaging technology has revealed abnormalities in brain structure, brain function and brain metabolism in patients with depression, providing new ideas for early diagnosis and optimization of treatment plans.
-
-
-
-\subsection{Performance Comparison}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Table \ref{tab3} shows a summary of the experimental results based on brain imaging to diagnosing depression.
 %As most researchers use their own collected data for the auxiliary diagnosis of depression based on brain images, the work among them is not comparable, but by comparing different methods of the same team, we can draw the following conclusions:
 %We evaluate the auxiliary depression diagnosis method using fMRI and fNIRS.
